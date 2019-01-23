@@ -1,6 +1,6 @@
 CFLAGS := -c -Wall -I../inc
 PROGS := hello-arm-static hello-arm-shared
-
+CC := CROSS_COMPILE
 all: $(PROGS)
 
 hello-arm.o: hello-arm.c
@@ -8,7 +8,7 @@ hello-arm.o: hello-arm.c
 
 hello-arm-static: hello-arm.o
 #	$(CC) $(LDFLAGS) -o $@ $^ ../static/libtest.a
-	$(CC) -o $@ $^ -L../static -ltest -static
+	$(CC) -o $@ $^ -L../static -ltest
 
 hello-arm-shared: hello-arm.o
 	$(CC) -o $@ $^ -L../shared -ltest
