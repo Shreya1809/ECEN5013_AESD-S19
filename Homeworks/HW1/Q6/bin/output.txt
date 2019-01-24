@@ -1,0 +1,77 @@
+---------System Information Script--------
+--------------User Information------------
+ 12:08:50 up  2:26,  1 user,  load average: 0.48, 0.25, 0.14
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+shreya18 :0       :0               09:45   ?xdm?   2:12   0.00s /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+
+---------Operating System Type------------
+   Static hostname: shreya1809
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: c60a27e9c1914471b7d554251eb7421d
+           Boot ID: 38aa254b001e45abbb2dcd88b2a00e22
+    Virtualization: oracle
+  Operating System: Ubuntu 18.04.1 LTS
+            Kernel: Linux 4.15.0-43-generic
+      Architecture: x86-64
+
+-------------OS Distribution--------------
+Distributor ID:	Ubuntu
+Description:	Ubuntu 18.04.1 LTS
+Release:	18.04
+Codename:	bionic
+
+----------------OS Version----------------
+NAME="Ubuntu"
+VERSION="18.04.1 LTS (Bionic Beaver)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 18.04.1 LTS"
+VERSION_ID="18.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=bionic
+UBUNTU_CODENAME=bionic
+
+---------------Kernel Version-------------
+4.15.0-43-generic
+
+---------Kernel GCC Version Build---------
+Linux version 4.15.0-43-generic (buildd@lgw01-amd64-001) (gcc version 7.3.0 (Ubuntu 7.3.0-16ubuntu3)) #46-Ubuntu SMP Thu Dec 6 14:45:28 UTC 2018
+
+-------------Kernel Build Time------------
+#46-Ubuntu SMP Thu Dec 6 14:45:28 UTC 2018
+
+---------System Architecture Info---------
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              2
+On-line CPU(s) list: 0,1
+Thread(s) per core:  1
+Core(s) per socket:  2
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               142
+Model name:          Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz
+Stepping:            9
+CPU MHz:             2903.996
+BogoMIPS:            5807.99
+Hypervisor vendor:   KVM
+Virtualization type: full
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            4096K
+NUMA node0 CPU(s):   0,1
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid pni pclmulqdq ssse3 cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx rdrand hypervisor lahf_lm abm 3dnowprefetch pti avx2 rdseed clflushopt
+
+--------Info on File System Memory--------
+              total        used        free      shared  buff/cache   available
+Mem:        5071744     1685288     2266452       37360     1120004     3105588
+Swap:       2097148           0     2097148
+
