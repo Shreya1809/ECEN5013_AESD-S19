@@ -1,18 +1,18 @@
 ---------System Information Script--------
 --------------User Information------------
- 19:40:35 up  5:31,  1 user,  load average: 0.07, 0.04, 0.01
+ 13:37:23 up  6:04,  1 user,  load average: 0.49, 0.16, 0.17
 USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-shreya18 :0       :0               14:10   ?xdm?   2:29   0.01s /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+shreya18 :0       :0               09:09   ?xdm?   3:07   0.03s /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
 
 ---------Operating System Type------------
    Static hostname: shreya1809
          Icon name: computer-vm
            Chassis: vm
-        Machine ID: 8b2ef35844d246afb35cbdda3e0c8080
-           Boot ID: 6d1d0db647c34894afb8a76338de40b1
+        Machine ID: c60a27e9c1914471b7d554251eb7421d
+           Boot ID: 8cb9875030354449aea57869afb1ba9f
     Virtualization: oracle
   Operating System: Ubuntu 18.04.1 LTS
-            Kernel: Linux 4.15.0-29-generic
+            Kernel: Linux 4.15.0-43-generic
       Architecture: x86-64
 
 -------------OS Distribution--------------
@@ -36,42 +36,42 @@ VERSION_CODENAME=bionic
 UBUNTU_CODENAME=bionic
 
 ---------------Kernel Version-------------
-4.15.0-29-generic
+4.15.0-43-generic
 
 ---------Kernel GCC Version Build---------
-Linux version 4.15.0-29-generic (buildd@lgw01-amd64-057) (gcc version 7.3.0 (Ubuntu 7.3.0-16ubuntu3)) #31-Ubuntu SMP Tue Jul 17 15:39:52 UTC 2018
+Linux version 4.15.0-43-generic (buildd@lgw01-amd64-001) (gcc version 7.3.0 (Ubuntu 7.3.0-16ubuntu3)) #46-Ubuntu SMP Thu Dec 6 14:45:28 UTC 2018
 
 -------------Kernel Build Time------------
-#31-Ubuntu SMP Tue Jul 17 15:39:52 UTC 2018
+#46-Ubuntu SMP Thu Dec 6 14:45:28 UTC 2018
 
 ---------System Architecture Info---------
 Architecture:        x86_64
 CPU op-mode(s):      32-bit, 64-bit
 Byte Order:          Little Endian
-CPU(s):              1
-On-line CPU(s) list: 0
+CPU(s):              2
+On-line CPU(s) list: 0,1
 Thread(s) per core:  1
-Core(s) per socket:  1
+Core(s) per socket:  2
 Socket(s):           1
 NUMA node(s):        1
 Vendor ID:           GenuineIntel
 CPU family:          6
-Model:               78
-Model name:          Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz
-Stepping:            3
-CPU MHz:             2400.002
-BogoMIPS:            4800.00
+Model:               142
+Model name:          Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz
+Stepping:            9
+CPU MHz:             2904.002
+BogoMIPS:            5808.00
 Hypervisor vendor:   KVM
 Virtualization type: full
 L1d cache:           32K
 L1i cache:           32K
 L2 cache:            256K
-L3 cache:            3072K
-NUMA node0 CPU(s):   0
-Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid pni pclmulqdq monitor ssse3 cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti fsgsbase avx2 invpcid rdseed clflushopt
+L3 cache:            4096K
+NUMA node0 CPU(s):   0,1
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid pni pclmulqdq ssse3 cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx rdrand hypervisor lahf_lm abm 3dnowprefetch pti avx2 rdseed clflushopt
 
 --------Info on File System Memory--------
               total        used        free      shared  buff/cache   available
-Mem:        5071924     1027824     2865232        7216     1178868     3797724
-Swap:       2097148           0     2097148
+Mem:        5071728     1338296      118160       24432     3615272     3417296
+Swap:       2097148        1036     2096112
 
