@@ -312,7 +312,7 @@ void openforappend()
                         printf("Bytes in input  string is %d\n",readline);
                         //idx++; 
                         while (readline >= b) {          /* if lines exceed total no of bytes allocated, reallocate */
-                            //printf("bytes is %d\n",b);
+                            printf("ALlocated bytes is %d\n",b);
                             printf("Memory allocated less than the input string... Reallocating\n");
                             char **tmp = realloc (ptr, b * 2 * sizeof *tmp);
                             if (!tmp) {
@@ -322,7 +322,7 @@ void openforappend()
                             ptr = tmp;
                             b *= 2;
                             //printf("readline is %d\n",readline);
-                            printf("New allocated no of bytes is %d\n",b);
+                            //printf("New allocated no of bytes is %d\n",b);
                         } 
                     printf ("\nThe line to write in the file is: %s\n",*ptr);
                     free (ptr);
@@ -384,6 +384,8 @@ void openforappend()
         /*CLOSE:*/      printf("Closing the file...\n");
                     fclose(fpa);
                     free(str);
+                    printf("The file has been closed the only option is to go back to menu\n");
+                    break;
                 }
                 else if(c == '6')
                 {
@@ -417,7 +419,7 @@ void openforread()
 {
     FILE *fpr;
     char *str = NULL;
-    char c,x;
+    char a,c,x;
     int n,ch;
     int size=0;
     
@@ -466,7 +468,8 @@ void openforread()
                         } 
                         if (ch == n)
                         {
-                            printf("%c", c); 
+                            printf("%c\n", c); 
+                            rewind(fpr);
                             break;
                         }
                         
@@ -478,10 +481,13 @@ void openforread()
                     printf("To read and display a string of characters from the file %s\n",str);
                     //printf("Size is %d\n",size);
                     //printf("in here..\n");
+                    rewind(fpr); 
                     while(fgets(buff, size+1, fpr))
                     {
-                        printf("The string is: %s\n", buff); 
+                        printf("The string is: %s\n", buff);
+                         
                     }
+                    rewind(fpr);
                     continue;
                 }
                 if(c =='3')
@@ -489,9 +495,29 @@ void openforread()
                     printf("Closing the file %s\n",str);
                     fclose(fpr);
                     printf("Closed\n");
-                    continue;
+                    printf("The only options available now are as below:\n");
+                    printf("1. Free the memory\n");
+                    printf("2. Go back to previous menu\n");
+                    a = getchar();
+                    x = getchar();
+                    if((a < '1')||(a > '2'))
+                    {
+                        printf("Invalid option!\n");
+                        break;
+                    }
+                    else if(a == '1')
+                    {
+                        goto FREE;
+                    }
+                    else{
+                        break;
+                    }
+
+                    
+
+                    //continue;
                 }
-                if(c == '4')
+     FREE:      if(c == '4')
                 {
                     printf("Freeing the memory\n");
                     free(buff);
