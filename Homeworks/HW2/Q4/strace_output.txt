@@ -1,0 +1,314 @@
+     0.000000 execve("./fileoperation", ["./fileoperation"], 0x7ffe32e052f0 /* 59 vars */) = 0 <0.000669>
+     0.000920 brk(NULL)                 = 0x5621564aa000 <0.000043>
+     0.000133 access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory) <0.000049>
+     0.000134 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory) <0.000048>
+     0.000119 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3 <0.000046>
+     0.000110 fstat(3, {st_mode=S_IFREG|0644, st_size=93519, ...}) = 0 <0.000041>
+     0.000114 mmap(NULL, 93519, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f05dfa77000 <0.000044>
+     0.000109 close(3)                  = 0 <0.000044>
+     0.000112 access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory) <0.000047>
+     0.000123 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000049>
+     0.000119 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260\34\2\0\0\0\0\0"..., 832) = 832 <0.000044>
+     0.000114 fstat(3, {st_mode=S_IFREG|0755, st_size=2030544, ...}) = 0 <0.000043>
+     0.000152 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f05dfa75000 <0.000046>
+     0.000119 mmap(NULL, 4131552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f05df476000 <0.000049>
+     0.000115 mprotect(0x7f05df65d000, 2097152, PROT_NONE) = 0 <0.000052>
+     0.000113 mmap(0x7f05df85d000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e7000) = 0x7f05df85d000 <0.000051>
+     0.000120 mmap(0x7f05df863000, 15072, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f05df863000 <0.000046>
+     0.000118 close(3)                  = 0 <0.000043>
+     0.000124 arch_prctl(ARCH_SET_FS, 0x7f05dfa76500) = 0 <0.000044>
+     0.000162 mprotect(0x7f05df85d000, 16384, PROT_READ) = 0 <0.000058>
+     0.000134 mprotect(0x562155bd0000, 4096, PROT_READ) = 0 <0.000049>
+     0.000117 mprotect(0x7f05dfa8e000, 4096, PROT_READ) = 0 <0.000050>
+     0.000115 munmap(0x7f05dfa77000, 93519) = 0 <0.000055>
+     0.000178 fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 0), ...}) = 0 <0.000043>
+     0.000149 brk(NULL)                 = 0x5621564aa000 <0.000045>
+     0.000108 brk(0x5621564cb000)       = 0x5621564cb000 <0.000042>
+     0.000110 write(1, "The following program demonstrat"..., 58) = 58 <0.000047>
+     0.000115 write(1, "\n", 1)         = 1 <0.000046>
+     0.000112 write(1, "Select operation number to proce"..., 36) = 36 <0.000047>
+     0.000114 write(1, "1. Print to standard out an inte"..., 60) = 60 <0.000046>
+     0.000112 write(1, "2. Create a file\n", 17) = 17 <0.000046>
+     0.000118 write(1, "3. Operations Menu\n", 19) = 19 <0.000047>
+     0.000114 write(1, "4. Exit Program\n", 16) = 16 <0.000045>
+     0.000115 fstat(0, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 0), ...}) = 0 <0.000042>
+     0.000113 read(0, "1\n", 1024)      = 2 <37.262121>
+    37.263252 write(1, "Enter string to be printed on th"..., 57) = 57 <0.000450>
+     0.000920 read(0, "hello\n", 1024)  = 6 <1.935304>
+     1.935989 write(1, "The entered string is : hello\n", 30) = 30 <0.000021>
+     0.000074 write(1, "\n", 1)         = 1 <0.000009>
+     0.000039 write(1, "Select operation number to proce"..., 36) = 36 <0.000009>
+     0.000037 write(1, "1. Print to standard out an inte"..., 60) = 60 <0.000008>
+     0.000036 write(1, "2. Create a file\n", 17) = 17 <0.000008>
+     0.000037 write(1, "3. Operations Menu\n", 19) = 19 <0.000009>
+     0.000036 write(1, "4. Exit Program\n", 16) = 16 <0.000009>
+     0.000037 read(0, "2\n", 1024)      = 2 <1.861107>
+     1.861170 write(1, "Enter the name of the file to cr"..., 39) = 39 <0.000009>
+     0.000055 read(0, "dummy.txt\n", 1024) = 10 <8.382827>
+     8.382901 openat(AT_FDCWD, "dummy.txt", O_RDWR|O_CREAT|O_TRUNC, 0666) = 3 <0.000044>
+     0.000086 write(1, "File dummy.txt has been created\n", 32) = 32 <0.000016>
+     0.000049 close(3)                  = 0 <0.000010>
+     0.000037 write(1, "\n", 1)         = 1 <0.000014>
+     0.000044 write(1, "Select operation number to proce"..., 36) = 36 <0.000014>
+     0.000054 write(1, "1. Print to standard out an inte"..., 60) = 60 <0.000013>
+     0.000042 write(1, "2. Create a file\n", 17) = 17 <0.000013>
+     0.000068 write(1, "3. Operations Menu\n", 19) = 19 <0.000014>
+     0.000044 write(1, "4. Exit Program\n", 16) = 16 <0.000014>
+     0.000042 read(0, "3\n", 1024)      = 2 <3.000120>
+     3.000305 write(1, "Enter further operation no as fo"..., 39) = 39 <0.000611>
+     0.000724 write(1, "1. Modify the permissions of the"..., 55) = 55 <0.000225>
+     0.000916 write(1, "2. Open the file (for writing)\n", 31) = 31 <0.000085>
+     0.000199 write(1, "3. Open the file (in append mode"..., 34) = 34 <0.000081>
+     0.000190 write(1, "4. Open the file (for reading)\n", 31) = 31 <0.000044>
+     0.000105 write(1, "5. Go back to main menu\n", 24) = 24 <0.000050>
+     0.000153 read(0, "1\n", 1024)      = 2 <3.395330>
+     3.395431 write(1, "Enter the name of the file to ch"..., 53) = 53 <0.000041>
+     0.000115 read(0, "dummy.txt\n", 1024) = 10 <4.325474>
+     4.327588 stat("dummy.txt", {st_mode=S_IFREG|0644, st_size=0, ...}) = 0 <0.000015>
+     0.000084 write(1, "File dummy.txt exists\n", 22) = 22 <0.000013>
+     0.000042 stat("dummy.txt", {st_mode=S_IFREG|0644, st_size=0, ...}) = 0 <0.000009>
+     0.000041 write(1, "The current file permission is :"..., 43) = 43 <0.000009>
+     0.000036 write(1, "The permission options are as fo"..., 39) = 39 <0.000009>
+     0.000035 write(1, "1. r(read)  2. w(write  3. rw(re"..., 50) = 50 <0.000008>
+     0.000035 write(1, "Enter permission for owner : 1 o"..., 48) = 48 <0.000008>
+     0.000035 read(0, "3\n", 1024)      = 2 <3.035248>
+     3.035417 write(1, "Enter permission for group : 1 o"..., 48) = 48 <0.000433>
+     0.000499 read(0, "3\n", 1024)      = 2 <0.871047>
+     0.871111 write(1, "Enter permission for others : 1 "..., 49) = 49 <0.000011>
+     0.000042 read(0, "3\n", 1024)      = 2 <0.757555>
+     0.757608 chmod("dummy.txt", 0666)  = 0 <0.000017>
+     0.000044 stat("dummy.txt", {st_mode=S_IFREG|0666, st_size=0, ...}) = 0 <0.000008>
+     0.000037 write(1, "After changes the permission is "..., 42) = 42 <0.000008>
+     0.000030 write(1, "\n", 1)         = 1 <0.000006>
+     0.000028 write(1, "Select operation number to proce"..., 36) = 36 <0.000007>
+     0.000028 write(1, "1. Print to standard out an inte"..., 60) = 60 <0.000007>
+     0.000028 write(1, "2. Create a file\n", 17) = 17 <0.000007>
+     0.000028 write(1, "3. Operations Menu\n", 19) = 19 <0.000007>
+     0.000027 write(1, "4. Exit Program\n", 16) = 16 <0.000007>
+     0.000029 read(0, "3\n", 1024)      = 2 <5.030296>
+     5.030358 write(1, "Enter further operation no as fo"..., 39) = 39 <0.000010>
+     0.000034 write(1, "1. Modify the permissions of the"..., 55) = 55 <0.000007>
+     0.000029 write(1, "2. Open the file (for writing)\n", 31) = 31 <0.000007>
+     0.000028 write(1, "3. Open the file (in append mode"..., 34) = 34 <0.000006>
+     0.000027 write(1, "4. Open the file (for reading)\n", 31) = 31 <0.000007>
+     0.000028 write(1, "5. Go back to main menu\n", 24) = 24 <0.000007>
+     0.000028 read(0, "2\n", 1024)      = 2 <1.726728>
+     1.726815 write(1, "Enter the name of file to open f"..., 45) = 45 <0.000061>
+     0.000141 read(0, "dummy.txt\n", 1024) = 10 <4.530195>
+     4.530267 stat("dummy.txt", {st_mode=S_IFREG|0666, st_size=0, ...}) = 0 <0.000012>
+     0.000055 write(1, "File dummy.txt exists\n", 22) = 22 <0.000016>
+     0.000047 openat(AT_FDCWD, "dummy.txt", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3 <0.000031>
+     0.000064 write(1, "File dummy.txt has been opened\n", 31) = 31 <0.000014>
+     0.000045 write(1, "Enter the operation you want to "..., 43) = 43 <0.000013>
+     0.000042 write(1, "1. Write a character to the file"..., 33) = 33 <0.000014>
+     0.000043 write(1, "2. Close the created file\n", 26) = 26 <0.000013>
+     0.000042 write(1, "3. Go back to previous menu\n", 28) = 28 <0.000013>
+     0.000043 read(0, "1\n", 1024)      = 2 <2.166440>
+     2.166508 write(1, "Enter the character to write to "..., 43) = 43 <0.000012>
+     0.000044 read(0, "A\n", 1024)      = 2 <3.072066>
+     3.072171 fstat(3, {st_mode=S_IFREG|0666, st_size=0, ...}) = 0 <0.000010>
+     0.000058 write(1, "Character A has been successfull"..., 60) = 60 <0.000016>
+     0.000047 write(1, "Do you wish to write more charac"..., 44) = 44 <0.000013>
+     0.000041 read(0, "Y\n", 1024)      = 2 <4.632771>
+     4.632848 write(1, "Enter the character to write to "..., 43) = 43 <0.000017>
+     0.000052 read(0, "B\n", 1024)      = 2 <2.839044>
+     2.839135 write(1, "Character B has been successfull"..., 60) = 60 <0.000016>
+     0.000051 write(1, "Do you wish to write more charac"..., 44) = 44 <0.000013>
+     0.000044 read(0, "Y\n", 1024)      = 2 <2.448114>
+     2.448205 write(1, "Enter the character to write to "..., 43) = 43 <0.000016>
+     0.000054 read(0, "C\n", 1024)      = 2 <2.523090>
+     2.523165 write(1, "Character C has been successfull"..., 60) = 60 <0.000011>
+     0.000045 write(1, "Do you wish to write more charac"..., 44) = 44 <0.000014>
+     0.000044 read(0, "N\n", 1024)      = 2 <2.241298>
+     2.241368 write(1, "Closing the file...\n", 20) = 20 <0.000036>
+     0.000082 write(3, "ABC", 3)        = 3 <0.000031>
+     0.000066 close(3)                  = 0 <0.000082>
+     0.000114 write(1, "\n", 1)         = 1 <0.000017>
+     0.000145 write(1, "Select operation number to proce"..., 36) = 36 <0.000014>
+     0.000044 write(1, "1. Print to standard out an inte"..., 60) = 60 <0.000014>
+     0.000043 write(1, "2. Create a file\n", 17) = 17 <0.000013>
+     0.000042 write(1, "3. Operations Menu\n", 19) = 19 <0.000013>
+     0.000042 write(1, "4. Exit Program\n", 16) = 16 <0.000013>
+     0.000043 read(0, "3\n", 1024)      = 2 <2.072564>
+     2.072696 write(1, "Enter further operation no as fo"..., 39) = 39 <0.000016>
+     0.000055 write(1, "1. Modify the permissions of the"..., 55) = 55 <0.000008>
+     0.000037 write(1, "2. Open the file (for writing)\n", 31) = 31 <0.000007>
+     0.000035 write(1, "3. Open the file (in append mode"..., 34) = 34 <0.000013>
+     0.000041 write(1, "4. Open the file (for reading)\n", 31) = 31 <0.000007>
+     0.000035 write(1, "5. Go back to main menu\n", 24) = 24 <0.000013>
+     0.000041 read(0, "3\n", 1024)      = 2 <3.762483>
+     3.762546 write(1, "Enter the name of file to open f"..., 47) = 47 <0.000011>
+     0.000037 read(0, "dummy.txt\n", 1024) = 10 <4.540684>
+     4.540739 stat("dummy.txt", {st_mode=S_IFREG|0666, st_size=3, ...}) = 0 <0.000010>
+     0.000043 write(1, "File dummy.txt exists\n", 22) = 22 <0.000008>
+     0.000031 openat(AT_FDCWD, "dummy.txt", O_WRONLY|O_CREAT|O_APPEND, 0666) = 3 <0.000011>
+     0.000035 lseek(3, 0, SEEK_END)     = 3 <0.000007>
+     0.000032 write(1, "File dummy.txt has been opened\n", 31) = 31 <0.000008>
+     0.000037 write(1, "\n", 1)         = 1 <0.000009>
+     0.000041 write(1, "Select options from below: \n", 28) = 28 <0.000009>
+     0.000041 write(1, "1. Dynamically allocate an array"..., 43) = 43 <0.000008>
+     0.000041 write(1, "2. Read an input string from the"..., 93) = 93 <0.000009>
+     0.000041 write(1, "3. Write the string to the file\n", 32) = 32 <0.000009>
+     0.000042 write(1, "4. Flush file output\n", 21) = 21 <0.000009>
+     0.000041 write(1, "5. Close the file opened in appe"..., 40) = 40 <0.000011>
+     0.000090 write(1, "6. Go back to previous menu\n", 28) = 28 <0.000010>
+     0.000043 read(0, "1\n", 1024)      = 2 <2.034205>
+     2.034289 write(1, "To dynamically allocate an array"..., 43) = 43 <0.000009>
+     0.000059 write(1, "Enter the number of bytes of mem"..., 47) = 47 <0.000007>
+     0.000032 read(0, "5\n", 1024)      = 2 <1.096513>
+     1.096615 write(1, "Memory successfully allocated : "..., 47) = 47 <0.000016>
+     0.000094 write(1, "\n", 1)         = 1 <0.000015>
+     0.000061 write(1, "Select options from below: \n", 28) = 28 <0.000012>
+     0.000054 write(1, "1. Dynamically allocate an array"..., 43) = 43 <0.000011>
+     0.000053 write(1, "2. Read an input string from the"..., 93) = 93 <0.000011>
+     0.000051 write(1, "3. Write the string to the file\n", 32) = 32 <0.000012>
+     0.000078 write(1, "4. Flush file output\n", 21) = 21 <0.000012>
+     0.000064 write(1, "5. Close the file opened in appe"..., 40) = 40 <0.000011>
+     0.000052 write(1, "6. Go back to previous menu\n", 28) = 28 <0.000013>
+     0.000070 read(0, "2\n", 1024)      = 2 <2.084912>
+     2.085020 write(1, "Enter a string to write to the a"..., 50) = 50 <0.000015>
+     0.000047 read(0, "DEFGHIJKLMNOPQRSTUVWXYZ\n", 1024) = 24 <14.112972>
+    14.113055 write(1, "Bytes in input  string is 23\n", 29) = 29 <0.000014>
+     0.000057 write(1, "ALlocated bytes is 5\n", 21) = 21 <0.000011>
+     0.000045 write(1, "Memory allocated less than the i"..., 60) = 60 <0.000011>
+     0.000045 write(1, "ALlocated bytes is 10\n", 22) = 22 <0.000010>
+     0.000045 write(1, "Memory allocated less than the i"..., 60) = 60 <0.000010>
+     0.000045 write(1, "ALlocated bytes is 20\n", 22) = 22 <0.000010>
+     0.000044 write(1, "Memory allocated less than the i"..., 60) = 60 <0.000010>
+     0.000045 write(1, "\n", 1)         = 1 <0.000012>
+     0.000073 write(1, "The line to write in the file is"..., 58) = 58 <0.000012>
+     0.000065 write(1, "\n", 1)         = 1 <0.000010>
+     0.000044 write(1, "Select options from below: \n", 28) = 28 <0.000010>
+     0.000044 write(1, "1. Dynamically allocate an array"..., 43) = 43 <0.000010>
+     0.000044 write(1, "2. Read an input string from the"..., 93) = 93 <0.000010>
+     0.000044 write(1, "3. Write the string to the file\n", 32) = 32 <0.000010>
+     0.000043 write(1, "4. Flush file output\n", 21) = 21 <0.000010>
+     0.000043 write(1, "5. Close the file opened in appe"..., 40) = 40 <0.000010>
+     0.000044 write(1, "6. Go back to previous menu\n", 28) = 28 <0.000010>
+     0.000046 read(0, "3\n", 1024)      = 2 <12.284920>
+    12.284987 write(1, "The string to write to the file "..., 73) = 73 <0.000009>
+     0.000038 fstat(3, {st_mode=S_IFREG|0666, st_size=3, ...}) = 0 <0.000007>
+     0.000036 write(1, "String DEFGHIJKLMNOPQRSTUVWXYZ h"..., 79) = 79 <0.000007>
+     0.000031 write(1, "Do you wish add  more string? Y/"..., 36) = 36 <0.000006>
+     0.000030 read(0, "N\n", 1024)      = 2 <4.140512>
+     4.140602 write(1, "\n", 1)         = 1 <0.000011>
+     0.000045 write(1, "Select options from below: \n", 28) = 28 <0.000008>
+     0.000036 write(1, "1. Dynamically allocate an array"..., 43) = 43 <0.000007>
+     0.000036 write(1, "2. Read an input string from the"..., 93) = 93 <0.000008>
+     0.000035 write(1, "3. Write the string to the file\n", 32) = 32 <0.000008>
+     0.000034 write(1, "4. Flush file output\n", 21) = 21 <0.000008>
+     0.000036 write(1, "5. Close the file opened in appe"..., 40) = 40 <0.000008>
+     0.000036 write(1, "6. Go back to previous menu\n", 28) = 28 <0.000008>
+     0.000035 read(0, "4\n", 1024)      = 2 <4.179142>
+     4.179204 write(1, "Flusing the file output: \n", 26) = 26 <0.000008>
+     0.000034 write(3, "DEFGHIJKLMNOPQRSTUVWXYZ", 23) = 23 <0.000013>
+     0.000035 write(1, "Flushed\n", 8)  = 8 <0.000006>
+     0.000028 write(1, "\n", 1)         = 1 <0.000006>
+     0.000027 write(1, "Select options from below: \n", 28) = 28 <0.000006>
+     0.000027 write(1, "1. Dynamically allocate an array"..., 43) = 43 <0.000006>
+     0.000027 write(1, "2. Read an input string from the"..., 93) = 93 <0.000041>
+     0.000080 write(1, "3. Write the string to the file\n", 32) = 32 <0.000007>
+     0.000028 write(1, "4. Flush file output\n", 21) = 21 <0.000006>
+     0.000027 write(1, "5. Close the file opened in appe"..., 40) = 40 <0.000006>
+     0.000027 write(1, "6. Go back to previous menu\n", 28) = 28 <0.000006>
+     0.000027 read(0, "5\n", 1024)      = 2 <3.418388>
+     3.418588 write(1, "Closing the file...\n", 20) = 20 <0.000073>
+     0.000168 close(3)                  = 0 <0.000053>
+     0.000123 write(1, "The file has been closed the onl"..., 63) = 63 <0.000048>
+     0.000123 write(1, "\n", 1)         = 1 <0.000048>
+     0.000134 write(1, "Select operation number to proce"..., 36) = 36 <0.000069>
+     0.000142 write(1, "1. Print to standard out an inte"..., 60) = 60 <0.000067>
+     0.000139 write(1, "2. Create a file\n", 17) = 17 <0.000048>
+     0.000128 write(1, "3. Operations Menu\n", 19) = 19 <0.000045>
+     0.000115 write(1, "4. Exit Program\n", 16) = 16 <0.000081>
+     0.000154 read(0, "3\n", 1024)      = 2 <3.620125>
+     3.620205 write(1, "Enter further operation no as fo"..., 39) = 39 <0.000014>
+     0.000052 write(1, "1. Modify the permissions of the"..., 55) = 55 <0.000010>
+     0.000042 write(1, "2. Open the file (for writing)\n", 31) = 31 <0.000009>
+     0.000042 write(1, "3. Open the file (in append mode"..., 34) = 34 <0.000032>
+     0.000067 write(1, "4. Open the file (for reading)\n", 31) = 31 <0.000018>
+     0.000056 write(1, "5. Go back to main menu\n", 24) = 24 <0.000019>
+     0.000056 read(0, "4\n", 1024)      = 2 <1.869865>
+     1.869938 write(1, "Enter the name of file to open f"..., 45) = 45 <0.000015>
+     0.000047 read(0, "dummy.txt\n", 1024) = 10 <4.510335>
+     4.510392 stat("dummy.txt", {st_mode=S_IFREG|0666, st_size=26, ...}) = 0 <0.000009>
+     0.000058 stat("dummy.txt", {st_mode=S_IFREG|0666, st_size=26, ...}) = 0 <0.000006>
+     0.000034 write(1, "File dummy.txt exists\n", 22) = 22 <0.000012>
+     0.000034 openat(AT_FDCWD, "dummy.txt", O_RDONLY) = 3 <0.000010>
+     0.000032 write(1, "Select from the following operat"..., 39) = 39 <0.000010>
+     0.000031 write(1, "1. Read a single character (getc"..., 34) = 34 <0.000011>
+     0.000033 write(1, "2. Read a string of characters ("..., 38) = 38 <0.000009>
+     0.000030 write(1, "3. Close the file for reading\n", 30) = 30 <0.000010>
+     0.000030 write(1, "4. Free the memory\n", 19) = 19 <0.000010>
+     0.000041 write(1, "5. Go back to previous menu\n", 28) = 28 <0.000011>
+     0.000033 read(0, "1\n", 1024)      = 2 <1.903726>
+     1.903801 write(1, "To read a single character from "..., 51) = 51 <0.000012>
+     0.000039 write(1, "Enter the no of character you wa"..., 66) = 66 <0.000010>
+     0.000031 read(0, "2\n", 1024)      = 2 <1.843604>
+     1.843664 fstat(3, {st_mode=S_IFREG|0666, st_size=26, ...}) = 0 <0.000007>
+     0.000036 read(3, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 4096) = 26 <0.000011>
+     0.000034 write(1, "B\n", 2)        = 2 <0.000011>
+     0.000033 lseek(3, 0, SEEK_SET)     = 0 <0.000005>
+     0.000025 write(1, "Select from the following operat"..., 39) = 39 <0.000006>
+     0.000026 write(1, "1. Read a single character (getc"..., 34) = 34 <0.000006>
+     0.000026 write(1, "2. Read a string of characters ("..., 38) = 38 <0.000006>
+     0.000026 write(1, "3. Close the file for reading\n", 30) = 30 <0.000006>
+     0.000025 write(1, "4. Free the memory\n", 19) = 19 <0.000006>
+     0.000026 write(1, "5. Go back to previous menu\n", 28) = 28 <0.000006>
+     0.000026 read(0, "2\n", 1024)      = 2 <2.762614>
+     2.762727 write(1, "To read and display a string of "..., 67) = 67 <0.000011>
+     0.000045 lseek(3, 0, SEEK_SET)     = 0 <0.000007>
+     0.000032 read(3, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 4096) = 26 <0.000009>
+     0.000036 write(1, "The string is: ABCDEFGHIJKLMNOPQ"..., 42) = 42 <0.000008>
+     0.000034 read(3, "", 4096)         = 0 <0.000007>
+     0.000031 lseek(3, 0, SEEK_SET)     = 0 <0.000007>
+     0.000031 write(1, "Select from the following operat"..., 39) = 39 <0.000007>
+     0.000034 write(1, "1. Read a single character (getc"..., 34) = 34 <0.000008>
+     0.000034 write(1, "2. Read a string of characters ("..., 38) = 38 <0.000007>
+     0.000033 write(1, "3. Close the file for reading\n", 30) = 30 <0.000008>
+     0.000033 write(1, "4. Free the memory\n", 19) = 19 <0.000008>
+     0.000034 write(1, "5. Go back to previous menu\n", 28) = 28 <0.000007>
+     0.000033 read(0, "3\n", 1024)      = 2 <4.097716>
+     4.097807 write(1, "Closing the file dummy.txt\n", 27) = 27 <0.000011>
+     0.000044 close(3)                  = 0 <0.000009>
+     0.000034 write(1, "Closed\n", 7)   = 7 <0.000008>
+     0.000036 write(1, "The only options available now a"..., 45) = 45 <0.000008>
+     0.000034 write(1, "1. Free the memory\n", 19) = 19 <0.000008>
+     0.000032 write(1, "2. Go back to previous menu\n", 28) = 28 <0.000008>
+     0.000034 read(0, "1\n", 1024)      = 2 <4.474631>
+     4.474693 write(1, "Select from the following operat"..., 39) = 39 <0.000009>
+     0.000035 write(1, "1. Read a single character (getc"..., 34) = 34 <0.000006>
+     0.000028 write(1, "2. Read a string of characters ("..., 38) = 38 <0.000006>
+     0.000026 write(1, "3. Close the file for reading\n", 30) = 30 <0.000006>
+     0.000027 write(1, "4. Free the memory\n", 19) = 19 <0.000006>
+     0.000026 write(1, "5. Go back to previous menu\n", 28) = 28 <0.000006>
+     0.000026 read(0, "5\n", 1024)      = 2 <3.000279>
+     3.000370 write(1, "\n", 1)         = 1 <0.000013>
+     0.000043 write(1, "Select operation number to proce"..., 36) = 36 <0.000006>
+     0.000027 write(1, "1. Print to standard out an inte"..., 60) = 60 <0.000006>
+     0.000027 write(1, "2. Create a file\n", 17) = 17 <0.000006>
+     0.000026 write(1, "3. Operations Menu\n", 19) = 19 <0.000006>
+     0.000025 write(1, "4. Exit Program\n", 16) = 16 <0.000006>
+     0.000026 read(0, "4\n", 1024)      = 2 <1.972236>
+     1.972289 write(1, "Exiting Program....\n", 20) = 20 <0.000013>
+     0.000066 exit_group(0)             = ?
+     0.000099 +++ exited with 0 +++
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+  0.00    0.000000           0        45           read
+  0.00    0.000000           0       199           write
+  0.00    0.000000           0         6           close
+  0.00    0.000000           0         7           stat
+  0.00    0.000000           0         7           fstat
+  0.00    0.000000           0         4           lseek
+  0.00    0.000000           0         5           mmap
+  0.00    0.000000           0         4           mprotect
+  0.00    0.000000           0         1           munmap
+  0.00    0.000000           0         3           brk
+  0.00    0.000000           0         3         3 access
+  0.00    0.000000           0         1           execve
+  0.00    0.000000           0         1           chmod
+  0.00    0.000000           0         1           arch_prctl
+  0.00    0.000000           0         6           openat
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.000000                   293         3 total

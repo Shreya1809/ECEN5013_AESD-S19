@@ -1,0 +1,923 @@
+  0.000000 SYS_brk(0)                                                                   = 0x55ded6a91000 <0.000086>
+  0.000176 SYS_access("/etc/ld.so.nohwcap", 00)                                         = -2 <0.000127>
+  0.000182 SYS_access("/etc/ld.so.preload", 04)                                         = -2 <0.000120>
+  0.000184 SYS_openat(0xffffff9c, 0x7ffac50b8428, 0x80000, 0)                           = 3 <0.000149>
+  0.000230 SYS_fstat(3, 0x7ffecee51800)                                                 = 0 <0.000054>
+  0.000112 SYS_mmap(0, 0x16d4f, 1, 2)                                                   = 0x7ffac52a7000 <0.000074>
+  0.000141 SYS_close(3)                                                                 = 0 <0.000053>
+  0.000154 SYS_access("/etc/ld.so.nohwcap", 00)                                         = -2 <0.000136>
+  0.000194 SYS_openat(0xffffff9c, 0x7ffac52c0dd0, 0x80000, 0)                           = 3 <0.000067>
+  0.000126 SYS_read(3, "\177ELF\002\001\001\003", 832)                                  = 832 <0.000050>
+  0.000138 SYS_fstat(3, 0x7ffecee51860)                                                 = 0 <0.000046>
+  0.000096 SYS_mmap(0, 8192, 3, 34)                                                     = 0x7ffac52a5000 <0.000070>
+  0.000135 SYS_mmap(0, 0x3f0ae0, 5, 2050)                                               = 0x7ffac4ca6000 <0.000060>
+  0.000121 SYS_mprotect(0x7ffac4e8d000, 2097152, 0)                                     = 0 <0.000055>
+  0.000104 SYS_mmap(0x7ffac508d000, 0x6000, 3, 2066)                                    = 0x7ffac508d000 <0.000064>
+  0.000126 SYS_mmap(0x7ffac5093000, 0x3ae0, 3, 50)                                      = 0x7ffac5093000 <0.000059>
+  0.000124 SYS_close(3)                                                                 = 0 <0.000047>
+  0.000112 SYS_arch_prctl(4098, 0x7ffac52a6500, 0x7ffac52a6e30, 0x7ffac52a59b8)         = 0 <0.000059>
+  0.000214 SYS_mprotect(0x7ffac508d000, 16384, 1)                                       = 0 <0.000102>
+  0.000209 SYS_mprotect(0x55ded6985000, 4096, 1)                                        = 0 <0.000058>
+  0.000162 SYS_mprotect(0x7ffac52be000, 4096, 1)                                        = 0 <0.000100>
+  0.000160 SYS_munmap(0x7ffac52a7000, 93519)                                            = 0 <0.000061>
+  0.002339 puts("The following program demonstrat"... <unfinished ...>
+  0.000563     SYS_fstat(1, 0x7ffecee52040)                                             = 0 <0.000458>
+  0.000577     SYS_brk(0)                                                               = 0x55ded6a91000 <0.000064>
+  0.000178     SYS_brk(0x55ded6ab2000)                                                  = 0x55ded6ab2000 <0.000105>
+  0.000213     SYS_write(1, "The following program demonstrat"..., 58)                  = 58 <0.000415>
+  0.000540 <... puts resumed> )                                                         = 58 <0.002054>
+  0.000077 putchar(10, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000275     SYS_write(1, "\n", 1)                                                    = 1 <0.000121>
+  0.000228 <... putchar resumed> )                                                      = 10 <0.000491>
+  0.000076 puts("Select operation number to proce"... <unfinished ...>
+  0.000507     SYS_write(1, "Select operation number to proce"..., 36)                  = 36 <0.000227>
+  0.000338 <... puts resumed> )                                                         = 36 <0.000835>
+  0.000076 puts("1. Print to standard out an inte"... <unfinished ...>
+  0.000563     SYS_write(1, "1. Print to standard out an inte"..., 60)                  = 60 <0.000269>
+  0.000379 <... puts resumed> )                                                         = 60 <0.000930>
+  0.000075 puts("2. Create a file" <unfinished ...>
+  0.000554     SYS_write(1, "2. Create a file\n", 17)                                   = 17 <0.000176>
+  0.000289 <... puts resumed> )                                                         = 17 <0.000831>
+  0.000120 puts("3. Operations Menu" <unfinished ...>
+  0.000288     SYS_write(1, "3. Operations Menu\n", 19)                                 = 19 <0.000187>
+  0.000253 <... puts resumed> )                                                         = 19 <0.000533>
+  0.000127 puts("4. Exit Program" <unfinished ...>
+  0.000450     SYS_write(1, "4. Exit Program\n", 16)                                    = 16 <0.000172>
+  0.000280 <... puts resumed> )                                                         = 16 <0.000719>
+  0.000084 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000240     SYS_fstat(0, 0x7ffecee52090)                                             = 0 <0.000068>
+  0.000160     SYS_read(0, "1\n", 1024)                                                 = 2 <2.712976>
+  2.713193 <... getchar resumed> )                                                      = 49 <2.713564>
+  0.001114 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.001539>
+  0.001696 printf("Enter string to be printed on th"...)                                = 57 <0.002739>
+  0.002877 getline(0x7ffecee52198, 0x7ffecee521a0, 0x7ffac5091a00, 0x7ffecee521a0 <unfinished ...>
+  0.000201     SYS_write(1, "Enter string to be printed on th"..., 57)                  = 57 <0.000237>
+  0.000290     SYS_read(0, "hello\n", 1024)                                             = 6 <1.821984>
+  1.822184 <... getline resumed> )                                                      = 6 <1.822645>
+  0.000578 printf("The entered string is : %s\n", "hello" <unfinished ...>
+  0.000362     SYS_write(1, "The entered string is : hello\n", 30)                      = 30 <0.000168>
+  0.000183 <... printf resumed> )                                                       = 30 <0.000537>
+  0.000035 free(0x55ded6a91a80)                                                         = <void> <0.000087>
+  0.000125 putchar(10, 0x55ded6a91040, 0x55ded6a91010, 1 <unfinished ...>
+  0.000139     SYS_write(1, "\n", 1)                                                    = 1 <0.000038>
+  0.000063 <... putchar resumed> )                                                      = 10 <0.000193>
+  0.000033 puts("Select operation number to proce"... <unfinished ...>
+  0.000223     SYS_write(1, "Select operation number to proce"..., 36)                  = 36 <0.000179>
+  0.000203 <... puts resumed> )                                                         = 36 <0.000419>
+  0.000033 puts("1. Print to standard out an inte"... <unfinished ...>
+  0.000260     SYS_write(1, "1. Print to standard out an inte"..., 60)                  = 60 <0.000218>
+  0.000243 <... puts resumed> )                                                         = 60 <0.000498>
+  0.000054 puts("2. Create a file" <unfinished ...>
+  0.000159     SYS_write(1, "2. Create a file\n", 17)                                   = 17 <0.000116>
+  0.000140 <... puts resumed> )                                                         = 17 <0.000293>
+  0.000033 puts("3. Operations Menu" <unfinished ...>
+  0.000167     SYS_write(1, "3. Operations Menu\n", 19)                                 = 19 <0.000108>
+  0.000129 <... puts resumed> )                                                         = 19 <0.000291>
+  0.000032 puts("4. Exit Program" <unfinished ...>
+  0.000151     SYS_write(1, "4. Exit Program\n", 16)                                    = 16 <0.000096>
+  0.000118 <... puts resumed> )                                                         = 16 <0.000263>
+  0.000032 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000103     SYS_read(0, "2\n", 1024)                                                 = 2 <1.443576>
+  1.443686 <... getchar resumed> )                                                      = 50 <1.443745>
+  0.000040 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000108>
+  0.000146 printf("Enter the name of the file to cr"...)                                = 39 <0.000263>
+  0.000298 getline(0x7ffecee52198, 0x7ffecee521a0, 0x7ffac5091a00, 0x7ffecee521a0 <unfinished ...>
+  0.000119     SYS_write(1, "Enter the name of the file to cr"..., 39)                  = 39 <0.000163>
+  0.000171     SYS_read(0, "ltrace.txt\n", 1024)                                        = 11 <6.981036>
+  6.981244 <... getline resumed> )                                                      = 11 <6.981476>
+  0.000063 fopen("ltrace.txt", "w+" <unfinished ...>
+  0.000224     SYS_openat(0xffffff9c, 0x55ded6a91a80, 578, 438)                         = 3 <0.000077>
+  0.000112 <... fopen resumed> )                                                        = 0x55ded6a91b00 <0.000329>
+  0.000038 printf("File %s has been created\n", "ltrace.txt" <unfinished ...>
+  0.000332     SYS_write(1, "File ltrace.txt has been created"..., 33)                  = 33 <0.000226>
+  0.000254 <... printf resumed> )                                                       = 33 <0.000579>
+  0.000040 fclose(0x55ded6a91b00 <unfinished ...>
+  0.000132     SYS_close(3)                                                             = 0 <0.000032>
+  0.000059 <... fclose resumed> )                                                       = 0 <0.000183>
+  0.000038 free(0x55ded6a91a80)                                                         = <void> <0.000096>
+  0.000138 putchar(10, 0x55ded6a91040, 0x55ded6a91010, 1 <unfinished ...>
+  0.000113     SYS_write(1, "\n", 1)                                                    = 1 <0.000041>
+  0.000068 <... putchar resumed> )                                                      = 10 <0.000172>
+  0.000038 puts("Select operation number to proce"... <unfinished ...>
+  0.000288     SYS_write(1, "Select operation number to proce"..., 36)                  = 36 <0.000212>
+  0.000218 <... puts resumed> )                                                         = 36 <0.000499>
+  0.000037 puts("1. Print to standard out an inte"... <unfinished ...>
+  0.000329     SYS_write(1, "1. Print to standard out an inte"..., 60)                  = 60 <0.000237>
+  0.000261 <... puts resumed> )                                                         = 60 <0.000582>
+  0.000037 puts("2. Create a file" <unfinished ...>
+  0.000252     SYS_write(1, "2. Create a file\n", 17)                                   = 17 <0.000129>
+  0.000152 <... puts resumed> )                                                         = 17 <0.000397>
+  0.000037 puts("3. Operations Menu" <unfinished ...>
+  0.000193     SYS_write(1, "3. Operations Menu\n", 19)                                 = 19 <0.000126>
+  0.000150 <... puts resumed> )                                                         = 19 <0.000337>
+  0.000037 puts("4. Exit Program" <unfinished ...>
+  0.000175     SYS_write(1, "4. Exit Program\n", 16)                                    = 16 <0.000156>
+  0.000190 <... puts resumed> )                                                         = 16 <0.000359>
+  0.000039 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000124     SYS_read(0, "3\n", 1024)                                                 = 2 <3.853342>
+  3.853452 <... getchar resumed> )                                                      = 51 <3.853546>
+  0.000064 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000134>
+  0.000185 puts("Enter further operation no as fo"... <unfinished ...>
+  0.001155     SYS_write(1, "Enter further operation no as fo"..., 39)                  = 39 <0.001149>
+  0.000354 <... puts resumed> )                                                         = 39 <0.001491>
+  0.000057 puts("1. Modify the permissions of the"... <unfinished ...>
+  0.000450     SYS_write(1, "1. Modify the permissions of the"..., 55)                  = 55 <0.000307>
+  0.000349 <... puts resumed> )                                                         = 55 <0.000785>
+  0.000050 puts("2. Open the file (for writing)" <unfinished ...>
+  0.000424     SYS_write(1, "2. Open the file (for writing)\n", 31)                     = 31 <0.001105>
+  0.001168 <... puts resumed> )                                                         = 31 <0.001572>
+  0.000066 puts("3. Open the file (in append mode"... <unfinished ...>
+  0.000371     SYS_write(1, "3. Open the file (in append mode"..., 34)                  = 34 <0.000384>
+  0.000420 <... puts resumed> )                                                         = 34 <0.000783>
+  0.000051 puts("4. Open the file (for reading)" <unfinished ...>
+  0.000349     SYS_write(1, "4. Open the file (for reading)\n", 31)                     = 31 <0.001221>
+  0.001290 <... puts resumed> )                                                         = 31 <0.001629>
+  0.000049 puts("5. Go back to main menu" <unfinished ...>
+  0.000307     SYS_write(1, "5. Go back to main menu\n", 24)                            = 24 <0.001320>
+  0.001398 <... puts resumed> )                                                         = 24 <0.001687>
+  0.000047 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000151     SYS_read(0, "1\n", 1024)                                                 = 2 <1.806596>
+  1.806694 <... getchar resumed> )                                                      = 49 <1.806815>
+  0.000035 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000134>
+  0.000181 printf("Enter the name of the file to ch"...)                                = 53 <0.000303>
+  0.000344 getline(0x7ffecee520c8, 0x7ffecee520d0, 0x7ffac5091a00, 0x7ffecee520d0 <unfinished ...>
+  0.000114     SYS_write(1, "Enter the name of the file to ch"..., 53)                  = 53 <0.000171>
+  0.000186     SYS_read(0, "ltrace.txt\n", 1024)                                        = 11 <3.807913>
+  3.808098 <... getline resumed> )                                                      = 11 <3.808366>
+  0.000046 __xstat(1, "ltrace.txt", 0x7ffecee52040 <unfinished ...>
+  0.000186     SYS_stat("ltrace.txt", 0x7ffecee52040)                                   = 0 <0.000085>
+  0.000108 <... __xstat resumed> )                                                      = 0 <0.000288>
+  0.000037 printf("File %s exists\n", "ltrace.txt" <unfinished ...>
+  0.000265     SYS_write(1, "File ltrace.txt exists\n", 23)                             = 23 <0.000144>
+  0.000170 <... printf resumed> )                                                       = 23 <0.000428>
+  0.000037 malloc(10)                                                                   = 0x55ded6a91d30 <0.000126>
+  0.000172 __xstat(1, "ltrace.txt", 0x7ffecee52040 <unfinished ...>
+  0.000161     SYS_stat("ltrace.txt", 0x7ffecee52040)                                   = 0 <0.000088>
+  0.000105 <... __xstat resumed> )                                                      = 0 <0.000261>
+  0.000036 printf("The current file permission is :"..., "rw-r--r--" <unfinished ...>
+  0.000379     SYS_write(1, "The current file permission is :"..., 43)                  = 43 <0.000253>
+  0.000281 <... printf resumed> )                                                       = 43 <0.000653>
+  0.000040 puts("The permission options are as fo"... <unfinished ...>
+  0.000263     SYS_write(1, "The permission options are as fo"..., 39)                  = 39 <0.000196>
+  0.000222 <... puts resumed> )                                                         = 39 <0.000478>
+  0.000037 puts("1. r(read)  2. w(write  3. rw(re"... <unfinished ...>
+  0.000295     SYS_write(1, "1. r(read)  2. w(write  3. rw(re"..., 50)                  = 50 <0.000242>
+  0.000271 <... puts resumed> )                                                         = 50 <0.000560>
+  0.000037 puts("Enter permission for owner : 1 o"... <unfinished ...>
+  0.000279     SYS_write(1, "Enter permission for owner : 1 o"..., 48)                  = 48 <0.000210>
+  0.000235 <... puts resumed> )                                                         = 48 <0.000508>
+  0.000037 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000146     SYS_read(0, "3\n", 1024)                                                 = 2 <2.543385>
+  2.543482 <... getchar resumed> )                                                      = 51 <2.543600>
+  0.000045 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000110>
+  0.000147 puts("Enter permission for group : 1 o"... <unfinished ...>
+  0.000217     SYS_write(1, "Enter permission for group : 1 o"..., 48)                  = 48 <0.000158>
+  0.000178 <... puts resumed> )                                                         = 48 <0.000390>
+  0.000028 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000109     SYS_read(0, "3\n", 1024)                                                 = 2 <0.822992>
+  0.823096 <... getchar resumed> )                                                      = 51 <0.823178>
+  0.000043 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000127>
+  0.000171 puts("Enter permission for others : 1 "... <unfinished ...>
+  0.000281     SYS_write(1, "Enter permission for others : 1 "..., 49)                  = 49 <0.000189>
+  0.000211 <... puts resumed> )                                                         = 49 <0.000486>
+  0.000033 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000108     SYS_read(0, "3\n", 1024)                                                 = 2 <0.798243>
+  0.798352 <... getchar resumed> )                                                      = 51 <0.798433>
+  0.000047 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000130>
+  0.000181 chmod("ltrace.txt", 0666 <unfinished ...>
+  0.000159     SYS_chmod("ltrace.txt", 0666)                                            = 0 <0.000091>
+  0.000111 <... chmod resumed> )                                                        = 0 <0.000265>
+  0.000100 malloc(10)                                                                   = 0x55ded6a91d50 <0.000100>
+  0.000145 __xstat(1, "ltrace.txt", 0x7ffecee52040 <unfinished ...>
+  0.000156     SYS_stat("ltrace.txt", 0x7ffecee52040)                                   = 0 <0.000082>
+  0.000104 <... __xstat resumed> )                                                      = 0 <0.000256>
+  0.000037 printf("After changes the permission is "..., "rw-rw-rw-" <unfinished ...>
+  0.000373     SYS_write(1, "After changes the permission is "..., 42)                  = 42 <0.000226>
+  0.000253 <... printf resumed> )                                                       = 42 <0.000619>
+  0.000038 free(0x55ded6a91a80)                                                         = <void> <0.000100>
+  0.000150 putchar(10, 0x55ded6a91040, 0x55ded6a91010, 1 <unfinished ...>
+  0.000122     SYS_write(1, "\n", 1)                                                    = 1 <0.000045>
+  0.000072 <... putchar resumed> )                                                      = 10 <0.000184>
+  0.000037 puts("Select operation number to proce"... <unfinished ...>
+  0.000253     SYS_write(1, "Select operation number to proce"..., 36)                  = 36 <0.000208>
+  0.000234 <... puts resumed> )                                                         = 36 <0.000480>
+  0.000037 puts("1. Print to standard out an inte"... <unfinished ...>
+  0.000302     SYS_write(1, "1. Print to standard out an inte"..., 60)                  = 60 <0.000229>
+  0.000253 <... puts resumed> )                                                         = 60 <0.000549>
+  0.000036 puts("2. Create a file" <unfinished ...>
+  0.000179     SYS_write(1, "2. Create a file\n", 17)                                   = 17 <0.000135>
+  0.000162 <... puts resumed> )                                                         = 17 <0.000334>
+  0.000037 puts("3. Operations Menu" <unfinished ...>
+  0.000191     SYS_write(1, "3. Operations Menu\n", 19)                                 = 19 <0.000124>
+  0.000149 <... puts resumed> )                                                         = 19 <0.000334>
+  0.000036 puts("4. Exit Program" <unfinished ...>
+  0.000175     SYS_write(1, "4. Exit Program\n", 16)                                    = 16 <0.000110>
+  0.000134 <... puts resumed> )                                                         = 16 <0.000303>
+  0.000046 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000140     SYS_read(0, "3\n", 1024)                                                 = 2 <2.561906>
+  2.562024 <... getchar resumed> )                                                      = 51 <2.562133>
+  0.000042 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000111>
+  0.000154 puts("Enter further operation no as fo"... <unfinished ...>
+  0.000206     SYS_write(1, "Enter further operation no as fo"..., 39)                  = 39 <0.000151>
+  0.000170 <... puts resumed> )                                                         = 39 <0.000372>
+  0.000029 puts("1. Modify the permissions of the"... <unfinished ...>
+  0.000224     SYS_write(1, "1. Modify the permissions of the"..., 55)                  = 55 <0.000184>
+  0.000210 <... puts resumed> )                                                         = 55 <0.000429>
+  0.000030 puts("2. Open the file (for writing)" <unfinished ...>
+  0.000204     SYS_write(1, "2. Open the file (for writing)\n", 31)                     = 31 <0.000147>
+  0.000152 <... puts resumed> )                                                         = 31 <0.000351>
+  0.000029 puts("3. Open the file (in append mode"... <unfinished ...>
+  0.000220     SYS_write(1, "3. Open the file (in append mode"..., 34)                  = 34 <0.000139>
+  0.000158 <... puts resumed> )                                                         = 34 <0.000373>
+  0.000028 puts("4. Open the file (for reading)" <unfinished ...>
+  0.000276     SYS_write(1, "4. Open the file (for reading)\n", 31)                     = 31 <0.000176>
+  0.000202 <... puts resumed> )                                                         = 31 <0.000471>
+  0.000031 puts("5. Go back to main menu" <unfinished ...>
+  0.000168     SYS_write(1, "5. Go back to main menu\n", 24)                            = 24 <0.000114>
+  0.000133 <... puts resumed> )                                                         = 24 <0.000296>
+  0.000029 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000093     SYS_read(0, "2\n", 1024)                                                 = 2 <4.535195>
+  4.535316 <... getchar resumed> )                                                      = 50 <4.535376>
+  0.000046 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000161>
+  0.000216 printf("Enter the name of file to open f"...)                                = 45 <0.000393>
+  0.000441 getline(0x7ffecee52168, 0x7ffecee52170, 0x7ffac5091a00, 0x7ffecee52170 <unfinished ...>
+  0.000120     SYS_write(1, "Enter the name of file to open f"..., 45)                  = 45 <0.000206>
+  0.000226     SYS_read(0, "ltrace.txt\n", 1024)                                        = 11 <5.977354>
+  5.977518 <... getline resumed> )                                                      = 11 <5.977833>
+  0.000047 __xstat(1, "ltrace.txt", 0x7ffecee520e0 <unfinished ...>
+  0.000189     SYS_stat("ltrace.txt", 0x7ffecee520e0)                                   = 0 <0.000092>
+  0.000110 <... __xstat resumed> )                                                      = 0 <0.000293>
+  0.000038 printf("File %s exists\n", "ltrace.txt" <unfinished ...>
+  0.000288     SYS_write(1, "File ltrace.txt exists\n", 23)                             = 23 <0.000148>
+  0.000174 <... printf resumed> )                                                       = 23 <0.000455>
+  0.000038 fopen("ltrace.txt", "w" <unfinished ...>
+  0.000171     SYS_openat(0xffffff9c, 0x55ded6a91a80, 577, 438)                         = 3 <0.000079>
+  0.000109 <... fopen resumed> )                                                        = 0x55ded6a91b00 <0.000273>
+  0.000037 printf("File %s has been opened\n", "ltrace.txt" <unfinished ...>
+  0.000387     SYS_write(1, "File ltrace.txt has been opened\n"..., 32)                 = 32 <0.000187>
+  0.000211 <... printf resumed> )                                                       = 32 <0.000591>
+  0.000047 puts("Enter the operation you want to "... <unfinished ...>
+  0.000272     SYS_write(1, "Enter the operation you want to "..., 43)                  = 43 <0.000229>
+  0.000257 <... puts resumed> )                                                         = 43 <0.000521>
+  0.000037 puts("1. Write a character to the file"... <unfinished ...>
+  0.000325     SYS_write(1, "1. Write a character to the file"..., 33)                  = 33 <0.000186>
+  0.000211 <... puts resumed> )                                                         = 33 <0.000529>
+  0.000037 puts("2. Close the created file" <unfinished ...>
+  0.000219     SYS_write(1, "2. Close the created file\n", 26)                          = 26 <0.000155>
+  0.000180 <... puts resumed> )                                                         = 26 <0.000392>
+  0.000037 puts("3. Go back to previous menu" <unfinished ...>
+  0.000248     SYS_write(1, "3. Go back to previous menu\n", 28)                        = 28 <0.000166>
+  0.000191 <... puts resumed> )                                                         = 28 <0.000432>
+  0.000037 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000121     SYS_read(0, "1\n", 1024)                                                 = 2 <1.749438>
+  1.749536 <... getchar resumed> )                                                      = 49 <1.749627>
+  0.000038 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000105>
+  0.000145 printf("Enter the character to write to "...)                                = 43 <0.000286>
+  0.000321 getchar(0x55ded6a91260, 0x55ded67846b8, 0, 0 <unfinished ...>
+  0.000093     SYS_write(1, "Enter the character to write to "..., 43)                  = 43 <0.000154>
+  0.000175     SYS_read(0, "1\n", 1024)                                                 = 2 <2.440557>
+  2.440679 <... getchar resumed> )                                                      = 49 <2.440914>
+  0.000045 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000133>
+  0.000183 fprintf(0x55ded6a91b00, "%c", '1' <unfinished ...>
+  0.000138     SYS_fstat(3, 0x7ffecee51a30)                                             = 0 <0.000059>
+  0.000097 <... fprintf resumed> )                                                      = 1 <0.000226>
+  0.000051 printf("Character %c has been successful"..., '1', "ltrace.txt" <unfinished ...>
+  0.000542     SYS_write(1, "Character 1 has been successfull"..., 61)                  = 61 <0.000234>
+  0.000259 <... printf resumed> )                                                       = 61 <0.000793>
+  0.000062 printf("Do you wish to write more charac"...)                                = 44 <0.000410>
+  0.000464 getchar(0x55ded6a91260, 0x55ded6784740, 0, 0 <unfinished ...>
+  0.000125     SYS_write(1, "Do you wish to write more charac"..., 44)                  = 44 <0.000202>
+  0.000221     SYS_read(0, "Y\n", 1024)                                                 = 2 <1.802858>
+  1.803003 <... getchar resumed> )                                                      = 89 <1.803320>
+  0.000041 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000115>
+  0.000155 printf("Enter the character to write to "...)                                = 43 <0.000292>
+  0.000327 getchar(0x55ded6a91260, 0x55ded67846b8, 0, 0 <unfinished ...>
+  0.000089     SYS_write(1, "Enter the character to write to "..., 43)                  = 43 <0.000155>
+  0.000170     SYS_read(0, "2\n", 1024)                                                 = 2 <1.838421>
+  1.838529 <... getchar resumed> )                                                      = 50 <1.838759>
+  0.000036 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000106>
+  0.000145 fprintf(0x55ded6a91b00, "%c", '2')                                           = 1 <0.000098>
+  0.000133 printf("Character %c has been successful"..., '2', "ltrace.txt" <unfinished ...>
+  0.000371     SYS_write(1, "Character 2 has been successfull"..., 61)                  = 61 <0.000179>
+  0.000213 <... printf resumed> )                                                       = 61 <0.000578>
+  0.000030 printf("Do you wish to write more charac"...)                                = 44 <0.000278>
+  0.000327 getchar(0x55ded6a91260, 0x55ded6784740, 0, 0 <unfinished ...>
+  0.000089     SYS_write(1, "Do you wish to write more charac"..., 44)                  = 44 <0.000183>
+  0.000200     SYS_read(0, "N\n", 1024)                                                 = 2 <3.102487>
+  3.102608 <... getchar resumed> )                                                      = 78 <3.102865>
+  0.000047 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000134>
+  0.000203 puts("Closing the file..." <unfinished ...>
+  0.000201     SYS_write(1, "Closing the file...\n", 20)                                = 20 <0.000129>
+  0.000155 <... puts resumed> )                                                         = 20 <0.000349>
+  0.000037 fclose(0x55ded6a91b00 <unfinished ...>
+  0.000106     SYS_write(3, "12", 2)                                                    = 2 <0.000059>
+  0.000079     SYS_close(3)                                                             = 0 <0.000096>
+  0.000143 <... fclose resumed> )                                                       = 0 <0.000321>
+  0.000081 free(0x55ded6a91a80)                                                         = <void> <0.000101>
+  0.000165 putchar(10, 0x55ded6a91040, 0x55ded6a91010, 1 <unfinished ...>
+  0.000121     SYS_write(1, "\n", 1)                                                    = 1 <0.000043>
+  0.000070 <... putchar resumed> )                                                      = 10 <0.000181>
+  0.000038 puts("Select operation number to proce"... <unfinished ...>
+  0.000312     SYS_write(1, "Select operation number to proce"..., 36)                  = 36 <0.000245>
+  0.000215 <... puts resumed> )                                                         = 36 <0.000520>
+  0.000037 puts("1. Print to standard out an inte"... <unfinished ...>
+  0.000315     SYS_write(1, "1. Print to standard out an inte"..., 60)                  = 60 <0.000232>
+  0.000258 <... puts resumed> )                                                         = 60 <0.000566>
+  0.000037 puts("2. Create a file" <unfinished ...>
+  0.000180     SYS_write(1, "2. Create a file\n", 17)                                   = 17 <0.000116>
+  0.000140 <... puts resumed> )                                                         = 17 <0.000313>
+  0.000036 puts("3. Operations Menu" <unfinished ...>
+  0.000204     SYS_write(1, "3. Operations Menu\n", 19)                                 = 19 <0.000126>
+  0.000149 <... puts resumed> )                                                         = 19 <0.000347>
+  0.000037 puts("4. Exit Program" <unfinished ...>
+  0.000178     SYS_write(1, "4. Exit Program\n", 16)                                    = 16 <0.000111>
+  0.000136 <... puts resumed> )                                                         = 16 <0.000307>
+  0.000039 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000140     SYS_read(0, "3\n", 1024)                                                 = 2 <4.486704>
+  4.486803 <... getchar resumed> )                                                      = 51 <4.486914>
+  0.000041 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000107>
+  0.000146 puts("Enter further operation no as fo"... <unfinished ...>
+  0.000208     SYS_write(1, "Enter further operation no as fo"..., 39)                  = 39 <0.000163>
+  0.000199 <... puts resumed> )                                                         = 39 <0.000401>
+  0.000029 puts("1. Modify the permissions of the"... <unfinished ...>
+  0.000227     SYS_write(1, "1. Modify the permissions of the"..., 55)                  = 55 <0.000169>
+  0.000191 <... puts resumed> )                                                         = 55 <0.000413>
+  0.000028 puts("2. Open the file (for writing)" <unfinished ...>
+  0.000193     SYS_write(1, "2. Open the file (for writing)\n", 31)                     = 31 <0.000154>
+  0.000167 <... puts resumed> )                                                         = 31 <0.000355>
+  0.000028 puts("3. Open the file (in append mode"... <unfinished ...>
+  0.000198     SYS_write(1, "3. Open the file (in append mode"..., 34)                  = 34 <0.000137>
+  0.000155 <... puts resumed> )                                                         = 34 <0.000348>
+  0.000028 puts("4. Open the file (for reading)" <unfinished ...>
+  0.000190     SYS_write(1, "4. Open the file (for reading)\n", 31)                     = 31 <0.000135>
+  0.000153 <... puts resumed> )                                                         = 31 <0.000338>
+  0.000028 puts("5. Go back to main menu" <unfinished ...>
+  0.000172     SYS_write(1, "5. Go back to main menu\n", 24)                            = 24 <0.000113>
+  0.000131 <... puts resumed> )                                                         = 24 <0.000298>
+  0.000028 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000093     SYS_read(0, "4\n", 1024)                                                 = 2 <3.399003>
+  3.399102 <... getchar resumed> )                                                      = 52 <3.399167>
+  0.000037 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000104>
+  0.000144 printf("Enter the name of file to open f"...)                                = 45 <0.000278>
+  0.000312 getline(0x7ffecee52158, 0x7ffecee52160, 0x7ffac5091a00, 0x7ffecee52160 <unfinished ...>
+  0.000091     SYS_write(1, "Enter the name of file to open f"..., 45)                  = 45 <0.000181>
+  0.000222     SYS_read(0, "ltrace.txt\n", 1024)                                        = 11 <4.935450>
+  4.935617 <... getline resumed> )                                                      = 11 <4.935884>
+  0.000044 __xstat(1, "ltrace.txt", 0x7ffecee520d0 <unfinished ...>
+  0.000165     SYS_stat("ltrace.txt", 0x7ffecee520d0)                                   = 0 <0.000073>
+  0.000094 <... __xstat resumed> )                                                      = 0 <0.000254>
+  0.000032 malloc(2)                                                                    = 0x55ded6a91d70 <0.000085>
+  0.000147 __xstat(1, "ltrace.txt", 0x7ffecee520d0 <unfinished ...>
+  0.000152     SYS_stat("ltrace.txt", 0x7ffecee520d0)                                   = 0 <0.000071>
+  0.000090 <... __xstat resumed> )                                                      = 0 <0.000238>
+  0.000032 printf("File %s exists\n", "ltrace.txt" <unfinished ...>
+  0.000224     SYS_write(1, "File ltrace.txt exists\n", 23)                             = 23 <0.000152>
+  0.000176 <... printf resumed> )                                                       = 23 <0.000394>
+  0.000032 fopen("ltrace.txt", "r" <unfinished ...>
+  0.000150     SYS_openat(0xffffff9c, 0x55ded6a91a80, 0, 0)                             = 3 <0.000103>
+  0.000146 <... fopen resumed> )                                                        = 0x55ded6a91b00 <0.000289>
+  0.000039 puts("Select from the following operat"... <unfinished ...>
+  0.000234     SYS_write(1, "Select from the following operat"..., 39)                  = 39 <0.000174>
+  0.000214 <... puts resumed> )                                                         = 39 <0.000444>
+  0.000033 puts("1. Read a single character (getc"... <unfinished ...>
+  0.000221     SYS_write(1, "1. Read a single character (getc"..., 34)                  = 34 <0.000162>
+  0.000183 <... puts resumed> )                                                         = 34 <0.000398>
+  0.000051 puts("2. Read a string of characters ("... <unfinished ...>
+  0.000369     SYS_write(1, "2. Read a string of characters ("..., 38)                  = 38 <0.000169>
+  0.000308 <... puts resumed> )                                                         = 38 <0.000669>
+  0.000030 puts("3. Close the file for reading" <unfinished ...>
+  0.000187     SYS_write(1, "3. Close the file for reading\n", 30)                      = 30 <0.000146>
+  0.000174 <... puts resumed> )                                                         = 30 <0.000355>
+  0.000029 puts("4. Free the memory" <unfinished ...>
+  0.000147     SYS_write(1, "4. Free the memory\n", 19)                                 = 19 <0.000096>
+  0.000114 <... puts resumed> )                                                         = 19 <0.000256>
+  0.000029 puts("5. Go back to previous menu" <unfinished ...>
+  0.000176     SYS_write(1, "5. Go back to previous menu\n", 28)                        = 28 <0.000128>
+  0.000146 <... puts resumed> )                                                         = 28 <0.000317>
+  0.000029 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000180     SYS_read(0, "5\n", 1024)                                                 = 2 <9.779900>
+  9.780017 <... getchar resumed> )                                                      = 53 <9.780172>
+  0.000039 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000107>
+  0.000148 putchar(10, 0x55ded6a91670, 10, 0x7ffac4db6081 <unfinished ...>
+  0.000091     SYS_write(1, "\n", 1)                                                    = 1 <0.000036>
+  0.000058 <... putchar resumed> )                                                      = 10 <0.000141>
+  0.000030 puts("Select operation number to proce"... <unfinished ...>
+  0.000263     SYS_write(1, "Select operation number to proce"..., 36)                  = 36 <0.000145>
+  0.000163 <... puts resumed> )                                                         = 36 <0.000420>
+  0.000029 puts("1. Print to standard out an inte"... <unfinished ...>
+  0.000234     SYS_write(1, "1. Print to standard out an inte"..., 60)                  = 60 <0.000179>
+  0.000193 <... puts resumed> )                                                         = 60 <0.000422>
+  0.000029 puts("2. Create a file" <unfinished ...>
+  0.000158     SYS_write(1, "2. Create a file\n", 17)                                   = 17 <0.000087>
+  0.000106 <... puts resumed> )                                                         = 17 <0.000259>
+  0.000029 puts("3. Operations Menu" <unfinished ...>
+  0.000146     SYS_write(1, "3. Operations Menu\n", 19)                                 = 19 <0.000093>
+  0.000112 <... puts resumed> )                                                         = 19 <0.000253>
+  0.000029 puts("4. Exit Program" <unfinished ...>
+  0.000424     SYS_write(1, "4. Exit Program\n", 16)                                    = 16 <0.000155>
+  0.000186 <... puts resumed> )                                                         = 16 <0.000601>
+  0.000032 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000099     SYS_read(0, "3\n", 1024)                                                 = 2 <2.064602>
+  2.064708 <... getchar resumed> )                                                      = 51 <2.064776>
+  0.000058 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000112>
+  0.000151 puts("Enter further operation no as fo"... <unfinished ...>
+  0.000208     SYS_write(1, "Enter further operation no as fo"..., 39)                  = 39 <0.000153>
+  0.000168 <... puts resumed> )                                                         = 39 <0.000371>
+  0.000029 puts("1. Modify the permissions of the"... <unfinished ...>
+  0.000222     SYS_write(1, "1. Modify the permissions of the"..., 55)                  = 55 <0.000203>
+  0.000256 <... puts resumed> )                                                         = 55 <0.000472>
+  0.000032 puts("2. Open the file (for writing)" <unfinished ...>
+  0.000189     SYS_write(1, "2. Open the file (for writing)\n", 31)                     = 31 <0.000134>
+  0.000152 <... puts resumed> )                                                         = 31 <0.000336>
+  0.000029 puts("3. Open the file (in append mode"... <unfinished ...>
+  0.000192     SYS_write(1, "3. Open the file (in append mode"..., 34)                  = 34 <0.000137>
+  0.000163 <... puts resumed> )                                                         = 34 <0.000350>
+  0.000035 puts("4. Open the file (for reading)" <unfinished ...>
+  0.000215     SYS_write(1, "4. Open the file (for reading)\n", 31)                     = 31 <0.000311>
+  0.000336 <... puts resumed> )                                                         = 31 <0.000545>
+  0.000029 puts("5. Go back to main menu" <unfinished ...>
+  0.000164     SYS_write(1, "5. Go back to main menu\n", 24)                            = 24 <0.000151>
+  0.000171 <... puts resumed> )                                                         = 24 <0.000330>
+  0.000029 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000093     SYS_read(0, "3\n", 1024)                                                 = 2 <2.081879>
+  2.082011 <... getchar resumed> )                                                      = 51 <2.082075>
+  0.000037 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000106>
+  0.000146 printf("Enter the name of file to open f"...)                                = 47 <0.000318>
+  0.000355 getline(0x7ffecee52138, 0x7ffecee52140, 0x7ffac5091a00, 0x7ffecee52140 <unfinished ...>
+  0.000107     SYS_write(1, "Enter the name of file to open f"..., 47)                  = 47 <0.000177>
+  0.000177     SYS_read(0, "ltrace.txt\n", 1024)                                        = 11 <4.935946>
+  4.936098 <... getline resumed> )                                                      = 11 <4.936356>
+  0.000046 __xstat(1, "ltrace.txt", 0x7ffecee520b0 <unfinished ...>
+  0.000179     SYS_stat("ltrace.txt", 0x7ffecee520b0)                                   = 0 <0.000104>
+  0.000129 <... __xstat resumed> )                                                      = 0 <0.000303>
+  0.000037 printf("File %s exists\n", "ltrace.txt" <unfinished ...>
+  0.000265     SYS_write(1, "File ltrace.txt exists\n", 23)                             = 23 <0.000144>
+  0.000170 <... printf resumed> )                                                       = 23 <0.000428>
+  0.000042 fopen("ltrace.txt", "a" <unfinished ...>
+  0.000186     SYS_openat(0xffffff9c, 0x55ded6a91d90, 1089, 438)                        = 15 <0.000073>
+  0.000080     SYS_lseek(15, 0, 2)                                                      = 2 <0.000021>
+  0.000049 <... fopen resumed> )                                                        = 0x55ded6a91e10 <0.000309>
+  0.000038 printf("File %s has been opened\n", "ltrace.txt" <unfinished ...>
+  0.000385     SYS_write(1, "File ltrace.txt has been opened\n"..., 32)                 = 32 <0.000186>
+  0.000210 <... printf resumed> )                                                       = 32 <0.000587>
+  0.000038 putchar(10, 0x55ded6a91260, 0, 0 <unfinished ...>
+  0.000160     SYS_write(1, "\n", 1)                                                    = 1 <0.000047>
+  0.000076 <... putchar resumed> )                                                      = 10 <0.000226>
+  0.000037 puts("Select options from below: " <unfinished ...>
+  0.000260     SYS_write(1, "Select options from below: \n", 28)                        = 28 <0.000162>
+  0.000188 <... puts resumed> )                                                         = 28 <0.000441>
+  0.000037 puts("1. Dynamically allocate an array"... <unfinished ...>
+  0.000263     SYS_write(1, "1. Dynamically allocate an array"..., 43)                  = 43 <0.000198>
+  0.000224 <... puts resumed> )                                                         = 43 <0.000481>
+  0.000036 puts("2. Read an input string from the"... <unfinished ...>
+  0.000446     SYS_write(1, "2. Read an input string from the"..., 93)                  = 93 <0.000329>
+  0.000367 <... puts resumed> )                                                         = 93 <0.000803>
+  0.000039 puts("3. Write the string to the file" <unfinished ...>
+  0.000448     SYS_write(1, "3. Write the string to the file\n"..., 32)                 = 32 <0.000261>
+  0.000297 <... puts resumed> )                                                         = 32 <0.000734>
+  0.000067 puts("4. Flush file output" <unfinished ...>
+  0.001005     SYS_write(1, "4. Flush file output\n", 21)                               = 21 <0.000246>
+  0.000296 <... puts resumed> )                                                         = 21 <0.001284>
+  0.000076 puts("5. Close the file opened in appe"... <unfinished ...>
+  0.000412     SYS_write(1, "5. Close the file opened in appe"..., 40)                  = 40 <0.000412>
+  0.000457 <... puts resumed> )                                                         = 40 <0.000850>
+  0.000056 puts("6. Go back to previous menu" <unfinished ...>
+  0.000356     SYS_write(1, "6. Go back to previous menu\n", 28)                        = 28 <0.000276>
+  0.000362 <... puts resumed> )                                                         = 28 <0.000664>
+  0.000058 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000248     SYS_read(0, "1\n", 1024)                                                 = 2 <2.050888>
+  2.050971 <... getchar resumed> )                                                      = 49 <2.051191>
+  0.000045 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000131>
+  0.000184 puts("To dynamically allocate an array"... <unfinished ...>
+  0.000322     SYS_write(1, "To dynamically allocate an array"..., 43)                  = 43 <0.000288>
+  0.000353 <... puts resumed> )                                                         = 43 <0.000663>
+  0.000050 printf("Enter the number of bytes of mem"...)                                = 47 <0.000462>
+  0.000514 __isoc99_scanf(0x55ded67849a0, 0x7ffecee52168, 0, 0 <unfinished ...>
+  0.000147     SYS_write(1, "Enter the number of bytes of mem"..., 47)                  = 47 <0.000277>
+  0.000305     SYS_read(0, "5\n", 1024)                                                 = 2 <1.297918>
+  1.298033 <... __isoc99_scanf resumed> )                                               = 1 <1.298454>
+  0.000037 getchar(0, 1, 0x7ffac50938d0, 16)                                            = 10 <0.000123>
+  0.000165 calloc(5, 8)                                                                 = 0x55ded6a92040 <0.000077>
+  0.000112 printf("Memory successfully allocated : "..., 5 <unfinished ...>
+  0.000322     SYS_write(1, "Memory successfully allocated : "..., 47)                  = 47 <0.000178>
+  0.000202 <... printf resumed> )                                                       = 47 <0.000519>
+  0.000030 putchar(10, 0x55ded6a91260, 0, 0 <unfinished ...>
+  0.000094     SYS_write(1, "\n", 1)                                                    = 1 <0.000036>
+  0.000055 <... putchar resumed> )                                                      = 10 <0.000141>
+  0.000049 puts("Select options from below: " <unfinished ...>
+  0.000182     SYS_write(1, "Select options from below: \n", 28)                        = 28 <0.000124>
+  0.000143 <... puts resumed> )                                                         = 28 <0.000320>
+  0.000029 puts("1. Dynamically allocate an array"... <unfinished ...>
+  0.000212     SYS_write(1, "1. Dynamically allocate an array"..., 43)                  = 43 <0.000155>
+  0.000174 <... puts resumed> )                                                         = 43 <0.000381>
+  0.000029 puts("2. Read an input string from the"... <unfinished ...>
+  0.000311     SYS_write(1, "2. Read an input string from the"..., 93)                  = 93 <0.000227>
+  0.000247 <... puts resumed> )                                                         = 93 <0.000552>
+  0.000029 puts("3. Write the string to the file" <unfinished ...>
+  0.000246     SYS_write(1, "3. Write the string to the file\n"..., 32)                 = 32 <0.000143>
+  0.000162 <... puts resumed> )                                                         = 32 <0.000402>
+  0.000029 puts("4. Flush file output" <unfinished ...>
+  0.000177     SYS_write(1, "4. Flush file output\n", 21)                               = 21 <0.000104>
+  0.000132 <... puts resumed> )                                                         = 21 <0.000304>
+  0.000029 puts("5. Close the file opened in appe"... <unfinished ...>
+  0.000201     SYS_write(1, "5. Close the file opened in appe"..., 40)                  = 40 <0.000148>
+  0.000168 <... puts resumed> )                                                         = 40 <0.000364>
+  0.000029 puts("6. Go back to previous menu" <unfinished ...>
+  0.000174     SYS_write(1, "6. Go back to previous menu\n", 28)                        = 28 <0.000140>
+  0.000178 <... puts resumed> )                                                         = 28 <0.000346>
+  0.000049 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000102     SYS_read(0, "2\n", 1024)                                                 = 2 <2.427844>
+  2.427937 <... getchar resumed> )                                                      = 50 <2.428012>
+  0.000036 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000105>
+  0.000144 printf("Enter a string to write to the a"...)                                = 50 <0.000322>
+  0.000358 getline(0x7ffecee52170, 0x7ffecee52178, 0x7ffac5091a00, 0x7ffecee52178 <unfinished ...>
+  0.000092     SYS_write(1, "Enter a string to write to the a"..., 50)                  = 50 <0.000167>
+  0.000204     SYS_read(0, "34567890123456789\n", 1024)                                 = 18 <10.487410>
+ 10.487637 <... getline resumed> )                                                      = 18 <10.487869>
+  0.000050 strdup("34567890123456789")                                                  = 0x55ded6a920f0 <0.000202>
+  0.000248 printf("Bytes in input  string is %d\n", 17 <unfinished ...>
+  0.000329     SYS_write(1, "Bytes in input  string is 17\n", 29)                       = 29 <0.000184>
+  0.000220 <... printf resumed> )                                                       = 29 <0.000540>
+  0.000043 printf("ALlocated bytes is %d\n", 5 <unfinished ...>
+  0.000283     SYS_write(1, "ALlocated bytes is 5\n", 21)                               = 21 <0.000138>
+  0.000156 <... printf resumed> )                                                       = 21 <0.000432>
+  0.000037 puts("Memory allocated less than the i"... <unfinished ...>
+  0.000364     SYS_write(1, "Memory allocated less than the i"..., 60)                  = 60 <0.000246>
+  0.000266 <... puts resumed> )                                                         = 60 <0.000623>
+  0.000038 realloc(0x55ded6a92040, 80)                                                  = 0x55ded6a92110 <0.000100>
+  0.000145 printf("ALlocated bytes is %d\n", 10 <unfinished ...>
+  0.000292     SYS_write(1, "ALlocated bytes is 10\n", 22)                              = 22 <0.000208>
+  0.000244 <... printf resumed> )                                                       = 22 <0.000528>
+  0.000051 puts("Memory allocated less than the i"... <unfinished ...>
+  0.000321     SYS_write(1, "Memory allocated less than the i"..., 60)                  = 60 <0.000234>
+  0.000259 <... puts resumed> )                                                         = 60 <0.000573>
+  0.000056 realloc(0x55ded6a92110, 160)                                                 = 0x55ded6a92110 <0.000101>
+  0.000145 printf("\nThe line to write in the file i"..., "34567890123456789" <unfinished ...>
+  0.000488     SYS_write(1, "\n", 1)                                                    = 1 <0.000049>
+  0.000067     SYS_write(1, "The line to write in the file is"..., 52)                  = 52 <0.000203>
+  0.000251 <... printf resumed> )                                                       = 53 <0.000783>
+  0.000040 free(0x55ded6a92110)                                                         = <void> <0.000098>
+  0.000141 putchar(10, 0x55ded6a91058, 0x55ded6a91010, 1 <unfinished ...>
+  0.000119     SYS_write(1, "\n", 1)                                                    = 1 <0.000043>
+  0.000071 <... putchar resumed> )                                                      = 10 <0.000181>
+  0.000048 puts("Select options from below: " <unfinished ...>
+  0.000228     SYS_write(1, "Select options from below: \n", 28)                        = 28 <0.000164>
+  0.000189 <... puts resumed> )                                                         = 28 <0.000410>
+  0.000036 puts("1. Dynamically allocate an array"... <unfinished ...>
+  0.000290     SYS_write(1, "1. Dynamically allocate an array"..., 43)                  = 43 <0.000199>
+  0.000223 <... puts resumed> )                                                         = 43 <0.000507>
+  0.000037 puts("2. Read an input string from the"... <unfinished ...>
+  0.000358     SYS_write(1, "2. Read an input string from the"..., 93)                  = 93 <0.000419>
+  0.000449 <... puts resumed> )                                                         = 93 <0.000800>
+  0.000038 puts("3. Write the string to the file" <unfinished ...>
+  0.000251     SYS_write(1, "3. Write the string to the file\n"..., 32)                 = 32 <0.000536>
+  0.000572 <... puts resumed> )                                                         = 32 <0.000813>
+  0.000038 puts("4. Flush file output" <unfinished ...>
+  0.000206     SYS_write(1, "4. Flush file output\n", 21)                               = 21 <0.000175>
+  0.000203 <... puts resumed> )                                                         = 21 <0.000402>
+  0.000037 puts("5. Close the file opened in appe"... <unfinished ...>
+  0.000264     SYS_write(1, "5. Close the file opened in appe"..., 40)                  = 40 <0.000208>
+  0.000234 <... puts resumed> )                                                         = 40 <0.000491>
+  0.000037 puts("6. Go back to previous menu" <unfinished ...>
+  0.000230     SYS_write(1, "6. Go back to previous menu\n", 28)                        = 28 <0.000162>
+  0.000187 <... puts resumed> )                                                         = 28 <0.000411>
+  0.000037 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000122     SYS_read(0, "3\n", 1024)                                                 = 2 <3.575593>
+  3.575702 <... getchar resumed> )                                                      = 51 <3.575784>
+  0.000037 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000106>
+  0.000147 printf("The string to write to the file "..., "34567890123456789" <unfinished ...>
+  0.000375     SYS_write(1, "The string to write to the file "..., 67)                  = 67 <0.000209>
+  0.000226 <... printf resumed> )                                                       = 67 <0.000594>
+  0.000029 fprintf(0x55ded6a91e10, "%s", "34567890123456789" <unfinished ...>
+  0.000181     SYS_fstat(15, 0x7ffecee519b0)                                            = 0 <0.000024>
+  0.000045 <... fprintf resumed> )                                                      = 17 <0.000221>
+  0.000030 printf("String %s has been successfully "..., "34567890123456789", "ltrace.txt" <unfinished ...>
+  0.000398     SYS_write(1, "String 34567890123456789 has bee"..., 74)                  = 74 <0.000196>
+  0.000216 <... printf resumed> )                                                       = 74 <0.000608>
+  0.000029 printf("Do you wish add  more string? Y/"...)                                = 36 <0.000265>
+  0.000299 getchar(0x55ded6a91260, 0x55ded6784b58, 0, 0 <unfinished ...>
+  0.000092     SYS_write(1, "Do you wish add  more string? Y/"..., 36)                  = 36 <0.000141>
+  0.000156     SYS_read(0, "N\n", 1024)                                                 = 2 <3.908036>
+  3.908180 <... getchar resumed> )                                                      = 78 <3.908397>
+  0.000048 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000134>
+  0.000185 putchar(10, 0x55ded6a91670, 10, 0x7ffac4db6081 <unfinished ...>
+  0.000117     SYS_write(1, "\n", 1)                                                    = 1 <0.000045>
+  0.000073 <... putchar resumed> )                                                      = 10 <0.000180>
+  0.000071 puts("Select options from below: " <unfinished ...>
+  0.000273     SYS_write(1, "Select options from below: \n", 28)                        = 28 <0.000162>
+  0.000185 <... puts resumed> )                                                         = 28 <0.000451>
+  0.000037 puts("1. Dynamically allocate an array"... <unfinished ...>
+  0.000272     SYS_write(1, "1. Dynamically allocate an array"..., 43)                  = 43 <0.000198>
+  0.000222 <... puts resumed> )                                                         = 43 <0.000487>
+  0.000066 puts("2. Read an input string from the"... <unfinished ...>
+  0.000375     SYS_write(1, "2. Read an input string from the"..., 93)                  = 93 <0.000295>
+  0.000321 <... puts resumed> )                                                         = 93 <0.000689>
+  0.000044 puts("3. Write the string to the file" <unfinished ...>
+  0.000324     SYS_write(1, "3. Write the string to the file\n"..., 32)                 = 32 <0.000188>
+  0.000214 <... puts resumed> )                                                         = 32 <0.000531>
+  0.000037 puts("4. Flush file output" <unfinished ...>
+  0.000203     SYS_write(1, "4. Flush file output\n", 21)                               = 21 <0.000133>
+  0.000158 <... puts resumed> )                                                         = 21 <0.000354>
+  0.000037 puts("5. Close the file opened in appe"... <unfinished ...>
+  0.000293     SYS_write(1, "5. Close the file opened in appe"..., 40)                  = 40 <0.000196>
+  0.000220 <... puts resumed> )                                                         = 40 <0.000506>
+  0.000037 puts("6. Go back to previous menu" <unfinished ...>
+  0.000227     SYS_write(1, "6. Go back to previous menu\n", 28)                        = 28 <0.000164>
+  0.000188 <... puts resumed> )                                                         = 28 <0.000409>
+  0.000036 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000120     SYS_read(0, "4\n", 1024)                                                 = 2 <2.447409>
+  2.447534 <... getchar resumed> )                                                      = 52 <2.447621>
+  0.000041 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000111>
+  0.000150 puts("Flusing the file output: " <unfinished ...>
+  0.000172     SYS_write(1, "Flusing the file output: \n", 26)                          = 26 <0.000122>
+  0.000142 <... puts resumed> )                                                         = 26 <0.000308>
+  0.000029 fflush(0x55ded6a91e10 <unfinished ...>
+  0.000127     SYS_write(15, "34567890123456789", 17)                                   = 17 <0.000093>
+  0.000112 <... fflush resumed> )                                                       = 0 <0.000233>
+  0.000029 puts("Flushed" <unfinished ...>
+  0.000108     SYS_write(1, "Flushed\n", 8)                                             = 8 <0.000076>
+  0.000097 <... puts resumed> )                                                         = 8 <0.000199>
+  0.000028 putchar(10, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000091     SYS_write(1, "\n", 1)                                                    = 1 <0.000036>
+  0.000057 <... putchar resumed> )                                                      = 10 <0.000141>
+  0.000029 puts("Select options from below: " <unfinished ...>
+  0.000173     SYS_write(1, "Select options from below: \n", 28)                        = 28 <0.000124>
+  0.000144 <... puts resumed> )                                                         = 28 <0.000312>
+  0.000028 puts("1. Dynamically allocate an array"... <unfinished ...>
+  0.000206     SYS_write(1, "1. Dynamically allocate an array"..., 43)                  = 43 <0.000170>
+  0.000195 <... puts resumed> )                                                         = 43 <0.000396>
+  0.000029 puts("2. Read an input string from the"... <unfinished ...>
+  0.000279     SYS_write(1, "2. Read an input string from the"..., 93)                  = 93 <0.000222>
+  0.000250 <... puts resumed> )                                                         = 93 <0.000523>
+  0.000028 puts("3. Write the string to the file" <unfinished ...>
+  0.000558     SYS_write(1, "3. Write the string to the file\n"..., 32)                 = 32 <0.000150>
+  0.000188 <... puts resumed> )                                                         = 32 <0.000719>
+  0.000031 puts("4. Flush file output" <unfinished ...>
+  0.000160     SYS_write(1, "4. Flush file output\n", 21)                               = 21 <0.000281>
+  0.000322 <... puts resumed> )                                                         = 21 <0.000475>
+  0.000031 puts("5. Close the file opened in appe"... <unfinished ...>
+  0.000865     SYS_write(1, "5. Close the file opened in appe"..., 40)                  = 40 <0.000185>
+  0.000225 <... puts resumed> )                                                         = 40 <0.001081>
+  0.000031 puts("6. Go back to previous menu" <unfinished ...>
+  0.000187     SYS_write(1, "6. Go back to previous menu\n", 28)                        = 28 <0.000128>
+  0.000148 <... puts resumed> )                                                         = 28 <0.000330>
+  0.000029 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000098     SYS_read(0, "5\n", 1024)                                                 = 2 <3.037150>
+  3.037292 <... getchar resumed> )                                                      = 53 <3.037356>
+  0.000046 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000135>
+  0.000184 puts("Closing the file..." <unfinished ...>
+  0.000197     SYS_write(1, "Closing the file...\n", 20)                                = 20 <0.000129>
+  0.000154 <... puts resumed> )                                                         = 20 <0.000344>
+  0.000069 fclose(0x55ded6a91e10 <unfinished ...>
+  0.000116     SYS_close(15)                                                            = 0 <0.000033>
+  0.000058 <... fclose resumed> )                                                       = 0 <0.000167>
+  0.000036 free(0x55ded6a91d90)                                                         = <void> <0.000094>
+  0.000144 puts("The file has been closed the onl"... <unfinished ...>
+  0.000311     SYS_write(1, "The file has been closed the onl"..., 63)                  = 63 <0.000240>
+  0.000277 <... puts resumed> )                                                         = 63 <0.000582>
+  0.000039 putchar(10, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000118     SYS_write(1, "\n", 1)                                                    = 1 <0.000047>
+  0.000075 <... putchar resumed> )                                                      = 10 <0.000184>
+  0.000040 puts("Select operation number to proce"... <unfinished ...>
+  0.000317     SYS_write(1, "Select operation number to proce"..., 36)                  = 36 <0.000560>
+  0.000590 <... puts resumed> )                                                         = 36 <0.000900>
+  0.000039 puts("1. Print to standard out an inte"... <unfinished ...>
+  0.000305     SYS_write(1, "1. Print to standard out an inte"..., 60)                  = 60 <0.000265>
+  0.000292 <... puts resumed> )                                                         = 60 <0.000589>
+  0.000037 puts("2. Create a file" <unfinished ...>
+  0.000208     SYS_write(1, "2. Create a file\n", 17)                                   = 17 <0.000116>
+  0.000139 <... puts resumed> )                                                         = 17 <0.000341>
+  0.000037 puts("3. Operations Menu" <unfinished ...>
+  0.000187     SYS_write(1, "3. Operations Menu\n", 19)                                 = 19 <0.000127>
+  0.000152 <... puts resumed> )                                                         = 19 <0.000332>
+  0.000036 puts("4. Exit Program" <unfinished ...>
+  0.000175     SYS_write(1, "4. Exit Program\n", 16)                                    = 16 <0.000109>
+  0.000153 <... puts resumed> )                                                         = 16 <0.000321>
+  0.000048 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000123     SYS_read(0, "3\n", 1024)                                                 = 2 <3.479210>
+  3.479308 <... getchar resumed> )                                                      = 51 <3.479402>
+  0.000037 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000105>
+  0.000145 puts("Enter further operation no as fo"... <unfinished ...>
+  0.000210     SYS_write(1, "Enter further operation no as fo"..., 39)                  = 39 <0.000156>
+  0.000176 <... puts resumed> )                                                         = 39 <0.000381>
+  0.000030 puts("1. Modify the permissions of the"... <unfinished ...>
+  0.000252     SYS_write(1, "1. Modify the permissions of the"..., 55)                  = 55 <0.000170>
+  0.000187 <... puts resumed> )                                                         = 55 <0.000435>
+  0.000029 puts("2. Open the file (for writing)" <unfinished ...>
+  0.000186     SYS_write(1, "2. Open the file (for writing)\n", 31)                     = 31 <0.000131>
+  0.000149 <... puts resumed> )                                                         = 31 <0.000330>
+  0.000028 puts("3. Open the file (in append mode"... <unfinished ...>
+  0.000207     SYS_write(1, "3. Open the file (in append mode"..., 34)                  = 34 <0.000137>
+  0.000155 <... puts resumed> )                                                         = 34 <0.000357>
+  0.000029 puts("4. Open the file (for reading)" <unfinished ...>
+  0.000196     SYS_write(1, "4. Open the file (for reading)\n", 31)                     = 31 <0.000222>
+  0.000245 <... puts resumed> )                                                         = 31 <0.000436>
+  0.000029 puts("5. Go back to main menu" <unfinished ...>
+  0.000165     SYS_write(1, "5. Go back to main menu\n", 24)                            = 24 <0.000159>
+  0.000185 <... puts resumed> )                                                         = 24 <0.000344>
+  0.000029 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000096     SYS_read(0, "4\n", 1024)                                                 = 2 <2.700761>
+  2.700883 <... getchar resumed> )                                                      = 52 <2.700948>
+  0.000050 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000163>
+  0.000216 printf("Enter the name of file to open f"...)                                = 45 <0.000385>
+  0.000433 getline(0x7ffecee52158, 0x7ffecee52160, 0x7ffac5091a00, 0x7ffecee52160 <unfinished ...>
+  0.000124     SYS_write(1, "Enter the name of file to open f"..., 45)                  = 45 <0.000224>
+  0.000248     SYS_read(0, "ltrace.txt\n", 1024)                                        = 11 <4.543753>
+  4.543936 <... getline resumed> )                                                      = 11 <4.544278>
+  0.000058 __xstat(1, "ltrace.txt", 0x7ffecee520d0 <unfinished ...>
+  0.000242     SYS_stat("ltrace.txt", 0x7ffecee520d0)                                   = 0 <0.000111>
+  0.000137 <... __xstat resumed> )                                                      = 0 <0.000372>
+  0.000082 malloc(19)                                                                   = 0x55ded6a921c0 <0.000125>
+  0.000178 __xstat(1, "ltrace.txt", 0x7ffecee520d0 <unfinished ...>
+  0.000191     SYS_stat("ltrace.txt", 0x7ffecee520d0)                                   = 0 <0.000096>
+  0.000124 <... __xstat resumed> )                                                      = 0 <0.000310>
+  0.000048 printf("File %s exists\n", "ltrace.txt" <unfinished ...>
+  0.000370     SYS_write(1, "File ltrace.txt exists\n", 23)                             = 23 <0.000220>
+  0.000267 <... printf resumed> )                                                       = 23 <0.000624>
+  0.000051 fopen("ltrace.txt", "r" <unfinished ...>
+  0.000407     SYS_openat(0xffffff9c, 0x55ded6a91d90, 0, 0)                             = 15 <0.000176>
+  0.000127 <... fopen resumed> )                                                        = 0x55ded6a91e10 <0.000528>
+  0.000049 puts("Select from the following operat"... <unfinished ...>
+  0.000304     SYS_write(1, "Select from the following operat"..., 39)                  = 39 <0.000184>
+  0.000204 <... puts resumed> )                                                         = 39 <0.000499>
+  0.000034 puts("1. Read a single character (getc"... <unfinished ...>
+  0.000223     SYS_write(1, "1. Read a single character (getc"..., 34)                  = 34 <0.000165>
+  0.000187 <... puts resumed> )                                                         = 34 <0.000404>
+  0.000032 puts("2. Read a string of characters ("... <unfinished ...>
+  0.000257     SYS_write(1, "2. Read a string of characters ("..., 38)                  = 38 <0.000169>
+  0.000191 <... puts resumed> )                                                         = 38 <0.000442>
+  0.000032 puts("3. Close the file for reading" <unfinished ...>
+  0.000206     SYS_write(1, "3. Close the file for reading\n", 30)                      = 30 <0.000148>
+  0.000170 <... puts resumed> )                                                         = 30 <0.000370>
+  0.000032 puts("4. Free the memory" <unfinished ...>
+  0.000164     SYS_write(1, "4. Free the memory\n", 19)                                 = 19 <0.000109>
+  0.000130 <... puts resumed> )                                                         = 19 <0.000288>
+  0.000028 puts("5. Go back to previous menu" <unfinished ...>
+  0.000242     SYS_write(1, "5. Go back to previous menu\n", 28)                        = 28 <0.000202>
+  0.000232 <... puts resumed> )                                                         = 28 <0.000464>
+  0.000037 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000146     SYS_read(0, "1\n", 1024)                                                 = 2 <2.090661>
+  2.090773 <... getchar resumed> )                                                      = 49 <2.090891>
+  0.000040 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000108>
+  0.000147 printf("To read a single character from "..., "ltrace.txt" <unfinished ...>
+  0.000322     SYS_write(1, "To read a single character from "..., 52)                  = 52 <0.000166>
+  0.000203 <... printf resumed> )                                                       = 52 <0.000519>
+  0.000030 printf("Enter the no of character you wa"...)                                = 66 <0.000358>
+  0.000393 __isoc99_scanf(0x55ded67849a0, 0x7ffecee52184, 0, 0 <unfinished ...>
+  0.000095     SYS_write(1, "Enter the no of character you wa"..., 66)                  = 66 <0.000214>
+  0.000227     SYS_read(0, "5\n", 1024)                                                 = 2 <2.575462>
+  2.575574 <... __isoc99_scanf resumed> )                                               = 1 <2.575866>
+  0.000038 getchar(0, 1, 0x7ffac50938d0, 16)                                            = 10 <0.000134>
+  0.000177 fgetc(0x55ded6a91e10 <unfinished ...>
+  0.000085     SYS_fstat(15, 0x7ffecee52050)                                            = 0 <0.000025>
+  0.000039     SYS_read(15, "1234567890123456789", 4096)                                = 19 <0.000019>
+  0.000112 <... fgetc resumed> )                                                        = '1' <0.000231>
+  0.000029 feof(0x55ded6a91e10)                                                         = 0 <0.000074>
+  0.000109 fgetc(0x55ded6a91e10)                                                        = '2' <0.000097>
+  0.000132 feof(0x55ded6a91e10)                                                         = 0 <0.000073>
+  0.000106 fgetc(0x55ded6a91e10)                                                        = '3' <0.000073>
+  0.000107 feof(0x55ded6a91e10)                                                         = 0 <0.000071>
+  0.000109 fgetc(0x55ded6a91e10)                                                        = '4' <0.000089>
+  0.000124 feof(0x55ded6a91e10)                                                         = 0 <0.000072>
+  0.000114 fgetc(0x55ded6a91e10)                                                        = '5' <0.000119>
+  0.000153 feof(0x55ded6a91e10)                                                         = 0 <0.000074>
+  0.000107 printf("%c\n", '5' <unfinished ...>
+  0.000112     SYS_write(1, "5\n", 2)                                                   = 2 <0.000047>
+  0.000062 <... printf resumed> )                                                       = 2 <0.000169>
+  0.000029 rewind(0x55ded6a91e10, 0x55ded6a91260, 0, 0 <unfinished ...>
+  0.000090     SYS_lseek(15, 0, 0)                                                      = 0 <0.000023>
+  0.000043 <... rewind resumed> )                                                       = 0xfbad2488 <0.000125>
+  0.000029 puts("Select from the following operat"... <unfinished ...>
+  0.000223     SYS_write(1, "Select from the following operat"..., 39)                  = 39 <0.000150>
+  0.000169 <... puts resumed> )                                                         = 39 <0.000387>
+  0.000029 puts("1. Read a single character (getc"... <unfinished ...>
+  0.000192     SYS_write(1, "1. Read a single character (getc"..., 34)                  = 34 <0.000141>
+  0.000160 <... puts resumed> )                                                         = 34 <0.000348>
+  0.000028 puts("2. Read a string of characters ("... <unfinished ...>
+  0.000198     SYS_write(1, "2. Read a string of characters ("..., 38)                  = 38 <0.000147>
+  0.000165 <... puts resumed> )                                                         = 38 <0.000358>
+  0.000028 puts("3. Close the file for reading" <unfinished ...>
+  0.000243     SYS_write(1, "3. Close the file for reading\n", 30)                      = 30 <0.000133>
+  0.000151 <... puts resumed> )                                                         = 30 <0.000389>
+  0.000028 puts("4. Free the memory" <unfinished ...>
+  0.000169     SYS_write(1, "4. Free the memory\n", 19)                                 = 19 <0.000115>
+  0.000159 <... puts resumed> )                                                         = 19 <0.000323>
+  0.000029 puts("5. Go back to previous menu" <unfinished ...>
+  0.000201     SYS_write(1, "5. Go back to previous menu\n", 28)                        = 28 <0.000158>
+  0.000179 <... puts resumed> )                                                         = 28 <0.000374>
+  0.000029 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000095     SYS_read(0, "2\n", 1024)                                                 = 2 <3.457044>
+  3.457260 <... getchar resumed> )                                                      = 50 <3.457320>
+  0.001181 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000165>
+  0.000222 printf("To read and display a string of "..., "ltrace.txt" <unfinished ...>
+  0.000424     SYS_write(1, "To read and display a string of "..., 68)                  = 68 <0.000218>
+  0.000241 <... printf resumed> )                                                       = 68 <0.000659>
+  0.000053 rewind(0x55ded6a91e10, 0x55ded6a91260, 0, 0 <unfinished ...>
+  0.000105     SYS_lseek(15, 0, 0)                                                      = 0 <0.000027>
+  0.000063 <... rewind resumed> )                                                       = 0xfbad2488 <0.000159>
+  0.000033 fgets( <unfinished ...>
+  0.000093     SYS_read(15, "1234567890123456789", 4096)                                = 19 <0.000027>
+  0.000127 <... fgets resumed> "1234567890123456789", 20, 0x55ded6a91e10)               = 0x55ded6a921c0 <0.000213>
+  0.000112 printf("The string is: %s\n", "1234567890123456789" <unfinished ...>
+  0.000299     SYS_write(1, "The string is: 12345678901234567"..., 35)                  = 35 <0.000167>
+  0.000189 <... printf resumed> )                                                       = 35 <0.000482>
+  0.000033 fgets( <unfinished ...>
+  0.000114     SYS_read(15, "", 4096)                                                   = 0 <0.000033>
+  0.000092 <... fgets resumed> "1234567890123456789", 20, 0x55ded6a91e10)               = 0 <0.000198>
+  0.000118 rewind(0x55ded6a91e10, 0, 0x55ded6a91ef0, 0xfbad2498 <unfinished ...>
+  0.000105     SYS_lseek(15, 0, 0)                                                      = 0 <0.000026>
+  0.000060 <... rewind resumed> )                                                       = 0xfbad2488 <0.000157>
+  0.000030 puts("Select from the following operat"... <unfinished ...>
+  0.000203     SYS_write(1, "Select from the following operat"..., 39)                  = 39 <0.000153>
+  0.000173 <... puts resumed> )                                                         = 39 <0.000370>
+  0.000028 puts("1. Read a single character (getc"... <unfinished ...>
+  0.000215     SYS_write(1, "1. Read a single character (getc"..., 34)                  = 34 <0.000144>
+  0.000163 <... puts resumed> )                                                         = 34 <0.000373>
+  0.000028 puts("2. Read a string of characters ("... <unfinished ...>
+  0.000201     SYS_write(1, "2. Read a string of characters ("..., 38)                  = 38 <0.001607>
+  0.001678 <... puts resumed> )                                                         = 38 <0.001863>
+  0.000038 puts("3. Close the file for reading" <unfinished ...>
+  0.000212     SYS_write(1, "3. Close the file for reading\n", 30)                      = 30 <0.000174>
+  0.000196 <... puts resumed> )                                                         = 30 <0.000402>
+  0.000029 puts("4. Free the memory" <unfinished ...>
+  0.000150     SYS_write(1, "4. Free the memory\n", 19)                                 = 19 <0.000094>
+  0.000112 <... puts resumed> )                                                         = 19 <0.000257>
+  0.000062 puts("5. Go back to previous menu" <unfinished ...>
+  0.000181     SYS_write(1, "5. Go back to previous menu\n", 28)                        = 28 <0.000123>
+  0.000141 <... puts resumed> )                                                         = 28 <0.000317>
+  0.000028 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000096     SYS_read(0, "3\n", 1024)                                                 = 2 <4.972554>
+  4.972715 <... getchar resumed> )                                                      = 51 <4.972777>
+  0.000047 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000134>
+  0.000185 printf("Closing the file %s\n", "ltrace.txt" <unfinished ...>
+  0.000372     SYS_write(1, "Closing the file ltrace.txt\n", 28)                        = 28 <0.000167>
+  0.000193 <... printf resumed> )                                                       = 28 <0.000556>
+  0.000038 fclose(0x55ded6a91e10 <unfinished ...>
+  0.000106     SYS_close(15)                                                            = 0 <0.000031>
+  0.000056 <... fclose resumed> )                                                       = 0 <0.000155>
+  0.000037 puts("Closed" <unfinished ...>
+  0.000133     SYS_write(1, "Closed\n", 7)                                              = 7 <0.000067>
+  0.000092 <... puts resumed> )                                                         = 7 <0.000218>
+  0.000036 puts("The only options available now a"... <unfinished ...>
+  0.000291     SYS_write(1, "The only options available now a"..., 45)                  = 45 <0.000194>
+  0.000218 <... puts resumed> )                                                         = 45 <0.000503>
+  0.000044 puts("1. Free the memory" <unfinished ...>
+  0.000236     SYS_write(1, "1. Free the memory\n", 19)                                 = 19 <0.000126>
+  0.000150 <... puts resumed> )                                                         = 19 <0.000380>
+  0.000036 puts("2. Go back to previous menu" <unfinished ...>
+  0.000289     SYS_write(1, "2. Go back to previous menu\n", 28)                        = 28 <0.000163>
+  0.000186 <... puts resumed> )                                                         = 28 <0.000469>
+  0.000037 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000125     SYS_read(0, "1\n", 1024)                                                 = 2 <3.340416>
+  3.340532 <... getchar resumed> )                                                      = 49 <3.340626>
+  0.000041 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000119>
+  0.000165 puts("Select from the following operat"... <unfinished ...>
+  0.000236     SYS_write(1, "Select from the following operat"..., 39)                  = 39 <0.000208>
+  0.000251 <... puts resumed> )                                                         = 39 <0.000459>
+  0.000036 puts("1. Read a single character (getc"... <unfinished ...>
+  0.000239     SYS_write(1, "1. Read a single character (getc"..., 34)                  = 34 <0.000160>
+  0.000182 <... puts resumed> )                                                         = 34 <0.000415>
+  0.000032 puts("2. Read a string of characters ("... <unfinished ...>
+  0.000233     SYS_write(1, "2. Read a string of characters ("..., 38)                  = 38 <0.000170>
+  0.000187 <... puts resumed> )                                                         = 38 <0.000414>
+  0.000033 puts("3. Close the file for reading" <unfinished ...>
+  0.000250     SYS_write(1, "3. Close the file for reading\n", 30)                      = 30 <0.000205>
+  0.000235 <... puts resumed> )                                                         = 30 <0.000478>
+  0.000048 puts("4. Free the memory" <unfinished ...>
+  0.000242     SYS_write(1, "4. Free the memory\n", 19)                                 = 19 <0.000598>
+  0.000628 <... puts resumed> )                                                         = 19 <0.000859>
+  0.000065 puts("5. Go back to previous menu" <unfinished ...>
+  0.000257     SYS_write(1, "5. Go back to previous menu\n", 28)                        = 28 <0.000164>
+  0.000187 <... puts resumed> )                                                         = 28 <0.000438>
+  0.000040 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000196     SYS_read(0, "5\n", 1024)                                                 = 2 <3.336070>
+  3.336511 <... getchar resumed> )                                                      = 53 <3.336679>
+  0.000180 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000312>
+  0.000466 putchar(10, 0x55ded6a91670, 10, 0x7ffac4db6081 <unfinished ...>
+  0.000302     SYS_write(1, "\n", 1)                                                    = 1 <0.000138>
+  0.000239 <... putchar resumed> )                                                      = 10 <0.000528>
+  0.000093 puts("Select operation number to proce"... <unfinished ...>
+  0.000413     SYS_write(1, "Select operation number to proce"..., 36)                  = 36 <0.000261>
+  0.000368 <... puts resumed> )                                                         = 36 <0.000775>
+  0.000118 puts("1. Print to standard out an inte"... <unfinished ...>
+  0.000451     SYS_write(1, "1. Print to standard out an inte"..., 60)                  = 60 <0.000398>
+  0.000498 <... puts resumed> )                                                         = 60 <0.000942>
+  0.000113 puts("2. Create a file" <unfinished ...>
+  0.000343     SYS_write(1, "2. Create a file\n", 17)                                   = 17 <0.000187>
+  0.000283 <... puts resumed> )                                                         = 17 <0.000620>
+  0.000102 puts("3. Operations Menu" <unfinished ...>
+  0.000313     SYS_write(1, "3. Operations Menu\n", 19)                                 = 19 <0.000182>
+  0.000268 <... puts resumed> )                                                         = 19 <0.000575>
+  0.000104 puts("4. Exit Program" <unfinished ...>
+  0.000438     SYS_write(1, "4. Exit Program\n", 16)                                    = 16 <0.000171>
+  0.000258 <... puts resumed> )                                                         = 16 <0.000690>
+  0.000101 getchar(1, 0x55ded6a91260, 0x7ffac50938c0, 0x7ffac4db6154 <unfinished ...>
+  0.000247     SYS_read(0, "4\n", 1024)                                                 = 2 <2.223059>
+  2.223659 <... getchar resumed> )                                                      = 52 <2.223872>
+  0.000312 getchar(0, 0x55ded6a91670, 0x55ded6a91671, 0x7ffac4db6081)                   = 10 <0.000503>
+  0.000610 puts("Exiting Program...." <unfinished ...>
+  0.000250     SYS_write(1, "Exiting Program....\n", 20)                                = 20 <0.000346>
+  0.000407 <... puts resumed> )                                                         = 20 <0.000648>
+  0.000078 exit(0 <unfinished ...>
+  0.000358     SYS_exit_group(0 <no return ...>
+  0.000127 +++ exited (status 0) +++
