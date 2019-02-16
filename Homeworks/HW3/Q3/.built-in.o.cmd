@@ -1,0 +1,1 @@
+cmd_/home/shreya1809/ECEN5013_AESD-S19/Homeworks/HW3/Q3/built-in.o :=  rm -f /home/shreya1809/ECEN5013_AESD-S19/Homeworks/HW3/Q3/built-in.o; ~/buildroot/output/host/usr/bin/arm-linux-ar rcSTPD /home/shreya1809/ECEN5013_AESD-S19/Homeworks/HW3/Q3/built-in.o

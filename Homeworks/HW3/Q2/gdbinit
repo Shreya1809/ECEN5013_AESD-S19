@@ -1,0 +1,6 @@
+file fileoperation
+target extended-remote 10.0.0.16:2008
+remote put fileoperation fileoperation
+set remote exec-file fileoperation
+b main
+run
