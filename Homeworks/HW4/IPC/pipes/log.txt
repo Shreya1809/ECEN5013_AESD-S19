@@ -1,0 +1,185 @@
+------------IPC MECHANISMS -> PIPES--------------
+<1551338613477.891602>PIPE 1 CREATED SUCCESSFULLY
+<1551338613478.227051>PIPE 2 CREATED SUCCESSFULLY
+<1551338613479.040039>FORK SUCCESSFULL
+<1551338613480.767822>[PARENT LOG] Parent Process ID 18384
+<1551338613480.940674>[PARENT LOG] ----- Parent Process Sending data to Child -----
+<1551338613480.958740>[PARENT LOG] Sending < Message : Hello from Parent >
+<1551338613480.971436>[PARENT LOG] Sending < Message size :17 >
+<1551338613480.982910>[PARENT LOG] Sending < Message : IPC pipes Programming >
+<1551338613480.993164>[PARENT LOG] Sending < Message size :21 >
+<1551338613481.003174>[PARENT LOG] Sending < Message : Parent Process >
+<1551338613481.013428>[PARENT LOG] Sending < Message size :14 >
+<1551338613481.023682>[PARENT LOG] Sending < Message : Parent says bye >
+<1551338613481.033691>[PARENT LOG] Sending < Message size :15 >
+<1551338613481.043945>[PARENT LOG] Sending < Timestamp 1551338613480.918213 >
+<1551338613481.060059>[PARENT LOG] Sending < Led Status 0 >
+<1551338613481.070557>[PARENT LOG] Sending < Parent Pid 18384 >
+------------IPC MECHANISMS -> PIPES--------------
+<1551338613477.891602>PIPE 1 CREATED SUCCESSFULLY
+<1551338613478.227051>PIPE 2 CREATED SUCCESSFULLY
+<1551338613481.892578>FORK SUCCESSFULL
+<1551338613484.998291>[CHILD LOG] Child Process ID 18385
+<1551338613485.475098>[CHILD LOG] ----- Child Process Received data from parent -----
+<1551338613485.497803>[CHILD LOG] Received < Message : Hello from Parent >
+<1551338613485.510010>[CHILD LOG] Received < Message size :17 >
+<1551338613485.521973>[CHILD LOG] Received < Message : IPC pipes Programming >
+<1551338613485.532471>[CHILD LOG] Received < Message size :21 >
+<1551338613485.542969>[CHILD LOG] Received < Message : Parent Process >
+<1551338613485.553955>[CHILD LOG] Received < Message size :14 >
+<1551338613485.564209>[CHILD LOG] Received < Message : Parent says bye >
+<1551338613485.574463>[CHILD LOG] Received < Message size :15 >
+<1551338613485.584961>[CHILD LOG] Received < Timestamp 1551338613480.918213 >
+<1551338613485.601807>[CHILD LOG] Received < Led Status 0 >
+<1551338613485.612549>[CHILD LOG] Received < Child Pid 18384 >
+<1551338613485.623535>[CHILD LOG]----- Child Process Sending data to parent -----
+<1551338613485.634277>[CHILD LOG] Sending <<1551338613486.285645>[PARENT LOG] ----- Parent Process Received data from Child -----
+<1551338613486.335205>[PARENT LOG] Received < Message : Hello from Child >
+<1551338613486.346924>[PARENT LOG] Received < Message size :16 >
+<1551338613486.359375>[PARENT LOG] Received < Message : IPC pipes Programming >
+<1551338613486.370361>[PARENT LOG] Received < Message size :21 >
+<1551338613486.381104>[PARENT LOG] Received < Message : Child Process >
+<1551338613486.391357>[PARENT LOG] Received < Message size :13 >
+<1551338613486.401855>[PARENT LOG] Received < Message : Child says bye >
+<1551338613486.411865>[PARENT LOG] Received < Message size :14 >
+<1551338613486.422119>[PARENT LOG] Received < Timestamp 1551338613485.344482 >
+<1551338613486.438477>[PARENT LOG] Received < Led Status 1 >
+<1551338613486.449463>[PARENT LOG] Received < Parent Pid 18385 >
+ Message : Hello from Child >
+<1551338613485.820557>[CHILD LOG] Sending < Message size :16 >
+<1551338613485.842285>[CHILD LOG] Sending < Message : IPC pipes Programming >
+<1551338613485.853760>[CHILD LOG] Sending < Message size :21 >
+<1551338613485.864746>[CHILD LOG] Sending < Message : Child Process >
+<1551338613485.875244>[CHILD LOG] Sending < Message size :13 >
+<1551338613485.885498>[CHILD LOG] Sending < Message : Child says bye >
+<1551338613485.895996>[CHILD LOG] Sending < Message size :14 >
+<1551338613485.906250>[CHILD LOG] Sending < Timestamp 1551338613485.344482 >
+<1551338613485.923096>[CHILD LOG] Sending < Led Status 1 >
+<1551338613485.934082>[CHILD LOG] Sending < Child Pid 18385 >
+<1551338618487.108887>[PARENT LOG] Parent Process ID 18384
+<1551338618487.192627>[PARENT LOG] ----- Parent Process Sending data to Child -----
+<1551338618487.205566>[PARENT LOG] Sending < Message : Hello from Parent >
+<1551338618487.218018>[PARENT LOG] Sending < Message size :17 >
+<1551338618487.228516>[PARENT LOG] Sending < Message : IPC pipes Programming >
+<1551338618487.239014>[PARENT LOG] Sending < Message size :21 >
+<1551338618487.249268>[PARENT LOG] Sending < Message : Parent Process >
+<1551338618487.259766>[PARENT LOG] Sending < Message size :14 >
+<1551338618487.270752>[PARENT LOG] Sending < Message : Parent says bye >
+<1551338618487.281006>[PARENT LOG] Sending < Message size :15 >
+<1551338618487.291016>[PARENT LOG] Sending < Timestamp 1551338618487.183105 >
+<1551338618487.307617>[PARENT LOG] Sending < Led Status 0 >
+<1551338618487.318848>[PARENT LOG] Sending < Parent Pid 18384 >
+<1551338613487.866699>[CHILD LOG] Child Process ID 18385
+<1551338618488.016602>[CHILD LOG] ----- Child Process Received data from parent -----
+<1551338618488.060791>[CHILD LOG] Received < Message : Hello from Parent >
+<1551338618488.073730>[CHILD LOG] Received < Message size :17 >
+<1551338618488.086670>[CHILD LOG] Received < Message : IPC pipes Programming >
+<1551338618488.098145>[CHILD LOG] Received < Message size :21 >
+<1551338618488.108643>[CHILD LOG] Received < Message : Parent Process >
+<1551338618488.118652>[CHILD LOG] Received < Message size :14 >
+<1551338618488.129639>[CHILD LOG] Received < Message : Parent says bye >
+<1551338618488.140381>[CHILD LOG] Received < Message size :15 >
+<1551338618488.151123>[CHILD LOG] Received < Timestamp 1551338618487.183105 >
+<1551338618488.167480>[CHILD LOG] Received < Led Status 0 >
+<1551338618488.178955>[CHILD LOG] Received < Child Pid 18384 >
+<1551338618488.189697>[CHILD LOG]----- Child Process Sending data to parent -----
+<1551338618488.200684>[CHILD LOG] Sending < Message : Hello from Child >
+<1551338618488.339844>[CHILD LOG] Sending < Message size :16 >
+<1551338618488.358398>[CHILD LOG] Sending < Message : IPC pipes Programming >
+<1551338618488.370850>[CHILD LOG] Sending < Message size :21 >
+<1551338618488.381592>[CHILD LOG] Sending < Message : Child Process >
+<1551338618488.392334>[CHILD LOG] Sending < Message size :13 >
+<1551338618488.403076>[CHILD LOG] Sending < Message : Child says bye >
+<1551338618488.413818>[CHILD LOG] Sending < Message size :14 >
+<1551338618488.424072>[CHILD LOG] Sending < Timestamp 1551338613487.936279 >
+<1551338618488.440186>[CHILD LOG] Sending < Led Status 1 >
+<1551338618488.450928>[CHILD LOG] Sending < Child Pid 18385 >
+<1551338618490.915039>[PARENT LOG] ----- Parent Process Received data from Child -----
+<1551338618490.986328>[PARENT LOG] Received < Message : Hello from Child >
+<1551338618490.999756>[PARENT LOG] Received < Message size :16 >
+<1551338618491.015625>[PARENT LOG] Received < Message : IPC pipes Programming >
+<1551338618491.026855>[PARENT LOG] Received < Message size :21 >
+<1551338618491.037598>[PARENT LOG] Received < Message : Child Process >
+<1551338618491.048096>[PARENT LOG] Received < Message size :13 >
+<1551338618491.058350>[PARENT LOG] Received < Message : Child says bye >
+<1551338618491.068359>[PARENT LOG] Received < Message size :14 >
+<1551338618491.078369>[PARENT LOG] Received < Timestamp 1551338613487.936279 >
+<1551338618491.094727>[PARENT LOG] Received < Led Status 1 >
+<1551338618491.105469>[PARENT LOG] Received < Parent Pid 18385 >
+<1551338623494.253906>[PARENT LOG] Parent Process ID 18384
+<1551338623494.337402>[PARENT LOG] ----- Parent Process Sending data to Child -----
+<1551338623494.350342>[PARENT LOG] Sending < Message : Hello from Parent >
+<1551338623494.363525>[PARENT LOG] Sending < Message size :17 >
+<1551338623494.374512>[PARENT LOG] Sending < Message : IPC pipes Programming >
+<1551338623494.384766>[PARENT LOG] Sending < Message size :21 >
+<1551338623494.395020>[PARENT LOG] Sending < Message : Parent Process >
+<1551338623494.405518>[PARENT LOG] Sending < Message size :14 >
+<1551338623494.416504>[PARENT LOG] Sending < Message : Parent says bye >
+<1551338623494.427002>[PARENT LOG] Sending < Message size :15 >
+<1551338623494.437256>[PARENT LOG] Sending < Timestamp 1551338623494.327637 >
+<1551338623494.454346>[PARENT LOG] Sending < Led Status 0 >
+<1551338623494.465576>[PARENT LOG] Sending < Parent Pid 18384 >
+<1551338618488.783936>[CHILD LOG] Child Process ID 18385
+<1551338623495.134277>[CHILD LOG] ----- Child Process Received data from parent -----
+<1551338623495.175049>[CHILD LOG] Received < Message : Hello from Parent >
+<1551338623495.187012>[CHILD LOG] Received < Message size :17 >
+<1551338623495.199951>[CHILD LOG] Received < Message : IPC pipes Programming >
+<1551338623495.211182>[CHILD LOG] Received < Message size :21 >
+<1551338623495.221436>[CHILD LOG] Received < Message : Parent Process >
+<1551338623495.232422>[CHILD LOG] Received < Message size :14 >
+<1551338623495.242920>[CHILD LOG] Received < Message : Parent says bye >
+<1551338623495.254150>[CHILD LOG] Received < Message size :15 >
+<1551338623495.264648>[CHILD LOG] Received < Timestamp 1551338623494.327637 >
+<1551338623495.281494>[CHILD LOG] Received < Led Status 0 >
+<1551338623495.292480>[CHILD LOG] Received < Child Pid 18384 >
+<1551338623495.304199>[CHILD LOG]----- Child Process Sending data to parent -----
+<1551338623495.314453>[CHILD LOG] Sending < Message : Hello from Child >
+<1551338623495.444824>[CHILD LOG] Sending < Message size :16 >
+<1551338623495.464600>[CHILD LOG] Sending < Message : IPC pipes Programming >
+<1551338623495.476318>[CHILD LOG] Sending < Message size :21 >
+<1551338623495.487305>[CHILD LOG] Sending < Message : Child Process >
+<1551338623495.497803>[CHILD LOG] Sending < Message size :13 >
+<1551338623495.508301>[CHILD LOG] Sending < Message : Child says bye >
+<1551338623495.518799>[CHILD LOG] Sending < Message size :14 >
+<1551338623495.529053>[CHILD LOG] Sending < Timestamp 1551338618488.824463 >
+<1551338623495.546143>[CHILD LOG] Sending < Led Status 1 >
+<1551338623495.557129>[CHILD LOG] Sending < Child Pid 18385 >
+<1551338623497.855225>[PARENT LOG] ----- Parent Process Received data from Child -----
+<1551338623497.924561>[PARENT LOG] Received < Message : Hello from Child >
+<1551338623497.937500>[PARENT LOG] Received < Message size :16 >
+<1551338623497.953369>[PARENT LOG] Received < Message : IPC pipes Programming >
+<1551338623497.965088>[PARENT LOG] Received < Message size :21 >
+<1551338623497.975586>[PARENT LOG] Received < Message : Child Process >
+<1551338623497.986328>[PARENT LOG] Received < Message size :13 >
+<1551338623497.996582>[PARENT LOG] Received < Message : Child says bye >
+<1551338623498.006836>[PARENT LOG] Received < Message size :14 >
+<1551338623498.017090>[PARENT LOG] Received < Timestamp 1551338618488.824463 >
+<1551338623498.033936>[PARENT LOG] Received < Led Status 1 >
+<1551338623498.044434>[PARENT LOG] Received < Parent Pid 18385 >
+<1551338623495.873047>[CHILD LOG] Child Process ID 18385
+<1551338624100.490723>[CHILD LOG] ----- Child Process Received data from parent -----
+<1551338624100.542236>[CHILD LOG] Received < Message :  >
+<1551338624100.555420>[CHILD LOG] Received < Message size :0 >
+<1551338624100.570068>[CHILD LOG] Received < Message :  >
+<1551338624100.580811>[CHILD LOG] Received < Message size :0 >
+<1551338624100.591064>[CHILD LOG] Received < Message :  >
+<1551338624100.602051>[CHILD LOG] Received < Message size :0 >
+<1551338624100.612061>[CHILD LOG] Received < Message :  >
+<1551338624100.622559>[CHILD LOG] Received < Message size :0 >
+<1551338624100.632812>[CHILD LOG] Received < Timestamp 0.000000 >
+<1551338624100.646240>[CHILD LOG] Received < Led Status 0 >
+<1551338624100.656250>[CHILD LOG] Received < Child Pid 0 >
+<1551338624100.666504>[CHILD LOG]----- Child Process Sending data to parent -----
+<1551338624100.677490>[CHILD LOG] Sending < Message : Hello from Child >
+<1551338624100.687988>[CHILD LOG] Sending < Message size :16 >
+<1551338624100.943848>[CHILD LOG] Sending < Message : IPC pipes Programming >
+<1551338624100.967285>[CHILD LOG] Sending < Message size :21 >
+<1551338624100.979248>[CHILD LOG] Sending < Message : Child Process >
+<1551338624100.989990>[CHILD LOG] Sending < Message size :13 >
+<1551338624101.000488>[CHILD LOG] Sending < Message : Child says bye >
+<1551338624101.010254>[CHILD LOG] Sending < Message size :14 >
+<1551338624101.020020>[CHILD LOG] Sending < Timestamp 1551338623495.910889 >
+<1551338624101.036865>[CHILD LOG] Sending < Led Status 1 >
+<1551338624101.047119>[CHILD LOG] Sending < Child Pid 18385 >
+SIGINT! Received! <1551338624101.446045> Terminating pipes program....
+SIGINT! Received! <1551338624104.540771> Terminating pipes program....
