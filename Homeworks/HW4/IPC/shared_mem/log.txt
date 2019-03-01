@@ -1,0 +1,227 @@
+------------IPC MECHANISMS -> SHARED MEMORY--------------
+<1551339455275.213379>[PROCESS 2 LOG] Process ID 22875
+<1551339455275.525391>[PROCESS 2 LOG] Named Semaphore Opened
+<1551339455275.638916>[PROCESS 2 LOG] POSIX Shared Memory Opened
+<1551339455278.380615>[PROCESS 2 LOG] Waiting for SEM from Process 1
+<1551339456279.959717>[PROCESS 2 LOG] ------Recieved Data from Process 1-----
+<1551339456280.037354>[PROCESS 2 LOG] Received < Message : Hello from Process 1 >
+<1551339456280.051514>[PROCESS 2 LOG] Received < Message size :20 >
+<1551339456280.068604>[PROCESS 2 LOG] Received < Message : IPC poxis shared memory Programming >
+<1551339456280.079834>[PROCESS 2 LOG] Received < Message size :35 >
+<1551339456280.090820>[PROCESS 2 LOG] Received < Message : Process 1 string >
+<1551339456280.101562>[PROCESS 2 LOG] Received < Message size :16 >
+<1551339456280.113037>[PROCESS 2 LOG] Received < Message : Process 1 says bye >
+<1551339456280.123779>[PROCESS 2 LOG] Received < Message size :18 >
+<1551339456280.134521>[PROCESS 2 LOG] Received < Timestamp 1551339452356.208740 >
+<1551339456280.151367>[PROCESS 2 LOG] Received < Led Status 0 >
+<1551339456280.162354>[PROCESS 2 LOG] Received < Process 1 Pid 22858 >
+<1551339456280.173828>[PROCESS 2 LOG] -----Copying Data by Process 2 to Shared Memory------
+<1551339456280.185791>[PROCESS 2 LOG] Sending < Message : Hello from Process 2 >
+<1551339456280.435059>[PROCESS 2 LOG] Sending < Message size :20 >
+<1551339456280.457031>[PROCESS 2 LOG] Sending < Message : IPC poxis shared memory Programming >
+<1551339456280.468994>[PROCESS 2 LOG] Sending < Message size :35 >
+<1551339456280.479736>[PROCESS 2 LOG] Sending < Message : Process 2 string >
+<1551339456280.490479>[PROCESS 2 LOG] Sending < Message size :16 >
+<1551339456280.501221>[PROCESS 2 LOG] Sending < Message : Process 2 says bye >
+<1551339456280.511963>[PROCESS 2 LOG] Sending < Message size :18 >
+<1551339456280.522461>[PROCESS 2 LOG] Sending < Timestamp 1551339455277.002197 >
+<1551339456280.539307>[PROCESS 2 LOG] Sending < Led Status 0 >
+<1551339456280.550537>[PROCESS 2 LOG] Sending < Process 2 Pid 22875 >
+<1551339457280.891602>[PROCESS 2 LOG] Posted SEM to process 1
+<1551339458281.796875>[PROCESS 2 LOG] Waiting for SEM from Process 1
+<1551339457281.621826>[PROCESS 1 LOG] Waiting for SEM from Process 2
+<1551339458282.297119>[PROCESS 1 LOG] ------Recieved Data from Process 1-----
+<1551339458282.337646>[PROCESS 1 LOG] Received < Message : Hello from Process 2 >
+<1551339458282.352051>[PROCESS 1 LOG] Received < Message size :20 >
+<1551339458282.369141>[PROCESS 1 LOG] Received < Message : IPC poxis shared memory Programming >
+<1551339458282.380127>[PROCESS 1 LOG] Received < Message size :35 >
+<1551339458282.390869>[PROCESS 1 LOG] Received < Message : Process 2 string >
+<1551339458282.401855>[PROCESS 1 LOG] Received < Message size :16 >
+<1551339458282.411865>[PROCESS 1 LOG] Received < Message : Process 2 says bye >
+<1551339458282.422119>[PROCESS 1 LOG] Received < Message size :18 >
+<1551339458282.432617>[PROCESS 1 LOG] Received < Timestamp 1551339455277.002197 >
+<1551339458282.449707>[PROCESS 1 LOG] Received < Led Status 0 >
+<1551339458282.460205>[PROCESS 1 LOG] Received < Process 2 Pid 22875 >
+<1551339459283.199463>[PROCESS 1 LOG] -----Copying Data by Process 1 to Shared Memory------
+<1551339459283.280762>[PROCESS 1 LOG] Sending < Message : Hello from Process 1 >
+<1551339459283.294189>[PROCESS 1 LOG] Sending < Message size :20 >
+<1551339459283.310547>[PROCESS 1 LOG] Sending < Message : IPC poxis shared memory Programming >
+<1551339459283.321045>[PROCESS 1 LOG] Sending < Message size :35 >
+<1551339459283.331543>[PROCESS 1 LOG] Sending < Message : Process 1 string >
+<1551339459283.341797>[PROCESS 1 LOG] Sending < Message size :16 >
+<1551339459283.352295>[PROCESS 1 LOG] Sending < Message : Process 1 says bye >
+<1551339459283.363281>[PROCESS 1 LOG] Sending < Message size :18 >
+<1551339459283.373779>[PROCESS 1 LOG] Sending < Timestamp 1551339452356.208740 >
+<1551339459283.389893>[PROCESS 1 LOG] Sending < Led Status 0 >
+<1551339459283.400879>[PROCESS 1 LOG] Sending < Process 1 Pid 22858 >
+<1551339459283.428955>[PROCESS 1 LOG] Posted SEM to process 2
+<1551339460285.231689>[PROCESS 2 LOG] ------Recieved Data from Process 1-----
+<1551339460285.307861>[PROCESS 2 LOG] Received < Message : Hello from Process 1 >
+<1551339460285.321533>[PROCESS 2 LOG] Received < Message size :20 >
+<1551339460285.338623>[PROCESS 2 LOG] Received < Message : IPC poxis shared memory Programming >
+<1551339460285.349365>[PROCESS 2 LOG] Received < Message size :35 >
+<1551339460285.360840>[PROCESS 2 LOG] Received < Message : Process 1 string >
+<1551339460285.373047>[PROCESS 2 LOG] Received < Message size :16 >
+<1551339460285.384033>[PROCESS 2 LOG] Received < Message : Process 1 says bye >
+<1551339460285.394531>[PROCESS 2 LOG] Received < Message size :18 >
+<1551339460285.405518>[PROCESS 2 LOG] Received < Timestamp 1551339452356.208740 >
+<1551339460285.422119>[PROCESS 2 LOG] Received < Led Status 0 >
+<1551339460285.433594>[PROCESS 2 LOG] Received < Process 1 Pid 22858 >
+<1551339460285.444824>[PROCESS 2 LOG] -----Copying Data by Process 2 to Shared Memory------
+<1551339460285.457031>[PROCESS 2 LOG] Sending < Message : Hello from Process 2 >
+<1551339460285.706543>[PROCESS 2 LOG] Sending < Message size :20 >
+<1551339460285.730225>[PROCESS 2 LOG] Sending < Message : IPC poxis shared memory Programming >
+<1551339460285.742188>[PROCESS 2 LOG] Sending < Message size :35 >
+<1551339460285.753418>[PROCESS 2 LOG] Sending < Message : Process 2 string >
+<1551339460285.764404>[PROCESS 2 LOG] Sending < Message size :16 >
+<1551339460285.774902>[PROCESS 2 LOG] Sending < Message : Process 2 says bye >
+<1551339460285.785400>[PROCESS 2 LOG] Sending < Message size :18 >
+<1551339460285.795898>[PROCESS 2 LOG] Sending < Timestamp 1551339455277.002197 >
+<1551339460285.812744>[PROCESS 2 LOG] Sending < Led Status 0 >
+<1551339460285.823730>[PROCESS 2 LOG] Sending < Process 2 Pid 22875 >
+<1551339461286.116455>[PROCESS 2 LOG] Posted SEM to process 1
+<1551339461286.635254>[PROCESS 1 LOG] Waiting for SEM from Process 2
+<1551339462286.854492>[PROCESS 1 LOG] ------Recieved Data from Process 1-----
+<1551339462286.909424>[PROCESS 1 LOG] Received < Message : Hello from Process 2 >
+<1551339462286.923340>[PROCESS 1 LOG] Received < Message size :20 >
+<1551339462286.939941>[PROCESS 1 LOG] Received < Message : IPC poxis shared memory Programming >
+<1551339462286.950684>[PROCESS 1 LOG] Received < Message size :35 >
+<1551339462286.961670>[PROCESS 1 LOG] Received < Message : Process 2 string >
+<1551339462286.972168>[PROCESS 1 LOG] Received < Message size :16 >
+<1551339462286.982910>[PROCESS 1 LOG] Received < Message : Process 2 says bye >
+<1551339462286.993164>[PROCESS 1 LOG] Received < Message size :18 >
+<1551339462287.003906>[PROCESS 1 LOG] Received < Timestamp 1551339455277.002197 >
+<1551339462287.020264>[PROCESS 1 LOG] Received < Led Status 0 >
+<1551339462287.030762>[PROCESS 1 LOG] Received < Process 2 Pid 22875 >
+<1551339462288.970215>[PROCESS 2 LOG] Waiting for SEM from Process 1
+<1551339463287.712158>[PROCESS 1 LOG] -----Copying Data by Process 1 to Shared Memory------
+<1551339463287.798584>[PROCESS 1 LOG] Sending < Message : Hello from Process 1 >
+<1551339463287.813721>[PROCESS 1 LOG] Sending < Message size :20 >
+<1551339463287.829346>[PROCESS 1 LOG] Sending < Message : IPC poxis shared memory Programming >
+<1551339463287.840332>[PROCESS 1 LOG] Sending < Message size :35 >
+<1551339463287.850830>[PROCESS 1 LOG] Sending < Message : Process 1 string >
+<1551339463287.861084>[PROCESS 1 LOG] Sending < Message size :16 >
+<1551339463287.871582>[PROCESS 1 LOG] Sending < Message : Process 1 says bye >
+<1551339463287.881592>[PROCESS 1 LOG] Sending < Message size :18 >
+<1551339463287.892090>[PROCESS 1 LOG] Sending < Timestamp 1551339452356.208740 >
+<1551339463287.908447>[PROCESS 1 LOG] Sending < Led Status 0 >
+<1551339463287.919189>[PROCESS 1 LOG] Sending < Process 1 Pid 22858 >
+<1551339463287.947754>[PROCESS 1 LOG] Posted SEM to process 2
+<1551339464289.370850>[PROCESS 2 LOG] ------Recieved Data from Process 1-----
+<1551339464289.450439>[PROCESS 2 LOG] Received < Message : Hello from Process 1 >
+<1551339464289.465332>[PROCESS 2 LOG] Received < Message size :20 >
+<1551339464289.481689>[PROCESS 2 LOG] Received < Message : IPC poxis shared memory Programming >
+<1551339464289.493164>[PROCESS 2 LOG] Received < Message size :35 >
+<1551339464289.504395>[PROCESS 2 LOG] Received < Message : Process 1 string >
+<1551339464289.515381>[PROCESS 2 LOG] Received < Message size :16 >
+<1551339464289.526367>[PROCESS 2 LOG] Received < Message : Process 1 says bye >
+<1551339464289.537354>[PROCESS 2 LOG] Received < Message size :18 >
+<1551339464289.548340>[PROCESS 2 LOG] Received < Timestamp 1551339452356.208740 >
+<1551339464289.565674>[PROCESS 2 LOG] Received < Led Status 0 >
+<1551339464289.576904>[PROCESS 2 LOG] Received < Process 1 Pid 22858 >
+<1551339464289.588379>[PROCESS 2 LOG] -----Copying Data by Process 2 to Shared Memory------
+<1551339464289.600586>[PROCESS 2 LOG] Sending < Message : Hello from Process 2 >
+<1551339464289.972412>[PROCESS 2 LOG] Sending < Message size :20 >
+<1551339464289.998535>[PROCESS 2 LOG] Sending < Message : IPC poxis shared memory Programming >
+<1551339464290.010254>[PROCESS 2 LOG] Sending < Message size :35 >
+<1551339464290.021240>[PROCESS 2 LOG] Sending < Message : Process 2 string >
+<1551339464290.031982>[PROCESS 2 LOG] Sending < Message size :16 >
+<1551339464290.042480>[PROCESS 2 LOG] Sending < Message : Process 2 says bye >
+<1551339464290.052734>[PROCESS 2 LOG] Sending < Message size :18 >
+<1551339464290.063232>[PROCESS 2 LOG] Sending < Timestamp 1551339455277.002197 >
+<1551339464290.079590>[PROCESS 2 LOG] Sending < Led Status 0 >
+<1551339464290.090576>[PROCESS 2 LOG] Sending < Process 2 Pid 22875 >
+<1551339465290.949951>[PROCESS 2 LOG] Posted SEM to process 1
+<1551339466291.806641>[PROCESS 2 LOG] Waiting for SEM from Process 1
+<1551339465291.547119>[PROCESS 1 LOG] Waiting for SEM from Process 2
+<1551339466292.302490>[PROCESS 1 LOG] ------Recieved Data from Process 1-----
+<1551339466292.343994>[PROCESS 1 LOG] Received < Message : Hello from Process 2 >
+<1551339466292.357910>[PROCESS 1 LOG] Received < Message size :20 >
+<1551339466292.374268>[PROCESS 1 LOG] Received < Message : IPC poxis shared memory Programming >
+<1551339466292.385254>[PROCESS 1 LOG] Received < Message size :35 >
+<1551339466292.396729>[PROCESS 1 LOG] Received < Message : Process 2 string >
+<1551339466292.407227>[PROCESS 1 LOG] Received < Message size :16 >
+<1551339466292.417969>[PROCESS 1 LOG] Received < Message : Process 2 says bye >
+<1551339466292.428711>[PROCESS 1 LOG] Received < Message size :18 >
+<1551339466292.438721>[PROCESS 1 LOG] Received < Timestamp 1551339455277.002197 >
+<1551339466292.455811>[PROCESS 1 LOG] Received < Led Status 0 >
+<1551339466292.467285>[PROCESS 1 LOG] Received < Process 2 Pid 22875 >
+<1551339467293.178223>[PROCESS 1 LOG] -----Copying Data by Process 1 to Shared Memory------
+<1551339467293.261230>[PROCESS 1 LOG] Sending < Message : Hello from Process 1 >
+<1551339467293.275146>[PROCESS 1 LOG] Sending < Message size :20 >
+<1551339467293.291016>[PROCESS 1 LOG] Sending < Message : IPC poxis shared memory Programming >
+<1551339467293.302246>[PROCESS 1 LOG] Sending < Message size :35 >
+<1551339467293.312500>[PROCESS 1 LOG] Sending < Message : Process 1 string >
+<1551339467293.322754>[PROCESS 1 LOG] Sending < Message size :16 >
+<1551339467293.333008>[PROCESS 1 LOG] Sending < Message : Process 1 says bye >
+<1551339467293.343262>[PROCESS 1 LOG] Sending < Message size :18 >
+<1551339467293.353516>[PROCESS 1 LOG] Sending < Timestamp 1551339452356.208740 >
+<1551339467293.369873>[PROCESS 1 LOG] Sending < Led Status 0 >
+<1551339467293.380615>[PROCESS 1 LOG] Sending < Process 1 Pid 22858 >
+<1551339467293.407959>[PROCESS 1 LOG] Posted SEM to process 2
+<1551339468295.005371>[PROCESS 2 LOG] ------Recieved Data from Process 1-----
+<1551339468295.077393>[PROCESS 2 LOG] Received < Message : Hello from Process 1 >
+<1551339468295.092773>[PROCESS 2 LOG] Received < Message size :20 >
+<1551339468295.108398>[PROCESS 2 LOG] Received < Message : IPC poxis shared memory Programming >
+<1551339468295.119385>[PROCESS 2 LOG] Received < Message size :35 >
+<1551339468295.131104>[PROCESS 2 LOG] Received < Message : Process 1 string >
+<1551339468295.141846>[PROCESS 2 LOG] Received < Message size :16 >
+<1551339468295.153320>[PROCESS 2 LOG] Received < Message : Process 1 says bye >
+<1551339468295.164062>[PROCESS 2 LOG] Received < Message size :18 >
+<1551339468295.175537>[PROCESS 2 LOG] Received < Timestamp 1551339452356.208740 >
+<1551339468295.192383>[PROCESS 2 LOG] Received < Led Status 0 >
+<1551339468295.203369>[PROCESS 2 LOG] Received < Process 1 Pid 22858 >
+<1551339468295.214844>[PROCESS 2 LOG] -----Copying Data by Process 2 to Shared Memory------
+<1551339468295.226807>[PROCESS 2 LOG] Sending < Message : Hello from Process 2 >
+<1551339468295.564941>[PROCESS 2 LOG] Sending < Message size :20 >
+<1551339468295.589111>[PROCESS 2 LOG] Sending < Message : IPC poxis shared memory Programming >
+<1551339468295.600830>[PROCESS 2 LOG] Sending < Message size :35 >
+<1551339468295.611572>[PROCESS 2 LOG] Sending < Message : Process 2 string >
+<1551339468295.622314>[PROCESS 2 LOG] Sending < Message size :16 >
+<1551339468295.633057>[PROCESS 2 LOG] Sending < Message : Process 2 says bye >
+<1551339468295.644287>[PROCESS 2 LOG] Sending < Message size :18 >
+<1551339468295.655029>[PROCESS 2 LOG] Sending < Timestamp 1551339455277.002197 >
+<1551339468295.671631>[PROCESS 2 LOG] Sending < Led Status 0 >
+<1551339468295.682373>[PROCESS 2 LOG] Sending < Process 2 Pid 22875 >
+<1551339468460.047607>[PROCESS 2 LOG] Posted SEM to process 1
+SIGINT! Received! [PROCESS 2] <1551339469460.673828> Terminating shared mem program....
+<1551339469296.927979>[PROCESS 1 LOG] Waiting for SEM from Process 2
+<1551339470297.167480>[PROCESS 1 LOG] ------Recieved Data from Process 1-----
+<1551339470297.235352>[PROCESS 1 LOG] Received < Message : Hello from Process 2 >
+<1551339470297.250000>[PROCESS 1 LOG] Received < Message size :20 >
+<1551339470297.265869>[PROCESS 1 LOG] Received < Message : IPC poxis shared memory Programming >
+<1551339470297.277100>[PROCESS 1 LOG] Received < Message size :35 >
+<1551339470297.287842>[PROCESS 1 LOG] Received < Message : Process 2 string >
+<1551339470297.298584>[PROCESS 1 LOG] Received < Message size :16 >
+<1551339470297.309082>[PROCESS 1 LOG] Received < Message : Process 2 says bye >
+<1551339470297.319824>[PROCESS 1 LOG] Received < Message size :18 >
+<1551339470297.330078>[PROCESS 1 LOG] Received < Timestamp 1551339455277.002197 >
+<1551339470297.346436>[PROCESS 1 LOG] Received < Led Status 0 >
+<1551339470297.357422>[PROCESS 1 LOG] Received < Process 2 Pid 22875 >
+<1551339471298.101562>[PROCESS 1 LOG] -----Copying Data by Process 1 to Shared Memory------
+<1551339471298.183350>[PROCESS 1 LOG] Sending < Message : Hello from Process 1 >
+<1551339471298.197754>[PROCESS 1 LOG] Sending < Message size :20 >
+<1551339471298.213623>[PROCESS 1 LOG] Sending < Message : IPC poxis shared memory Programming >
+<1551339471298.224609>[PROCESS 1 LOG] Sending < Message size :35 >
+<1551339471298.235107>[PROCESS 1 LOG] Sending < Message : Process 1 string >
+<1551339471298.245361>[PROCESS 1 LOG] Sending < Message size :16 >
+<1551339471298.255615>[PROCESS 1 LOG] Sending < Message : Process 1 says bye >
+<1551339471298.266113>[PROCESS 1 LOG] Sending < Message size :18 >
+<1551339471298.276367>[PROCESS 1 LOG] Sending < Timestamp 1551339452356.208740 >
+<1551339471298.292725>[PROCESS 1 LOG] Sending < Led Status 0 >
+<1551339471298.303955>[PROCESS 1 LOG] Sending < Process 1 Pid 22858 >
+<1551339471298.331787>[PROCESS 1 LOG] Posted SEM to process 2
+<1551339472402.913086>[PROCESS 1 LOG] Waiting for SEM from Process 2
+<1551339473403.137207>[PROCESS 1 LOG] ------Recieved Data from Process 1-----
+<1551339473403.188721>[PROCESS 1 LOG] Received < Message : Hello from Process 1 >
+<1551339473403.202881>[PROCESS 1 LOG] Received < Message size :20 >
+<1551339473403.218506>[PROCESS 1 LOG] Received < Message : IPC poxis shared memory Programming >
+<1551339473403.229492>[PROCESS 1 LOG] Received < Message size :35 >
+<1551339473403.240234>[PROCESS 1 LOG] Received < Message : Process 1 string >
+<1551339473403.250977>[PROCESS 1 LOG] Received < Message size :16 >
+<1551339473403.261230>[PROCESS 1 LOG] Received < Message : Process 1 says bye >
+<1551339473403.271240>[PROCESS 1 LOG] Received < Message size :18 >
+<1551339473403.281738>[PROCESS 1 LOG] Received < Timestamp 1551339452356.208740 >
+<1551339473403.298340>[PROCESS 1 LOG] Received < Led Status 0 >
+<1551339473403.309326>[PROCESS 1 LOG] Received < Process 2 Pid 22858 >
+SIGINT! Received! [PROCESS 1] <1551339473403.928223> Terminating shared mem program....
