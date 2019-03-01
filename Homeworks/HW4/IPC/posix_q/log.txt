@@ -1,0 +1,196 @@
+------------IPC MECHANISMS -> POSIX MQ--------------
+<1551338959607.015869>[SERVER LOG] Server Process ID 20225
+<1551338959769.859863>[CLIENT LOG] -------Client Process Sending data to Server-------
+<1551338959769.942383>[CLIENT LOG] Sending < Message : Hello from Client >
+<1551338959769.957520>[CLIENT LOG] Sending < Message size :17 >
+<1551338959769.973633>[CLIENT LOG] Sending < Message : IPC poxis queue Programming >
+<1551338959769.984863>[CLIENT LOG] Sending < Message size :27 >
+<1551338959769.995850>[CLIENT LOG] Sending < Message : Client Process >
+<1551338959770.006592>[CLIENT LOG] Sending < Message size :14 >
+<1551338959770.017090>[CLIENT LOG] Sending < Message : Client says bye >
+<1551338959770.027100>[CLIENT LOG] Sending < Message size :15 >
+<1551338959770.037354>[CLIENT LOG] Sending < Timestamp 1551338954767.803955 >
+<1551338959770.054199>[CLIENT LOG] Sending < Led Status 0 >
+<1551338959770.065186>[CLIENT LOG] Sending < Client Pid 20208 >
+<1551338959770.520996>[SERVER LOG] -------Server Process Received data from Client-------
+<1551338959770.571533>[SERVER LOG] Received < Message : Hello from Client >
+<1551338959770.584229>[SERVER LOG] Received < Message size :17 >
+<1551338959770.597900>[SERVER LOG] Received < Message : IPC poxis queue Programming >
+<1551338959770.608154>[SERVER LOG] Received < Message size :27 >
+<1551338959770.618652>[SERVER LOG] Received < Message : Client Process >
+<1551338959770.628906>[SERVER LOG] Received < Message size :14 >
+<1551338959770.639893>[SERVER LOG] Received < Message : Client says bye >
+<1551338959770.650391>[SERVER LOG] Received < Message size :15 >
+<1551338959770.660645>[SERVER LOG] Received < Timestamp 1551338954767.803955 >
+<1551338959770.677734>[SERVER LOG] Received < Led Status 0 >
+<1551338959770.688477>[SERVER LOG] Received < Client Pid 20208 >
+<1551338959771.903076>[SERVER LOG] -------Server Process Sending data to Client-------
+<1551338959771.960205>[SERVER LOG] Sending < Message : Hello from Server >
+<1551338959771.972168>[SERVER LOG] Sending < Message size :17 >
+<1551338959771.988281>[SERVER LOG] Sending < Message : IPC poxis queue Programming >
+<1551338959771.999756>[SERVER LOG] Sending < Message size :27 >
+<1551338959772.010742>[SERVER LOG] Sending < Message : Server Process >
+<1551338959772.021484>[SERVER LOG] Sending < Message size :14 >
+<1551338959772.031738>[SERVER LOG] Sending < Message : Server says bye >
+<1551338959772.041992>[SERVER LOG] Sending < Message size :15 >
+<1551338959772.052246>[SERVER LOG] Sending < Timestamp 1551338959608.436035 >
+<1551338959772.068848>[SERVER LOG] Sending < Led Status 0 >
+<1551338959772.079590>[SERVER LOG] Sending < Server Pid 20225 >
+<1551338959772.523682>[CLIENT LOG] -------Client Process Received data from Server-------
+<1551338959772.575195>[CLIENT LOG] Received < Message : Hello from Server >
+<1551338959772.587402>[CLIENT LOG] Received < Message size :17 >
+<1551338959772.599609>[CLIENT LOG] Received < Message : IPC poxis queue Programming >
+<1551338959772.610596>[CLIENT LOG] Received < Message size :27 >
+<1551338959772.621094>[CLIENT LOG] Received < Message : Server Process >
+<1551338959772.631348>[CLIENT LOG] Received < Message size :14 >
+<1551338959772.642334>[CLIENT LOG] Received < Message : Server says bye >
+<1551338959772.652832>[CLIENT LOG] Received < Message size :15 >
+<1551338959772.663330>[CLIENT LOG] Received < Timestamp 1551338959608.436035 >
+<1551338959772.679932>[CLIENT LOG] Received < Led Status 0 >
+<1551338959772.691162>[CLIENT LOG] Received < Server Pid 20225 >
+<1551338964773.445068>[CLIENT LOG] -------Client Process Sending data to Server-------
+<1551338964773.533691>[CLIENT LOG] Sending < Message : Hello from Client >
+<1551338964773.547119>[CLIENT LOG] Sending < Message size :17 >
+<1551338964773.562988>[CLIENT LOG] Sending < Message : IPC poxis queue Programming >
+<1551338964773.574219>[CLIENT LOG] Sending < Message size :27 >
+<1551338964773.586426>[CLIENT LOG] Sending < Message : Client Process >
+<1551338964773.596924>[CLIENT LOG] Sending < Message size :14 >
+<1551338964773.607422>[CLIENT LOG] Sending < Message : Client says bye >
+<1551338964773.617676>[CLIENT LOG] Sending < Message size :15 >
+<1551338964773.628174>[CLIENT LOG] Sending < Timestamp 1551338954767.803955 >
+<1551338964773.645020>[CLIENT LOG] Sending < Led Status 0 >
+<1551338964773.656494>[CLIENT LOG] Sending < Client Pid 20208 >
+<1551338964774.853516>[SERVER LOG] -------Server Process Received data from Client-------
+<1551338964774.921875>[SERVER LOG] Received < Message : Hello from Client >
+<1551338964774.935791>[SERVER LOG] Received < Message size :17 >
+<1551338964774.949707>[SERVER LOG] Received < Message : IPC poxis queue Programming >
+<1551338964774.960205>[SERVER LOG] Received < Message size :27 >
+<1551338964774.970215>[SERVER LOG] Received < Message : Client Process >
+<1551338964774.980713>[SERVER LOG] Received < Message size :14 >
+<1551338964774.991943>[SERVER LOG] Received < Message : Client says bye >
+<1551338964775.002441>[SERVER LOG] Received < Message size :15 >
+<1551338964775.012695>[SERVER LOG] Received < Timestamp 1551338954767.803955 >
+<1551338964775.029785>[SERVER LOG] Received < Led Status 0 >
+<1551338964775.040771>[SERVER LOG] Received < Client Pid 20208 >
+<1551338964779.072998>[SERVER LOG] -------Server Process Sending data to Client-------
+<1551338964779.132812>[SERVER LOG] Sending < Message : Hello from Server >
+<1551338964779.145996>[SERVER LOG] Sending < Message size :17 >
+<1551338964779.159668>[SERVER LOG] Sending < Message : IPC poxis queue Programming >
+<1551338964779.171387>[SERVER LOG] Sending < Message size :27 >
+<1551338964779.182129>[SERVER LOG] Sending < Message : Server Process >
+<1551338964779.193115>[SERVER LOG] Sending < Message size :14 >
+<1551338964779.203369>[SERVER LOG] Sending < Message : Server says bye >
+<1551338964779.213867>[SERVER LOG] Sending < Message size :15 >
+<1551338964779.224121>[SERVER LOG] Sending < Timestamp 1551338959608.436035 >
+<1551338964779.240967>[SERVER LOG] Sending < Led Status 0 >
+<1551338964779.251709>[SERVER LOG] Sending < Server Pid 20225 >
+<1551338964780.689209>[CLIENT LOG] -------Client Process Received data from Server-------
+<1551338964780.754639>[CLIENT LOG] Received < Message : Hello from Server >
+<1551338964780.767578>[CLIENT LOG] Received < Message size :17 >
+<1551338964780.782227>[CLIENT LOG] Received < Message : IPC poxis queue Programming >
+<1551338964780.792725>[CLIENT LOG] Received < Message size :27 >
+<1551338964780.803223>[CLIENT LOG] Received < Message : Server Process >
+<1551338964780.813232>[CLIENT LOG] Received < Message size :14 >
+<1551338964780.824219>[CLIENT LOG] Received < Message : Server says bye >
+<1551338964780.834717>[CLIENT LOG] Received < Message size :15 >
+<1551338964780.845215>[CLIENT LOG] Received < Timestamp 1551338959608.436035 >
+<1551338964780.861816>[CLIENT LOG] Received < Led Status 0 >
+<1551338964780.872559>[CLIENT LOG] Received < Server Pid 20225 >
+<1551338969782.201660>[CLIENT LOG] -------Client Process Sending data to Server-------
+<1551338969782.287598>[CLIENT LOG] Sending < Message : Hello from Client >
+<1551338969782.302490>[CLIENT LOG] Sending < Message size :17 >
+<1551338969782.318848>[CLIENT LOG] Sending < Message : IPC poxis queue Programming >
+<1551338969782.330078>[CLIENT LOG] Sending < Message size :27 >
+<1551338969782.340576>[CLIENT LOG] Sending < Message : Client Process >
+<1551338969782.351074>[CLIENT LOG] Sending < Message size :14 >
+<1551338969782.361572>[CLIENT LOG] Sending < Message : Client says bye >
+<1551338969782.371826>[CLIENT LOG] Sending < Message size :15 >
+<1551338969782.382080>[CLIENT LOG] Sending < Timestamp 1551338954767.803955 >
+<1551338969782.398682>[CLIENT LOG] Sending < Led Status 0 >
+<1551338969782.409668>[CLIENT LOG] Sending < Client Pid 20208 >
+<1551338969783.531494>[SERVER LOG] -------Server Process Received data from Client-------
+<1551338969783.599365>[SERVER LOG] Received < Message : Hello from Client >
+<1551338969783.611572>[SERVER LOG] Received < Message size :17 >
+<1551338969783.624756>[SERVER LOG] Received < Message : IPC poxis queue Programming >
+<1551338969783.635986>[SERVER LOG] Received < Message size :27 >
+<1551338969783.646729>[SERVER LOG] Received < Message : Client Process >
+<1551338969783.657227>[SERVER LOG] Received < Message size :14 >
+<1551338969783.668213>[SERVER LOG] Received < Message : Client says bye >
+<1551338969783.678955>[SERVER LOG] Received < Message size :15 >
+<1551338969783.689453>[SERVER LOG] Received < Timestamp 1551338954767.803955 >
+<1551338969783.706543>[SERVER LOG] Received < Led Status 0 >
+<1551338969783.717529>[SERVER LOG] Received < Client Pid 20208 >
+<1551338969787.008789>[SERVER LOG] -------Server Process Sending data to Client-------
+<1551338969787.066895>[SERVER LOG] Sending < Message : Hello from Server >
+<1551338969787.081299>[SERVER LOG] Sending < Message size :17 >
+<1551338969787.095947>[SERVER LOG] Sending < Message : IPC poxis queue Programming >
+<1551338969787.106934>[SERVER LOG] Sending < Message size :27 >
+<1551338969787.117676>[SERVER LOG] Sending < Message : Server Process >
+<1551338969787.128418>[SERVER LOG] Sending < Message size :14 >
+<1551338969787.138916>[SERVER LOG] Sending < Message : Server says bye >
+<1551338969787.149414>[SERVER LOG] Sending < Message size :15 >
+<1551338969787.159668>[SERVER LOG] Sending < Timestamp 1551338959608.436035 >
+<1551338969787.176758>[SERVER LOG] Sending < Led Status 0 >
+<1551338969787.188232>[SERVER LOG] Sending < Server Pid 20225 >
+<1551338969788.647217>[CLIENT LOG] -------Client Process Received data from Server-------
+<1551338969788.715088>[CLIENT LOG] Received < Message : Hello from Server >
+<1551338969788.727783>[CLIENT LOG] Received < Message size :17 >
+<1551338969788.742432>[CLIENT LOG] Received < Message : IPC poxis queue Programming >
+<1551338969788.753174>[CLIENT LOG] Received < Message size :27 >
+<1551338969788.763672>[CLIENT LOG] Received < Message : Server Process >
+<1551338969788.774414>[CLIENT LOG] Received < Message size :14 >
+<1551338969788.785156>[CLIENT LOG] Received < Message : Server says bye >
+<1551338969788.795654>[CLIENT LOG] Received < Message size :15 >
+<1551338969788.806152>[CLIENT LOG] Received < Timestamp 1551338959608.436035 >
+<1551338969788.822510>[CLIENT LOG] Received < Led Status 0 >
+<1551338969788.833496>[CLIENT LOG] Received < Server Pid 20225 >
+<1551338974790.154541>[CLIENT LOG] -------Client Process Sending data to Server-------
+<1551338974790.245361>[CLIENT LOG] Sending < Message : Hello from Client >
+<1551338974790.258545>[CLIENT LOG] Sending < Message size :17 >
+<1551338974790.275879>[CLIENT LOG] Sending < Message : IPC poxis queue Programming >
+<1551338974790.286865>[CLIENT LOG] Sending < Message size :27 >
+<1551338974790.297607>[CLIENT LOG] Sending < Message : Client Process >
+<1551338974790.307861>[CLIENT LOG] Sending < Message size :14 >
+<1551338974790.318359>[CLIENT LOG] Sending < Message : Client says bye >
+<1551338974790.328613>[CLIENT LOG] Sending < Message size :15 >
+<1551338974790.338867>[CLIENT LOG] Sending < Timestamp 1551338954767.803955 >
+<1551338974790.355469>[CLIENT LOG] Sending < Led Status 0 >
+<1551338974790.366699>[CLIENT LOG] Sending < Client Pid 20208 >
+<1551338974791.295654>[SERVER LOG] -------Server Process Received data from Client-------
+<1551338974791.361816>[SERVER LOG] Received < Message : Hello from Client >
+<1551338974791.374756>[SERVER LOG] Received < Message size :17 >
+<1551338974791.388428>[SERVER LOG] Received < Message : IPC poxis queue Programming >
+<1551338974791.399170>[SERVER LOG] Received < Message size :27 >
+<1551338974791.409668>[SERVER LOG] Received < Message : Client Process >
+<1551338974791.420166>[SERVER LOG] Received < Message size :14 >
+<1551338974791.431152>[SERVER LOG] Received < Message : Client says bye >
+<1551338974791.441650>[SERVER LOG] Received < Message size :15 >
+<1551338974791.451904>[SERVER LOG] Received < Timestamp 1551338954767.803955 >
+<1551338974791.468750>[SERVER LOG] Received < Led Status 0 >
+<1551338974791.479736>[SERVER LOG] Received < Client Pid 20208 >
+<1551338974794.611084>[SERVER LOG] -------Server Process Sending data to Client-------
+<1551338974794.669922>[SERVER LOG] Sending < Message : Hello from Server >
+<1551338974794.682129>[SERVER LOG] Sending < Message size :17 >
+<1551338974794.695801>[SERVER LOG] Sending < Message : IPC poxis queue Programming >
+<1551338974794.706543>[SERVER LOG] Sending < Message size :27 >
+<1551338974794.717041>[SERVER LOG] Sending < Message : Server Process >
+<1551338974794.727539>[SERVER LOG] Sending < Message size :14 >
+<1551338974794.737793>[SERVER LOG] Sending < Message : Server says bye >
+<1551338974794.748047>[SERVER LOG] Sending < Message size :15 >
+<1551338974794.758545>[SERVER LOG] Sending < Timestamp 1551338959608.436035 >
+<1551338974794.775391>[SERVER LOG] Sending < Led Status 0 >
+<1551338974794.786377>[SERVER LOG] Sending < Server Pid 20225 >
+<1551338974796.353516>[CLIENT LOG] -------Client Process Received data from Server-------
+<1551338974796.421631>[CLIENT LOG] Received < Message : Hello from Server >
+<1551338974796.434326>[CLIENT LOG] Received < Message size :17 >
+<1551338974796.448975>[CLIENT LOG] Received < Message : IPC poxis queue Programming >
+<1551338974796.459961>[CLIENT LOG] Received < Message size :27 >
+<1551338974796.470459>[CLIENT LOG] Received < Message : Server Process >
+<1551338974796.480957>[CLIENT LOG] Received < Message size :14 >
+<1551338974796.491699>[CLIENT LOG] Received < Message : Server says bye >
+<1551338974796.502441>[CLIENT LOG] Received < Message size :15 >
+<1551338974796.512695>[CLIENT LOG] Received < Timestamp 1551338959608.436035 >
+<1551338974796.529541>[CLIENT LOG] Received < Led Status 0 >
+<1551338974796.540527>[CLIENT LOG] Received < Server Pid 20225 >
+SIGINT! Received! [SERVER] <1551338976169.361816> Terminating posix mq program....
+SIGINT! Received! [CLIENT] <1551338978666.651367> Terminating posix mq program....
