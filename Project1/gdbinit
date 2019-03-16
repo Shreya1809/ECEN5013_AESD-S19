@@ -1,0 +1,3 @@
+target extended-remote 10.0.0.16:4433
+set remote exec-file ~/home/Project1/output/project1.out
+file project1.out
