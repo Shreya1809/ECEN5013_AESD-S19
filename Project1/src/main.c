@@ -4,6 +4,6 @@
 
 int main(){
 
-    printf("Hello world\n");
+    printf("Project1 start\n");
     return 0;
 }
