@@ -18,6 +18,7 @@
             //"miDebuggerServerAddress": "10.0.0.16:5000",
             "miDebuggerPath": "/usr/bin/gdb-multiarch",
             "miDebuggerArgs": "-x gdbinit",
+            "debugServerArgs": "log.txt",
             "setupCommands": [
                 //{"text": "target extended-remote 10.0.0.16:4433"},
                 //{"text": "set remote exec-file ~/home/Project1/output/project1.out"},
