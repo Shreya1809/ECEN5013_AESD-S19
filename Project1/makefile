@@ -1,12 +1,12 @@
 include sources.mk
 WORKSPACE:=$(shell pwd)
 WORKSPACE_FILES:=$(WORKSPACE)/*
-INCLUDES:= -I include/common
+INCLUDES:= -I include/common -I include/BeagleboneGreen
 OUTPUT:= project1.out
 
 CC:=arm-linux-gcc
 
-CFLAGS:= -g3 -Wall
+CFLAGS:= -g3 -Wall -Wno-unused-variable -Wno-unused-function -Wno-unused-but-set-variable
 FLAGS:= $(CFLAGS) $(INCLUDES)
 LIBS:= -lrt -lpthread
 

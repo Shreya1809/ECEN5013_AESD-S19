@@ -11,6 +11,10 @@
 
 #include "includes.h"
 #include "socket.h"
+#include "temp.h"
+#include "logger.h"
+#include "light.h"
+#include "bbgled.h"
 
 /**
  * @brief 
@@ -20,13 +24,13 @@
  */
 void *socket_task(void *threadp)
 {
-    printf("The socket task!!!\n");
+    LOG_INFO(SOCKET_TASK,"Socket task thread spawned");
     int server_fd, new_socket, valread; 
     struct sockaddr_in address; 
     int opt = 1; 
     int addrlen = sizeof(address); 
     char buffer[1024] = {0};
-    char *mesg = "mesg from client"; 
+    char mesg[1024] ={0}; 
     //char *hello = "Hello from server"; 
        
     // Creating socket file descriptor 
@@ -34,8 +38,9 @@ void *socket_task(void *threadp)
     { 
         perror("socket failed"); 
         exit(EXIT_FAILURE); 
-    } 
-     printf("----socket created\n");  
+    }
+    LOG_INFO(SOCKET_TASK,"Socket has been created"); 
+     //printf("----socket created\n");  
     // Forcefully attaching socket to the port 8080 
     if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, 
                                                   &opt, sizeof(opt))) 
@@ -54,13 +59,13 @@ void *socket_task(void *threadp)
         perror("bind failed"); 
         exit(EXIT_FAILURE); 
     }
-    printf("----socket binded\n"); 
+    LOG_INFO(SOCKET_TASK,"socket binded"); 
     if (listen(server_fd, 3) < 0) 
     { 
         perror("listen"); 
         exit(EXIT_FAILURE); 
     }
-    printf("----socket listening\n"); 
+    LOG_INFO(SOCKET_TASK,"socket listening"); 
     while(1)
     {
         if ((new_socket = accept(server_fd, (struct sockaddr *)&address,  
@@ -69,35 +74,33 @@ void *socket_task(void *threadp)
             perror("accept"); 
             exit(EXIT_FAILURE); 
         }
-        printf("----socket accepted\n"); 
+        printf("socket accepted\n");
+        LOG_INFO(SOCKET_TASK,"socket connection accepted from Remote Client"); 
         valread = read( new_socket , buffer, 1024); 
-        printf("Remote Client request number is %s\n",buffer ); 
+        LOG_INFO(SOCKET_TASK,"Remote Client request number is %s",buffer ); 
+        
         if(strcmp(buffer,"1") == 0)
         {
-            mesg = "Temperature Requested";
-        }
-        if(strcmp(buffer,"1") == 0)
-        {
-            mesg = "Temperature Requested";
+            sprintf(mesg,"Temperature Requested is %f\n",getTemp(0));
         }
         if(strcmp(buffer,"2") == 0)
         {
-            mesg = "Light Requested";
+           sprintf(mesg,"Light value Requested is %f\n",getLight());
         }
         if(strcmp(buffer,"3") == 0)
         {
-            mesg = "Temperature unit Kelvin";
+            sprintf(mesg,"Temperature value in kelvin is %f",getTemp(2));
         }
         if(strcmp(buffer,"4") == 0)
         {
-            mesg = "Temperature unit Celsius";
+            sprintf(mesg,"Temperature value in celcius is %f",getTemp(1));
         }
         if(strcmp(buffer,"5") == 0)
         {
-            mesg = "Temperature unit Farenheit";
+            sprintf(mesg,"Temperature value in Farenheit is %f",getTemp(3));
         }
         send(new_socket , mesg , strlen(mesg) , 0 ); 
-        printf("Client Request is processed\n"); 
+        LOG_INFO(SOCKET_TASK,"Client Request is processed"); 
     }
     return NULL;
 }

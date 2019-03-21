@@ -19,5 +19,10 @@
  * @return void* 
  */
 void *light_task(void *threadp);
-
+/**
+ * @brief Get the Light object
+ * 
+ * @return float 
+ */
+float getLight(void);
 #endif

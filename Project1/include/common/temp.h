@@ -11,6 +11,14 @@
 
 #ifndef TEMP_H_
 #define TEMP_H_
+
+typedef enum 
+{
+    default_unit = 0,
+    celcius,
+    kelvin,
+    Farenheit
+}temp_unit;
 /**
  * @brief call back for temperature task 
  * 
@@ -18,5 +26,12 @@
  * @return void* 
  */
 void *temp_task(void *threadp);
+/**
+ * @brief Get the Temp object
+ * 
+ * @param unit 
+ * @return float 
+ */
+float getTemp(temp_unit unit);
 
 #endif

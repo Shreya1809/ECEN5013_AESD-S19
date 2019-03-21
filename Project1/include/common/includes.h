@@ -39,25 +39,14 @@
 #include <openssl/md5.h>
 #include <time.h>
 #include <fcntl.h>           /* For O_* constants */
+#include <stdarg.h>
+#include <sys/syscall.h>
 
+sem_t temp_sem;
+sem_t light_sem;
 
 #define PORT 8888
 
-typedef enum
-{ 
-    TCP_SEND,
-    TCP_ACK, 
-    
-}tcp_enum_t;
 
-typedef struct{
-    uint32_t log_level;
-    uint8_t log_mesg[1024];
-    double Timestamp;
-    uint16_t logger_modID;
-
-} payload_struct_t;
-
-static mqd_t loggertask_q;
 
 #endif

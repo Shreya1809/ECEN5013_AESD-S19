@@ -16,57 +16,72 @@
 #include "light.h"
 #include "bist.h"
 #include "logger.h"
+#include "bbgled.h"
 
 
-void* (*ThreadEntryFunction[MAX]) (void*) = 
+void* (*ThreadEntryFunction[MAX_TASKS]) (void*) = 
 {
     bist_task,
     light_task,
     temp_task,
-    log_task,
+    logger_task,
     socket_task,
 };
 
+const char * moduleIdName[MAX_TASKS+1] = {
+    "LOGGER_TASK",
+    "TEMP_TASK",
+    "LIGHT_TASK",
+    "BIST_TASK",
+    "SOCKET_TASK",
+    "MAIN_TASK",
+};
+void *threadParamArgs[MAX_TASKS] = {0};
+
+
 int main(int argc , char **argv){
 
-    FILE *fp;
     int rc;
-    pthread_t threads[MAX];
-    printf("-----Project1 started main thread------\n");
+    pthread_t threads[MAX_TASKS];
+    sem_init(&temp_sem,0,0);
+    sem_init(&light_sem,0,0);
+    BBGinit();
+    logger_queue_init();
+    PRINTLOGCONSOLE("-----Project1 started main thread------\n");
     if (argc != 2)
     {
-        printf("USAGE <LOG FILE NAME>\n");
+        PRINTLOGCONSOLE("USAGE <LOG FILE NAME>\n");
+        BBGled_error();
+        sleep(3);
         exit(EXIT_FAILURE);
     }
-    //log file
-    fp = fopen(argv[1],"w+");
-    if (fp == NULL)
-    {
-        printf("Could not open file %s\n",argv[1]);
-        exit(EXIT_FAILURE);
-    }
-    fprintf(fp, "log file created\n");
+
+    struct loggerTask_param loggerParam = {
+        .filename = argv[1],
+        .loglevel = LOG_DEBUG
+    };
+
+    threadParamArgs[4] = (void*)&loggerParam;
 
     //creating threads for tasks
-    for(int i = 0; i < MAX; i++)
+    for(int i = 0; i < MAX_TASKS; i++)
     {
-        rc = pthread_create(&threads[i],NULL,ThreadEntryFunction[i], NULL);
+        rc = pthread_create(&threads[i],NULL,ThreadEntryFunction[i], threadParamArgs[i]);
         if(rc)
         {
-            printf("pthread_create for thread %s failed\n", (char*)ThreadEntryFunction[i]);
+            PRINT("pthread_create for thread %s failed\n", (char*)ThreadEntryFunction[i]);
             exit(EXIT_FAILURE);
         }
     }
-
-    for(int i = 0; i < MAX; i++)
+    LOG_INFO(MAIN_TASK, "Threads spawned from the main");
+    for(int i = 0; i < MAX_TASKS; i++)
     {
         rc = pthread_join(threads[i],NULL);
         if(rc)
         {
-            printf("pthread_join for thread %s failed\n", (char*)ThreadEntryFunction[i]);
+            PRINTLOGCONSOLE("pthread_join for thread %s failed\n", (char*)ThreadEntryFunction[i]);
             exit(EXIT_FAILURE);   
         }
     }    
-    fclose(fp);
     return 0;
 }

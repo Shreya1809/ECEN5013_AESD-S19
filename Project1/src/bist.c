@@ -10,9 +10,17 @@
  */
 #include "includes.h"
 #include "bist.h"
+#include "logger.h"
+#include "main.h"
+#include "bbgled.h"
+
+void bist_init(void)
+{
+   
+}
 
 void *bist_task(void *threadp)
 {
-    printf("IN BIST TASK!!!\n");
+    LOG_INFO(BIST_TASK,"Bist task thread spawned\n");
     return NULL;
 }

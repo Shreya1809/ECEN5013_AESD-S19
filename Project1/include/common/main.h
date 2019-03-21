@@ -11,22 +11,28 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
-
 typedef enum {
-    LOG_TASK = 0,
-    TEMP_TASK = 1,
-    LIGHT_TASK = 2,
-    BIST_TASK = 3,
-    SOCKET_TASK = 4,
-    MAX = 5
-}modID_status;
+    LOGGER_TASK = 0,
+    TEMP_TASK,
+    LIGHT_TASK,
+    BIST_TASK,
+    SOCKET_TASK,
+    MAIN_TASK,
+    MAX_TASKS = MAIN_TASK, /*maximum no of tasks*/
+}moduleId_t;
 
-//thread entry functions
-/*extern void *bist_task(void *threadp);
-extern void *light_task(void *threadp);
-extern void *temp_task(void *threadp);
-extern void *log_task(void *threadp);
-extern void *socket_task(void *threadp);*/
+typedef struct{
+    moduleId_t srcModuleID;
+    char msg[100];
+    int status;
+}main_struct_t;
+
+
+const char * moduleIdName[MAX_TASKS+1];
+
+
+
+
 
 
 #endif
