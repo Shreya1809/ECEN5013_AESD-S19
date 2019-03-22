@@ -13,6 +13,7 @@
 #include "logger.h"
 #include "main.h"
 #include "bbgled.h"
+#include "mysignal.h"
 
 void bist_init(void)
 {
@@ -21,6 +22,9 @@ void bist_init(void)
 
 void *bist_task(void *threadp)
 {
-    LOG_INFO(BIST_TASK,"Bist task thread spawned\n");
+    signal_init();
+    LOG_INFO(BIST_TASK,"Bist task thread spawned");
+    sleep(2);
+    LOG_INFO(BIST_TASK,"Bist task thread exiting");
     return NULL;
 }

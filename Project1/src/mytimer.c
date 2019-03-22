@@ -1,6 +1,13 @@
 #include "includes.h"
-#include "timer.h"
+#include "mytimer.h"
+#include "logger.h"
+#include "temp.h"
+#include "light.h"
 
+/*void DisplaySensorValue(void)
+{
+    printf("the temp value is %f\n",getTemp(0));
+}*/
 
 int maketimer(timer_t *timerID)
 {
@@ -19,10 +26,10 @@ void startTimer(timer_t timerID)
 {
     int val = 0;
     struct itimerspec its;
-    its.it_interval.tv_sec = 0;
-    its.it_interval.tv_nsec = 100000000;
-    its.it_value.tv_sec = 0;
-    its.it_value.tv_nsec = 100000000;
+    its.it_interval.tv_sec = 3;
+    its.it_interval.tv_nsec = 0;//500000000;
+    its.it_value.tv_sec = 3;
+    its.it_value.tv_nsec = 0;//500000000;
     timer_settime(timerID, 0, &its,0);
 
 }

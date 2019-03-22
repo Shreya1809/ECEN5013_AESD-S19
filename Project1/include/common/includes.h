@@ -41,9 +41,12 @@
 #include <fcntl.h>           /* For O_* constants */
 #include <stdarg.h>
 #include <sys/syscall.h>
+#include <stdbool.h>
 
+static volatile sig_atomic_t done = 0;
 sem_t temp_sem;
 sem_t light_sem;
+
 
 #define PORT 8888
 

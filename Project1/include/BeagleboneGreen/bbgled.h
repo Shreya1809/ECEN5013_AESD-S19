@@ -1,13 +1,24 @@
 #ifndef BBGLED_H_
 #define BBGLED_H_
-
-int BBGinit(void);
+#include <stdbool.h>
 /**
- * @brief controlling externally connected led with bbg
+ * @brief turn on off red led
  * 
- * @param void 
+ * @param option 
  * @return int 
  */
-int BBGled_error(void);
+int redLed_OnOff(bool option);
+/**
+ * @brief turn on off green led 
+ * 
+ * @param option 
+ * @return int 
+ */
+int greenLed_OnOff(bool option);
+
+#define REDLEDON()      redLed_OnOff(1)
+#define REDLEDOFF()     redLed_OnOff(0)
+#define GREENLEDON()    greenLed_OnOff(1) 
+#define GREENLEDOFF()   greenLed_OnOff(0)
 
 #endif

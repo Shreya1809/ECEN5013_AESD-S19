@@ -13,10 +13,14 @@
 #include "main.h"
 #include "logger.h"
 #include "bbgled.h"
+#include "mysignal.h"
+#include "mytimer.h"
+#include "i2c.h"
 
 
 float getTemp(temp_unit unit)
 {
+
     float i = 25.3;
     float value = 0.0;
     
@@ -41,6 +45,24 @@ float getTemp(temp_unit unit)
 
 void *temp_task(void *threadp)
 {
+    //signal_init();
+    i2c_init();
     LOG_INFO(TEMP_TASK,"Temperature Task thread spawned");
+    timer_t temp_timer;
+    if(maketimer(&temp_timer) != 0)
+    {
+        perror("MakeTimer fail");
+    }
+    startTimer(temp_timer);
+    //int i = 0;
+    //while(!done)
+    while(1)
+    {
+        if(sem_wait(&temp_sem) == 0)
+        {
+            LOG_INFO(TEMP_TASK,"The temp is %f",getTemp(0));
+        }
+    }
+    LOG_INFO(TEMP_TASK,"Temp task thread exiting");
     return NULL;
 }

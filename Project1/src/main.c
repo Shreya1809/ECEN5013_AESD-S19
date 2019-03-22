@@ -17,15 +17,16 @@
 #include "bist.h"
 #include "logger.h"
 #include "bbgled.h"
+#include "mysignal.h"
 
 
 void* (*ThreadEntryFunction[MAX_TASKS]) (void*) = 
 {
+    logger_task,
     bist_task,
     light_task,
     temp_task,
-    logger_task,
-    socket_task,
+    socket_task
 };
 
 const char * moduleIdName[MAX_TASKS+1] = {
@@ -45,14 +46,19 @@ int main(int argc , char **argv){
     pthread_t threads[MAX_TASKS];
     sem_init(&temp_sem,0,0);
     sem_init(&light_sem,0,0);
-    BBGinit();
+    //signal_init();
     logger_queue_init();
-    PRINTLOGCONSOLE("-----Project1 started main thread------\n");
+    /*if(BBGinit()){
+        LOG_ERROR(MAIN_TASK, "LED Init failed");
+        return -1;
+    }*/
+    GREENLEDON();
+    LOG_INFO(MAIN_TASK, "-----Project1 started main thread------");
     if (argc != 2)
     {
-        PRINTLOGCONSOLE("USAGE <LOG FILE NAME>\n");
-        BBGled_error();
-        sleep(3);
+        PRINTLOGCONSOLE("Command line Arg Error: USAGE <LOG FILE NAME>");
+        GREENLEDOFF();
+        REDLEDON();
         exit(EXIT_FAILURE);
     }
 
@@ -61,7 +67,7 @@ int main(int argc , char **argv){
         .loglevel = LOG_DEBUG
     };
 
-    threadParamArgs[4] = (void*)&loggerParam;
+    threadParamArgs[0] = (void*)&loggerParam;
 
     //creating threads for tasks
     for(int i = 0; i < MAX_TASKS; i++)
@@ -82,6 +88,7 @@ int main(int argc , char **argv){
             PRINTLOGCONSOLE("pthread_join for thread %s failed\n", (char*)ThreadEntryFunction[i]);
             exit(EXIT_FAILURE);   
         }
-    }    
+    }  
+    //BBGled_off();  
     return 0;
 }

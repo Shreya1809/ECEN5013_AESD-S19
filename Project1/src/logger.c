@@ -11,6 +11,7 @@
 #include "includes.h"
 #include "logger.h"
 #include "bbgled.h"
+#include "mysignal.h"
 
 static mqd_t mq_logger = -1;
 static log_level_t currentLogLevel = LOG_DEBUG;
@@ -45,6 +46,17 @@ double getTimeMsec()
   return ((event_ts.tv_sec) * 1000.0) + ((event_ts.tv_nsec) / 1000000.0);
 }
 
+FILE *fp;
+
+#define PRINTLOGFILE(log)  do{\
+             printf("[%lf] [%s] [%s] [PID:%d] [TID:%ld] Message: ",getTimeMsec(),logLevel[log.level], moduleIdName[log.srcModuleID],getpid(),syscall(SYS_gettid));\
+             printf("%s\n",log.msg );\
+             fflush(stdout);\
+             fprintf(fp,"[%lf] [%s] [%s] [PID:%d] [TID:%ld] Message: ", getTimeMsec(),logLevel[log.level], moduleIdName[log.srcModuleID],getpid(),syscall(SYS_gettid));\
+             fprintf(fp, "%s\n",log.msg );\
+             fflush(fp);\
+            }while(0) 
+
 int LOG_ENQUEUE(log_level_t level, moduleId_t modId, char *msg, ...)
 {
 
@@ -66,6 +78,7 @@ int LOG_ENQUEUE(log_level_t level, moduleId_t modId, char *msg, ...)
     return 0;
   }
 
+  printf("Log enqueue Error\n");
   return 1;
 }
 
@@ -102,15 +115,15 @@ mqd_t logger_queue_init(void)
  */
 void *logger_task(void *threadp)
 {
-  struct loggerTask_param *params = (struct loggerTask_param *)&threadp;
-  printf("Logger Filename:%s ", params->filename);
-  printf("Logger level:%d\n", params->loglevel);
-  LOG_INFO(LOGGER_TASK,"Logger Task thread spawned");
+  //signal_init();
+  struct loggerTask_param *params = (struct loggerTask_param *)threadp;
   logger_setCurrentLogLevel(params->loglevel);
+  LOG_DEBUG(LOGGER_TASK, "Logger Filename:%s ", params->filename);
+  LOG_DEBUG(LOGGER_TASK, "Logger level:%d\n", params->loglevel);
+  LOG_INFO(LOGGER_TASK,"Logger Task thread spawned");
 
   //log file
-  //fp = fopen(params->filename, "w+");
-  fp = fopen("log.txt", "w+");
+  fp = fopen(params->filename, "w+");
   if (fp == NULL)
   {
     PRINTLOGCONSOLE("Could not open file %s\n", params->filename);
@@ -118,7 +131,8 @@ void *logger_task(void *threadp)
   }
   fprintf(fp, "log file created\n");
   log_struct_t recv_log = {0};
-  while(1){
+  //while(!done){
+    while(1){
       //deque msg
        if (mq_receive (mq_logger, (char*)&recv_log, sizeof(recv_log), NULL) == -1) {
             perror ("Client: mq_receive");
@@ -132,6 +146,6 @@ void *logger_task(void *threadp)
 
   }
   fclose(fp);
-
+  LOG_INFO(LOGGER_TASK,"Logger Task thread exiting");
   return NULL;
 }

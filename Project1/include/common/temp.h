@@ -34,4 +34,8 @@ void *temp_task(void *threadp);
  */
 float getTemp(temp_unit unit);
 
+#define TEMP_KELVIN()       getTemp(kelvin)
+#define TEMP_CELCIUS()      getTemp(celcius)
+#define TEMP_FARENHEIT()    getTemp(Farenheit)
+
 #endif

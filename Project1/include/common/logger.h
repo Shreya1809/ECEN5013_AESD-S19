@@ -15,33 +15,15 @@
 #include <time.h>
 #include <stdio.h>
 #include <sys/time.h>
+#include "includes.h"
 #include "main.h"
 
 #define LOG_QUEUE_NAME         "/logger_q"
 #define QUEUE_PERMISSIONS   0666
-#define MAX_MESSAGES        32
+#define MAX_MESSAGES        128
 #define MAX_MSG_SIZE        256
 #define CURRENT_MSG         0
 #define FLAGS               0
-
-FILE *fp;
-#define PRINTLOGCONSOLE(f_, ...)    do{\
-             printf("[%lf] [PID:%d] [TID:%ld] Message:",getTimeMsec(),getpid(),syscall(SYS_gettid));\
-             printf(f_, ##__VA_ARGS__);\
-             printf("\n");\
-             fflush(stdout);\
-            }while(0)
-
-#define PRINT(f_, ...)   printf(f_, ##__VA_ARGS__)
-
-#define PRINTLOGFILE(log)  do{\
-             printf("[%lf] [%s] [%s] [PID:%d] [TID:%ld] Message: ",getTimeMsec(),logLevel[log.level], moduleIdName[log.srcModuleID],getpid(),syscall(SYS_gettid));\
-             printf("%s\n",log.msg );\
-             fflush(stdout);\
-             fprintf(fp,"[%lf] [%s] [%s] [PID:%d] [TID:%ld] Message: ", getTimeMsec(),logLevel[log.level], moduleIdName[log.srcModuleID],getpid(),syscall(SYS_gettid));\
-             fprintf(fp, "%s\n",log.msg );\
-             fflush(fp);\
-            }while(0) 
 
 #define LOG_STDOUT
 static mqd_t mq_logger;
@@ -70,6 +52,15 @@ struct loggerTask_param{
     char *filename;
     log_level_t loglevel;
 };
+
+#define PRINTLOGCONSOLE(f_, ...)    do{\
+             printf("[%lf] [PID:%d] [TID:%ld] Message:",getTimeMsec(),getpid(),syscall(SYS_gettid));\
+             printf(f_, ##__VA_ARGS__);\
+             printf("\n");\
+             fflush(stdout);\
+            }while(0)
+
+#define PRINT(f_, ...)   printf(f_, ##__VA_ARGS__)
 
 #define LOG_INFO(modId, msg, ...)   LOG_ENQUEUE(LOG_INFO, modId, msg, ##__VA_ARGS__)
 #define LOG_ERROR(modId, msg, ...)  LOG_ENQUEUE(LOG_ERR, modId, msg, ##__VA_ARGS__)

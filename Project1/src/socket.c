@@ -15,6 +15,7 @@
 #include "logger.h"
 #include "light.h"
 #include "bbgled.h"
+#include "mysignal.h"
 
 /**
  * @brief 
@@ -25,6 +26,7 @@
 void *socket_task(void *threadp)
 {
     LOG_INFO(SOCKET_TASK,"Socket task thread spawned");
+    //signal_init();
     int server_fd, new_socket, valread; 
     struct sockaddr_in address; 
     int opt = 1; 
@@ -66,6 +68,7 @@ void *socket_task(void *threadp)
         exit(EXIT_FAILURE); 
     }
     LOG_INFO(SOCKET_TASK,"socket listening"); 
+    //while(!done)
     while(1)
     {
         if ((new_socket = accept(server_fd, (struct sockaddr *)&address,  
@@ -89,15 +92,15 @@ void *socket_task(void *threadp)
         }
         if(strcmp(buffer,"3") == 0)
         {
-            sprintf(mesg,"Temperature value in kelvin is %f",getTemp(2));
+            sprintf(mesg,"Temperature value in kelvin is %f",TEMP_KELVIN());
         }
         if(strcmp(buffer,"4") == 0)
         {
-            sprintf(mesg,"Temperature value in celcius is %f",getTemp(1));
+            sprintf(mesg,"Temperature value in celcius is %f",TEMP_CELCIUS());
         }
         if(strcmp(buffer,"5") == 0)
         {
-            sprintf(mesg,"Temperature value in Farenheit is %f",getTemp(3));
+            sprintf(mesg,"Temperature value in Farenheit is %f",TEMP_FARENHEIT());
         }
         send(new_socket , mesg , strlen(mesg) , 0 ); 
         LOG_INFO(SOCKET_TASK,"Client Request is processed"); 
