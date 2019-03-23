@@ -15,13 +15,23 @@
 #include "bbgled.h"
 #include "mysignal.h"
 #include "mytimer.h"
-#include "i2c.h"
-
+#include "myI2C.h"
+#include "tempSensor.h"
+i2c_struct_t i2c_handler;
 
 float getTemp(temp_unit unit)
 {
+    uint8_t tempbuff[2] = {0};
+    uint8_t MSB, LSB;
+    int ret = I2C_read_bytes(i2c_handler,TMP102_SLAVE_ADDRESS , TMP102_TEMP_REG, tempbuff, sizeof(tempbuff));
+    if(ret == -1)
+        return ret;
 
-    float i = 25.3;
+    uint16_t result = 0;
+    MSB = tempbuff[0];
+    LSB = tempbuff[1]
+    result = ((MSB << 8) | LSB) >> 4;
+    float i = result * 0.0625;
     float value = 0.0;
     
     if(unit == default_unit)
@@ -46,7 +56,7 @@ float getTemp(temp_unit unit)
 void *temp_task(void *threadp)
 {
     //signal_init();
-    i2c_init();
+    I2C_init(i2c_handler);
     LOG_INFO(TEMP_TASK,"Temperature Task thread spawned");
     timer_t temp_timer;
     if(maketimer(&temp_timer) != 0)

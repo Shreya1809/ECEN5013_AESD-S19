@@ -48,17 +48,16 @@ int main(int argc , char **argv){
     sem_init(&light_sem,0,0);
     //signal_init();
     logger_queue_init();
-    /*if(BBGinit()){
-        LOG_ERROR(MAIN_TASK, "LED Init failed");
-        return -1;
-    }*/
     GREENLEDON();
+    REDLEDOFF();
     LOG_INFO(MAIN_TASK, "-----Project1 started main thread------");
     if (argc != 2)
     {
         PRINTLOGCONSOLE("Command line Arg Error: USAGE <LOG FILE NAME>");
         GREENLEDOFF();
         REDLEDON();
+        sleep(3);
+        REDLEDOFF();
         exit(EXIT_FAILURE);
     }
 
@@ -88,7 +87,6 @@ int main(int argc , char **argv){
             PRINTLOGCONSOLE("pthread_join for thread %s failed\n", (char*)ThreadEntryFunction[i]);
             exit(EXIT_FAILURE);   
         }
-    }  
-    //BBGled_off();  
+    }   
     return 0;
 }
