@@ -43,4 +43,12 @@
 #define TMP102_CONFIG_SET	(TMP102_CONF_TM | TMP102_CONF_EM | \
 				 TMP102_CONF_CR1)
 
+/**
+ * @brief 
+ * 
+ * @param temp_val 
+ * @return int 
+ */
+int TMP102_getTemperature(float *temp_val);
+
 #endif

@@ -42,6 +42,7 @@
 #include <stdarg.h>
 #include <sys/syscall.h>
 #include <stdbool.h>
+#include <math.h>
 
 static volatile sig_atomic_t done = 0;
 sem_t temp_sem;

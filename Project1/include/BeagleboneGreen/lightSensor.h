@@ -34,6 +34,40 @@
 #define APDS9301_TIMING_GAIN        (0x10)
 #define APDS9301_TIMING_INTEGRATION_TIME(i)    (i)
 #define APDS9301_TIMING_MANUAL(i)   (i<<3)
+/**
+ * @brief get ADC channel0 data
+ * 
+ * @param data 
+ * @return int 
+ */
+int APDS9301_getCh0(uint16_t *data);
+/**
+ * @brief get ADC channel1 data
+ * 
+ * @param data 
+ * @return int 
+ */
+int APDS9301_getCh1(uint16_t *data);
+/**
+ * @brief combine channel0 and 1 data to get lux
+ * 
+ * @param lux 
+ * @return int 
+ */
+int APDS9301_getlight(float *lux);
+/**
+ * @brief read light id register
+ * 
+ * @param data 
+ * @return int 
+ */
+int APDS9301_readIDreg(uint8_t *data);
 
+/**
+ * @brief 
+ * 
+ * @return int 
+ */
+int APDS9301_powerup();
 
 #endif

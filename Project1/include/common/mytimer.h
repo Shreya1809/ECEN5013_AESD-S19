@@ -1,12 +1,16 @@
 #ifndef TIMER_H_
 #define TIMER_H_
+
+#include "includes.h"
+
 /**
- * @brief initialisation of timer
+ * @brief 
  * 
  * @param timerID 
+ * @param callback 
  * @return int 
  */
-int maketimer(timer_t *timerID);
+int maketimer(timer_t *timerID, void (*callback)(union sigval));
 /**
  * @brief starting the timer
  * 
@@ -14,15 +18,5 @@ int maketimer(timer_t *timerID);
  * @return int 
  */
 void startTimer(timer_t timerID);
-/**
- * @brief 
- * 
- * @param sigval 
- */
-static void giveSemSensor(union sigval no)
-{
-    sem_post(&temp_sem);
-    sem_post(&light_sem);
-    //fprintf(fp,"[%lf] CPU UTILISATION -> " ,getTimeMsec());
-}
+
 #endif

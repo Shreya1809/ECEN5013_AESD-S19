@@ -4,7 +4,7 @@
  * @brief 
  * @version 0.1
  * @date 2019-03-16
- * 
+ * @reference https://github.com/jbdatko/tmp102/blob/master/tmp102.c
  * @copyright Copyright (c) 2019
  * 
  */
@@ -17,49 +17,70 @@
 #include "mytimer.h"
 #include "myI2C.h"
 #include "tempSensor.h"
-i2c_struct_t i2c_handler;
+#include "i2c.h"
 
-float getTemp(temp_unit unit)
+static volatile float temperature_val = 0.0;
+
+pthread_mutex_t temp_var_lock = PTHREAD_MUTEX_INITIALIZER;
+
+static inline void setTempVar(float temp)
 {
-    uint8_t tempbuff[2] = {0};
-    uint8_t MSB, LSB;
-    int ret = I2C_read_bytes(i2c_handler,TMP102_SLAVE_ADDRESS , TMP102_TEMP_REG, tempbuff, sizeof(tempbuff));
-    if(ret == -1)
-        return ret;
+    pthread_mutex_lock(&temp_var_lock);
+    temperature_val = temp;
+    pthread_mutex_unlock(&temp_var_lock);
+} 
 
-    uint16_t result = 0;
-    MSB = tempbuff[0];
-    LSB = tempbuff[1]
-    result = ((MSB << 8) | LSB) >> 4;
-    float i = result * 0.0625;
-    float value = 0.0;
+static inline float getTempVar()
+{
+    float temp = 0;
+    pthread_mutex_lock(&temp_var_lock);
+    temp = temperature_val;
+    pthread_mutex_unlock(&temp_var_lock);
+    return temp;
+} 
+
+float getTemperature(temp_unit unit)
+{
+    float temp_val = getTempVar();
+    if(unit == KELVIN)
+    {
+        temp_val = (temp_val+273.15);
+    }
+    else if(unit == FARENHEIT)
+    {
+        temp_val = ((temp_val*9/5)+32);
+    }
+    return temp_val;
+}
+
+static int readAndUpdateTemp(void)
+{
+    float temp_val = 0.0 ;
     
-    if(unit == default_unit)
+    int ret = TMP102_getTemperature(&temp_val);
+    if(ret)
     {
-        value = i;
+        LOG_ERROR(TEMP_TASK, "TMP102 Get Temperature: %d", ret);
+        return ret;
     }
-    if(unit == celcius)
-    {
-        value = i;
-    }
-    if(unit == kelvin)
-    {
-        value = (i+273.15);
-    }
-    if(unit == Farenheit)
-    {
-        value = ((i*9/5)+32);
-    }
-    return value;
+
+    setTempVar(temp_val);    
+    LOG_INFO(TEMP_TASK,"The temperature is %f C",temp_val);
+    return 0;
+}
+
+static void giveSemSensor(union sigval no)
+{
+    sem_post(&temp_sem);
 }
 
 void *temp_task(void *threadp)
 {
-    //signal_init();
-    I2C_init(i2c_handler);
+    I2C_init(&i2c_handler);
     LOG_INFO(TEMP_TASK,"Temperature Task thread spawned");
     timer_t temp_timer;
-    if(maketimer(&temp_timer) != 0)
+    sem_init(&temp_sem,0,0);
+    if(maketimer(&temp_timer, &giveSemSensor) != 0)
     {
         perror("MakeTimer fail");
     }
@@ -70,7 +91,7 @@ void *temp_task(void *threadp)
     {
         if(sem_wait(&temp_sem) == 0)
         {
-            LOG_INFO(TEMP_TASK,"The temp is %f",getTemp(0));
+            readAndUpdateTemp();
         }
     }
     LOG_INFO(TEMP_TASK,"Temp task thread exiting");

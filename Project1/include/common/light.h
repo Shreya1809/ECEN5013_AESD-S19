@@ -25,4 +25,6 @@ void *light_task(void *threadp);
  * @return float 
  */
 float getLight(void);
+
+#define GETLUX()        getLight()
 #endif

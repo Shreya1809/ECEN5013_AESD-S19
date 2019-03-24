@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "includes.h": "c",
-        "cstdlib": "c"
+        "cstdlib": "c",
+        "myi2c.h": "c",
+        "lightsensor.h": "c",
+        "bist.h": "c"
     }
 }

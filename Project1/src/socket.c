@@ -16,6 +16,7 @@
 #include "light.h"
 #include "bbgled.h"
 #include "mysignal.h"
+#include "tempSensor.h"
 
 /**
  * @brief 
@@ -29,7 +30,7 @@ void *socket_task(void *threadp)
     //signal_init();
     int server_fd, new_socket, valread; 
     struct sockaddr_in address; 
-    int opt = 1; 
+    int opt = 1, m = 0; 
     int addrlen = sizeof(address); 
     char buffer[1024] = {0};
     char mesg[1024] ={0}; 
@@ -77,34 +78,51 @@ void *socket_task(void *threadp)
             perror("accept"); 
             exit(EXIT_FAILURE); 
         }
-        printf("socket accepted\n");
+        //printf("socket accepted\n");
         LOG_INFO(SOCKET_TASK,"socket connection accepted from Remote Client"); 
-        valread = read( new_socket , buffer, 1024); 
-        LOG_INFO(SOCKET_TASK,"Remote Client request number is %s",buffer ); 
-        
-        if(strcmp(buffer,"1") == 0)
+        while(1)
         {
-            sprintf(mesg,"Temperature Requested is %f\n",getTemp(0));
+            valread = read( new_socket , buffer, 1024); 
+            if(strcmp(buffer,"\0") == 0)
+            {
+                LOG_INFO(SOCKET_TASK,"Socket disconnected from remote client");
+                break;
+            }
+            LOG_INFO(SOCKET_TASK,"Remote Client request number is %s",buffer ); 
+            
+            if(strcmp(buffer,"1") == 0)
+            {
+                sprintf(mesg,"Temperature Requested is %f\n",GET_TEMP_CELCIUS());
+            }
+            if(strcmp(buffer,"2") == 0)
+            {
+            sprintf(mesg,"Light value Requested is %f\n",GETLUX());
+            }
+            if(strcmp(buffer,"3") == 0)
+            {
+                sprintf(mesg,"Temperature value in kelvin is %f",GET_TEMP_KELVIN());
+            }
+            if(strcmp(buffer,"4") == 0)
+            {
+                sprintf(mesg,"Temperature value in celcius is %f",GET_TEMP_CELCIUS());
+            }
+            if(strcmp(buffer,"5") == 0)
+            {
+                sprintf(mesg,"Temperature value in Farenheit is %f",GET_TEMP_FARENHEIT());
+            }
+            if(strcmp(buffer,"6") == 0)
+            {
+                LOG_INFO(SOCKET_TASK,"Client has exited");
+                break;
+            }
+            send(new_socket , mesg , strlen(mesg) , 0 ); 
+            LOG_INFO(SOCKET_TASK,"Client Request processed");
+            //m = 1; 
         }
-        if(strcmp(buffer,"2") == 0)
-        {
-           sprintf(mesg,"Light value Requested is %f\n",getLight());
-        }
-        if(strcmp(buffer,"3") == 0)
-        {
-            sprintf(mesg,"Temperature value in kelvin is %f",TEMP_KELVIN());
-        }
-        if(strcmp(buffer,"4") == 0)
-        {
-            sprintf(mesg,"Temperature value in celcius is %f",TEMP_CELCIUS());
-        }
-        if(strcmp(buffer,"5") == 0)
-        {
-            sprintf(mesg,"Temperature value in Farenheit is %f",TEMP_FARENHEIT());
-        }
-        send(new_socket , mesg , strlen(mesg) , 0 ); 
-        LOG_INFO(SOCKET_TASK,"Client Request is processed"); 
+
     }
+    LOG_INFO(SOCKET_TASK,"Socket task closed");
+    close(new_socket);
     return NULL;
 }
 

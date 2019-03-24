@@ -11,8 +11,11 @@
 
 #ifndef BIST_H_
 #define BIST_H_
-
-
+/**
+ * @brief testing if light sensor is connected
+ * 
+ */
+int Test_LightSensor(void);
 /**
  * @brief call back function for bist task from main task
  * 

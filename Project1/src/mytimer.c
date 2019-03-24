@@ -9,12 +9,12 @@
     printf("the temp value is %f\n",getTemp(0));
 }*/
 
-int maketimer(timer_t *timerID)
+int maketimer(timer_t *timerID, void (*callback)(union sigval))
 {
     int val = 0;
     struct sigevent event;
     event.sigev_notify = SIGEV_THREAD;
-    event.sigev_notify_function = giveSemSensor;
+    event.sigev_notify_function = callback;
     event.sigev_value.sival_ptr = NULL;
     event.sigev_notify_attributes = NULL; 
     val = timer_create(CLOCK_REALTIME, &event, timerID); 

@@ -15,10 +15,9 @@
 
 typedef enum 
 {
-    default_unit = 0,
-    celcius,
-    kelvin,
-    Farenheit
+    CELCIUS,
+    KELVIN,
+    FARENHEIT
 }temp_unit;
 /**
  * @brief call back for temperature task 
@@ -33,10 +32,10 @@ void *temp_task(void *threadp);
  * @param unit 
  * @return float 
  */
-float getTemp(temp_unit unit);
+float getTemperature(temp_unit unit);
 
-#define TEMP_KELVIN()       getTemp(kelvin)
-#define TEMP_CELCIUS()      getTemp(celcius)
-#define TEMP_FARENHEIT()    getTemp(Farenheit)
+#define GET_TEMP_KELVIN()       getTemperature(KELVIN)
+#define GET_TEMP_CELCIUS()      getTemperature(CELCIUS)
+#define GET_TEMP_FARENHEIT()    getTemperature(FARENHEIT)
 
 #endif

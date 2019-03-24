@@ -10,24 +10,9 @@
 int main(int argc, char const *argv[]) 
 { 
     struct sockaddr_in address; 
-    int sock = 0, valread; 
+    int sock = 0, valread,m = 0; 
     char c,x;
     struct sockaddr_in serv_addr; 
-    TRY: printf("Remote Client Request Option:\n");
-    printf("1. Request Current Temperature value\n");
-    printf("2. Request Current Light value\n");
-    printf("3. Change Temperature unit to Kelvin\n");
-    printf("4. Change Temperature unit to Celsius\n");
-    printf("5. Change Temperature unit to Farenheit\n");
-    printf("Enter any of the above option nos.\n");
-    c = getchar();
-    x = getchar(); //dummy enter
-
-    if((c < '1') && (c > '5'))
-    {
-        printf("Invalid Option. Try again..\n");
-        goto TRY;
-    }
     //char *hello = "Hello from client"; 
     char buffer[1024] = {0}; 
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) 
@@ -47,15 +32,42 @@ int main(int argc, char const *argv[])
         printf("\nInvalid address/ Address not supported \n"); 
         return -1; 
     } 
-   
     if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0) 
     { 
         printf("\nConnection Failed \n"); 
         return -1; 
     } 
-    send(sock , (char*)&c , sizeof(c) , 0 ); 
-    printf("Client Request Sent\n"); 
-    valread = read( sock , buffer, 1024); 
-    printf("%s\n",buffer ); 
+    while(1)
+    {
+        TRY: printf("Remote Client Request Option:\n");
+        printf("1. Request Current Temperature value\n");
+        printf("2. Request Current Light value\n");
+        printf("3. Request Temperature in Kelvin\n");
+        printf("4. Request Temperature in Celsius\n");
+        printf("5. Request Temperature in Farenheit\n");
+        printf("6. Exit Client\n");
+        printf("Enter any of the above option nos.\n");
+        c = getchar();
+        x = getchar(); //dummy enter
+        printf("entered option is %c\n",c);
+        if((c < '1') && (c > '6'))
+        {
+            printf("Invalid Option. Try again..\n");
+            goto TRY;
+        } 
+        if(c == '6')
+        {
+            send(sock , (char*)&c , sizeof(c) , 0 );
+            break; 
+        }  
+        send(sock , (char*)&c , sizeof(c) , 0 ); 
+        printf("Client Request Sent\n"); 
+        valread = read( sock , buffer, 1024); 
+        printf("%s\n",buffer ); 
+         
+        //m = 1;
+    }
+    printf("Client exiting....\n");
+    close(sock);
     return 0; 
 } 

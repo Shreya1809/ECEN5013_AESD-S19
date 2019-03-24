@@ -59,8 +59,11 @@ FILE *fp;
 
 int LOG_ENQUEUE(log_level_t level, moduleId_t modId, char *msg, ...)
 {
-
-  if (mq_logger > -1 && level > LOG_INVALID && level < LOG_MAX && level <= currentLogLevel)
+  if(level > currentLogLevel)
+  {
+    return 0;
+  }
+  if (mq_logger > -1 && level > LOG_INVALID && level < LOG_MAX)
   {
     log_struct_t send_log;
     send_log.level = level;
@@ -119,7 +122,7 @@ void *logger_task(void *threadp)
   struct loggerTask_param *params = (struct loggerTask_param *)threadp;
   logger_setCurrentLogLevel(params->loglevel);
   LOG_DEBUG(LOGGER_TASK, "Logger Filename:%s ", params->filename);
-  LOG_DEBUG(LOGGER_TASK, "Logger level:%d\n", params->loglevel);
+  LOG_DEBUG(LOGGER_TASK, "Logger level:%d", params->loglevel);
   LOG_INFO(LOGGER_TASK,"Logger Task thread spawned");
 
   //log file

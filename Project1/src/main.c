@@ -44,14 +44,12 @@ int main(int argc , char **argv){
 
     int rc;
     pthread_t threads[MAX_TASKS];
-    sem_init(&temp_sem,0,0);
-    sem_init(&light_sem,0,0);
     //signal_init();
     logger_queue_init();
     GREENLEDON();
     REDLEDOFF();
     LOG_INFO(MAIN_TASK, "-----Project1 started main thread------");
-    if (argc != 2)
+    if (argc < 2)
     {
         PRINTLOGCONSOLE("Command line Arg Error: USAGE <LOG FILE NAME>");
         GREENLEDOFF();
@@ -65,6 +63,10 @@ int main(int argc , char **argv){
         .filename = argv[1],
         .loglevel = LOG_DEBUG
     };
+
+    if(argc == 3){
+        loggerParam.loglevel = atoi(argv[2]);
+    }
 
     threadParamArgs[0] = (void*)&loggerParam;
 

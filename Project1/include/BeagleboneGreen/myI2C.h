@@ -20,20 +20,21 @@ mraa_i2c_context i2c_context;
 
 }i2c_struct_t;
 
+i2c_struct_t i2c_handler;
 /**
  * @brief Initialise i2c context, passing in the i2c bus to use. 
  * 
  * @param i2c_handler 
  * @return int 
  */
-int I2C_init(i2c_struct_t i2c_handler);
+int I2C_init(i2c_struct_t *i2c_handler);
 /**
  * @brief 
  * 
  * @param i2c_handler 
  * @return int 
  */
-int I2C_close(i2c_struct_t i2c_handler);
+int I2C_close(i2c_struct_t *i2c_handler);
 /**
  * @brief set slave address for i2c read and write
  * 
@@ -41,7 +42,7 @@ int I2C_close(i2c_struct_t i2c_handler);
  * @param slave_addr 
  * @return int 
  */
-int I2C_set_slave(i2c_struct_t i2c_handler,uint8_t slave_addr);
+int I2C_set_slave(i2c_struct_t *i2c_handler,uint8_t slave_addr);
 /**
  * @brief write 1 byte to the given slave address
  * 
@@ -50,7 +51,19 @@ int I2C_set_slave(i2c_struct_t i2c_handler,uint8_t slave_addr);
  * @param data 
  * @return int 
  */
-int I2C_write_byte(i2c_struct_t i2c_handler,uint8_t slave_addr,uint8_t data);
+int I2C_write_byte(i2c_struct_t *i2c_handler,uint8_t slave_addr,uint8_t data);
+
+/**
+ * @brief 
+ * 
+ * @param i2c_handler 
+ * @param slave_addr 
+ * @param command_reg 
+ * @param data 
+ * @return int 
+ */
+int I2C_write_byte_data(i2c_struct_t *i2c_handler,uint8_t slave_addr,uint8_t command_reg,uint8_t data);
+
 /**
  * @brief read 1 byte from the slave from the particular register
  * 
@@ -60,7 +73,7 @@ int I2C_write_byte(i2c_struct_t i2c_handler,uint8_t slave_addr,uint8_t data);
  * @param data 
  * @return int 
  */
-int I2C_read_byte(i2c_struct_t i2c_handler,uint8_t slave_addr,uint8_t command_reg, uint8_t *data);
+int I2C_read_byte(i2c_struct_t *i2c_handler,uint8_t slave_addr,uint8_t command_reg, uint8_t *data);
 /**
  * @brief read multiple bytes from the command register of the slave into data
  * 
@@ -71,7 +84,7 @@ int I2C_read_byte(i2c_struct_t i2c_handler,uint8_t slave_addr,uint8_t command_re
  * @param length 
  * @return int 
  */
-int I2C_read_bytes(i2c_struct_t i2c_handler,uint8_t slave_addr,uint8_t command_reg, uint8_t *data, size_t length);
+int I2C_read_bytes(i2c_struct_t *i2c_handler,uint8_t slave_addr,uint8_t command_reg, uint8_t *data, size_t length);
 /**
  * @brief write 2 bytes MSB first then lsb into the command register of the slave addr
  * 
@@ -81,5 +94,5 @@ int I2C_read_bytes(i2c_struct_t i2c_handler,uint8_t slave_addr,uint8_t command_r
  * @param data 
  * @return int 
  */
-int I2C_write_word(i2c_struct_t i2c_handler,uint8_t slave_addr,uint8_t command_reg,uint16_t data);
+int I2C_write_word(i2c_struct_t *i2c_handler,uint8_t slave_addr,uint8_t command_reg,uint16_t data);
 #endif
