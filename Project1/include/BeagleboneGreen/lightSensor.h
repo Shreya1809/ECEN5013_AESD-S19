@@ -32,8 +32,26 @@
 #define APDS9301_CONTROL_POWER_UP    (0x03)
 #define APDS9301_INTERRUPT_CTRL_ENABLE_DISABLE        (0x10)   
 #define APDS9301_TIMING_GAIN        (0x10)
-#define APDS9301_TIMING_INTEGRATION_TIME(i)    (i)
-#define APDS9301_TIMING_MANUAL(i)   (i<<3)
+#define APDS9301_TIMING_INTEGRATION_TIME_BIT0 (0x01)
+#define APDS9301_TIMING_INTEGRATION_TIME_BIT1 (0x02)
+
+
+typedef enum{
+    LOW,
+    HIGH
+}gain_mode_t;
+
+typedef enum{
+    MODE_ZERO,
+    MODE_ONE,
+    MODE_TWO,
+    MODE_THREE,
+}integ_time_t;
+
+typedef enum{
+    ENABLE,
+    DISABLE
+}interrupt_mode_t;
 /**
  * @brief get ADC channel0 data
  * 
@@ -69,5 +87,75 @@ int APDS9301_readIDreg(uint8_t *data);
  * @return int 
  */
 int APDS9301_powerup();
+/**
+ * @brief write to command register
+ * 
+ * @param data 
+ * @return int 
+ */
+int APDS9301_writeCMDreg(uint8_t data); // also write command register
+/**
+ * @brief read control register
+ * 
+ * @param data 
+ * @return int 
+ */
+int APDS9301_readCTRLreg(uint8_t *data);
+/**
+ * @brief set gain in timing register
+ * 
+ * @param gain 
+ * @return int 
+ */
+int APDS9301_setTiming_gain(gain_mode_t gain); //default value is low
+/**
+ * @brief set integration time in timing register
+ * 
+ * @param integTime 
+ * @return int 
+ */
+int APDS9301_setTiming_integ(integ_time_t integTime);//mode 2 is default
+/**
+ * @brief set interrupt enable disable
+ * 
+ * @param option 
+ * @return int 
+ */
+int APDS9301_interruptCTRLreg(interrupt_mode_t option); //default is disabled
+/**
+ * @brief write threshhold low low register
+ * 
+ * @param th_lowlow 
+ * @return int 
+ */
+int APDS9301_writeTHRESH_low(uint16_t th_lowlow);
+/**
+ * @brief read threshold low low register
+ * 
+ * @param th_lowlow 
+ * @return int 
+ */
+int APDS9301_readTHRESH_low(uint16_t *th_lowlow);
+/**
+ * @brief write threshold high low register
+ * 
+ * @param th_hilow 
+ * @return int 
+ */
+int APDS9301_writeTHRESH_high(uint16_t th_hilow);
+/**
+ * @brief read threshold high low register
+ * 
+ * @param th_hilow 
+ * @return int 
+ */
+int APDS9301_readTHRESH_high(uint16_t *th_hilow);
+/**
+ * @brief set all register values default
+ * 
+ * @return int 
+ */
+int APDS9301_setAllDefault();
+
 
 #endif

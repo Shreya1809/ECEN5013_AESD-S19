@@ -18,27 +18,28 @@
 #include "logger.h"
 #include "bbgled.h"
 #include "mysignal.h"
+#include "bist.h"
+#include "heartbeat.h"
 
-
+int thread_flag[5] = {0};
 void* (*ThreadEntryFunction[MAX_TASKS]) (void*) = 
 {
-    logger_task,
     bist_task,
+    logger_task,
     light_task,
     temp_task,
     socket_task
 };
 
 const char * moduleIdName[MAX_TASKS+1] = {
+    "BIST_TASK",
     "LOGGER_TASK",
     "TEMP_TASK",
     "LIGHT_TASK",
-    "BIST_TASK",
     "SOCKET_TASK",
     "MAIN_TASK",
 };
 void *threadParamArgs[MAX_TASKS] = {0};
-
 
 int main(int argc , char **argv){
 
@@ -68,10 +69,10 @@ int main(int argc , char **argv){
         loggerParam.loglevel = atoi(argv[2]);
     }
 
-    threadParamArgs[0] = (void*)&loggerParam;
-
+    threadParamArgs[1] = (void*)&loggerParam;
+    
     //creating threads for tasks
-    for(int i = 0; i < MAX_TASKS; i++)
+    for(int i = 1; i < MAX_TASKS; i++)
     {
         rc = pthread_create(&threads[i],NULL,ThreadEntryFunction[i], threadParamArgs[i]);
         if(rc)
@@ -79,9 +80,43 @@ int main(int argc , char **argv){
             PRINT("pthread_create for thread %s failed\n", (char*)ThreadEntryFunction[i]);
             exit(EXIT_FAILURE);
         }
+        else
+        {
+            thread_flag[i]=1;
+            PRINT("%s thread created\n",moduleIdName[i]);
+
+        }
+        
     }
     LOG_INFO(MAIN_TASK, "Threads spawned from the main");
-    for(int i = 0; i < MAX_TASKS; i++)
+    //bist thread generation
+    //check for bist flag
+    rc = pthread_create(&threads[0],NULL,ThreadEntryFunction[0], threadParamArgs[0]);
+    if(rc)
+    {
+        PRINT("pthread_create for thread %s failed\n", (char*)ThreadEntryFunction[0]);
+        exit(EXIT_FAILURE);
+    }
+    else
+    {
+        thread_flag[0]=1;
+        PRINT("%s thread created\n",moduleIdName[0]);
+
+    }
+
+    rc = pthread_join(threads[0],NULL);
+    if(rc)
+    {
+        PRINTLOGCONSOLE("pthread_join for thread %s failed\n", (char*)ThreadEntryFunction[0]);
+        exit(EXIT_FAILURE);   
+    }
+    if(!CheckBistResult())
+    {
+        return 0;
+    }
+    startHearbeatCheck();
+    //printf("here\n");
+    for(int i = 1; i < MAX_TASKS; i++)
     {
         rc = pthread_join(threads[i],NULL);
         if(rc)
@@ -90,5 +125,6 @@ int main(int argc , char **argv){
             exit(EXIT_FAILURE);   
         }
     }   
+    
     return 0;
 }

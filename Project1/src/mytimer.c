@@ -26,9 +26,21 @@ void startTimer(timer_t timerID)
 {
     int val = 0;
     struct itimerspec its;
-    its.it_interval.tv_sec = 3;
+    its.it_interval.tv_sec = 0 ;//1;
+    its.it_interval.tv_nsec = 500000000;
+    its.it_value.tv_sec = 0;//1;
+    its.it_value.tv_nsec = 500000000;
+    timer_settime(timerID, 0, &its,0);
+
+}
+
+void startTimerHB(timer_t timerID)
+{
+    int val = 0;
+    struct itimerspec its;
+    its.it_interval.tv_sec = 1;
     its.it_interval.tv_nsec = 0;//500000000;
-    its.it_value.tv_sec = 3;
+    its.it_value.tv_sec = 1;
     its.it_value.tv_nsec = 0;//500000000;
     timer_settime(timerID, 0, &its,0);
 

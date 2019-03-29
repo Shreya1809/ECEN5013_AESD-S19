@@ -18,9 +18,11 @@
 #include "myI2C.h"
 #include "tempSensor.h"
 #include "i2c.h"
+#include "heartbeat.h"
 
 static volatile float temperature_val = 0.0;
-
+static int stop_thread_temp = 0;
+int t_count = 0;
 pthread_mutex_t temp_var_lock = PTHREAD_MUTEX_INITIALIZER;
 
 static inline void setTempVar(float temp)
@@ -39,6 +41,11 @@ static inline float getTempVar()
     return temp;
 } 
 
+void kill_temp_thread(void)
+{
+    stop_thread_temp = 1;    
+}
+
 float getTemperature(temp_unit unit)
 {
     float temp_val = getTempVar();
@@ -56,7 +63,6 @@ float getTemperature(temp_unit unit)
 static int readAndUpdateTemp(void)
 {
     float temp_val = 0.0 ;
-    
     int ret = TMP102_getTemperature(&temp_val);
     if(ret)
     {
@@ -66,6 +72,14 @@ static int readAndUpdateTemp(void)
 
     setTempVar(temp_val);    
     LOG_INFO(TEMP_TASK,"The temperature is %f C",temp_val);
+    if(temp_val == 0)
+    {
+        t_count++;
+    }
+    if(t_count > 4)
+    {
+        stop_thread_temp = 1;   
+    }
     return 0;
 }
 
@@ -76,8 +90,15 @@ static void giveSemSensor(union sigval no)
 
 void *temp_task(void *threadp)
 {
-    I2C_init(&i2c_handler);
+    //printf("hello1\n");
+    sem_init(&temp_thread_sem,0,0);
+    //printf("hello2\n");
+    usleep(1000);
+    sem_wait(&temp_thread_sem);
+    usleep(1000);
+    //printf("hello3\n");
     LOG_INFO(TEMP_TASK,"Temperature Task thread spawned");
+    I2C_init(&i2c_handler);
     timer_t temp_timer;
     sem_init(&temp_sem,0,0);
     if(maketimer(&temp_timer, &giveSemSensor) != 0)
@@ -85,15 +106,14 @@ void *temp_task(void *threadp)
         perror("MakeTimer fail");
     }
     startTimer(temp_timer);
-    //int i = 0;
-    //while(!done)
-    while(1)
+    while(!stop_thread_temp)
     {
+        set_heartbeatFlag(TEMP_TASK);
         if(sem_wait(&temp_sem) == 0)
         {
             readAndUpdateTemp();
         }
-    }
+    }        
     LOG_INFO(TEMP_TASK,"Temp task thread exiting");
     return NULL;
 }

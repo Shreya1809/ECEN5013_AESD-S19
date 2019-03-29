@@ -12,9 +12,11 @@
 #include "logger.h"
 #include "bbgled.h"
 #include "mysignal.h"
+#include "heartbeat.h"
 
 static mqd_t mq_logger = -1;
 static log_level_t currentLogLevel = LOG_DEBUG;
+static int stop_thread_logger = 0;
 
 const char * logLevel[LOG_MAX] = {
     "LOG_ERR",              //Error conditions
@@ -110,6 +112,10 @@ mqd_t logger_queue_init(void)
   return mq_logger;
 }
 
+void kill_logger_thread(void)
+{
+    stop_thread_logger = 1;    
+}
 /**
  * @brief call back function for the logger
  * 
@@ -118,7 +124,11 @@ mqd_t logger_queue_init(void)
  */
 void *logger_task(void *threadp)
 {
+  sem_init(&logger_thread_sem,0,0);
+  sem_wait(&logger_thread_sem);
   //signal_init();
+  unsigned int prio;
+  struct timespec recv_timeout = {0};
   struct loggerTask_param *params = (struct loggerTask_param *)threadp;
   logger_setCurrentLogLevel(params->loglevel);
   LOG_DEBUG(LOGGER_TASK, "Logger Filename:%s ", params->filename);
@@ -132,23 +142,28 @@ void *logger_task(void *threadp)
     PRINTLOGCONSOLE("Could not open file %s\n", params->filename);
     exit(EXIT_FAILURE);
   }
+  clock_gettime(CLOCK_REALTIME, &recv_timeout);
+  recv_timeout.tv_sec += 10;
   fprintf(fp, "log file created\n");
   log_struct_t recv_log = {0};
-  //while(!done){
-    while(1){
-      //deque msg
-       if (mq_receive (mq_logger, (char*)&recv_log, sizeof(recv_log), NULL) == -1) {
-            perror ("Client: mq_receive");
-            exit (1);
-        }
-      //put the log struct in file
-      #ifdef LOG_STDOUT
-      PRINTLOGFILE(recv_log);
-      #endif
-
-
+  while(!stop_thread_logger)
+  {
+    set_heartbeatFlag(LOGGER_TASK);
+    //deque msg
+    if (mq_timedreceive (mq_logger, (char*)&recv_log, sizeof(recv_log), &prio, &recv_timeout) == -1) {
+        perror ("Client: mq_receive");
+        exit (1);
+    }
+    else{
+      recv_timeout.tv_sec += 10;  
+    }
+    //put the log struct in file
+    #ifdef LOG_STDOUT
+    PRINTLOGFILE(recv_log);
+    #endif
   }
   fclose(fp);
-  LOG_INFO(LOGGER_TASK,"Logger Task thread exiting");
+  //LOG_INFO(LOGGER_TASK,"Logger Task thread exiting");
+  PRINTLOGCONSOLE("Logger Task thread exiting");
   return NULL;
 }

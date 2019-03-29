@@ -20,6 +20,11 @@ typedef enum
     FARENHEIT
 }temp_unit;
 /**
+ * @brief to kill temp thread
+ * 
+ */
+void kill_temp_thread(void);
+/**
  * @brief call back for temperature task 
  * 
  * @param threadp 

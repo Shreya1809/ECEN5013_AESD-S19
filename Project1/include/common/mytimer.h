@@ -18,5 +18,10 @@ int maketimer(timer_t *timerID, void (*callback)(union sigval));
  * @return int 
  */
 void startTimer(timer_t timerID);
+/**
+ * @brief start timer for heartbeat
+ * 
+ */
+void startTimerHB(timer_t timerID);
 
 #endif

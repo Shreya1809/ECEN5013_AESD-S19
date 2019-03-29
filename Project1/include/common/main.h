@@ -11,11 +11,13 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
+extern int thread_flag[5];
+
 typedef enum {
-    LOGGER_TASK = 0,
+    BIST_TASK = 0,
+    LOGGER_TASK,
     TEMP_TASK,
     LIGHT_TASK,
-    BIST_TASK,
     SOCKET_TASK,
     MAIN_TASK,
     MAX_TASKS = MAIN_TASK, /*maximum no of tasks*/
@@ -29,10 +31,6 @@ typedef struct{
 
 
 const char * moduleIdName[MAX_TASKS+1];
-
-
-
-
 
 
 #endif

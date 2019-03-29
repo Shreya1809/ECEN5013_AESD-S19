@@ -11,6 +11,31 @@
 
 #ifndef BIST_H_
 #define BIST_H_
+
+/**
+ * @brief testing i2c init
+ * 
+ * @return int 
+ */
+int Test_I2C(void);
+/**
+ * @brief checking all thread status
+ * 
+ * @return int 
+ */
+int Test_AllThreads(void);
+/**
+ * @brief testing temperature register
+ * 
+ * @return int 
+ */
+int Test_TempSensor(void);
+/**
+ * @brief tedting logger enqueue
+ * 
+ * @return int 
+ */
+int Test_loggerQ(void);
 /**
  * @brief testing if light sensor is connected
  * 
@@ -23,6 +48,11 @@ int Test_LightSensor(void);
  * @return void* 
  */
 void *bist_task(void *threadp);
-
+/**
+ * @brief 
+ * 
+ * @return int 
+ */
+int CheckBistResult(void);
 
 #endif

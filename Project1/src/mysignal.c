@@ -2,10 +2,10 @@
 #include "bbgled.h"
 #include "mysignal.h"
 
-void signal_handler(int signum)
+/*void signal_handler(int signum)
 {
     done = 1;
-}
+}*/
 
 void signal_init(void)
 {
@@ -15,4 +15,11 @@ void signal_init(void)
     sigaction(SIGUSR1, &action, NULL);
 }
 
-
+void signal_handler(int signum)
+{
+    if (signum == SIGUSR1)
+    {
+        done = 1;
+    }
+    
+}

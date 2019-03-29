@@ -106,3 +106,166 @@ int APDS9301_readIDreg(uint8_t *data)
     }
     return EXIT_SUCCESS;
 }
+
+int APDS9301_writeCMDreg(uint8_t data) // also write command register
+{
+    int ret1;
+    ret1 = I2C_write_byte_data(&i2c_handler,APDS9301_SLAVE_ADDRESS,APDS9301_CONTROL_REG,data);
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    } 
+    return EXIT_SUCCESS;  
+}
+
+int APDS9301_readCTRLreg(uint8_t *data)
+{
+    int ret1;
+    ret1 = I2C_read_byte(&i2c_handler,APDS9301_SLAVE_ADDRESS,APDS9301_CONTROL_REG,data);
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    }
+    return EXIT_SUCCESS;
+}
+
+int APDS9301_setTiming_gain(gain_mode_t gain) //default value is low
+{
+    uint8_t result;
+    int ret1 = I2C_read_byte(&i2c_handler,APDS9301_SLAVE_ADDRESS,APDS9301_TIMING_REG,&result);
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    }
+    
+    if(gain == LOW)
+    {
+        result &= ~((uint8_t)APDS9301_TIMING_GAIN);
+    }
+    else if (gain == HIGH) // gain is high
+    {
+        result |= (uint8_t)APDS9301_TIMING_GAIN;
+    }
+    else //error
+    {
+        return EXIT_FAILURE;
+    }
+    ret1 = I2C_write_byte_data(&i2c_handler, APDS9301_SLAVE_ADDRESS, APDS9301_TIMING_REG,result);
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    } 
+    return EXIT_SUCCESS;  
+}
+
+int APDS9301_setTiming_integ(integ_time_t integTime) //mode 2 is default
+{
+    uint8_t result;
+    int ret1 = I2C_read_byte(&i2c_handler,APDS9301_SLAVE_ADDRESS,APDS9301_TIMING_REG,&result);
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    }
+
+    if(integTime == MODE_ZERO)
+    {
+        result &= ~((uint8_t)APDS9301_TIMING_INTEGRATION_TIME_BIT0);
+        result &= ~((uint8_t)APDS9301_TIMING_INTEGRATION_TIME_BIT1);
+    }
+    else if(integTime == MODE_ONE)
+    {
+        result &= ~((uint8_t)APDS9301_TIMING_INTEGRATION_TIME_BIT1);
+        result |= (uint8_t)APDS9301_TIMING_INTEGRATION_TIME_BIT0;
+    }
+    else if(integTime == MODE_TWO)
+    {
+        result |= (uint8_t)APDS9301_TIMING_INTEGRATION_TIME_BIT1;
+        result &= ~((uint8_t)APDS9301_TIMING_INTEGRATION_TIME_BIT0);
+    }
+    else
+    {
+        result |= (uint8_t)APDS9301_TIMING_INTEGRATION_TIME_BIT0;
+        result |= (uint8_t)APDS9301_TIMING_INTEGRATION_TIME_BIT1;
+    }
+    ret1 = I2C_write_byte_data(&i2c_handler, APDS9301_SLAVE_ADDRESS, APDS9301_TIMING_REG,result);
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    } 
+    return EXIT_SUCCESS;  
+      
+}
+
+int APDS9301_interruptCTRLreg(interrupt_mode_t option) //default is disabled
+{
+    uint8_t result;
+    int ret1 = I2C_read_byte(&i2c_handler,APDS9301_SLAVE_ADDRESS,APDS9301_INTERRUPT_REG,&result);
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    }
+
+    if(option == ENABLE)
+    {
+        result |= (uint8_t)APDS9301_INTERRUPT_CTRL_ENABLE_DISABLE;
+    }
+    else
+    {
+        result &= ~((uint8_t)APDS9301_INTERRUPT_CTRL_ENABLE_DISABLE);    
+    }
+    ret1 = I2C_write_byte_data(&i2c_handler, APDS9301_SLAVE_ADDRESS, APDS9301_INTERRUPT_REG,result);
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    } 
+    return EXIT_SUCCESS;   
+}
+
+int APDS9301_writeTHRESH_low(uint16_t th_lowlow)
+{
+    int ret1 = I2C_write_word(&i2c_handler, APDS9301_SLAVE_ADDRESS,APDS9301_THRESHLOWLOW_REG,th_lowlow);
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    } 
+    return EXIT_SUCCESS;   
+}
+int APDS9301_readTHRESH_low(uint16_t *th_lowlow)
+{
+    int ret1 = I2C_read_bytes(&i2c_handler, APDS9301_SLAVE_ADDRESS,APDS9301_THRESHLOWLOW_REG,(uint8_t*)th_lowlow,sizeof(uint16_t));
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    } 
+    return EXIT_SUCCESS;    
+}
+int APDS9301_writeTHRESH_high(uint16_t th_hilow)
+{
+    int ret1 = I2C_write_word(&i2c_handler, APDS9301_SLAVE_ADDRESS,APDS9301_THRESHHILOW_REG,th_hilow);
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    } 
+    return EXIT_SUCCESS;     
+}
+int APDS9301_readTHRESH_high(uint16_t *th_hilow)
+{
+    int ret1 = I2C_read_bytes(&i2c_handler, APDS9301_SLAVE_ADDRESS,APDS9301_THRESHHILOW_REG,(uint8_t*)th_hilow,sizeof(uint16_t));
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    } 
+    return EXIT_SUCCESS;     
+}
+
+int APDS9301_setAllDefault()
+{
+    int ret = APDS9301_setTiming_gain(LOW);
+    ret |=  APDS9301_setTiming_integ(MODE_TWO);
+    ret |= APDS9301_interruptCTRLreg(DISABLE);
+    if(ret)
+    {
+        return EXIT_FAILURE;
+    } 
+    return EXIT_SUCCESS;  
+}

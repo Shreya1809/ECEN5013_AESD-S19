@@ -17,6 +17,7 @@
 #include "bbgled.h"
 #include "mysignal.h"
 #include "tempSensor.h"
+#include "heartbeat.h"
 
 /**
  * @brief 
@@ -26,6 +27,8 @@
  */
 void *socket_task(void *threadp)
 {
+    sem_init(&temp_thread_sem,0,0);
+    sem_wait(&socket_thread_sem);
     LOG_INFO(SOCKET_TASK,"Socket task thread spawned");
     //signal_init();
     int server_fd, new_socket, valread; 
@@ -72,6 +75,7 @@ void *socket_task(void *threadp)
     //while(!done)
     while(1)
     {
+        set_heartbeatFlag(SOCKET_TASK);
         if ((new_socket = accept(server_fd, (struct sockaddr *)&address,  
                         (socklen_t*)&addrlen))<0) 
         { 
@@ -110,7 +114,22 @@ void *socket_task(void *threadp)
             {
                 sprintf(mesg,"Temperature value in Farenheit is %f",GET_TEMP_FARENHEIT());
             }
-            if(strcmp(buffer,"6") == 0)
+            if(strcmp(buffer,"a") == 0)
+            {
+                sprintf(mesg,"Request to Kill Temp thread");
+                kill_temp_thread();
+            }
+            if(strcmp(buffer,"b") == 0)
+            {
+                sprintf(mesg,"Request to Kill Light thread");
+                kill_light_thread();
+            }
+            if(strcmp(buffer,"c") == 0)
+            {
+                sprintf(mesg,"Request to Kill Logger thread");
+                kill_logger_thread();
+            }
+            if(strcmp(buffer,"7") == 0)
             {
                 LOG_INFO(SOCKET_TASK,"Client has exited");
                 break;

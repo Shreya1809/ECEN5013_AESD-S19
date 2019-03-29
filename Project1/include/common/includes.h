@@ -47,6 +47,10 @@
 static volatile sig_atomic_t done = 0;
 sem_t temp_sem;
 sem_t light_sem;
+sem_t socket_thread_sem;
+sem_t light_thread_sem;
+sem_t logger_thread_sem;
+sem_t temp_thread_sem;
 
 
 #define PORT 8888

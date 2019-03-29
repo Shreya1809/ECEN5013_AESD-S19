@@ -6,8 +6,11 @@
 #include "mysignal.h"
 #include "mytimer.h"
 #include "lightSensor.h"
+#include "heartbeat.h"
 
 static volatile float lux_val = 0.0;
+static int stop_thread_light = 0;
+int l_count = 0;
 pthread_mutex_t light_var_lock = PTHREAD_MUTEX_INITIALIZER;
 
 
@@ -38,7 +41,20 @@ static int readAndUpdateLight(void)
     } 
     LOG_INFO(LIGHT_TASK,"The light is %f",lux);
     setLuxVar(lux);   
+    if(lux == 0)
+    {
+        l_count++;
+    }
+    if(l_count > 4)
+    {
+        stop_thread_light = 1;   
+    }
     return 0;
+}
+
+void kill_light_thread(void)
+{
+    stop_thread_light = 1;    
 }
 
 float getLight(void)
@@ -54,6 +70,8 @@ static void giveSemSensor(union sigval no)
 
 void *light_task(void *threadp)
 {
+    sem_init(&light_thread_sem,0,0);
+    sem_wait(&light_thread_sem);
     LOG_INFO(LIGHT_TASK,"Light task thread spawned");
     timer_t light_timer;
     sem_init(&light_sem,0,0);
@@ -62,12 +80,12 @@ void *light_task(void *threadp)
         perror("MakeTimer fail");
     }
     startTimer(light_timer);
-    while(1)
+    while(!stop_thread_light)
     {
+        set_heartbeatFlag(LIGHT_TASK);
         if(sem_wait(&light_sem) == 0)
         {
             readAndUpdateLight();
-            //LOG_INFO(LIGHT_TASK,"The light is 10.0");
         }
     }
     LOG_INFO(LIGHT_TASK,"Light task thread exiting");

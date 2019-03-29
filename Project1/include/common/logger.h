@@ -66,7 +66,20 @@ struct loggerTask_param{
 #define LOG_ERROR(modId, msg, ...)  LOG_ENQUEUE(LOG_ERR, modId, msg, ##__VA_ARGS__)
 #define LOG_WARN(modId, msg, ...)   LOG_ENQUEUE(LOG_WARNING, modId, msg, ##__VA_ARGS__)
 #define LOG_DEBUG(modId, msg, ...)  LOG_ENQUEUE(LOG_DEBUG, modId, msg, ##__VA_ARGS__)
-
+/**
+ * @brief to kill logger thread externally
+ * 
+ */
+void kill_logger_thread(void);
+/**
+ * @brief to put messages in the logger queue
+ * 
+ * @param level 
+ * @param modId 
+ * @param msg 
+ * @param ... 
+ * @return int 
+ */
 int LOG_ENQUEUE(log_level_t level ,moduleId_t modId, char *msg, ...);
 /**
  * @brief queue initialisation

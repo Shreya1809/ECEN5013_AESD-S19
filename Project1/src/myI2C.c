@@ -24,7 +24,7 @@ int I2C_init(i2c_struct_t *i2c_handler)
         mraa_deinit();
         return EXIT_FAILURE;
     }
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 int I2C_close(i2c_struct_t *i2c_handler)
