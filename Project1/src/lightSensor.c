@@ -15,6 +15,7 @@ int APDS9301_getCh0(uint16_t *data)
         return EXIT_FAILURE;
     }
     *data = (((uint16_t)datahigh) << 8) | datalow ;
+    LOG_DEBUG(LIGHT_TASK,"Value of ch0 is %d",*data);
     return EXIT_SUCCESS;
 }
 
@@ -30,6 +31,7 @@ int APDS9301_getCh1(uint16_t *data)
         return EXIT_FAILURE;
     }
     *data = (((uint16_t)datahigh) << 8) | datalow ;
+    LOG_DEBUG(LIGHT_TASK,"Value of ch1 is %d",*data);
     return EXIT_SUCCESS;
 
 }
@@ -96,6 +98,38 @@ int APDS9301_powerup()
     return EXIT_SUCCESS;
 }
 
+int APDS9301_intClear(void)
+{
+    int ret1;
+    ret1 = I2C_write_byte(&i2c_handler,APDS9301_SLAVE_ADDRESS,APDS9301_CONTROL_REG | APDS9301_COMMAND_INT_CLEAR);
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    } 
+    return EXIT_SUCCESS;   
+}
+
+int APDS9301_CheckInt(uint8_t *data)
+{
+    int ret1;
+    ret1 = I2C_read_byte(&i2c_handler,APDS9301_SLAVE_ADDRESS,APDS9301_CONTROL_REG,data);
+    *data &= (APDS9301_COMMAND_INT_CLEAR);
+    *data = *data >> 6;
+    if(*data)
+    {
+        printf("interrupt cleared\n");
+    }
+    else
+    {
+        printf("pending interrupt");
+    }
+    
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    } 
+    return EXIT_SUCCESS;   
+}
 int APDS9301_readIDreg(uint8_t *data)
 {
     int ret1;
@@ -200,6 +234,7 @@ int APDS9301_interruptCTRLreg(interrupt_mode_t option) //default is disabled
 {
     uint8_t result;
     int ret1 = I2C_read_byte(&i2c_handler,APDS9301_SLAVE_ADDRESS,APDS9301_INTERRUPT_REG,&result);
+    printf("INT reg result is 0x%0x\n",result);
     if(ret1)
     {
         return EXIT_FAILURE;
@@ -207,7 +242,7 @@ int APDS9301_interruptCTRLreg(interrupt_mode_t option) //default is disabled
 
     if(option == ENABLE)
     {
-        result |= (uint8_t)APDS9301_INTERRUPT_CTRL_ENABLE_DISABLE;
+        result |= ((uint8_t)APDS9301_INTERRUPT_CTRL_ENABLE_DISABLE | (0x1));
     }
     else
     {
@@ -221,36 +256,56 @@ int APDS9301_interruptCTRLreg(interrupt_mode_t option) //default is disabled
     return EXIT_SUCCESS;   
 }
 
-int APDS9301_writeTHRESH_low(uint16_t th_lowlow)
+int APDS9301_writeTHRESH_lowlow(uint16_t th_lowlow)
 {
-    int ret1 = I2C_write_word(&i2c_handler, APDS9301_SLAVE_ADDRESS,APDS9301_THRESHLOWLOW_REG,th_lowlow);
+    int ret1 = I2C_write_word(&i2c_handler, APDS9301_SLAVE_ADDRESS,APDS9301_THRESHLOWLOW_REG | APDS9301_COMMAND_WORD_RW,th_lowlow);
     if(ret1)
     {
         return EXIT_FAILURE;
     } 
     return EXIT_SUCCESS;   
 }
-int APDS9301_readTHRESH_low(uint16_t *th_lowlow)
+int APDS9301_readTHRESH_lowlow(uint8_t *th_lowlow)
 {
-    int ret1 = I2C_read_bytes(&i2c_handler, APDS9301_SLAVE_ADDRESS,APDS9301_THRESHLOWLOW_REG,(uint8_t*)th_lowlow,sizeof(uint16_t));
+    int ret1 = I2C_read_byte(&i2c_handler, APDS9301_SLAVE_ADDRESS,APDS9301_THRESHLOWLOW_REG,th_lowlow);
     if(ret1)
     {
         return EXIT_FAILURE;
     } 
     return EXIT_SUCCESS;    
 }
-int APDS9301_writeTHRESH_high(uint16_t th_hilow)
+int APDS9301_writeTHRESH_highlow(uint16_t th_hilow)
 {
-    int ret1 = I2C_write_word(&i2c_handler, APDS9301_SLAVE_ADDRESS,APDS9301_THRESHHILOW_REG,th_hilow);
+    int ret1 = I2C_write_word(&i2c_handler, APDS9301_SLAVE_ADDRESS,APDS9301_THRESHHILOW_REG | APDS9301_COMMAND_WORD_RW,th_hilow);
     if(ret1)
     {
         return EXIT_FAILURE;
     } 
     return EXIT_SUCCESS;     
 }
-int APDS9301_readTHRESH_high(uint16_t *th_hilow)
+int APDS9301_readTHRESH_highlow(uint8_t *th_hilow)
 {
-    int ret1 = I2C_read_bytes(&i2c_handler, APDS9301_SLAVE_ADDRESS,APDS9301_THRESHHILOW_REG,(uint8_t*)th_hilow,sizeof(uint16_t));
+    int ret1 = I2C_read_byte(&i2c_handler, APDS9301_SLAVE_ADDRESS,APDS9301_THRESHHILOW_REG,th_hilow);
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    } 
+    return EXIT_SUCCESS;     
+}
+
+int APDS9301_readTHRESH_highhigh(uint8_t *th_hihi)
+{
+    int ret1 = I2C_read_byte(&i2c_handler, APDS9301_SLAVE_ADDRESS,APDS9301_THRESHHIHI_REG,th_hihi);
+    if(ret1)
+    {
+        return EXIT_FAILURE;
+    } 
+    return EXIT_SUCCESS;     
+}
+
+int APDS9301_readTHRESH_lowhigh(uint8_t *th_lowhi)
+{
+    int ret1 = I2C_read_byte(&i2c_handler, APDS9301_SLAVE_ADDRESS,APDS9301_THRESHLOWHI_REG,th_lowhi);
     if(ret1)
     {
         return EXIT_FAILURE;

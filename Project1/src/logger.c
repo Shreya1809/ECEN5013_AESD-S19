@@ -13,10 +13,11 @@
 #include "bbgled.h"
 #include "mysignal.h"
 #include "heartbeat.h"
+#include "bist.h"
 
 static mqd_t mq_logger = -1;
 static log_level_t currentLogLevel = LOG_DEBUG;
-static int stop_thread_logger = 0;
+static sig_atomic_t  stop_thread_logger = 0;
 
 const char * logLevel[LOG_MAX] = {
     "LOG_ERR",              //Error conditions
@@ -114,7 +115,8 @@ mqd_t logger_queue_init(void)
 
 void kill_logger_thread(void)
 {
-    stop_thread_logger = 1;    
+  printf("logger exit\n");
+  stop_thread_logger = 1;    
 }
 /**
  * @brief call back function for the logger
@@ -126,6 +128,10 @@ void *logger_task(void *threadp)
 {
   sem_init(&logger_thread_sem,0,0);
   sem_wait(&logger_thread_sem);
+  if(!CheckBistResult())
+  {
+      goto exit;
+  }
   //signal_init();
   unsigned int prio;
   struct timespec recv_timeout = {0};
@@ -143,19 +149,38 @@ void *logger_task(void *threadp)
     exit(EXIT_FAILURE);
   }
   clock_gettime(CLOCK_REALTIME, &recv_timeout);
-  recv_timeout.tv_sec += 10;
+  recv_timeout.tv_sec = 1;
   fprintf(fp, "log file created\n");
   log_struct_t recv_log = {0};
-  while(!stop_thread_logger)
+  int lastError = 0;
+  while(!stop_thread_logger || lastError < 5)
   {
     set_heartbeatFlag(LOGGER_TASK);
     //deque msg
-    if (mq_timedreceive (mq_logger, (char*)&recv_log, sizeof(recv_log), &prio, &recv_timeout) == -1) {
-        perror ("Client: mq_receive");
-        exit (1);
+    if (mq_timedreceive(mq_logger, (char*)&recv_log, sizeof(recv_log), &prio, &recv_timeout) == -1) {
+        if(!stop_thread_logger && errno == ETIMEDOUT)
+        {
+          // PRINT("Logger Timeout\n");
+          continue;
+        }
+        else if(stop_thread_logger)
+        {
+          LOG_DEBUG(LOGGER_TASK, "Logger Timeout: Stop logger:%d, lastErr: %d",stop_thread_logger, lastError);
+          lastError++;
+          //required sleep here to yield as the lastError check till < 5 
+          //takes less than the quantum given to this thread by the scheduler.
+          //Having this sleep here allows other thread to run and make 
+          //sure to have all the logs from other threads
+          usleep(10000);
+          continue;
+        }
+        else
+        {
+          perror ("Client: mq_receive");
+        }  
     }
     else{
-      recv_timeout.tv_sec += 10;  
+      // recv_timeout.tv_sec += 10;  
     }
     //put the log struct in file
     #ifdef LOG_STDOUT
@@ -164,6 +189,7 @@ void *logger_task(void *threadp)
   }
   fclose(fp);
   //LOG_INFO(LOGGER_TASK,"Logger Task thread exiting");
+exit:
   PRINTLOGCONSOLE("Logger Task thread exiting");
   return NULL;
 }

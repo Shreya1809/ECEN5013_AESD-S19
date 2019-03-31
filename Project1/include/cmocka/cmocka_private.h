@@ -17,7 +17,7 @@
 #ifndef CMOCKA_PRIVATE_H_
 #define CMOCKA_PRIVATE_H_
 
-#include "config.h"
+//#include "config.h"
 
 #include <stdint.h>
 

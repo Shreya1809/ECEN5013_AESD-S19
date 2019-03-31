@@ -40,6 +40,8 @@
 #include <time.h>
 #include <fcntl.h>           /* For O_* constants */
 #include <stdarg.h>
+#include <stddef.h>
+#include <setjmp.h>
 #include <sys/syscall.h>
 #include <stdbool.h>
 #include <math.h>

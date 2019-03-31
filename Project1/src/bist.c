@@ -136,7 +136,6 @@ int BuiltInSelfTest(void)
         PRINTLOGCONSOLE("Temp Sensor disconnected and non functional");  
     }
     return (ret|ret1|ret2|ret3|ret4);
-
 }
 
 int CheckBistResult(void)
@@ -145,18 +144,24 @@ int CheckBistResult(void)
     pthread_mutex_lock(&bistlock);
     ret = BIST_allOk;/* code */
     pthread_mutex_unlock(&bistlock);
+    return ret;   
+}
+
+void PostBistOkResult(void)
+{
     sem_post(&logger_thread_sem);
     sem_post(&temp_thread_sem);
     sem_post(&light_thread_sem);
     sem_post(&socket_thread_sem); 
-    return ret;   
 }
+
 void *bist_task(void *threadp)
 {
     PRINT("-----Built in Self Test started-----\n");
     int ret = BuiltInSelfTest();
     if(ret)
     {
+        BIST_allOk = 0;
         REDLEDON();   
         GREENLEDOFF(); 
         PRINTLOGCONSOLE("Program Exiting.....");

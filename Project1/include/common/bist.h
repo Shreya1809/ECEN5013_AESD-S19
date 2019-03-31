@@ -55,4 +55,10 @@ void *bist_task(void *threadp);
  */
 int CheckBistResult(void);
 
+/**
+ * @brief 
+ * 
+ */
+void PostBistOkResult(void);
+
 #endif

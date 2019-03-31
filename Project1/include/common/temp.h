@@ -38,6 +38,21 @@ void *temp_task(void *threadp);
  * @return float 
  */
 float getTemperature(temp_unit unit);
+/**
+ * @brief Construct a new tmp102 settempthreshold object
+ * 
+ * @param tlow_val 
+ * @param thigh_val 
+ */
+int TMP102_setTempThreshold(float tlow_val,float thigh_val);
+/**
+ * @brief take threshold values from client
+ * 
+ * @param flow 
+ * @param fhigh 
+ * @return int 
+ */
+int RemoteThresholdValues(float flow,float fhigh);
 
 #define GET_TEMP_KELVIN()       getTemperature(KELVIN)
 #define GET_TEMP_CELCIUS()      getTemperature(CELCIUS)

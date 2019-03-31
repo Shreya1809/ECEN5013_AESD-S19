@@ -11,6 +11,11 @@
 #ifndef SOCKET_H_
 #define SOCKET_H_
 /**
+ * @brief to kill socket thread
+ * 
+ */
+void kill_socket_thread(void);
+/**
  * @brief Call back function for socket from main thread
  * 
  * @param threadp 

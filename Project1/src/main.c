@@ -21,7 +21,8 @@
 #include "bist.h"
 #include "heartbeat.h"
 
-int thread_flag[5] = {0};
+pthread_t threads[MAX_TASKS] = {0};
+int thread_flag[MAX_TASKS] = {0};
 void* (*ThreadEntryFunction[MAX_TASKS]) (void*) = 
 {
     bist_task,
@@ -41,10 +42,11 @@ const char * moduleIdName[MAX_TASKS+1] = {
 };
 void *threadParamArgs[MAX_TASKS] = {0};
 
+
+#ifndef TEST_MODE
 int main(int argc , char **argv){
 
     int rc;
-    pthread_t threads[MAX_TASKS];
     //signal_init();
     logger_queue_init();
     GREENLEDON();
@@ -110,11 +112,11 @@ int main(int argc , char **argv){
         PRINTLOGCONSOLE("pthread_join for thread %s failed\n", (char*)ThreadEntryFunction[0]);
         exit(EXIT_FAILURE);   
     }
-    if(!CheckBistResult())
+    PostBistOkResult();
+    if(CheckBistResult())
     {
-        return 0;
+        startHearbeatCheck();
     }
-    startHearbeatCheck();
     //printf("here\n");
     for(int i = 1; i < MAX_TASKS; i++)
     {
@@ -126,5 +128,9 @@ int main(int argc , char **argv){
         }
     }   
     
+    PRINT("******Program Clean Exit******\n");
+
     return 0;
 }
+
+#endif

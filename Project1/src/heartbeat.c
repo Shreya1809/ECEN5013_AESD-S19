@@ -3,9 +3,12 @@
 #include "main.h"
 #include "logger.h"
 #include "bbgled.h"
+#include "temp.h"
+#include "light.h"
+#include "socket.h"
 
 static volatile uint32_t g_heartbeat_taskFlags = 0;
-
+int counter = 0;
 static pthread_mutex_t heartbeatFlagsLock = PTHREAD_MUTEX_INITIALIZER;
 
 //Use this function in each thread to set the respective flag for each thread. 
@@ -18,17 +21,26 @@ void set_heartbeatFlag(moduleId_t moduleId)
 	pthread_mutex_unlock(&heartbeatFlagsLock);
 }
 
-void startSystemExit(void)
+void SystemExit(void)
 {
-    pthread_cancel(pthread_self());
-	//execute system clean shutdown
-	//set the flags to false that you use to check in the while() loop for each thread.
-	//for starters, you can use pthread_cancel for each thread.	
+	kill_temp_thread();
+	//usleep(1000);
+	kill_light_thread();
+	//usleep(1000);
+	kill_socket_thread();
+	//usleep(1000);
+	kill_logger_thread();
 }
+
+static bool systemExitInitiated = false;
 
 //use this as the timer callback
 void heatbeat_timer_callback(union sigval no)
 {
+	if(systemExitInitiated)
+	{
+		return;
+	}
 	uint32_t copy_flags = 0;
 	pthread_mutex_lock(&heartbeatFlagsLock);
 	uint32_t flags = g_heartbeat_taskFlags;
@@ -39,14 +51,18 @@ void heatbeat_timer_callback(union sigval no)
 	{
 		if(!(flags & (1<<i)))
 		{
-			//make sure the while(1) loop in each thread does not block in any way - use timeouts for dequeue operation and use timeouts in socket thread
-			//for ex: if you have this callback executing every 2 sec, the while loop of each thread should not block more than 1.5 sec. 
-            //printf("heartbeat for %s NOT received\n",moduleIdName[i]);
             LOG_ERROR(MAIN_TASK,"HEARTBEAT </3 </3 </3 %s thread is DEAD x_x",moduleIdName[i]);
             GREENLEDOFF();
             REDLEDON();
-            startSystemExit();
+			//printf("%s\n",moduleIdName[i]);
+			// counter++;
+			// if(counter > 4)
+			// {
+				systemExitInitiated = true;
+				SystemExit();
+			// }
 			break;
+			// continue;
 		}
         else {
             flags &= ~(1<<i);
@@ -54,6 +70,18 @@ void heatbeat_timer_callback(union sigval no)
             if((flags == 0) && (copy_flags == 0x0e))
             {
                 LOG_INFO(MAIN_TASK,"HEARTBEAT <3 <3 <3 All threads working");
+				static uint8_t greenLedON = 0; 
+				if(greenLedON)
+				{
+					GREENLEDON();
+					greenLedON ^= 1;
+				}
+				else
+				{
+					GREENLEDOFF();
+					greenLedON ^= 1;
+				}
+				
             }
         }
 	}

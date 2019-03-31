@@ -10,11 +10,10 @@ int TMP102_getTemperature(float *temp_val)
     uint8_t tempbuff[2] = {0};
     uint8_t MSB, LSB;
     int ret = I2C_read_bytes(&i2c_handler,TMP102_SLAVE_ADDRESS , TMP102_TEMP_REG, tempbuff, sizeof(tempbuff));
-    if(ret == -1)
+    if(ret == -1 || ret == 1)
     {
         return ret;
     }
-
     uint16_t result = 0;
     MSB = tempbuff[0];
     LSB = tempbuff[1];
@@ -43,10 +42,10 @@ int TMP102_getTlow(float *tlow_val)
     if(result & 0x800) //check for negative temperature
     {
         result = ((~result) + 1); 
-        *tlow_val = (-1) * result * 0.0625;
+        *tlow_val = (-1) * (float)result;
     }
     else{
-        *tlow_val = result * 0.0625;
+        *tlow_val = (float)result;
     }
     return EXIT_SUCCESS;  
 }
@@ -54,7 +53,7 @@ int TMP102_getTlow(float *tlow_val)
 int TMP102_getThigh(float *thigh_val)
 {
     uint16_t result = 0;
-    int ret1 = I2C_read_bytes(&i2c_handler,TMP102_SLAVE_ADDRESS ,TMP102_THIGH_REG, (uint8_t*)&result,sizeof(ret1));
+    int ret1 = I2C_read_bytes(&i2c_handler,TMP102_SLAVE_ADDRESS ,TMP102_THIGH_REG, (uint8_t*)&result,sizeof(uint16_t));
     if(ret1 < 0)
     {
         return EXIT_FAILURE;
@@ -62,10 +61,10 @@ int TMP102_getThigh(float *thigh_val)
     if(result & 0x800) //check for negative temperature
     {
         result = ((~result) + 1); 
-        *thigh_val = (-1) * result * 0.0625;
+        *thigh_val = (-1) * (float)result;
     }
     else{
-        *thigh_val = result * 0.0625;
+        *thigh_val = (float)result;
     }
     return EXIT_SUCCESS;     
 }
@@ -77,14 +76,14 @@ int TMP102_setThigh(float thigh_val) // default value is 80 deg celcius
     //get raw temp value from the parameter and check for negative values
     if(thigh_val > 0)
     {
-        result = ((uint16_t)thigh_val << 4);// tlow is 12 bits in normal mode.
+        result = ((uint16_t)thigh_val >> 4);// tlow is 12 bits in normal mode.
     }
     else
     {
         thigh_val = -1 * thigh_val;
         result = (uint16_t)thigh_val;
         result = ((~result) + 1); 
-        result <<= 4;
+        result >>= 4;
     }
 
     int ret1 = I2C_write_word(&i2c_handler,TMP102_SLAVE_ADDRESS ,TMP102_THIGH_REG,result);
@@ -100,14 +99,15 @@ int TMP102_setTlow(float tlow_val) //default value is 75 deg celcius
     //get raw temp value from the parameter and check for negative values
     if(tlow_val > 0)
     {
-        result = ((uint16_t)tlow_val << 4);// tlow is 12 bits in normal mode.
+        result = ((uint16_t)tlow_val >> 4);// tlow is 12 bits in normal mode.
+        result &= 0x7FFF;
     }
     else
     {
         tlow_val = -1 * tlow_val;
         result = (uint16_t)tlow_val;
         result = ((~result) + 1); 
-        result <<= 4;
+        result >>= 4;
     }
 
     int ret1 = I2C_write_word(&i2c_handler,TMP102_SLAVE_ADDRESS ,TMP102_TLOW_REG,result);
@@ -221,12 +221,13 @@ int TMP102_setFaultbits(fault_setting_t option) //default is 1 fault
     
     if(option == SIX_FAULTS) // FO and F1 set
     {
-        setting = setting | (uint16_t)TMP102_CONF_F0 | (uint16_t)TMP102_CONF_F1;    
+        setting |= (uint16_t)TMP102_CONF_F0;
+        setting |= (uint16_t)TMP102_CONF_F1; 
     }
     else if( option == FOUR_FAULTS) // F1 set F0 clear
     {
-        setting &= ~(uint16_t)TMP102_CONF_F0;
-        setting |= (uint16_t)TMP102_CONF_F1;
+        setting &= (~(uint16_t)TMP102_CONF_F0);
+        setting |= ((uint16_t)TMP102_CONF_F1);
     }
     else if(option == TWO_FAULTS) //FO set F1 clear
     {
@@ -239,7 +240,7 @@ int TMP102_setFaultbits(fault_setting_t option) //default is 1 fault
         setting &= ~(uint16_t)TMP102_CONF_F0;
         setting &= ~(uint16_t)TMP102_CONF_F1;
     }
-    
+    //printf("settings :0x%x\n",setting);  
     ret1 = I2C_write_word(&i2c_handler,TMP102_SLAVE_ADDRESS,TMP102_CONFIG_REG,setting);
     if(ret1 != 0)
     {
@@ -313,12 +314,13 @@ int TMP102_setCR(conversion_rate_t option)
 int TMP102_readAL( uint8_t *bit)
 {
     uint16_t AL = 0;
-    int ret1 = I2C_read_bytes(&i2c_handler,TMP102_SLAVE_ADDRESS,TMP102_CONFIG_REG,(uint8_t*)&AL,sizeof(AL));
+    *bit = 0;
+    int ret1 = I2C_read_bytes(&i2c_handler,TMP102_SLAVE_ADDRESS,TMP102_CONFIG_REG,(uint8_t*)&AL,sizeof(uint16_t));
     if(ret1 < 0)
     {
         return EXIT_FAILURE;
     } 
-    *bit = AL & TMP102_CONF_AL;
+    *bit = ((AL & (uint16_t)TMP102_CONF_AL) >> 13);
     return EXIT_SUCCESS;
 }
 

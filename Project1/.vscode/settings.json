@@ -4,6 +4,9 @@
         "cstdlib": "c",
         "myi2c.h": "c",
         "lightsensor.h": "c",
-        "bist.h": "c"
+        "bist.h": "c",
+        "string.h": "c",
+        "cmocka.h": "c",
+        "gpio.h": "c"
     }
 }

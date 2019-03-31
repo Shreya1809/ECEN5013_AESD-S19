@@ -19,9 +19,12 @@
 #include "tempSensor.h"
 #include "i2c.h"
 #include "heartbeat.h"
+#include "bist.h"
 
 static volatile float temperature_val = 0.0;
-static int stop_thread_temp = 0;
+static volatile float tlow_val = 75.0;
+static volatile float thigh_val = 80.0;
+static sig_atomic_t stop_thread_temp = 0;
 int t_count = 0;
 pthread_mutex_t temp_var_lock = PTHREAD_MUTEX_INITIALIZER;
 
@@ -43,6 +46,7 @@ static inline float getTempVar()
 
 void kill_temp_thread(void)
 {
+    printf("temp exit\n");
     stop_thread_temp = 1;    
 }
 
@@ -60,26 +64,56 @@ float getTemperature(temp_unit unit)
     return temp_val;
 }
 
+int RemoteThresholdValues(float flow,float fhigh)
+{
+    pthread_mutex_lock(&temp_var_lock);
+    tlow_val = flow;
+    thigh_val = fhigh;
+    pthread_mutex_unlock(&temp_var_lock); 
+    return 0;
+}
+int TMP102_setTempThreshold(float tlow_val,float thigh_val)
+{
+    uint8_t bit;
+    TMP102_setThigh(thigh_val);
+    TMP102_setTlow(tlow_val);
+    TMP102_setResolution(R0R1_SET);
+    TMP102_setFaultbits(TWO_FAULTS);
+    TMP102_readAL(&bit);
+    LOG_INFO(TEMP_TASK,"thresholds are %f and %f",tlow_val,thigh_val);
+    if(bit == 0)
+    {
+        GREENLEDOFF();
+        REDLEDON();
+        LOG_WARN(TEMP_TASK,"Current Temperature has exceeded the upper threshold");
+    }
+    else
+    {
+        REDLEDOFF();
+        GREENLEDON();
+    }
+    return 0;
+    
+}
+
+
 static int readAndUpdateTemp(void)
 {
     float temp_val = 0.0 ;
-    int ret = TMP102_getTemperature(&temp_val);
-    if(ret)
-    {
-        LOG_ERROR(TEMP_TASK, "TMP102 Get Temperature: %d", ret);
-        return ret;
-    }
-
-    setTempVar(temp_val);    
-    LOG_INFO(TEMP_TASK,"The temperature is %f C",temp_val);
-    if(temp_val == 0)
-    {
-        t_count++;
-    }
     if(t_count > 4)
     {
         stop_thread_temp = 1;   
     }
+    int ret = TMP102_getTemperature(&temp_val);
+    if(ret)
+    {
+        LOG_ERROR(TEMP_TASK, "TMP102 Temperature Sensor disconnected: %d", ret);
+        t_count++;
+        return ret;
+    }
+    setTempVar(temp_val);    
+    LOG_INFO(TEMP_TASK,"The temperature is %f C",temp_val);
+    TMP102_setTempThreshold(tlow_val,thigh_val);
     return 0;
 }
 
@@ -90,13 +124,14 @@ static void giveSemSensor(union sigval no)
 
 void *temp_task(void *threadp)
 {
-    //printf("hello1\n");
     sem_init(&temp_thread_sem,0,0);
-    //printf("hello2\n");
     usleep(1000);
     sem_wait(&temp_thread_sem);
     usleep(1000);
-    //printf("hello3\n");
+    if(!CheckBistResult())
+    {
+        goto exit;
+    }
     LOG_INFO(TEMP_TASK,"Temperature Task thread spawned");
     I2C_init(&i2c_handler);
     timer_t temp_timer;
@@ -114,6 +149,7 @@ void *temp_task(void *threadp)
             readAndUpdateTemp();
         }
     }        
+exit:    
     LOG_INFO(TEMP_TASK,"Temp task thread exiting");
     return NULL;
 }

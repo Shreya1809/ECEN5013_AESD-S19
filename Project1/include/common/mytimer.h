@@ -17,11 +17,19 @@ int maketimer(timer_t *timerID, void (*callback)(union sigval));
  * @param timerID 
  * @return int 
  */
-void startTimer(timer_t timerID);
+int startTimer(timer_t timerID);
 /**
  * @brief start timer for heartbeat
  * 
  */
-void startTimerHB(timer_t timerID);
+int startTimerHB(timer_t timerID);
+
+/**
+ * @brief stops the timer
+ * 
+ * @param timer_id 
+ * @return int 
+ */
+int stopTimer(timer_t timer_id);
 
 #endif

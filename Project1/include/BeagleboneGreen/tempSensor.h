@@ -19,18 +19,18 @@
 #define TMP102_TLOW_REG                 (0x02)
 #define TMP102_THIGH_REG                (0x03)  
 //config register is a 16 bit register with the following bit position byte1 msb followed by byte 2
-#define		TMP102_CONF_SD		0x0100  
-#define		TMP102_CONF_TM		0x0200
-#define		TMP102_CONF_POL		0x0400
-#define		TMP102_CONF_F0		0x0800
-#define		TMP102_CONF_F1		0x1000
-#define		TMP102_CONF_R0		0x2000
-#define		TMP102_CONF_R1		0x4000
-#define		TMP102_CONF_OS		0x8000
-#define		TMP102_CONF_EM		0x0010
-#define		TMP102_CONF_AL		0x0020
-#define		TMP102_CONF_CR0		0x0040
-#define		TMP102_CONF_CR1		0x0080
+#define		TMP102_CONF_SD		(1)  
+#define		TMP102_CONF_TM		(1<<1)
+#define		TMP102_CONF_POL		(1<<2)
+#define		TMP102_CONF_F0		(1<<3)
+#define		TMP102_CONF_F1		(1<<4)
+#define		TMP102_CONF_R0		(1<<5)
+#define		TMP102_CONF_R1		(1<<6)
+#define		TMP102_CONF_OS		(1<<7)
+#define		TMP102_CONF_EM		(1<<12)
+#define		TMP102_CONF_AL		(1<<13)
+#define		TMP102_CONF_CR0		(1<<14)
+#define		TMP102_CONF_CR1		(1<<15)
 
 #define TMP102_CONFREG_MASK	(TMP102_CONF_SD | TMP102_CONF_TM | \
 				 TMP102_CONF_POL | TMP102_CONF_F0 | \

@@ -23,5 +23,5 @@ void startHearbeatCheck(void);
  * @brief 
  * 
  */
-void startSystemExit(void);
+void SystemExit(void);
 #endif

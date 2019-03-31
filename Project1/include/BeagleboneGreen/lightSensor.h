@@ -67,6 +67,19 @@ int APDS9301_getCh0(uint16_t *data);
  */
 int APDS9301_getCh1(uint16_t *data);
 /**
+ * @brief clears pending inteerupt
+ * 
+ * @return int 
+ */
+int APDS9301_intClear(void);
+/**
+ * @brief 
+ * 
+ * @param data 
+ * @return int 
+ */
+int APDS9301_CheckInt(uint8_t *data);
+/**
  * @brief combine channel0 and 1 data to get lux
  * 
  * @param lux 
@@ -128,28 +141,42 @@ int APDS9301_interruptCTRLreg(interrupt_mode_t option); //default is disabled
  * @param th_lowlow 
  * @return int 
  */
-int APDS9301_writeTHRESH_low(uint16_t th_lowlow);
+int APDS9301_writeTHRESH_lowlow(uint16_t th_lowlow);
 /**
  * @brief read threshold low low register
  * 
  * @param th_lowlow 
  * @return int 
  */
-int APDS9301_readTHRESH_low(uint16_t *th_lowlow);
+int APDS9301_readTHRESH_lowlow(uint8_t *th_lowlow);
 /**
  * @brief write threshold high low register
  * 
  * @param th_hilow 
  * @return int 
  */
-int APDS9301_writeTHRESH_high(uint16_t th_hilow);
+int APDS9301_writeTHRESH_highlow(uint16_t th_hilow);
 /**
  * @brief read threshold high low register
  * 
  * @param th_hilow 
  * @return int 
  */
-int APDS9301_readTHRESH_high(uint16_t *th_hilow);
+int APDS9301_readTHRESH_highlow(uint8_t *th_hilow);
+/**
+ * @brief high high thres register
+ * 
+ * @param th_hihi 
+ * @return int 
+ */
+int APDS9301_readTHRESH_highhigh(uint8_t *th_hihi);
+/**
+ * @brief low high threshold register
+ * 
+ * @param th_lowhi 
+ * @return int 
+ */
+int APDS9301_readTHRESH_lowhigh(uint8_t *th_lowhi);
 /**
  * @brief set all register values default
  * 
