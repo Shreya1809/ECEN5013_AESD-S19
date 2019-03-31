@@ -87,12 +87,15 @@ $(document).ready(function(){initNavTree('bist_8c.html','');});
 <div class="title">bist.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>built in self test before starting the main program  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="includes_8h_source.html">includes.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="bist_8h_source.html">bist.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
-<code>#include &quot;bbgled.h&quot;</code><br />
-<code>#include &quot;mysignal.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="bbgled_8h_source.html">bbgled.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mysignal_8h_source.html">mysignal.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="lightSensor_8h_source.html">lightSensor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="tempSensor_8h_source.html">tempSensor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="myI2C_8h_source.html">myI2C.h</a>&quot;</code><br />
@@ -112,7 +115,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bist_
 <tr class="memdesc:a04f53a58de931b7aee64354337b1717f"><td class="mdescLeft">&#160;</td><td class="mdescRight">testing if light sensor is connected <br /></td></tr>
 <tr class="separator:a04f53a58de931b7aee64354337b1717f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d14d73d6e1fa674e30aa2304ae93362"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bist_8c.html#a3d14d73d6e1fa674e30aa2304ae93362">Test_AllThreads</a> (void)</td></tr>
-<tr class="memdesc:a3d14d73d6e1fa674e30aa2304ae93362"><td class="mdescLeft">&#160;</td><td class="mdescRight">checking all thread status  <a href="#a3d14d73d6e1fa674e30aa2304ae93362">More...</a><br /></td></tr>
+<tr class="memdesc:a3d14d73d6e1fa674e30aa2304ae93362"><td class="mdescLeft">&#160;</td><td class="mdescRight">checking all thread status after creation from the global flag  <a href="#a3d14d73d6e1fa674e30aa2304ae93362">More...</a><br /></td></tr>
 <tr class="separator:a3d14d73d6e1fa674e30aa2304ae93362"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4af560292780449047e7cd8cd1dab2e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bist_8c.html#a4af560292780449047e7cd8cd1dab2e8">Test_I2C</a> (void)</td></tr>
 <tr class="memdesc:a4af560292780449047e7cd8cd1dab2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">testing i2c init  <a href="#a4af560292780449047e7cd8cd1dab2e8">More...</a><br /></td></tr>
@@ -121,15 +124,17 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bist_
 <tr class="memdesc:a49ba973b041702872812a3a3986dedf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">testing temperature register  <a href="#a49ba973b041702872812a3a3986dedf2">More...</a><br /></td></tr>
 <tr class="separator:a49ba973b041702872812a3a3986dedf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0206c558e01844495617238cc5288e8e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bist_8c.html#a0206c558e01844495617238cc5288e8e">Test_loggerQ</a> (void)</td></tr>
-<tr class="memdesc:a0206c558e01844495617238cc5288e8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">tedting logger enqueue  <a href="#a0206c558e01844495617238cc5288e8e">More...</a><br /></td></tr>
+<tr class="memdesc:a0206c558e01844495617238cc5288e8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">testing logger enqueue  <a href="#a0206c558e01844495617238cc5288e8e">More...</a><br /></td></tr>
 <tr class="separator:a0206c558e01844495617238cc5288e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5303bf00f61d6b6cdad370acced43d3"><td class="memItemLeft" align="right" valign="top"><a id="af5303bf00f61d6b6cdad370acced43d3"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>BuiltInSelfTest</b> (void)</td></tr>
 <tr class="separator:af5303bf00f61d6b6cdad370acced43d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7793fe60ba4afcc9a64e139826ad7b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bist_8c.html#ab7793fe60ba4afcc9a64e139826ad7b5">CheckBistResult</a> (void)</td></tr>
+<tr class="memdesc:ab7793fe60ba4afcc9a64e139826ad7b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks BIST_allOk flag to see if the bist was successful  <a href="#ab7793fe60ba4afcc9a64e139826ad7b5">More...</a><br /></td></tr>
 <tr class="separator:ab7793fe60ba4afcc9a64e139826ad7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a767159aff436f77ad55a3785a9a12cd0"><td class="memItemLeft" align="right" valign="top"><a id="a767159aff436f77ad55a3785a9a12cd0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>PostBistOkResult</b> (void)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bist_8c.html#a767159aff436f77ad55a3785a9a12cd0">PostBistOkResult</a> (void)</td></tr>
+<tr class="memdesc:a767159aff436f77ad55a3785a9a12cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">posts semaphores to rest of the threads <br /></td></tr>
 <tr class="separator:a767159aff436f77ad55a3785a9a12cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e31456d94976ba2476c1761392f0ca0"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bist_8c.html#a3e31456d94976ba2476c1761392f0ca0">bist_task</a> (void *threadp)</td></tr>
 <tr class="memdesc:a3e31456d94976ba2476c1761392f0ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">call back function for bist task from main task  <a href="#a3e31456d94976ba2476c1761392f0ca0">More...</a><br /></td></tr>
@@ -142,7 +147,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>thread_flags</b> [5]</
 <tr class="separator:af3524dd7c8b302fe634552460b1ba1ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>your name (<a href="#" onclick="location.href='mai'+'lto:'+'you'+'@d'+'oma'+'in'+'.co'+'m'; return false;">you@d<span style="display: none;">.nosp@m.</span>omai<span style="display: none;">.nosp@m.</span>n.com</a>) </dd></dl>
+<div class="textblock"><p>built in self test before starting the main program </p>
+<dl class="section author"><dt>Author</dt><dd>Shreya Chakraborty </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2019-03-16</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019 </dd></dl>
@@ -174,7 +180,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>thread_flags</b> [5]</
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void* </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bist_8c_source.html#l00158">158</a> of file <a class="el" href="bist_8c_source.html">bist.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bist_8c_source.html#l00161">161</a> of file <a class="el" href="bist_8c_source.html">bist.c</a>.</p>
 
 </div>
 </div>
@@ -193,9 +199,11 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>thread_flags</b> [5]</
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>checks BIST_allOk flag to see if the bist was successful </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bist_8c_source.html#l00141">141</a> of file <a class="el" href="bist_8c_source.html">bist.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bist_8c_source.html#l00140">140</a> of file <a class="el" href="bist_8c_source.html">bist.c</a>.</p>
 
 </div>
 </div>
@@ -215,7 +223,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>thread_flags</b> [5]</
       </table>
 </div><div class="memdoc">
 
-<p>checking all thread status </p>
+<p>checking all thread status after creation from the global flag </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="bist_8c_source.html#l00044">44</a> of file <a class="el" href="bist_8c_source.html">bist.c</a>.</p>
@@ -261,7 +269,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>thread_flags</b> [5]</
       </table>
 </div><div class="memdoc">
 
-<p>tedting logger enqueue </p>
+<p>testing logger enqueue </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="bist_8c_source.html#l00079">79</a> of file <a class="el" href="bist_8c_source.html">bist.c</a>.</p>

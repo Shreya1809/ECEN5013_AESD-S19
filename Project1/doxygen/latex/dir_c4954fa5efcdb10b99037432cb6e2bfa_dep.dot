@@ -7,5 +7,5 @@ digraph "/home/shreya1809/ECEN5013_AESD-S19/Project1/test/Logger_TEST" {
   dir_c4954fa5efcdb10b99037432cb6e2bfa [shape=box, label="Logger_TEST", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_c4954fa5efcdb10b99037432cb6e2bfa.html"];
   }
   dir_d44c64559bbebec7f509842c48db8b23 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_d44c64559bbebec7f509842c48db8b23.html"];
-  dir_c4954fa5efcdb10b99037432cb6e2bfa->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="1", labeldistance=1.5 headhref="dir_000008_000000.html"];
+  dir_c4954fa5efcdb10b99037432cb6e2bfa->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="2", labeldistance=1.5 headhref="dir_000008_000000.html"];
 }

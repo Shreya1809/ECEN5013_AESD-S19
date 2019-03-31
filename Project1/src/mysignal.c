@@ -1,25 +1,26 @@
+/**
+ * @file mysignal.c
+ * @author Shreya Chakraborty
+ * @brief handles the CTRL-C keyboard input from user to exit cleanly
+ * @version 0.1
+ * @date 2019-03-31
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "includes.h"
 #include "bbgled.h"
 #include "mysignal.h"
+#include "heartbeat.h"
+#include "logger.h"
 
-/*void signal_handler(int signum)
-{
-    done = 1;
-}*/
-
-void signal_init(void)
-{
-    struct sigaction action;
-    memset(&action, 0, sizeof(action));
-    action.sa_handler = signal_handler;
-    sigaction(SIGUSR1, &action, NULL);
-}
 
 void signal_handler(int signum)
 {
-    if (signum == SIGUSR1)
+    if (signum == SIGINT)
     {
-        done = 1;
+        LOG_WARN(MAIN_TASK,"User exit signal received....");
+        SystemExit();
     }
     
 }

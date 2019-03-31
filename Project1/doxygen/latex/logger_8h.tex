@@ -1,5 +1,10 @@
 \hypertarget{logger_8h}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/logger.h File Reference}
 \label{logger_8h}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/logger.\+h@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/logger.\+h}}
+
+
+Header file for logger task.  
+
+
 {\ttfamily \#include $<$time.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$sys/time.\+h$>$}\newline
@@ -40,14 +45,14 @@ struct \hyperlink{structloggerTask__param}{logger\+Task\+\_\+param}
 \mbox{\Hypertarget{logger_8h_a841666af413bb2922b6de4a651c282a3}\label{logger_8h_a841666af413bb2922b6de4a651c282a3}} 
 \#define {\bfseries L\+O\+G\+\_\+\+S\+T\+D\+O\+UT}
 \item 
-\#define {\bfseries P\+R\+I\+N\+T\+L\+O\+G\+C\+O\+N\+S\+O\+LE}(f\+\_\+, ...)
-\item 
+\#define \hyperlink{logger_8h_a20714b4540bd3995b3161063601a8582}{P\+R\+I\+N\+T\+L\+O\+G\+C\+O\+N\+S\+O\+LE}(f\+\_\+, ...)
+\begin{DoxyCompactList}\small\item\em macro function for printing on the console \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{logger_8h_ae3e3a490f3f48d89f563a24fffe92fb3}\label{logger_8h_ae3e3a490f3f48d89f563a24fffe92fb3}} 
 \#define {\bfseries P\+R\+I\+NT}(f\+\_\+, ...)~printf(f\+\_\+, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
 \item 
 \mbox{\Hypertarget{logger_8h_aa8ae79f0ca62f8fbb8e783868b73e8b8}\label{logger_8h_aa8ae79f0ca62f8fbb8e783868b73e8b8}} 
-\#define {\bfseries L\+O\+G\+\_\+\+I\+N\+FO}(mod\+Id,  msg, ...)~\hyperlink{logger_8h_a59bf591b758fe8741ffad898e91e748c}{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE}(L\+O\+G\+\_\+\+I\+N\+FO, mod\+Id, msg, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
-\item 
+\#define \hyperlink{logger_8h_aa8ae79f0ca62f8fbb8e783868b73e8b8}{L\+O\+G\+\_\+\+I\+N\+FO}(mod\+Id,  msg, ...)~\hyperlink{logger_8h_a59bf591b758fe8741ffad898e91e748c}{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE}(L\+O\+G\+\_\+\+I\+N\+FO, mod\+Id, msg, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Macro functions for logger with levels. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{logger_8h_add6c05edc3df7bc35c5943a2abf9e817}\label{logger_8h_add6c05edc3df7bc35c5943a2abf9e817}} 
 \#define {\bfseries L\+O\+G\+\_\+\+E\+R\+R\+OR}(mod\+Id,  msg, ...)~\hyperlink{logger_8h_a59bf591b758fe8741ffad898e91e748c}{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE}(L\+O\+G\+\_\+\+E\+RR, mod\+Id, msg, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
 \item 
@@ -94,8 +99,10 @@ const char $\ast$ {\bfseries log\+Level} \mbox{[}L\+O\+G\+\_\+\+M\+AX\mbox{]}
 
 
 \subsection{Detailed Description}
+Header file for logger task. 
+
 \begin{DoxyAuthor}{Author}
-your name (\href{mailto:you@domain.com}{\tt you@domain.\+com}) 
+Shreya Chakraborty 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 0.\+1 
@@ -127,7 +134,11 @@ Copyright (c) 2019
 \end{DoxyCode}
 
 
-Definition at line 56 of file logger.\+h.
+macro function for printing on the console 
+
+
+
+Definition at line 61 of file logger.\+h.
 
 
 
@@ -161,9 +172,9 @@ to put messages in the logger queue
 
 
 \begin{DoxyParams}{Parameters}
-{\em level} & \\
+{\em level} & log level \\
 \hline
-{\em mod\+Id} & \\
+{\em mod\+Id} & the task \\
 \hline
 {\em msg} & \\
 \hline
@@ -188,16 +199,11 @@ Definition at line 63 of file logger.\+c.
 queue initialisation 
 
 \begin{DoxyReturn}{Returns}
-int
-\end{DoxyReturn}
-queue initialisation
-
-\begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
 
 
-Definition at line 97 of file logger.\+c.
+Definition at line 93 of file logger.\+c.
 
 \mbox{\Hypertarget{logger_8h_afa7630a1e435cb94de8fb5c793bc864d}\label{logger_8h_afa7630a1e435cb94de8fb5c793bc864d}} 
 \index{logger.\+h@{logger.\+h}!logger\+\_\+task@{logger\+\_\+task}}
@@ -229,5 +235,5 @@ void$\ast$
 \end{DoxyReturn}
 
 
-Definition at line 127 of file logger.\+c.
+Definition at line 123 of file logger.\+c.
 

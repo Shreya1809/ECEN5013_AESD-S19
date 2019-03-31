@@ -64,11 +64,11 @@ digraph "/home/shreya1809/ECEN5013_AESD-S19/Project1/src/myI2C.c"
   Node1 -> Node30 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node30 [label="math.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node0 -> Node31 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node31 [label="myI2C.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$myI2C_8h.html"];
+  Node31 [label="myI2C.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$myI2C_8h.html",tooltip="header for I2C drivers "];
   Node31 -> Node32 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node32 [label="mraa/i2c.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node0 -> Node33 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node33 [label="logger.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logger_8h.html"];
+  Node33 [label="logger.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logger_8h.html",tooltip="Header file for logger task. "];
   Node33 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node33 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node33 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

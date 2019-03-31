@@ -1,7 +1,7 @@
 /**
  * @file myI2C.c
- * @author your name (you@domain.com)
- * @brief 
+ * @author Shreya Chakraborty
+ * @brief I2C drivers for sensor using mraa library
  * @version 0.1
  * @date 2019-03-22
  * @reference https://iotdk.intel.com/docs/master/mraa/i2c_8h.html#a935c1206dfd241e182de7fe133aadb18
@@ -87,7 +87,6 @@ int I2C_read_byte(i2c_struct_t *i2c_handler,uint8_t slave_addr,uint8_t command_r
 
 int I2C_read_bytes(i2c_struct_t *i2c_handler,uint8_t slave_addr,uint8_t command_reg, uint8_t *data, size_t length)
 {
-    //printf("length is %d\n",length);
     int ret;
     if(! I2C_set_slave(i2c_handler,slave_addr))
     {
@@ -99,7 +98,6 @@ int I2C_read_bytes(i2c_struct_t *i2c_handler,uint8_t slave_addr,uint8_t command_
         }
         else 
         {
-            //printf("the ret is %d\n",ret);
             return ret;
         }
     }
@@ -126,11 +124,9 @@ int I2C_write_byte_data(i2c_struct_t *i2c_handler,uint8_t slave_addr,uint8_t com
 //msb byte2 followed by lsb byte1 format
 int I2C_write_word(i2c_struct_t *i2c_handler,uint8_t slave_addr,uint8_t command_reg,uint16_t data)
 {
-    //printf("i2c write word %d\n",data);
     if(! I2C_set_slave(i2c_handler,slave_addr))
     {
         i2c_handler->status = mraa_i2c_write_word_data(i2c_handler->i2c_context, data,command_reg);
-        //printf("mraa write word data write word %d\n",data);
         if(i2c_handler->status != MRAA_SUCCESS)
         {
             PRINTLOGCONSOLE("Could not write data to Slave address");
@@ -138,7 +134,6 @@ int I2C_write_word(i2c_struct_t *i2c_handler,uint8_t slave_addr,uint8_t command_
         }
         else 
         {
-            //printf("status is %d\n",i2c_handler->status);
             return i2c_handler->status;
         }
     }

@@ -1,4 +1,13 @@
-#include "includes.h"
+/**
+ * @file heartbeat.c
+ * @author Shreya Chakraborty
+ * @brief heartbeat functionality from all threads
+ * @version 0.1
+ * @date 2019-03-31
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "mytimer.h"
 #include "main.h"
 #include "logger.h"
@@ -8,6 +17,8 @@
 #include "socket.h"
 
 static volatile uint32_t g_heartbeat_taskFlags = 0;
+static int h_sec = 2;
+static int h_nsec = 0;
 int counter = 0;
 static pthread_mutex_t heartbeatFlagsLock = PTHREAD_MUTEX_INITIALIZER;
 
@@ -17,24 +28,19 @@ void set_heartbeatFlag(moduleId_t moduleId)
 {
 	pthread_mutex_lock(&heartbeatFlagsLock);
 	g_heartbeat_taskFlags |= (1<<moduleId);
-    //printf("the module %d and global taskflag 0x%x\n",moduleId,g_heartbeat_taskFlags);
 	pthread_mutex_unlock(&heartbeatFlagsLock);
 }
 
 void SystemExit(void)
 {
 	kill_temp_thread();
-	//usleep(1000);
 	kill_light_thread();
-	//usleep(1000);
 	kill_socket_thread();
-	//usleep(1000);
 	kill_logger_thread();
 }
 
-static bool systemExitInitiated = false;
+static bool systemExitInitiated = false; //to break out of heartbeat loop
 
-//use this as the timer callback
 void heatbeat_timer_callback(union sigval no)
 {
 	if(systemExitInitiated)
@@ -54,19 +60,12 @@ void heatbeat_timer_callback(union sigval no)
             LOG_ERROR(MAIN_TASK,"HEARTBEAT </3 </3 </3 %s thread is DEAD x_x",moduleIdName[i]);
             GREENLEDOFF();
             REDLEDON();
-			//printf("%s\n",moduleIdName[i]);
-			// counter++;
-			// if(counter > 4)
-			// {
-				systemExitInitiated = true;
-				SystemExit();
-			// }
+			systemExitInitiated = true;
+			SystemExit();
 			break;
-			// continue;
 		}
         else {
             flags &= ~(1<<i);
-			//printf("After flags is 0x%0x\n",flags);
             if((flags == 0) && (copy_flags == 0x0e))
             {
                 LOG_INFO(MAIN_TASK,"HEARTBEAT <3 <3 <3 All threads working");
@@ -92,6 +91,6 @@ void startHearbeatCheck(void)
 {
     timer_t hearbeat_timer_id;
 	maketimer(&hearbeat_timer_id, &heatbeat_timer_callback);
-	startTimerHB(hearbeat_timer_id);
+	startTimerHB(hearbeat_timer_id,h_sec,h_nsec);
 }
 

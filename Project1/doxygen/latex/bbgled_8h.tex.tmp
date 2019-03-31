@@ -1,0 +1,98 @@
+\hypertarget{bbgled_8h}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/\+Beaglebone\+Green/bbgled.h File Reference}
+\label{bbgled_8h}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/\+Beaglebone\+Green/bbgled.\+h@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/\+Beaglebone\+Green/bbgled.\+h}}
+
+
+header file for external led functionality connected to B\+BG  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for bbgled.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{bbgled_8h_a8642a79ab7551f839b2fb6693c3518a5}\label{bbgled_8h_a8642a79ab7551f839b2fb6693c3518a5}} 
+\#define {\bfseries R\+E\+D\+L\+E\+D\+ON}()~\hyperlink{bbgled_8h_ac4983b0801ad2489c226dd2f056a6fda}{red\+Led\+\_\+\+On\+Off}(1)
+\item 
+\mbox{\Hypertarget{bbgled_8h_a3dd887c9e964d0cfad81ad703bb8738a}\label{bbgled_8h_a3dd887c9e964d0cfad81ad703bb8738a}} 
+\#define {\bfseries R\+E\+D\+L\+E\+D\+O\+FF}()~\hyperlink{bbgled_8h_ac4983b0801ad2489c226dd2f056a6fda}{red\+Led\+\_\+\+On\+Off}(0)
+\item 
+\mbox{\Hypertarget{bbgled_8h_a420478e844db6cfc5fe789b4a2d89e50}\label{bbgled_8h_a420478e844db6cfc5fe789b4a2d89e50}} 
+\#define {\bfseries G\+R\+E\+E\+N\+L\+E\+D\+ON}()~\hyperlink{bbgled_8h_ac88dacefab0d1b6e820e4347b09a8a81}{green\+Led\+\_\+\+On\+Off}(1)
+\item 
+\mbox{\Hypertarget{bbgled_8h_ab8e60ea8cf05ab816a7d864f8b94c6b1}\label{bbgled_8h_ab8e60ea8cf05ab816a7d864f8b94c6b1}} 
+\#define {\bfseries G\+R\+E\+E\+N\+L\+E\+D\+O\+FF}()~\hyperlink{bbgled_8h_ac88dacefab0d1b6e820e4347b09a8a81}{green\+Led\+\_\+\+On\+Off}(0)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{bbgled_8h_ac4983b0801ad2489c226dd2f056a6fda}{red\+Led\+\_\+\+On\+Off} (bool option)
+\begin{DoxyCompactList}\small\item\em turn on off red led \end{DoxyCompactList}\item 
+int \hyperlink{bbgled_8h_ac88dacefab0d1b6e820e4347b09a8a81}{green\+Led\+\_\+\+On\+Off} (bool option)
+\begin{DoxyCompactList}\small\item\em turn on off green led \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+header file for external led functionality connected to B\+BG 
+
+\begin{DoxyAuthor}{Author}
+Shreya Chakraborty 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/03-\/31
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{bbgled_8h_ac88dacefab0d1b6e820e4347b09a8a81}\label{bbgled_8h_ac88dacefab0d1b6e820e4347b09a8a81}} 
+\index{bbgled.\+h@{bbgled.\+h}!green\+Led\+\_\+\+On\+Off@{green\+Led\+\_\+\+On\+Off}}
+\index{green\+Led\+\_\+\+On\+Off@{green\+Led\+\_\+\+On\+Off}!bbgled.\+h@{bbgled.\+h}}
+\subsubsection{\texorpdfstring{green\+Led\+\_\+\+On\+Off()}{greenLed\_OnOff()}}
+{\footnotesize\ttfamily int green\+Led\+\_\+\+On\+Off (\begin{DoxyParamCaption}\item[{bool}]{option }\end{DoxyParamCaption})}
+
+
+
+turn on off green led 
+
+
+\begin{DoxyParams}{Parameters}
+{\em option} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file bbgled.\+c.
+
+\mbox{\Hypertarget{bbgled_8h_ac4983b0801ad2489c226dd2f056a6fda}\label{bbgled_8h_ac4983b0801ad2489c226dd2f056a6fda}} 
+\index{bbgled.\+h@{bbgled.\+h}!red\+Led\+\_\+\+On\+Off@{red\+Led\+\_\+\+On\+Off}}
+\index{red\+Led\+\_\+\+On\+Off@{red\+Led\+\_\+\+On\+Off}!bbgled.\+h@{bbgled.\+h}}
+\subsubsection{\texorpdfstring{red\+Led\+\_\+\+On\+Off()}{redLed\_OnOff()}}
+{\footnotesize\ttfamily int red\+Led\+\_\+\+On\+Off (\begin{DoxyParamCaption}\item[{bool}]{option }\end{DoxyParamCaption})}
+
+
+
+turn on off red led 
+
+
+\begin{DoxyParams}{Parameters}
+{\em option} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 18 of file bbgled.\+c.
+

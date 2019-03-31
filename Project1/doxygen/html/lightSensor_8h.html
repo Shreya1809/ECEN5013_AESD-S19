@@ -88,12 +88,14 @@ $(document).ready(function(){initNavTree('lightSensor_8h.html','');});
 <div class="title">lightSensor.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>header file for APDS9301 register functions  
+<a href="#details">More...</a></p>
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="lightSensor_8h__dep__incl.png" border="0" usemap="#_2home_2shreya1809_2ECEN5013__AESD-S19_2Project1_2include_2BeagleboneGreen_2lightSensor_8hdep" alt=""/></div>
-<map name="_2home_2shreya1809_2ECEN5013__AESD-S19_2Project1_2include_2BeagleboneGreen_2lightSensor_8hdep" id="_2home_2shreya1809_2ECEN5013__AESD-S19_2Project1_2include_2BeagleboneGreen_2lightSensor_8hdep">
-</map>
+<!-- MAP 0 -->
 </div>
 </div>
 <p><a href="lightSensor_8h_source.html">Go to the source code of this file.</a></p>
@@ -193,6 +195,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a2c4c5c895ba901f884f473651bd3afdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">clears pending inteerupt  <a href="#a2c4c5c895ba901f884f473651bd3afdc">More...</a><br /></td></tr>
 <tr class="separator:a2c4c5c895ba901f884f473651bd3afdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ff1625996e8f1cebf5041777c653964"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lightSensor_8h.html#a4ff1625996e8f1cebf5041777c653964">APDS9301_CheckInt</a> (uint8_t *data)</td></tr>
+<tr class="memdesc:a4ff1625996e8f1cebf5041777c653964"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks interrupt  <a href="#a4ff1625996e8f1cebf5041777c653964">More...</a><br /></td></tr>
 <tr class="separator:a4ff1625996e8f1cebf5041777c653964"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae12804ca44a2f58617bd467c8633553e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lightSensor_8h.html#ae12804ca44a2f58617bd467c8633553e">APDS9301_getlight</a> (float *lux)</td></tr>
 <tr class="memdesc:ae12804ca44a2f58617bd467c8633553e"><td class="mdescLeft">&#160;</td><td class="mdescRight">combine channel0 and 1 data to get lux  <a href="#ae12804ca44a2f58617bd467c8633553e">More...</a><br /></td></tr>
@@ -201,6 +204,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a960a4cfc5ff042a3fc995a201eb83916"><td class="mdescLeft">&#160;</td><td class="mdescRight">read light id register  <a href="#a960a4cfc5ff042a3fc995a201eb83916">More...</a><br /></td></tr>
 <tr class="separator:a960a4cfc5ff042a3fc995a201eb83916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a790e79354d79d996d39d97e3c0750f81"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lightSensor_8h.html#a790e79354d79d996d39d97e3c0750f81">APDS9301_powerup</a> ()</td></tr>
+<tr class="memdesc:a790e79354d79d996d39d97e3c0750f81"><td class="mdescLeft">&#160;</td><td class="mdescRight">powerup the light sensor  <a href="#a790e79354d79d996d39d97e3c0750f81">More...</a><br /></td></tr>
 <tr class="separator:a790e79354d79d996d39d97e3c0750f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adaf832bbb1ee2551672b59b171913212"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lightSensor_8h.html#adaf832bbb1ee2551672b59b171913212">APDS9301_writeCMDreg</a> (uint8_t data)</td></tr>
 <tr class="memdesc:adaf832bbb1ee2551672b59b171913212"><td class="mdescLeft">&#160;</td><td class="mdescRight">write to command register  <a href="#adaf832bbb1ee2551672b59b171913212">More...</a><br /></td></tr>
@@ -240,7 +244,8 @@ Functions</h2></td></tr>
 <tr class="separator:a8aa4cf1866fd0f410dfa714fae4828d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>your name (<a href="#" onclick="location.href='mai'+'lto:'+'you'+'@d'+'oma'+'in'+'.co'+'m'; return false;">you@d<span style="display: none;">.nosp@m.</span>omai<span style="display: none;">.nosp@m.</span>n.com</a>) </dd></dl>
+<div class="textblock"><p>header file for APDS9301 register functions </p>
+<dl class="section author"><dt>Author</dt><dd>Shreya Chakraborty </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2019-03-22  : <a href="https://github.com/sparkfun/APDS-9301_Breakout/blob/master/Libraries/Arduino/src/Sparkfun_APDS9301_Library.h">https://github.com/sparkfun/APDS-9301_Breakout/blob/master/Libraries/Arduino/src/Sparkfun_APDS9301_Library.h</a> </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019 </dd></dl>
@@ -262,6 +267,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>checks interrupt </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td></td></tr>
@@ -270,7 +277,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00112">112</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00122">122</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -299,7 +306,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00006">6</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00016">16</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -328,7 +335,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00022">22</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00032">32</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -357,7 +364,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00039">39</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00049">49</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -380,7 +387,7 @@ Functions</h2></td></tr>
 <p>clears pending inteerupt </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00101">101</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00111">111</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -409,7 +416,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00233">233</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00243">243</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -427,9 +434,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>powerup the light sensor </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00083">83</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00093">93</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -458,7 +467,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00155">155</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00165">165</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -487,7 +496,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00133">133</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00143">143</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -516,7 +525,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00296">296</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00305">305</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -545,7 +554,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00286">286</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00295">295</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -574,7 +583,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00306">306</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00315">315</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -603,7 +612,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00268">268</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00277">277</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -625,7 +634,7 @@ Functions</h2></td></tr>
 <p>set all register values default </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00316">316</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00325">325</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -654,7 +663,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00166">166</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00176">176</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -683,7 +692,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00195">195</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00205">205</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -712,7 +721,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00144">144</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00154">154</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -741,7 +750,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00277">277</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00286">286</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>
@@ -770,7 +779,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00259">259</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lightSensor_8c_source.html#l00268">268</a> of file <a class="el" href="lightSensor_8c_source.html">lightSensor.c</a>.</p>
 
 </div>
 </div>

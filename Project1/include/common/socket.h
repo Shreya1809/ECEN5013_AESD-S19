@@ -1,7 +1,7 @@
 /**
  * @file socket.h
- * @author your name (you@domain.com)
- * @brief 
+ * @author Shreya Chakraborty
+ * @brief header for socket functionality
  * @version 0.1
  * @date 2019-03-16
  * 

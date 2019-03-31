@@ -1,3 +1,13 @@
+/**
+ * @file test.c
+ * @author Shreya Chakraborty
+ * @brief Cmoka unit testing for light sensor register functions
+ * @version 0.1
+ * @date 2019-03-31
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "myI2C.h"
 #include "lightSensor.h"
 #include <unistd.h>
@@ -38,14 +48,14 @@ static void lightSensor_GetCH1Test(void **state)
 
 static void lightSensor_GetIDregTest(void **state)
 {
-    uint16_t data;
+    uint8_t data;
     int ret = APDS9301_readIDreg(&data);
     assert_int_equal(ret, 0);
 }
 
 static void lightSensor_GetCTRLTest(void **state)
 {
-    uint16_t data;
+    uint8_t data;
     int ret = APDS9301_readCTRLreg(&data);
     assert_int_equal(ret, 0);
 }
@@ -73,42 +83,40 @@ static void lightSensor_interruptCTRLTest(void **state)
 
 static void lightSensor_setTHlowlowTest(void **state)
 {
-    uint16_t th_lowlow;
-    int ret = APDS9301_writeTHRESH_lowlow(th_lowlow);
+    int ret = APDS9301_writeTHRESH_lowlow(1);
     assert_int_equal(ret, 0);
 }
 
 static void lightSensor_setTHhilowLTest(void **state)
 {
-    uint16_t th_hilow;
-    int ret = APDS9301_writeTHRESH_highlow(th_hilow);
+    int ret = APDS9301_writeTHRESH_highlow(1);
     assert_int_equal(ret, 0);
 }
 
 static void lightSensor_getTHlowlowTest(void **state)
 {
-    uint16_t th_lowlow;
+    uint8_t th_lowlow;
     int ret = APDS9301_readTHRESH_lowlow(&th_lowlow);
     assert_int_equal(ret, 0);
 }
 
 static void lightSensor_getTHlowhiTest(void **state)
 {
-    uint16_t th_lowhi;
+    uint8_t th_lowhi;
     int ret = APDS9301_readTHRESH_lowhigh(&th_lowhi);
     assert_int_equal(ret, 0);
 }
 
 static void lightSensor_getTHhighlowTest(void **state)
 {
-    uint16_t th_hilow;
+    uint8_t th_hilow;
     int ret = APDS9301_readTHRESH_highlow(&th_hilow);
     assert_int_equal(ret, 0);
 }
 
 static void lightSensor_getTHhihiTest(void **state)
 {
-    uint16_t th_hihi;
+    uint8_t th_hihi;
     int ret = APDS9301_readTHRESH_lowlow(&th_hihi);
     assert_int_equal(ret, 0);
 }

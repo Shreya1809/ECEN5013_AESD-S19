@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['socket_2ec',['socket.c',['../socket_8c.html',1,'']]],
-  ['socket_2eh',['socket.h',['../socket_8h.html',1,'']]]
+  ['light_2ec',['light.c',['../light_8c.html',1,'']]],
+  ['light_2eh',['light.h',['../light_8h.html',1,'']]],
+  ['lightsensor_2ec',['lightSensor.c',['../lightSensor_8c.html',1,'']]],
+  ['lightsensor_2eh',['lightSensor.h',['../lightSensor_8h.html',1,'']]],
+  ['logger_2ec',['logger.c',['../logger_8c.html',1,'']]],
+  ['logger_2eh',['logger.h',['../logger_8h.html',1,'']]]
 ];

@@ -36,6 +36,9 @@ test:
 	$(CC) $(FLAGS) $(TEST_INCLUDES) -DTEST_MODE -DHAVE_SIGNAL_H $(TEST_SRCS) test/Logger_TEST/test.c -o logger_test.out $(LIBS)
 	scp *.out root@10.0.0.16:~/home/Project1/output
 	
+.PHONY: doxygen
+doxygen:
+	cd doxygen && doxygen doxygen.config
 
 .PHONY:clean
 clean:

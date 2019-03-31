@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['standard_20assertions',['Standard Assertions',['../group__cmocka__mock__assert.html',1,'']]],
-  ['socket_2ec',['socket.c',['../socket_8c.html',1,'']]],
-  ['socket_2eh',['socket.h',['../socket_8h.html',1,'']]],
-  ['socket_5ftask',['socket_task',['../socket_8c.html#a92f66c7de324d0f99973c1af462cfa3b',1,'socket_task(void *threadp):&#160;socket.c'],['../socket_8h.html#a92f66c7de324d0f99973c1af462cfa3b',1,'socket_task(void *threadp):&#160;socket.c']]],
-  ['sourcelocation',['SourceLocation',['../structSourceLocation.html',1,'']]],
-  ['symbolmapvalue',['SymbolMapValue',['../structSymbolMapValue.html',1,'']]],
-  ['symbolvalue',['SymbolValue',['../structSymbolValue.html',1,'']]]
+  ['running_20tests',['Running Tests',['../group__cmocka__exec.html',1,'']]],
+  ['redled_5fonoff',['redLed_OnOff',['../bbgled_8c.html#ac4983b0801ad2489c226dd2f056a6fda',1,'redLed_OnOff(bool option):&#160;bbgled.c'],['../bbgled_8h.html#ac4983b0801ad2489c226dd2f056a6fda',1,'redLed_OnOff(bool option):&#160;bbgled.c']]],
+  ['remotethresholdvalues',['RemoteThresholdValues',['../temp_8c.html#a7beb226afb19a57861973866ecaf5338',1,'RemoteThresholdValues(float flow, float fhigh):&#160;temp.c'],['../temp_8h.html#a7beb226afb19a57861973866ecaf5338',1,'RemoteThresholdValues(float flow, float fhigh):&#160;temp.c']]],
+  ['remotethresholdvalueslight',['RemoteThresholdValueslight',['../light_8c.html#a64fb9b6e666ca43b918e316190751c6c',1,'RemoteThresholdValueslight(uint16_t llow, uint16_t lhigh):&#160;light.c'],['../light_8h.html#a64fb9b6e666ca43b918e316190751c6c',1,'RemoteThresholdValueslight(uint16_t llow, uint16_t lhigh):&#160;light.c']]]
 ];

@@ -1,15 +1,18 @@
+/**
+ * @file mysignal.h
+ * @author Shreya Chakraborty
+ * @brief header file for signals
+ * @version 0.1
+ * @date 2019-03-16
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 
 #ifndef MYSIGNAL_H_
 #define MYSIGNAL_H_
-
-
 /**
- * @brief initialisation for signal
- * 
- */
-void signal_init(void);
-/**
- * @brief signal for signal received
+ * @brief signal handler for CTRL-C 
  * 
  * @param signum 
  */

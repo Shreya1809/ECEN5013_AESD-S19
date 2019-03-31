@@ -1,7 +1,7 @@
 /**
  * @file temp.h
- * @author your name (you@domain.com)
- * @brief 
+ * @author Shreya Chakraborty
+ * @brief header file for temperature task thread functionality
  * @version 0.1
  * @date 2019-03-16
  * 
@@ -21,18 +21,20 @@ typedef enum
 }temp_unit;
 /**
  * @brief to kill temp thread
+ * Sets the kill thread in the task
  * 
  */
 void kill_temp_thread(void);
 /**
  * @brief call back for temperature task 
- * 
+ * waits on a semaphore from the timer periodically
  * @param threadp 
  * @return void* 
  */
 void *temp_task(void *threadp);
 /**
- * @brief Get the Temp object
+ * @brief Get the Temp object.
+ * Gets the temperature value from the temp register
  * 
  * @param unit 
  * @return float 
@@ -40,13 +42,13 @@ void *temp_task(void *threadp);
 float getTemperature(temp_unit unit);
 /**
  * @brief Construct a new tmp102 settempthreshold object
- * 
+ * sets thresholds for the temperature val
  * @param tlow_val 
  * @param thigh_val 
  */
 int TMP102_setTempThreshold(float tlow_val,float thigh_val);
 /**
- * @brief take threshold values from client
+ * @brief take threshold values from remote client
  * 
  * @param flow 
  * @param fhigh 

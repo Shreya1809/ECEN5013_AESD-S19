@@ -1,7 +1,7 @@
 /**
  * @file lightSensor.h
- * @author your name (you@domain.com)
- * @brief 
+ * @author Shreya Chakraborty
+ * @brief header file for APDS9301 register functions
  * @version 0.1
  * @date 2019-03-22
  * @reference : https://github.com/sparkfun/APDS-9301_Breakout/blob/master/Libraries/Arduino/src/Sparkfun_APDS9301_Library.h
@@ -73,7 +73,7 @@ int APDS9301_getCh1(uint16_t *data);
  */
 int APDS9301_intClear(void);
 /**
- * @brief 
+ * @brief checks interrupt
  * 
  * @param data 
  * @return int 
@@ -95,7 +95,7 @@ int APDS9301_getlight(float *lux);
 int APDS9301_readIDreg(uint8_t *data);
 
 /**
- * @brief 
+ * @brief powerup the light sensor 
  * 
  * @return int 
  */

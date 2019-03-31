@@ -1,3 +1,13 @@
+/**
+ * @file test.c
+ * @author Shreya Chakraborty
+ * @brief Cmoka Unit testing for TMP102 temperature sensor regster functions
+ * @version 0.1
+ * @date 2019-03-31
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "myI2C.h"
 #include "tempSensor.h"
 #include <unistd.h>

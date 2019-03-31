@@ -1,0 +1,96 @@
+\hypertarget{heartbeat_8c}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/heartbeat.c File Reference}
+\label{heartbeat_8c}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/heartbeat.\+c@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/heartbeat.\+c}}
+
+
+heartbeat functionality from all threads  
+
+
+{\ttfamily \#include \char`\"{}mytimer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logger.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bbgled.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}temp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}light.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}socket.\+h\char`\"{}}\newline
+Include dependency graph for heartbeat.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{heartbeat_8c_af5af631610de6787aeca531ef57e6983}{set\+\_\+heartbeat\+Flag} (module\+Id\+\_\+t module\+Id)
+\begin{DoxyCompactList}\small\item\em Set the heartbeat\+Flag bit corresponding to each module that sets the heartbeat to the static volatile flag called g\+\_\+heartbeat\+\_\+task\+Flags. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{heartbeat_8c_a1cc9d852a50d767ada09ea8a96033217}\label{heartbeat_8c_a1cc9d852a50d767ada09ea8a96033217}} 
+void \hyperlink{heartbeat_8c_a1cc9d852a50d767ada09ea8a96033217}{System\+Exit} (void)
+\begin{DoxyCompactList}\small\item\em sets the thread exit flags in each task modules for clean exit \end{DoxyCompactList}\item 
+void \hyperlink{heartbeat_8c_af1d3a741d617844f846cdd4ea91dac85}{heatbeat\+\_\+timer\+\_\+callback} (union sigval no)
+\begin{DoxyCompactList}\small\item\em the heartbeat timer call back function checks the global static heartbeat flag to see if all the threads are alive \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{heartbeat_8c_a1c5dadaeef46c763018c3b9f05f8e396}\label{heartbeat_8c_a1c5dadaeef46c763018c3b9f05f8e396}} 
+void \hyperlink{heartbeat_8c_a1c5dadaeef46c763018c3b9f05f8e396}{start\+Hearbeat\+Check} (void)
+\begin{DoxyCompactList}\small\item\em starts the timer for heartbeat and calls the callback function above \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{heartbeat_8c_a617a47c70795bcff659815ad0efd2266}\label{heartbeat_8c_a617a47c70795bcff659815ad0efd2266}} 
+int {\bfseries counter} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+heartbeat functionality from all threads 
+
+\begin{DoxyAuthor}{Author}
+Shreya Chakraborty 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/03-\/31
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{heartbeat_8c_af1d3a741d617844f846cdd4ea91dac85}\label{heartbeat_8c_af1d3a741d617844f846cdd4ea91dac85}} 
+\index{heartbeat.\+c@{heartbeat.\+c}!heatbeat\+\_\+timer\+\_\+callback@{heatbeat\+\_\+timer\+\_\+callback}}
+\index{heatbeat\+\_\+timer\+\_\+callback@{heatbeat\+\_\+timer\+\_\+callback}!heartbeat.\+c@{heartbeat.\+c}}
+\subsubsection{\texorpdfstring{heatbeat\+\_\+timer\+\_\+callback()}{heatbeat\_timer\_callback()}}
+{\footnotesize\ttfamily void heatbeat\+\_\+timer\+\_\+callback (\begin{DoxyParamCaption}\item[{union sigval}]{no }\end{DoxyParamCaption})}
+
+
+
+the heartbeat timer call back function checks the global static heartbeat flag to see if all the threads are alive 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sigval} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file heartbeat.\+c.
+
+\mbox{\Hypertarget{heartbeat_8c_af5af631610de6787aeca531ef57e6983}\label{heartbeat_8c_af5af631610de6787aeca531ef57e6983}} 
+\index{heartbeat.\+c@{heartbeat.\+c}!set\+\_\+heartbeat\+Flag@{set\+\_\+heartbeat\+Flag}}
+\index{set\+\_\+heartbeat\+Flag@{set\+\_\+heartbeat\+Flag}!heartbeat.\+c@{heartbeat.\+c}}
+\subsubsection{\texorpdfstring{set\+\_\+heartbeat\+Flag()}{set\_heartbeatFlag()}}
+{\footnotesize\ttfamily void set\+\_\+heartbeat\+Flag (\begin{DoxyParamCaption}\item[{module\+Id\+\_\+t}]{module\+Id }\end{DoxyParamCaption})}
+
+
+
+Set the heartbeat\+Flag bit corresponding to each module that sets the heartbeat to the static volatile flag called g\+\_\+heartbeat\+\_\+task\+Flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em module\+Id} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file heartbeat.\+c.
+

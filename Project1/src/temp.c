@@ -1,7 +1,7 @@
 /**
  * @file temp.c
  * @author your name (you@domain.com)
- * @brief 
+ * @brief Temperature task thread functionality
  * @version 0.1
  * @date 2019-03-16
  * @reference https://github.com/jbdatko/tmp102/blob/master/tmp102.c
@@ -24,10 +24,17 @@
 static volatile float temperature_val = 0.0;
 static volatile float tlow_val = 75.0;
 static volatile float thigh_val = 80.0;
+static int t_sec = 1;
+static int t_nsec = 0;
 static sig_atomic_t stop_thread_temp = 0;
 int t_count = 0;
 pthread_mutex_t temp_var_lock = PTHREAD_MUTEX_INITIALIZER;
 
+/**
+ * @brief Set the Temp Var object "temp" as the value of temperature
+ * 
+ * @param temp 
+ */
 static inline void setTempVar(float temp)
 {
     pthread_mutex_lock(&temp_var_lock);
@@ -35,6 +42,12 @@ static inline void setTempVar(float temp)
     pthread_mutex_unlock(&temp_var_lock);
 } 
 
+/**
+ * @brief Get the Temp Var object "temp" from the actual global
+ * temperature value variable
+ * 
+ * @return float 
+ */
 static inline float getTempVar()
 {
     float temp = 0;
@@ -46,7 +59,7 @@ static inline float getTempVar()
 
 void kill_temp_thread(void)
 {
-    printf("temp exit\n");
+    LOG_DEBUG(TEMP_TASK,"Temperature task exit signal received");
     stop_thread_temp = 1;    
 }
 
@@ -140,7 +153,8 @@ void *temp_task(void *threadp)
     {
         perror("MakeTimer fail");
     }
-    startTimer(temp_timer);
+    LOG_DEBUG(TEMP_TASK,"The thread frequency is %d sec and %d nsec",t_sec,t_nsec);
+    startTimer(temp_timer,t_sec,t_nsec);
     while(!stop_thread_temp)
     {
         set_heartbeatFlag(TEMP_TASK);

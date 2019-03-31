@@ -75,7 +75,7 @@ typedef enum{
 	EIGHT_HZ
 }conversion_rate_t;
 /**
- * @brief 
+ * @brief get temperature raw value
  * 
  * @param temp_val 
  * @return int 

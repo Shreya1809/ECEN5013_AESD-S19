@@ -87,11 +87,21 @@ $(document).ready(function(){initNavTree('light_8h.html','');});
 <div class="title">light.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
+
+<p>header file for the light Sensor task functionality  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;mraa/gpio.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for light.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="light_8h__incl.png" border="0" usemap="#_2home_2shreya1809_2ECEN5013__AESD-S19_2Project1_2include_2common_2light_8h" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="light_8h__dep__incl.png" border="0" usemap="#_2home_2shreya1809_2ECEN5013__AESD-S19_2Project1_2include_2common_2light_8hdep" alt=""/></div>
-<!-- MAP 0 -->
+<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="light_8h_source.html">Go to the source code of this file.</a></p>
@@ -104,9 +114,22 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a111c84e6b2e3a3968a18e4fbd488327f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="light_8h.html#a111c84e6b2e3a3968a18e4fbd488327f">APDS9301_setLightThreshold</a> (uint16_t l_low, uint16_t l_high)</td></tr>
+<tr class="memdesc:a111c84e6b2e3a3968a18e4fbd488327f"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the threshold values for the light sensor  <a href="#a111c84e6b2e3a3968a18e4fbd488327f">More...</a><br /></td></tr>
+<tr class="separator:a111c84e6b2e3a3968a18e4fbd488327f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64fb9b6e666ca43b918e316190751c6c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="light_8h.html#a64fb9b6e666ca43b918e316190751c6c">RemoteThresholdValueslight</a> (uint16_t llow, uint16_t lhigh)</td></tr>
+<tr class="memdesc:a64fb9b6e666ca43b918e316190751c6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the streshold values from the remote client and changes the default values  <a href="#a64fb9b6e666ca43b918e316190751c6c">More...</a><br /></td></tr>
+<tr class="separator:a64fb9b6e666ca43b918e316190751c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21ebdd5fb32c58d52dcfe7f4f08445a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="light_8h.html#a21ebdd5fb32c58d52dcfe7f4f08445a5">APDS9301_checkINTPIN</a> (mraa_gpio_context lightSensorIntPin)</td></tr>
+<tr class="memdesc:a21ebdd5fb32c58d52dcfe7f4f08445a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks the INT pin on the APDS9301 sensor  <a href="#a21ebdd5fb32c58d52dcfe7f4f08445a5">More...</a><br /></td></tr>
+<tr class="separator:a21ebdd5fb32c58d52dcfe7f4f08445a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e3e495354294ac06a133bb42a58ded4"><td class="memItemLeft" align="right" valign="top"><a id="a0e3e495354294ac06a133bb42a58ded4"></a>
+mraa_gpio_context&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="light_8h.html#a0e3e495354294ac06a133bb42a58ded4">APDS9301_IntPinSetup</a> (int mraaPinNumber)</td></tr>
+<tr class="memdesc:a0e3e495354294ac06a133bb42a58ded4"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin setup using gpio mraa library <br /></td></tr>
+<tr class="separator:a0e3e495354294ac06a133bb42a58ded4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae78695364002a2e4266e084ff7a2a495"><td class="memItemLeft" align="right" valign="top"><a id="ae78695364002a2e4266e084ff7a2a495"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="light_8h.html#ae78695364002a2e4266e084ff7a2a495">kill_light_thread</a> (void)</td></tr>
-<tr class="memdesc:ae78695364002a2e4266e084ff7a2a495"><td class="mdescLeft">&#160;</td><td class="mdescRight">to kill light thread <br /></td></tr>
+<tr class="memdesc:ae78695364002a2e4266e084ff7a2a495"><td class="mdescLeft">&#160;</td><td class="mdescRight">to kill light thread sets the stop thread flag <br /></td></tr>
 <tr class="separator:ae78695364002a2e4266e084ff7a2a495"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a173216ebf6f0d4106908c21fcdcddfbf"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="light_8h.html#a173216ebf6f0d4106908c21fcdcddfbf">light_task</a> (void *threadp)</td></tr>
 <tr class="memdesc:a173216ebf6f0d4106908c21fcdcddfbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call back for light task from main thread.  <a href="#a173216ebf6f0d4106908c21fcdcddfbf">More...</a><br /></td></tr>
@@ -116,13 +139,83 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ligh
 <tr class="separator:ae749a64e92542af9fe593d9018d64260"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>your name (<a href="#" onclick="location.href='mai'+'lto:'+'you'+'@d'+'oma'+'in'+'.co'+'m'; return false;">you@d<span style="display: none;">.nosp@m.</span>omai<span style="display: none;">.nosp@m.</span>n.com</a>) </dd></dl>
+<div class="textblock"><p>header file for the light Sensor task functionality </p>
+<dl class="section author"><dt>Author</dt><dd>Shreya Chakraborty </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2019-03-16</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="light_8h_source.html">light.h</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a21ebdd5fb32c58d52dcfe7f4f08445a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21ebdd5fb32c58d52dcfe7f4f08445a5">&#9670;&nbsp;</a></span>APDS9301_checkINTPIN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int APDS9301_checkINTPIN </td>
+          <td>(</td>
+          <td class="paramtype">mraa_gpio_context&#160;</td>
+          <td class="paramname"><em>lightSensorIntPin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>checks the INT pin on the APDS9301 sensor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lightSensorIntPin</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="light_8c_source.html#l00104">104</a> of file <a class="el" href="light_8c_source.html">light.c</a>.</p>
+
+</div>
+</div>
+<a id="a111c84e6b2e3a3968a18e4fbd488327f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a111c84e6b2e3a3968a18e4fbd488327f">&#9670;&nbsp;</a></span>APDS9301_setLightThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int APDS9301_setLightThreshold </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>l_low</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>l_high</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>sets the threshold values for the light sensor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l_low</td><td></td></tr>
+    <tr><td class="paramname">l_high</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="light_8c_source.html#l00142">142</a> of file <a class="el" href="light_8c_source.html">light.c</a>.</p>
+
+</div>
+</div>
 <a id="ae749a64e92542af9fe593d9018d64260"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae749a64e92542af9fe593d9018d64260">&#9670;&nbsp;</a></span>getLight()</h2>
 
@@ -142,7 +235,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ligh
 <p>Get the Light object. </p>
 <dl class="section return"><dt>Returns</dt><dd>float </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="light_8c_source.html#l00096">96</a> of file <a class="el" href="light_8c_source.html">light.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="light_8c_source.html#l00122">122</a> of file <a class="el" href="light_8c_source.html">light.c</a>.</p>
 
 </div>
 </div>
@@ -171,7 +264,47 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ligh
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void* </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="light_8c_source.html#l00107">107</a> of file <a class="el" href="light_8c_source.html">light.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="light_8c_source.html#l00164">164</a> of file <a class="el" href="light_8c_source.html">light.c</a>.</p>
+
+</div>
+</div>
+<a id="a64fb9b6e666ca43b918e316190751c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64fb9b6e666ca43b918e316190751c6c">&#9670;&nbsp;</a></span>RemoteThresholdValueslight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int RemoteThresholdValueslight </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>llow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>lhigh</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>gets the streshold values from the remote client and changes the default values </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">llow</td><td></td></tr>
+    <tr><td class="paramname">lhigh</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="light_8c_source.html#l00133">133</a> of file <a class="el" href="light_8c_source.html">light.c</a>.</p>
 
 </div>
 </div>

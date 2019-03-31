@@ -1,3 +1,13 @@
+/**
+ * @file light.c
+ * @author Shreya CHakraborty
+ * @brief Light task thread functionality
+ * @version 0.1
+ * @date 2019-03-31
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "includes.h"
 #include "light.h"
 #include "main.h"
@@ -16,11 +26,20 @@
 #define APDS_INT_PIN    GPIO_PIN_19
 
 static volatile float lux_val = 0.0;
+static volatile uint16_t l_low = 0;
+static volatile uint16_t l_high = 1200;
+static int l_sec = 1;
+static int l_nsec = 0;
 static sig_atomic_t stop_thread_light = 0;
+mraa_gpio_context interrupt_gpio_pin;
 int l_count = 0;
 pthread_mutex_t light_var_lock = PTHREAD_MUTEX_INITIALIZER;
 
-
+/**
+ * @brief Set the Lux Var object "lux"
+ * 
+ * @param lux 
+ */
 static inline void setLuxVar(float lux)
 {
     pthread_mutex_lock(&light_var_lock);
@@ -28,6 +47,11 @@ static inline void setLuxVar(float lux)
     pthread_mutex_unlock(&light_var_lock);
 } 
 
+/**
+ * @brief Get the Lux Var object into "lux"
+ * 
+ * @return float 
+ */
 static inline float getLuxVar()
 {
     float lux = 0;
@@ -36,6 +60,7 @@ static inline float getLuxVar()
     pthread_mutex_unlock(&light_var_lock);
     return lux;
 } 
+
 
 static int readAndUpdateLight(void)
 {
@@ -53,6 +78,7 @@ static int readAndUpdateLight(void)
     } 
     LOG_INFO(LIGHT_TASK,"The light is %f",lux);
     setLuxVar(lux); 
+    LOG_INFO(LIGHT_TASK,"Light thresholds are 0x%02x and 0x%02x",l_low,l_high);
     return 0;
 }
 
@@ -88,7 +114,7 @@ int APDS9301_checkINTPIN(mraa_gpio_context lightSensorIntPin)
 
 void kill_light_thread(void)
 {
-    printf("light exit\n");
+    LOG_DEBUG(LIGHT_TASK,"light thread exit signal received");
     stop_thread_light = 1;
     stop_thread_light++;    
 }
@@ -104,9 +130,39 @@ static void giveSemSensor(union sigval no)
     sem_post(&light_sem);
 }
 
-void *light_task(void *threadp)
+int RemoteThresholdValueslight(uint16_t llow,uint16_t lhigh)
+{
+    pthread_mutex_lock(&light_var_lock);
+    l_low = llow;
+    l_high = lhigh;
+    pthread_mutex_unlock(&light_var_lock); 
+    return 0;
+}
+
+int APDS9301_setLightThreshold(uint16_t l_low,uint16_t l_high)
 {
     uint8_t th_lowlow,th_hilow,th_lowhi,th_hihi;
+    interrupt_gpio_pin =  APDS9301_IntPinSetup(APDS_INT_PIN); //mraa_gpio context
+    if(interrupt_gpio_pin == NULL)
+    {
+       return -1;
+    }
+    LOG_DEBUG(LIGHT_TASK, "APDS Int pin setup done");
+    int ret1 = APDS9301_writeTHRESH_lowlow(l_low); //write 2 byte
+    int ret4 = APDS9301_writeTHRESH_highlow(l_high);//write 2 byte
+    int ret2 = APDS9301_readTHRESH_lowlow(&th_lowlow);
+    ret2 = APDS9301_readTHRESH_lowhigh(&th_lowhi);
+    ret2 = APDS9301_readTHRESH_highhigh(&th_hihi);
+    ret2 = APDS9301_readTHRESH_highlow(&th_hilow);
+    LOG_DEBUG(LIGHT_TASK,"read threshold low val is 0x%02x",th_lowlow | ((uint16_t)th_lowhi)<<8);
+    LOG_DEBUG(LIGHT_TASK,"read threshold high val is 0x%02x",th_hilow | ((uint16_t)th_hihi)<<8);
+    LOG_INFO(LIGHT_TASK,"Light thresholds are 0x%02x and 0x%02x",th_lowlow | ((uint16_t)th_lowhi)<<8,th_hilow | ((uint16_t)th_hihi)<<8);
+    APDS9301_interruptCTRLreg(ENABLE);
+    return EXIT_SUCCESS;
+}
+
+void *light_task(void *threadp)
+{
     sem_init(&light_thread_sem,0,0);
     sem_wait(&light_thread_sem);
     if(!CheckBistResult())
@@ -114,29 +170,18 @@ void *light_task(void *threadp)
         goto exit;
     }
     LOG_INFO(LIGHT_TASK,"Light task thread spawned");
-    mraa_gpio_context interrupt_gpio_pin =  APDS9301_IntPinSetup(APDS_INT_PIN);
-    if(interrupt_gpio_pin == NULL)
+    if(APDS9301_setLightThreshold(l_low,l_high) == -1)
     {
         goto exit;
     }
-    LOG_INFO(LIGHT_TASK, "APDS Int pin setup done");
-    int ret1 = APDS9301_writeTHRESH_lowlow(0x0); //write 2 byte
-    int ret4 = APDS9301_writeTHRESH_highlow(1200);//write 2 byte
-    int ret2 = APDS9301_readTHRESH_lowlow(&th_lowlow);
-    ret2 = APDS9301_readTHRESH_lowhigh(&th_lowhi);
-    ret2 = APDS9301_readTHRESH_highhigh(&th_hihi);
-    ret2 = APDS9301_readTHRESH_highlow(&th_hilow);
-    LOG_DEBUG(LIGHT_TASK,"read threshold low val is 0x%02x",th_lowlow | ((uint16_t)th_lowhi)<<8);
-    LOG_DEBUG(LIGHT_TASK,"read threshold high val is 0x%02x",th_hilow | ((uint16_t)th_hihi)<<8);
-    APDS9301_interruptCTRLreg(ENABLE);
-
     timer_t light_timer;
     sem_init(&light_sem,0,0);
     if(maketimer(&light_timer, &giveSemSensor) != 0)
     {
         perror("MakeTimer fail");
     }
-    startTimer(light_timer);
+    LOG_DEBUG(LIGHT_TASK,"The thread frequency is %d sec and %d nsec",l_sec,l_nsec);
+    startTimer(light_timer,l_sec,l_nsec);
     while(!stop_thread_light)
     {
         set_heartbeatFlag(LIGHT_TASK);

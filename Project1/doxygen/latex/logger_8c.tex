@@ -1,5 +1,10 @@
 \hypertarget{logger_8c}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/logger.c File Reference}
 \label{logger_8c}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/logger.\+c@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/logger.\+c}}
+
+
+externally connected led functionalities for normal and error conditions  
+
+
 {\ttfamily \#include \char`\"{}includes.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}logger.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}bbgled.\+h\char`\"{}}\newline
@@ -21,7 +26,7 @@ double \hyperlink{logger_8c_a2a8842755f14b8a2ba414132307a8c51}{get\+Time\+Msec} 
 int \hyperlink{logger_8c_a59bf591b758fe8741ffad898e91e748c}{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE} (log\+\_\+level\+\_\+t level, module\+Id\+\_\+t mod\+Id, char $\ast$msg,...)
 \begin{DoxyCompactList}\small\item\em to put messages in the logger queue \end{DoxyCompactList}\item 
 mqd\+\_\+t \hyperlink{logger_8c_adbbfebbf60efeb03c99c735f2343f26b}{logger\+\_\+queue\+\_\+init} (void)
-\begin{DoxyCompactList}\small\item\em mesg queue attribute initialisation \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em queue initialisation \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{logger_8c_a3d3ce57d8ba16ca05ea10faa97811903}\label{logger_8c_a3d3ce57d8ba16ca05ea10faa97811903}} 
 void \hyperlink{logger_8c_a3d3ce57d8ba16ca05ea10faa97811903}{kill\+\_\+logger\+\_\+thread} (void)
 \begin{DoxyCompactList}\small\item\em to kill logger thread externally \end{DoxyCompactList}\item 
@@ -38,8 +43,10 @@ F\+I\+LE $\ast$ {\bfseries fp}
 
 
 \subsection{Detailed Description}
+externally connected led functionalities for normal and error conditions 
+
 \begin{DoxyAuthor}{Author}
-your name (\href{mailto:you@domain.com}{\tt you@domain.\+com}) 
+Shreya Chakraborty 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 0.\+1 
@@ -108,9 +115,9 @@ to put messages in the logger queue
 
 
 \begin{DoxyParams}{Parameters}
-{\em level} & \\
+{\em level} & log level \\
 \hline
-{\em mod\+Id} & \\
+{\em mod\+Id} & the task \\
 \hline
 {\em msg} & \\
 \hline
@@ -132,16 +139,14 @@ Definition at line 63 of file logger.\+c.
 
 
 
-mesg queue attribute initialisation 
-
-queue initialisation
+queue initialisation 
 
 \begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
 
 
-Definition at line 97 of file logger.\+c.
+Definition at line 93 of file logger.\+c.
 
 \mbox{\Hypertarget{logger_8c_afa7630a1e435cb94de8fb5c793bc864d}\label{logger_8c_afa7630a1e435cb94de8fb5c793bc864d}} 
 \index{logger.\+c@{logger.\+c}!logger\+\_\+task@{logger\+\_\+task}}
@@ -165,7 +170,7 @@ void$\ast$
 \end{DoxyReturn}
 
 
-Definition at line 127 of file logger.\+c.
+Definition at line 123 of file logger.\+c.
 
 
 

@@ -1,7 +1,7 @@
 /**
  * @file bist.h
- * @author your name (you@domain.com)
- * @brief 
+ * @author Shreya Chakraborty
+ * @brief header file for bist task thread functions
  * @version 0.1
  * @date 2019-03-16
  * 
@@ -19,7 +19,7 @@
  */
 int Test_I2C(void);
 /**
- * @brief checking all thread status
+ * @brief checking all thread status after creation from the global flag
  * 
  * @return int 
  */
@@ -31,7 +31,7 @@ int Test_AllThreads(void);
  */
 int Test_TempSensor(void);
 /**
- * @brief tedting logger enqueue
+ * @brief testing logger enqueue
  * 
  * @return int 
  */
@@ -49,14 +49,14 @@ int Test_LightSensor(void);
  */
 void *bist_task(void *threadp);
 /**
- * @brief 
+ * @brief checks BIST_allOk flag to see if the bist was successful
  * 
  * @return int 
  */
 int CheckBistResult(void);
 
 /**
- * @brief 
+ * @brief posts semaphores to rest of the threads
  * 
  */
 void PostBistOkResult(void);

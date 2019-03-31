@@ -1,7 +1,7 @@
 /**
  * @file logger.c
- * @author your name (you@domain.com)
- * @brief 
+ * @author Shreya Chakraborty
+ * @brief externally connected led functionalities for normal and error conditions
  * @version 0.1
  * @date 2019-03-16
  * 
@@ -81,19 +81,15 @@ int LOG_ENQUEUE(log_level_t level, moduleId_t modId, char *msg, ...)
     if (ret)
       return ret;
 
-    return 0;
+    return EXIT_SUCCESS;
   }
 
-  printf("Log enqueue Error\n");
-  return 1;
+  LOG_ERROR(LOGGER_TASK,"Log enqueue Error");
+  GREENLEDOFF();
+  REDLEDON();
+  return EXIT_FAILURE;
 }
 
-
-/**
- * @brief mesg queue attribute initialisation
- * 
- * @return int 
- */
 mqd_t logger_queue_init(void)
 {
   struct mq_attr attr;
@@ -115,7 +111,7 @@ mqd_t logger_queue_init(void)
 
 void kill_logger_thread(void)
 {
-  printf("logger exit\n");
+  LOG_DEBUG(LOGGER_TASK,"logger exit signal received");
   stop_thread_logger = 1;    
 }
 /**
@@ -160,7 +156,6 @@ void *logger_task(void *threadp)
     if (mq_timedreceive(mq_logger, (char*)&recv_log, sizeof(recv_log), &prio, &recv_timeout) == -1) {
         if(!stop_thread_logger && errno == ETIMEDOUT)
         {
-          // PRINT("Logger Timeout\n");
           continue;
         }
         else if(stop_thread_logger)
@@ -180,7 +175,6 @@ void *logger_task(void *threadp)
         }  
     }
     else{
-      // recv_timeout.tv_sec += 10;  
     }
     //put the log struct in file
     #ifdef LOG_STDOUT
@@ -188,7 +182,6 @@ void *logger_task(void *threadp)
     #endif
   }
   fclose(fp);
-  //LOG_INFO(LOGGER_TASK,"Logger Task thread exiting");
 exit:
   PRINTLOGCONSOLE("Logger Task thread exiting");
   return NULL;

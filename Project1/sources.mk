@@ -11,7 +11,8 @@ SRCS:= $(SRCDIR)main.c\
 	$(SRCDIR)i2c.c\
 	$(SRCDIR)tempSensor.c\
 	$(SRCDIR)lightSensor.c\
-	$(SRCDIR)heartbeat.c
+	$(SRCDIR)heartbeat.c\
+	$(SRCDIR)mysignal.c
 	
 	
 TEST_SRCS:= $(SRCDIR)cmocka.c\
@@ -27,7 +28,8 @@ TEST_SRCS:= $(SRCDIR)cmocka.c\
 	$(SRCDIR)i2c.c\
 	$(SRCDIR)tempSensor.c\
 	$(SRCDIR)lightSensor.c\
-	$(SRCDIR)heartbeat.c
+	$(SRCDIR)heartbeat.c\
+	$(SRCDIR)mysignal.c
 
 
 

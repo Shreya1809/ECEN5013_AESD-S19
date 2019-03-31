@@ -1,5 +1,10 @@
 \hypertarget{myI2C_8c}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/my\+I2C.c File Reference}
 \label{myI2C_8c}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/my\+I2\+C.\+c@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/my\+I2\+C.\+c}}
+
+
+I2C drivers for sensor using mraa library.  
+
+
 {\ttfamily \#include \char`\"{}includes.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}my\+I2\+C.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}logger.\+h\char`\"{}}\newline
@@ -12,7 +17,7 @@ Include dependency graph for my\+I2\+C.\+c\+:
 int \hyperlink{myI2C_8c_a0799af3d3a75e0597b805dedfecc9d07}{I2\+C\+\_\+init} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler)
 \begin{DoxyCompactList}\small\item\em Initialise i2c context, passing in the i2c bus to use. \end{DoxyCompactList}\item 
 int \hyperlink{myI2C_8c_ae8decee1cd7906785e6ce389d71e14c0}{I2\+C\+\_\+close} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler)
-\item 
+\begin{DoxyCompactList}\small\item\em close i2c context \end{DoxyCompactList}\item 
 int \hyperlink{myI2C_8c_a0b94ae8a4cd4577a177959a15fe7a837}{I2\+C\+\_\+set\+\_\+slave} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr)
 \begin{DoxyCompactList}\small\item\em set slave address for i2c read and write \end{DoxyCompactList}\item 
 int \hyperlink{myI2C_8c_a239ee2fef128c26fdc70926af40b8831}{I2\+C\+\_\+write\+\_\+byte} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t data)
@@ -22,14 +27,16 @@ int \hyperlink{myI2C_8c_a6fdfce2ee87545c93df820fafd913370}{I2\+C\+\_\+read\+\_\+
 int \hyperlink{myI2C_8c_a5d22d3baf97a7fbff1036bee6c34b64e}{I2\+C\+\_\+read\+\_\+bytes} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t command\+\_\+reg, uint8\+\_\+t $\ast$data, size\+\_\+t length)
 \begin{DoxyCompactList}\small\item\em read multiple bytes from the command register of the slave into data \end{DoxyCompactList}\item 
 int \hyperlink{myI2C_8c_a951696b402a493dde4120b49a709a9fe}{I2\+C\+\_\+write\+\_\+byte\+\_\+data} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t command\+\_\+reg, uint8\+\_\+t data)
-\item 
+\begin{DoxyCompactList}\small\item\em write 1 byte data \end{DoxyCompactList}\item 
 int \hyperlink{myI2C_8c_ad25819b7ac00db28d3f446105592306f}{I2\+C\+\_\+write\+\_\+word} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t command\+\_\+reg, uint16\+\_\+t data)
 \begin{DoxyCompactList}\small\item\em write 2 bytes M\+SB first then lsb into the command register of the slave addr \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+I2C drivers for sensor using mraa library. 
+
 \begin{DoxyAuthor}{Author}
-your name (\href{mailto:you@domain.com}{\tt you@domain.\+com}) 
+Shreya Chakraborty 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 0.\+1 
@@ -48,6 +55,10 @@ Copyright (c) 2019
 \index{I2\+C\+\_\+close@{I2\+C\+\_\+close}!my\+I2\+C.\+c@{my\+I2\+C.\+c}}
 \subsubsection{\texorpdfstring{I2\+C\+\_\+close()}{I2C\_close()}}
 {\footnotesize\ttfamily int I2\+C\+\_\+close (\begin{DoxyParamCaption}\item[{\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$}]{i2c\+\_\+handler }\end{DoxyParamCaption})}
+
+
+
+close i2c context 
 
 
 \begin{DoxyParams}{Parameters}
@@ -198,6 +209,10 @@ Definition at line 54 of file my\+I2\+C.\+c.
 {\footnotesize\ttfamily int I2\+C\+\_\+write\+\_\+byte\+\_\+data (\begin{DoxyParamCaption}\item[{\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$}]{i2c\+\_\+handler,  }\item[{uint8\+\_\+t}]{slave\+\_\+addr,  }\item[{uint8\+\_\+t}]{command\+\_\+reg,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
 
 
+
+write 1 byte data 
+
+
 \begin{DoxyParams}{Parameters}
 {\em i2c\+\_\+handler} & \\
 \hline
@@ -213,7 +228,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 111 of file my\+I2\+C.\+c.
+Definition at line 109 of file my\+I2\+C.\+c.
 
 \mbox{\Hypertarget{myI2C_8c_ad25819b7ac00db28d3f446105592306f}\label{myI2C_8c_ad25819b7ac00db28d3f446105592306f}} 
 \index{my\+I2\+C.\+c@{my\+I2\+C.\+c}!I2\+C\+\_\+write\+\_\+word@{I2\+C\+\_\+write\+\_\+word}}
@@ -241,5 +256,5 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 127 of file my\+I2\+C.\+c.
+Definition at line 125 of file my\+I2\+C.\+c.
 

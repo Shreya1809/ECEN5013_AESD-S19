@@ -1,3 +1,13 @@
+/**
+ * @file test.c
+ * @author Shreya Chakraborty
+ * @brief Test for gpio pin on BeagleBone Green
+ * @version 0.1
+ * @date 2019-03-31
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 /* standard headers */
 #include <signal.h>
 #include <stdio.h>

@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('main_8c.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>main thread  
+<p>Main task which spawns the other threads.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="includes_8h_source.html">includes.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
@@ -97,9 +97,9 @@ $(document).ready(function(){initNavTree('main_8c.html','');});
 <code>#include &quot;<a class="el" href="socket_8h_source.html">socket.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="light_8h_source.html">light.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="bist_8h_source.html">bist.h</a>&quot;</code><br />
-<code>#include &quot;bbgled.h&quot;</code><br />
-<code>#include &quot;mysignal.h&quot;</code><br />
-<code>#include &quot;heartbeat.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="bbgled_8h_source.html">bbgled.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mysignal_8h_source.html">mysignal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="heartbeat_8h_source.html">heartbeat.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.c:</div>
 <div class="dyncontent">
@@ -132,8 +132,8 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>threadParamArgs</b>
 <tr class="separator:aa03aeed08eaf170b2cd2eeff1ebcb219"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>main thread </p>
-<dl class="section author"><dt>Author</dt><dd>shreya </dd></dl>
+<div class="textblock"><p>Main task which spawns the other threads. </p>
+<dl class="section author"><dt>Author</dt><dd>Shreya Chakraborty </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2019-03-16</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019 </dd></dl>
@@ -152,7 +152,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>threadParamArgs</b>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">    <span class="stringliteral">&quot;BIST_TASK&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;LOGGER_TASK&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;TEMP_TASK&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;LIGHT_TASK&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;SOCKET_TASK&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;MAIN_TASK&quot;</span>,</div><div class="line">}</div></div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00035">35</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00036">36</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -167,13 +167,13 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>threadParamArgs</b>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= </div><div class="line">{</div><div class="line">    <a class="code" href="bist_8c.html#a3e31456d94976ba2476c1761392f0ca0">bist_task</a>,</div><div class="line">    <a class="code" href="logger_8c.html#afa7630a1e435cb94de8fb5c793bc864d">logger_task</a>,</div><div class="line">    <a class="code" href="light_8h.html#a173216ebf6f0d4106908c21fcdcddfbf">light_task</a>,</div><div class="line">    <a class="code" href="temp_8c.html#a9367e0b2320b0dd727163e557a9791d6">temp_task</a>,</div><div class="line">    <a class="code" href="socket_8c.html#a92f66c7de324d0f99973c1af462cfa3b">socket_task</a></div><div class="line">}</div><div class="ttc" id="logger_8c_html_afa7630a1e435cb94de8fb5c793bc864d"><div class="ttname"><a href="logger_8c.html#afa7630a1e435cb94de8fb5c793bc864d">logger_task</a></div><div class="ttdeci">void * logger_task(void *threadp)</div><div class="ttdoc">call back function for the logger </div><div class="ttdef"><b>Definition:</b> <a href="logger_8c_source.html#l00127">logger.c:127</a></div></div>
-<div class="ttc" id="bist_8c_html_a3e31456d94976ba2476c1761392f0ca0"><div class="ttname"><a href="bist_8c.html#a3e31456d94976ba2476c1761392f0ca0">bist_task</a></div><div class="ttdeci">void * bist_task(void *threadp)</div><div class="ttdoc">call back function for bist task from main task </div><div class="ttdef"><b>Definition:</b> <a href="bist_8c_source.html#l00158">bist.c:158</a></div></div>
-<div class="ttc" id="temp_8c_html_a9367e0b2320b0dd727163e557a9791d6"><div class="ttname"><a href="temp_8c.html#a9367e0b2320b0dd727163e557a9791d6">temp_task</a></div><div class="ttdeci">void * temp_task(void *threadp)</div><div class="ttdoc">call back for temperature task </div><div class="ttdef"><b>Definition:</b> <a href="temp_8c_source.html#l00125">temp.c:125</a></div></div>
-<div class="ttc" id="light_8h_html_a173216ebf6f0d4106908c21fcdcddfbf"><div class="ttname"><a href="light_8h.html#a173216ebf6f0d4106908c21fcdcddfbf">light_task</a></div><div class="ttdeci">void * light_task(void *threadp)</div><div class="ttdoc">Call back for light task from main thread. </div><div class="ttdef"><b>Definition:</b> <a href="light_8c_source.html#l00107">light.c:107</a></div></div>
-<div class="ttc" id="socket_8c_html_a92f66c7de324d0f99973c1af462cfa3b"><div class="ttname"><a href="socket_8c.html#a92f66c7de324d0f99973c1af462cfa3b">socket_task</a></div><div class="ttdeci">void * socket_task(void *threadp)</div><div class="ttdoc">Call back function for socket from main thread. </div><div class="ttdef"><b>Definition:</b> <a href="socket_8c_source.html#l00038">socket.c:38</a></div></div>
+<b>Initial value:</b><div class="fragment"><div class="line">= </div><div class="line">{</div><div class="line">    <a class="code" href="bist_8c.html#a3e31456d94976ba2476c1761392f0ca0">bist_task</a>,</div><div class="line">    <a class="code" href="logger_8c.html#afa7630a1e435cb94de8fb5c793bc864d">logger_task</a>,</div><div class="line">    <a class="code" href="light_8c.html#a173216ebf6f0d4106908c21fcdcddfbf">light_task</a>,</div><div class="line">    <a class="code" href="temp_8c.html#a9367e0b2320b0dd727163e557a9791d6">temp_task</a>,</div><div class="line">    <a class="code" href="socket_8c.html#a92f66c7de324d0f99973c1af462cfa3b">socket_task</a></div><div class="line">}</div><div class="ttc" id="logger_8c_html_afa7630a1e435cb94de8fb5c793bc864d"><div class="ttname"><a href="logger_8c.html#afa7630a1e435cb94de8fb5c793bc864d">logger_task</a></div><div class="ttdeci">void * logger_task(void *threadp)</div><div class="ttdoc">call back function for the logger </div><div class="ttdef"><b>Definition:</b> <a href="logger_8c_source.html#l00123">logger.c:123</a></div></div>
+<div class="ttc" id="light_8c_html_a173216ebf6f0d4106908c21fcdcddfbf"><div class="ttname"><a href="light_8c.html#a173216ebf6f0d4106908c21fcdcddfbf">light_task</a></div><div class="ttdeci">void * light_task(void *threadp)</div><div class="ttdoc">Call back for light task from main thread. </div><div class="ttdef"><b>Definition:</b> <a href="light_8c_source.html#l00164">light.c:164</a></div></div>
+<div class="ttc" id="bist_8c_html_a3e31456d94976ba2476c1761392f0ca0"><div class="ttname"><a href="bist_8c.html#a3e31456d94976ba2476c1761392f0ca0">bist_task</a></div><div class="ttdeci">void * bist_task(void *threadp)</div><div class="ttdoc">call back function for bist task from main task </div><div class="ttdef"><b>Definition:</b> <a href="bist_8c_source.html#l00161">bist.c:161</a></div></div>
+<div class="ttc" id="temp_8c_html_a9367e0b2320b0dd727163e557a9791d6"><div class="ttname"><a href="temp_8c.html#a9367e0b2320b0dd727163e557a9791d6">temp_task</a></div><div class="ttdeci">void * temp_task(void *threadp)</div><div class="ttdoc">call back for temperature task waits on a semaphore from the timer periodically </div><div class="ttdef"><b>Definition:</b> <a href="temp_8c_source.html#l00138">temp.c:138</a></div></div>
+<div class="ttc" id="socket_8c_html_a92f66c7de324d0f99973c1af462cfa3b"><div class="ttname"><a href="socket_8c.html#a92f66c7de324d0f99973c1af462cfa3b">socket_task</a></div><div class="ttdeci">void * socket_task(void *threadp)</div><div class="ttdoc">Call back function for socket from main thread. </div><div class="ttdef"><b>Definition:</b> <a href="socket_8c_source.html#l00033">socket.c:33</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00026">26</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00027">27</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>

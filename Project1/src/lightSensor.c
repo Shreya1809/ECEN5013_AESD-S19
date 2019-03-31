@@ -1,3 +1,13 @@
+/**
+ * @file lightSensor.c
+ * @author Shreya Chakraborty
+ * @brief APDS9301 sensor register functions
+ * @version 0.1
+ * @date 2019-03-31
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "includes.h"
 #include "lightSensor.h"
 #include "myI2C.h"
@@ -234,7 +244,6 @@ int APDS9301_interruptCTRLreg(interrupt_mode_t option) //default is disabled
 {
     uint8_t result;
     int ret1 = I2C_read_byte(&i2c_handler,APDS9301_SLAVE_ADDRESS,APDS9301_INTERRUPT_REG,&result);
-    printf("INT reg result is 0x%0x\n",result);
     if(ret1)
     {
         return EXIT_FAILURE;

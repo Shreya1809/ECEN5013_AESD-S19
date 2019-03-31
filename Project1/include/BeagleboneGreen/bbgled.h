@@ -1,3 +1,13 @@
+/**
+ * @file bbgled.h
+ * @author Shreya Chakraborty
+ * @brief header file for external led functionality connected to BBG
+ * @version 0.1
+ * @date 2019-03-31
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef BBGLED_H_
 #define BBGLED_H_
 #include <stdbool.h>

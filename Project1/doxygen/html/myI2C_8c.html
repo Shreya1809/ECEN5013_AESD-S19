@@ -86,6 +86,9 @@ $(document).ready(function(){initNavTree('myI2C_8c.html','');});
 <div class="title">myI2C.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>I2C drivers for sensor using mraa library.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="includes_8h_source.html">includes.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="myI2C_8h_source.html">myI2C.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
@@ -105,6 +108,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a0799af3d3a75e0597b805dedfecc9d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise i2c context, passing in the i2c bus to use.  <a href="#a0799af3d3a75e0597b805dedfecc9d07">More...</a><br /></td></tr>
 <tr class="separator:a0799af3d3a75e0597b805dedfecc9d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8decee1cd7906785e6ce389d71e14c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="myI2C_8c.html#ae8decee1cd7906785e6ce389d71e14c0">I2C_close</a> (<a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *i2c_handler)</td></tr>
+<tr class="memdesc:ae8decee1cd7906785e6ce389d71e14c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">close i2c context  <a href="#ae8decee1cd7906785e6ce389d71e14c0">More...</a><br /></td></tr>
 <tr class="separator:ae8decee1cd7906785e6ce389d71e14c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b94ae8a4cd4577a177959a15fe7a837"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="myI2C_8c.html#a0b94ae8a4cd4577a177959a15fe7a837">I2C_set_slave</a> (<a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *i2c_handler, uint8_t slave_addr)</td></tr>
 <tr class="memdesc:a0b94ae8a4cd4577a177959a15fe7a837"><td class="mdescLeft">&#160;</td><td class="mdescRight">set slave address for i2c read and write  <a href="#a0b94ae8a4cd4577a177959a15fe7a837">More...</a><br /></td></tr>
@@ -119,13 +123,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:a5d22d3baf97a7fbff1036bee6c34b64e"><td class="mdescLeft">&#160;</td><td class="mdescRight">read multiple bytes from the command register of the slave into data  <a href="#a5d22d3baf97a7fbff1036bee6c34b64e">More...</a><br /></td></tr>
 <tr class="separator:a5d22d3baf97a7fbff1036bee6c34b64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a951696b402a493dde4120b49a709a9fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="myI2C_8c.html#a951696b402a493dde4120b49a709a9fe">I2C_write_byte_data</a> (<a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint8_t data)</td></tr>
+<tr class="memdesc:a951696b402a493dde4120b49a709a9fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">write 1 byte data  <a href="#a951696b402a493dde4120b49a709a9fe">More...</a><br /></td></tr>
 <tr class="separator:a951696b402a493dde4120b49a709a9fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad25819b7ac00db28d3f446105592306f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="myI2C_8c.html#ad25819b7ac00db28d3f446105592306f">I2C_write_word</a> (<a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint16_t data)</td></tr>
 <tr class="memdesc:ad25819b7ac00db28d3f446105592306f"><td class="mdescLeft">&#160;</td><td class="mdescRight">write 2 bytes MSB first then lsb into the command register of the slave addr  <a href="#ad25819b7ac00db28d3f446105592306f">More...</a><br /></td></tr>
 <tr class="separator:ad25819b7ac00db28d3f446105592306f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>your name (<a href="#" onclick="location.href='mai'+'lto:'+'you'+'@d'+'oma'+'in'+'.co'+'m'; return false;">you@d<span style="display: none;">.nosp@m.</span>omai<span style="display: none;">.nosp@m.</span>n.com</a>) </dd></dl>
+<div class="textblock"><p>I2C drivers for sensor using mraa library. </p>
+<dl class="section author"><dt>Author</dt><dd>Shreya Chakraborty </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2019-03-22  <a href="https://iotdk.intel.com/docs/master/mraa/i2c_8h.html#a935c1206dfd241e182de7fe133aadb18">https://iotdk.intel.com/docs/master/mraa/i2c_8h.html#a935c1206dfd241e182de7fe133aadb18</a> </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019 </dd></dl>
@@ -147,6 +153,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>close i2c context </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">i2c_handler</td><td></td></tr>
@@ -427,6 +435,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>write 1 byte data </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">i2c_handler</td><td></td></tr>
@@ -438,7 +448,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="myI2C_8c_source.html#l00111">111</a> of file <a class="el" href="myI2C_8c_source.html">myI2C.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="myI2C_8c_source.html#l00109">109</a> of file <a class="el" href="myI2C_8c_source.html">myI2C.c</a>.</p>
 
 </div>
 </div>
@@ -492,7 +502,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="myI2C_8c_source.html#l00127">127</a> of file <a class="el" href="myI2C_8c_source.html">myI2C.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="myI2C_8c_source.html#l00125">125</a> of file <a class="el" href="myI2C_8c_source.html">myI2C.c</a>.</p>
 
 </div>
 </div>

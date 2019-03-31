@@ -1,7 +1,7 @@
 /**
  * @file socket.c
- * @author your name (you@domain.com)
- * @brief 
+ * @author Shreya Chakraborty
+ * @brief Socket thread task functionality
  * @version 0.1
  * @date 2019-03-16
  * 
@@ -20,17 +20,12 @@
 #include "heartbeat.h"
 #include "bist.h"
 
-/**
- * @brief 
- * 
- * @param threadp 
- * @return void* 
- */
 static sig_atomic_t stop_thread_socket = 0;
 extern pthread_t threads[MAX_TASKS];
+
 void kill_socket_thread(void)
 {
-    printf("socket exit\n");
+    LOG_DEBUG(SOCKET_TASK,"socket thread exit signal received");
     stop_thread_socket = 1;
     pthread_cancel(threads[SOCKET_TASK]);    
 }
@@ -44,16 +39,16 @@ void *socket_task(void *threadp)
         goto exit;
     }
     LOG_INFO(SOCKET_TASK,"Socket task thread spawned");
-    //signal_init();
     int server_fd, new_socket, valread; 
     struct sockaddr_in address; 
     int opt = 1, m = 0; 
     int addrlen = sizeof(address); 
     char buffer[1024] = {0};
     char buffer1[1024] = {0};
+    char buffer2[1024] = {0};
     char mesg[1024] ={0};
     char mesg1[1024] ={0}; 
-    //char *hello = "Hello from server"; 
+    char mesg2[1024] ={0};
        
     // Creating socket file descriptor 
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) 
@@ -62,7 +57,6 @@ void *socket_task(void *threadp)
         exit(EXIT_FAILURE); 
     }
     LOG_INFO(SOCKET_TASK,"Socket has been created"); 
-     //printf("----socket created\n");  
     // Forcefully attaching socket to the port 8080 
     if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, 
                                                   &opt, sizeof(opt))) 
@@ -97,12 +91,12 @@ void *socket_task(void *threadp)
             perror("accept"); 
             exit(EXIT_FAILURE); 
         }
-        //printf("socket accepted\n");
         LOG_INFO(SOCKET_TASK,"socket connection accepted from Remote Client"); 
         while(!stop_thread_socket)
         {
             mesg[1024] = '\0';
             mesg1[1024] = '\0';
+            mesg2[1024] = '\0';
             valread = read( new_socket , buffer, 1024); 
             if(strcmp(buffer,"\0") == 0)
             {
@@ -169,18 +163,39 @@ void *socket_task(void *threadp)
                     p = strtok(NULL,",");
                     i++;
                 }
-                printf("flow and fhigh are %f and %f\n",f_val[0],f_val[1]);
+                LOG_DEBUG(SOCKET_TASK,"flow and fhigh are %f and %f",f_val[0],f_val[1]);
                 RemoteThresholdValues(f_val[0],f_val[1]);
-                //sprintf(mesg,"Temperature threshold has been modified");
-                //break;
             }
             if(strcmp(buffer,"8") == 0)
+            {
+                char *p;
+                int i = 0;
+                uint16_t val[2] = {0.0};
+                sprintf(mesg2,"threshold values for light");
+                send(new_socket , mesg2 , strlen(mesg2) , 0 ); 
+                valread = read( new_socket , buffer2, 1024); 
+                p = strtok(buffer2,",");
+                while(p != NULL)
+                {
+                    val[i] = atof(p);
+                    p = strtok(NULL,",");
+                    i++;
+                }
+                LOG_DEBUG(SOCKET_TASK,"low and high light threshold are %d and %d",val[0],val[1]);
+                RemoteThresholdValueslight(val[0],val[1]);
+            }
+            
+            if(strcmp(buffer,"9") == 0)
+            {
+                LOG_INFO(SOCKET_TASK,"Client has requested program to exit");
+                SystemExit();
+            } 
+            if(strcmp(buffer,"0") == 0)
             {
                 LOG_INFO(SOCKET_TASK,"Client has exited");
                 break;
             } 
             LOG_INFO(SOCKET_TASK,"Client Request processed");
-            //m = 1; 
         }
 
     }

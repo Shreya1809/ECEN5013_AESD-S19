@@ -1,7 +1,7 @@
 /**
  * @file bist.c
- * @author your name (you@domain.com)
- * @brief 
+ * @author Shreya Chakraborty
+ * @brief built in self test before starting the main program
  * @version 0.1
  * @date 2019-03-16
  * 
@@ -27,7 +27,7 @@ int Test_LightSensor(void)
     int ret = 0;
     uint8_t data;
     ret = APDS9301_powerup();
-    LOG_INFO(BIST_TASK, "Light Sensor(ID:0x%1x) powered up",data);
+    LOG_DEBUG(BIST_TASK, "Light Sensor(ID:0x%1x) powered up",data);
     ret += APDS9301_readIDreg(&data); 
     LOG_DEBUG(BIST_TASK,"Testing Light Sensor ID reg 0x%1x",data);
     if(ret)
@@ -107,7 +107,6 @@ int BuiltInSelfTest(void)
     {
         PRINTLOGCONSOLE("I2C bus initialisation NOT Successfull"); 
     }
-    //int ret2 = 0;
     int ret2 = Test_AllThreads();
     if(!ret2)
     {
@@ -142,8 +141,12 @@ int CheckBistResult(void)
 {
     int ret;
     pthread_mutex_lock(&bistlock);
-    ret = BIST_allOk;/* code */
+    ret = BIST_allOk;
     pthread_mutex_unlock(&bistlock);
+    if(BIST_allOk)
+    {
+        LOG_INFO(BIST_TASK,"Built in Self Test Passed");
+    }
     return ret;   
 }
 
@@ -165,15 +168,13 @@ void *bist_task(void *threadp)
         REDLEDON();   
         GREENLEDOFF(); 
         PRINTLOGCONSOLE("Program Exiting.....");
-        //return NULL; 
     }
     else
     {
         pthread_mutex_lock(&bistlock);
-        BIST_allOk = 1;/* code */
+        BIST_allOk = 1;
         pthread_mutex_unlock(&bistlock);
     }
     PRINT("-----Built in Self Test Ended-----\n");
-    //printf("bist flag value %d\n",BIST_allOk);
     return NULL;
 }

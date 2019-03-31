@@ -1,7 +1,7 @@
 /**
  * @file myI2C.h
- * @author your name (you@domain.com)
- * @brief 
+ * @author Shreya Chakraborty
+ * @brief header for I2C drivers
  * @version 0.1
  * @date 2019-03-22
  * @Reference https://github.com/intel-iot-devkit/mraa/blob/master/examples/c/i2c_hmc5883l.c
@@ -29,7 +29,7 @@ i2c_struct_t i2c_handler;
  */
 int I2C_init(i2c_struct_t *i2c_handler);
 /**
- * @brief 
+ * @brief close i2c context
  * 
  * @param i2c_handler 
  * @return int 
@@ -54,7 +54,7 @@ int I2C_set_slave(i2c_struct_t *i2c_handler,uint8_t slave_addr);
 int I2C_write_byte(i2c_struct_t *i2c_handler,uint8_t slave_addr,uint8_t data);
 
 /**
- * @brief 
+ * @brief write 1 byte data 
  * 
  * @param i2c_handler 
  * @param slave_addr 

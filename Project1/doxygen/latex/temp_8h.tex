@@ -1,5 +1,10 @@
 \hypertarget{temp_8h}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/temp.h File Reference}
 \label{temp_8h}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/temp.\+h@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/temp.\+h}}
+
+
+header file for temperature task thread functionality  
+
+
 This graph shows which files directly or indirectly include this file\+:
 % FIG 0
 \subsection*{Macros}
@@ -28,20 +33,22 @@ enum {\bfseries temp\+\_\+unit} \{ {\bfseries C\+E\+L\+C\+I\+US},
 \item 
 \mbox{\Hypertarget{temp_8h_a6c6e8e13fb2ba7d141945e64b5b693cc}\label{temp_8h_a6c6e8e13fb2ba7d141945e64b5b693cc}} 
 void \hyperlink{temp_8h_a6c6e8e13fb2ba7d141945e64b5b693cc}{kill\+\_\+temp\+\_\+thread} (void)
-\begin{DoxyCompactList}\small\item\em to kill temp thread \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em to kill temp thread Sets the kill thread in the task \end{DoxyCompactList}\item 
 void $\ast$ \hyperlink{temp_8h_a9367e0b2320b0dd727163e557a9791d6}{temp\+\_\+task} (void $\ast$threadp)
-\begin{DoxyCompactList}\small\item\em call back for temperature task \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em call back for temperature task waits on a semaphore from the timer periodically \end{DoxyCompactList}\item 
 float \hyperlink{temp_8h_ad278c9dd0785311834fbdd25e9ccb08e}{get\+Temperature} (temp\+\_\+unit unit)
-\begin{DoxyCompactList}\small\item\em Get the Temp object. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the Temp object. Gets the temperature value from the temp register. \end{DoxyCompactList}\item 
 int \hyperlink{temp_8h_a0584aa99c4703588749b140587d1724a}{T\+M\+P102\+\_\+set\+Temp\+Threshold} (float tlow\+\_\+val, float thigh\+\_\+val)
-\begin{DoxyCompactList}\small\item\em Construct a new tmp102 settempthreshold object. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Construct a new tmp102 settempthreshold object sets thresholds for the temperature val. \end{DoxyCompactList}\item 
 int \hyperlink{temp_8h_a7beb226afb19a57861973866ecaf5338}{Remote\+Threshold\+Values} (float flow, float fhigh)
-\begin{DoxyCompactList}\small\item\em take threshold values from client \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em take threshold values from remote client \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+header file for temperature task thread functionality 
+
 \begin{DoxyAuthor}{Author}
-your name (\href{mailto:you@domain.com}{\tt you@domain.\+com}) 
+Shreya Chakraborty 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 0.\+1 
@@ -63,7 +70,7 @@ Copyright (c) 2019
 
 
 
-Get the Temp object. 
+Get the Temp object. Gets the temperature value from the temp register. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -75,7 +82,7 @@ float
 \end{DoxyReturn}
 
 
-Definition at line 53 of file temp.\+c.
+Definition at line 66 of file temp.\+c.
 
 \mbox{\Hypertarget{temp_8h_a7beb226afb19a57861973866ecaf5338}\label{temp_8h_a7beb226afb19a57861973866ecaf5338}} 
 \index{temp.\+h@{temp.\+h}!Remote\+Threshold\+Values@{Remote\+Threshold\+Values}}
@@ -85,7 +92,7 @@ Definition at line 53 of file temp.\+c.
 
 
 
-take threshold values from client 
+take threshold values from remote client 
 
 
 \begin{DoxyParams}{Parameters}
@@ -99,7 +106,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 67 of file temp.\+c.
+Definition at line 80 of file temp.\+c.
 
 \mbox{\Hypertarget{temp_8h_a9367e0b2320b0dd727163e557a9791d6}\label{temp_8h_a9367e0b2320b0dd727163e557a9791d6}} 
 \index{temp.\+h@{temp.\+h}!temp\+\_\+task@{temp\+\_\+task}}
@@ -109,7 +116,7 @@ Definition at line 67 of file temp.\+c.
 
 
 
-call back for temperature task 
+call back for temperature task waits on a semaphore from the timer periodically 
 
 
 \begin{DoxyParams}{Parameters}
@@ -121,7 +128,7 @@ void$\ast$
 \end{DoxyReturn}
 
 
-Definition at line 125 of file temp.\+c.
+Definition at line 138 of file temp.\+c.
 
 \mbox{\Hypertarget{temp_8h_a0584aa99c4703588749b140587d1724a}\label{temp_8h_a0584aa99c4703588749b140587d1724a}} 
 \index{temp.\+h@{temp.\+h}!T\+M\+P102\+\_\+set\+Temp\+Threshold@{T\+M\+P102\+\_\+set\+Temp\+Threshold}}
@@ -131,7 +138,7 @@ Definition at line 125 of file temp.\+c.
 
 
 
-Construct a new tmp102 settempthreshold object. 
+Construct a new tmp102 settempthreshold object sets thresholds for the temperature val. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -142,5 +149,5 @@ Construct a new tmp102 settempthreshold object.
 \end{DoxyParams}
 
 
-Definition at line 75 of file temp.\+c.
+Definition at line 88 of file temp.\+c.
 

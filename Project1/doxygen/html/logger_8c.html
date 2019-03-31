@@ -88,11 +88,14 @@ $(document).ready(function(){initNavTree('logger_8c.html','');});
 <div class="title">logger.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>externally connected led functionalities for normal and error conditions  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="includes_8h_source.html">includes.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
-<code>#include &quot;bbgled.h&quot;</code><br />
-<code>#include &quot;mysignal.h&quot;</code><br />
-<code>#include &quot;heartbeat.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="bbgled_8h_source.html">bbgled.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mysignal_8h_source.html">mysignal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="heartbeat_8h_source.html">heartbeat.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="bist_8h_source.html">bist.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for logger.c:</div>
@@ -117,7 +120,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a59bf591b758fe8741ffad898e91e748c"><td class="mdescLeft">&#160;</td><td class="mdescRight">to put messages in the logger queue  <a href="#a59bf591b758fe8741ffad898e91e748c">More...</a><br /></td></tr>
 <tr class="separator:a59bf591b758fe8741ffad898e91e748c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbbfebbf60efeb03c99c735f2343f26b"><td class="memItemLeft" align="right" valign="top">mqd_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8c.html#adbbfebbf60efeb03c99c735f2343f26b">logger_queue_init</a> (void)</td></tr>
-<tr class="memdesc:adbbfebbf60efeb03c99c735f2343f26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">mesg queue attribute initialisation  <a href="#adbbfebbf60efeb03c99c735f2343f26b">More...</a><br /></td></tr>
+<tr class="memdesc:adbbfebbf60efeb03c99c735f2343f26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">queue initialisation  <a href="#adbbfebbf60efeb03c99c735f2343f26b">More...</a><br /></td></tr>
 <tr class="separator:adbbfebbf60efeb03c99c735f2343f26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d3ce57d8ba16ca05ea10faa97811903"><td class="memItemLeft" align="right" valign="top"><a id="a3d3ce57d8ba16ca05ea10faa97811903"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8c.html#a3d3ce57d8ba16ca05ea10faa97811903">kill_logger_thread</a> (void)</td></tr>
@@ -136,7 +139,8 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>fp</b></td></tr>
 <tr class="separator:aa065f30aa9f5f9a42132c82c787ee70b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>your name (<a href="#" onclick="location.href='mai'+'lto:'+'you'+'@d'+'oma'+'in'+'.co'+'m'; return false;">you@d<span style="display: none;">.nosp@m.</span>omai<span style="display: none;">.nosp@m.</span>n.com</a>) </dd></dl>
+<div class="textblock"><p>externally connected led functionalities for normal and error conditions </p>
+<dl class="section author"><dt>Author</dt><dd>Shreya Chakraborty </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2019-03-16</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019 </dd></dl>
@@ -229,8 +233,8 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>fp</b></td></tr>
 <p>to put messages in the logger queue </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">level</td><td></td></tr>
-    <tr><td class="paramname">modId</td><td></td></tr>
+    <tr><td class="paramname">level</td><td>log level </td></tr>
+    <tr><td class="paramname">modId</td><td>the task </td></tr>
     <tr><td class="paramname">msg</td><td></td></tr>
     <tr><td class="paramname">...</td><td></td></tr>
   </table>
@@ -258,11 +262,10 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>fp</b></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>mesg queue attribute initialisation </p>
-<p>queue initialisation</p>
+<p>queue initialisation </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00097">97</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00093">93</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
 
 </div>
 </div>
@@ -292,7 +295,7 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>fp</b></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void* </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00127">127</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00123">123</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
 
 </div>
 </div>

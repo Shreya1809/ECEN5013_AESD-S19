@@ -90,6 +90,9 @@ $(document).ready(function(){initNavTree('logger_8h.html','');});
 <div class="title">logger.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Header file for logger task.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;time.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;sys/time.h&gt;</code><br />
@@ -140,13 +143,15 @@ Macros</h2></td></tr>
 <tr class="memitem:a841666af413bb2922b6de4a651c282a3"><td class="memItemLeft" align="right" valign="top"><a id="a841666af413bb2922b6de4a651c282a3"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>LOG_STDOUT</b></td></tr>
 <tr class="separator:a841666af413bb2922b6de4a651c282a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20714b4540bd3995b3161063601a8582"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>PRINTLOGCONSOLE</b>(f_, ...)</td></tr>
+<tr class="memitem:a20714b4540bd3995b3161063601a8582"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8h.html#a20714b4540bd3995b3161063601a8582">PRINTLOGCONSOLE</a>(f_, ...)</td></tr>
+<tr class="memdesc:a20714b4540bd3995b3161063601a8582"><td class="mdescLeft">&#160;</td><td class="mdescRight">macro function for printing on the console  <a href="#a20714b4540bd3995b3161063601a8582">More...</a><br /></td></tr>
 <tr class="separator:a20714b4540bd3995b3161063601a8582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3e3a490f3f48d89f563a24fffe92fb3"><td class="memItemLeft" align="right" valign="top"><a id="ae3e3a490f3f48d89f563a24fffe92fb3"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>PRINT</b>(f_, ...)&#160;&#160;&#160;printf(f_, ##__VA_ARGS__)</td></tr>
 <tr class="separator:ae3e3a490f3f48d89f563a24fffe92fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8ae79f0ca62f8fbb8e783868b73e8b8"><td class="memItemLeft" align="right" valign="top"><a id="aa8ae79f0ca62f8fbb8e783868b73e8b8"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>LOG_INFO</b>(modId,  msg, ...)&#160;&#160;&#160;<a class="el" href="logger_8h.html#a59bf591b758fe8741ffad898e91e748c">LOG_ENQUEUE</a>(LOG_INFO, modId, msg, ##__VA_ARGS__)</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8h.html#aa8ae79f0ca62f8fbb8e783868b73e8b8">LOG_INFO</a>(modId,  msg, ...)&#160;&#160;&#160;<a class="el" href="logger_8h.html#a59bf591b758fe8741ffad898e91e748c">LOG_ENQUEUE</a>(LOG_INFO, modId, msg, ##__VA_ARGS__)</td></tr>
+<tr class="memdesc:aa8ae79f0ca62f8fbb8e783868b73e8b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro functions for logger with levels. <br /></td></tr>
 <tr class="separator:aa8ae79f0ca62f8fbb8e783868b73e8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add6c05edc3df7bc35c5943a2abf9e817"><td class="memItemLeft" align="right" valign="top"><a id="add6c05edc3df7bc35c5943a2abf9e817"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>LOG_ERROR</b>(modId,  msg, ...)&#160;&#160;&#160;<a class="el" href="logger_8h.html#a59bf591b758fe8741ffad898e91e748c">LOG_ENQUEUE</a>(LOG_ERR, modId, msg, ##__VA_ARGS__)</td></tr>
@@ -198,7 +203,8 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>logLevel</b> 
 <tr class="separator:a1d4db610fb7416a6e8b333d8619dae00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>your name (<a href="#" onclick="location.href='mai'+'lto:'+'you'+'@d'+'oma'+'in'+'.co'+'m'; return false;">you@d<span style="display: none;">.nosp@m.</span>omai<span style="display: none;">.nosp@m.</span>n.com</a>) </dd></dl>
+<div class="textblock"><p>Header file for logger task. </p>
+<dl class="section author"><dt>Author</dt><dd>Shreya Chakraborty </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2019-03-16</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019 </dd></dl>
@@ -232,7 +238,9 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>logLevel</b> 
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span>{\</div><div class="line">             printf(<span class="stringliteral">&quot;[%lf] [PID:%d] [TID:%ld] Message:&quot;</span>,<a class="code" href="logger_8h.html#aacddb84d39f358e65929dc6f4b914de8">getTimeMsec</a>(),getpid(),syscall(SYS_gettid));\</div><div class="line">             printf(f_, ##__VA_ARGS__);\</div><div class="line">             printf(<span class="stringliteral">&quot;\n&quot;</span>);\</div><div class="line">             fflush(stdout);\</div><div class="line">            }<span class="keywordflow">while</span>(0)</div><div class="ttc" id="logger_8h_html_aacddb84d39f358e65929dc6f4b914de8"><div class="ttname"><a href="logger_8h.html#aacddb84d39f358e65929dc6f4b914de8">getTimeMsec</a></div><div class="ttdeci">double getTimeMsec(void)</div><div class="ttdoc">Get the Time Msec object. </div><div class="ttdef"><b>Definition:</b> <a href="logger_8c_source.html#l00045">logger.c:45</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="logger_8h_source.html#l00056">56</a> of file <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
+<p>macro function for printing on the console </p>
+
+<p class="definition">Definition at line <a class="el" href="logger_8h_source.html#l00061">61</a> of file <a class="el" href="logger_8h_source.html">logger.h</a>.</p>
 
 </div>
 </div>
@@ -301,8 +309,8 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>logLevel</b> 
 <p>to put messages in the logger queue </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">level</td><td></td></tr>
-    <tr><td class="paramname">modId</td><td></td></tr>
+    <tr><td class="paramname">level</td><td>log level </td></tr>
+    <tr><td class="paramname">modId</td><td>the task </td></tr>
     <tr><td class="paramname">msg</td><td></td></tr>
     <tr><td class="paramname">...</td><td></td></tr>
   </table>
@@ -331,11 +339,9 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>logLevel</b> 
 </div><div class="memdoc">
 
 <p>queue initialisation </p>
-<dl class="section return"><dt>Returns</dt><dd>int</dd></dl>
-<p>queue initialisation</p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00097">97</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00093">93</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
 
 </div>
 </div>
@@ -372,7 +378,7 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>logLevel</b> 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void* </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00127">127</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00123">123</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
 
 </div>
 </div>

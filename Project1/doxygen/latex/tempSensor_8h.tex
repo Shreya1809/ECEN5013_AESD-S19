@@ -103,7 +103,7 @@ enum {\bfseries conversion\+\_\+rate\+\_\+t} \{ {\bfseries O\+N\+E\+\_\+\+F\+O\+
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{tempSensor_8h_a9113eb7060b0e80e1022b3513f69dfd7}{T\+M\+P102\+\_\+get\+Temperature} (float $\ast$temp\+\_\+val)
-\item 
+\begin{DoxyCompactList}\small\item\em get temperature raw value \end{DoxyCompactList}\item 
 int \hyperlink{tempSensor_8h_aa8d930c53b02b7b3513732e4351ff222}{T\+M\+P102\+\_\+get\+Tlow} (float $\ast$tlow\+\_\+val)
 \begin{DoxyCompactList}\small\item\em read tlow reg \end{DoxyCompactList}\item 
 int \hyperlink{tempSensor_8h_aa83ab1ebdf1b1134f05369cd41fdd8cf}{T\+M\+P102\+\_\+get\+Thigh} (float $\ast$thigh\+\_\+val)
@@ -221,13 +221,17 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 205 of file temp\+Sensor.\+c.
+Definition at line 215 of file temp\+Sensor.\+c.
 
 \mbox{\Hypertarget{tempSensor_8h_a9113eb7060b0e80e1022b3513f69dfd7}\label{tempSensor_8h_a9113eb7060b0e80e1022b3513f69dfd7}} 
 \index{temp\+Sensor.\+h@{temp\+Sensor.\+h}!T\+M\+P102\+\_\+get\+Temperature@{T\+M\+P102\+\_\+get\+Temperature}}
 \index{T\+M\+P102\+\_\+get\+Temperature@{T\+M\+P102\+\_\+get\+Temperature}!temp\+Sensor.\+h@{temp\+Sensor.\+h}}
 \subsubsection{\texorpdfstring{T\+M\+P102\+\_\+get\+Temperature()}{TMP102\_getTemperature()}}
 {\footnotesize\ttfamily int T\+M\+P102\+\_\+get\+Temperature (\begin{DoxyParamCaption}\item[{float $\ast$}]{temp\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+get temperature raw value 
 
 
 \begin{DoxyParams}{Parameters}
@@ -239,7 +243,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 8 of file temp\+Sensor.\+c.
+Definition at line 18 of file temp\+Sensor.\+c.
 
 \mbox{\Hypertarget{tempSensor_8h_aa83ab1ebdf1b1134f05369cd41fdd8cf}\label{tempSensor_8h_aa83ab1ebdf1b1134f05369cd41fdd8cf}} 
 \index{temp\+Sensor.\+h@{temp\+Sensor.\+h}!T\+M\+P102\+\_\+get\+Thigh@{T\+M\+P102\+\_\+get\+Thigh}}
@@ -261,7 +265,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 53 of file temp\+Sensor.\+c.
+Definition at line 63 of file temp\+Sensor.\+c.
 
 \mbox{\Hypertarget{tempSensor_8h_aa8d930c53b02b7b3513732e4351ff222}\label{tempSensor_8h_aa8d930c53b02b7b3513732e4351ff222}} 
 \index{temp\+Sensor.\+h@{temp\+Sensor.\+h}!T\+M\+P102\+\_\+get\+Tlow@{T\+M\+P102\+\_\+get\+Tlow}}
@@ -283,7 +287,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 34 of file temp\+Sensor.\+c.
+Definition at line 44 of file temp\+Sensor.\+c.
 
 \mbox{\Hypertarget{tempSensor_8h_ae00e5aa054bb4f37b6ad8b04a709f49c}\label{tempSensor_8h_ae00e5aa054bb4f37b6ad8b04a709f49c}} 
 \index{temp\+Sensor.\+h@{temp\+Sensor.\+h}!T\+M\+P102\+\_\+read\+AL@{T\+M\+P102\+\_\+read\+AL}}
@@ -305,7 +309,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 314 of file temp\+Sensor.\+c.
+Definition at line 324 of file temp\+Sensor.\+c.
 
 \mbox{\Hypertarget{tempSensor_8h_a3672db766adda3bd63d3be8754f42b7f}\label{tempSensor_8h_a3672db766adda3bd63d3be8754f42b7f}} 
 \index{temp\+Sensor.\+h@{temp\+Sensor.\+h}!T\+M\+P102\+\_\+read\+Reg@{T\+M\+P102\+\_\+read\+Reg}}
@@ -329,7 +333,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 120 of file temp\+Sensor.\+c.
+Definition at line 130 of file temp\+Sensor.\+c.
 
 \mbox{\Hypertarget{tempSensor_8h_ae8500a6a0560f4d9f80c8986fb0f4d03}\label{tempSensor_8h_ae8500a6a0560f4d9f80c8986fb0f4d03}} 
 \index{temp\+Sensor.\+h@{temp\+Sensor.\+h}!T\+M\+P102\+\_\+set\+All\+Default@{T\+M\+P102\+\_\+set\+All\+Default}}
@@ -346,7 +350,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 327 of file temp\+Sensor.\+c.
+Definition at line 337 of file temp\+Sensor.\+c.
 
 \mbox{\Hypertarget{tempSensor_8h_a5a18e17f6467937075c02be9d5d51a2a}\label{tempSensor_8h_a5a18e17f6467937075c02be9d5d51a2a}} 
 \index{temp\+Sensor.\+h@{temp\+Sensor.\+h}!T\+M\+P102\+\_\+set\+CR@{T\+M\+P102\+\_\+set\+CR}}
@@ -368,7 +372,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 277 of file temp\+Sensor.\+c.
+Definition at line 287 of file temp\+Sensor.\+c.
 
 \mbox{\Hypertarget{tempSensor_8h_aca8fb3e52a8046f7194f0334ed5c1167}\label{tempSensor_8h_aca8fb3e52a8046f7194f0334ed5c1167}} 
 \index{temp\+Sensor.\+h@{temp\+Sensor.\+h}!T\+M\+P102\+\_\+set\+EM@{T\+M\+P102\+\_\+set\+EM}}
@@ -390,7 +394,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 252 of file temp\+Sensor.\+c.
+Definition at line 262 of file temp\+Sensor.\+c.
 
 \mbox{\Hypertarget{tempSensor_8h_a182a31c4de57ec285a490baedbccb926}\label{tempSensor_8h_a182a31c4de57ec285a490baedbccb926}} 
 \index{temp\+Sensor.\+h@{temp\+Sensor.\+h}!T\+M\+P102\+\_\+set\+Faultbits@{T\+M\+P102\+\_\+set\+Faultbits}}
@@ -412,7 +416,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 217 of file temp\+Sensor.\+c.
+Definition at line 227 of file temp\+Sensor.\+c.
 
 \mbox{\Hypertarget{tempSensor_8h_ac6442311de8464158cc4be49136a464b}\label{tempSensor_8h_ac6442311de8464158cc4be49136a464b}} 
 \index{temp\+Sensor.\+h@{temp\+Sensor.\+h}!T\+M\+P102\+\_\+set\+Resolution@{T\+M\+P102\+\_\+set\+Resolution}}
@@ -434,7 +438,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 167 of file temp\+Sensor.\+c.
+Definition at line 177 of file temp\+Sensor.\+c.
 
 \mbox{\Hypertarget{tempSensor_8h_aa52da543d212e628eb14ade211b64a5b}\label{tempSensor_8h_aa52da543d212e628eb14ade211b64a5b}} 
 \index{temp\+Sensor.\+h@{temp\+Sensor.\+h}!T\+M\+P102\+\_\+set\+Shutdown\+Mode@{T\+M\+P102\+\_\+set\+Shutdown\+Mode}}
@@ -456,7 +460,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 140 of file temp\+Sensor.\+c.
+Definition at line 150 of file temp\+Sensor.\+c.
 
 \mbox{\Hypertarget{tempSensor_8h_a7008e1c8cfb707e16c0b107b8f97ef9c}\label{tempSensor_8h_a7008e1c8cfb707e16c0b107b8f97ef9c}} 
 \index{temp\+Sensor.\+h@{temp\+Sensor.\+h}!T\+M\+P102\+\_\+set\+Thigh@{T\+M\+P102\+\_\+set\+Thigh}}
@@ -478,7 +482,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 72 of file temp\+Sensor.\+c.
+Definition at line 82 of file temp\+Sensor.\+c.
 
 \mbox{\Hypertarget{tempSensor_8h_a69c77489451fe289ecafea703e70f817}\label{tempSensor_8h_a69c77489451fe289ecafea703e70f817}} 
 \index{temp\+Sensor.\+h@{temp\+Sensor.\+h}!T\+M\+P102\+\_\+set\+Tlow@{T\+M\+P102\+\_\+set\+Tlow}}
@@ -500,7 +504,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 95 of file temp\+Sensor.\+c.
+Definition at line 105 of file temp\+Sensor.\+c.
 
 \mbox{\Hypertarget{tempSensor_8h_a221d0e1479cbfa8701175eae33e3a847}\label{tempSensor_8h_a221d0e1479cbfa8701175eae33e3a847}} 
 \index{temp\+Sensor.\+h@{temp\+Sensor.\+h}!T\+M\+P102\+\_\+write\+P\+T\+Rreg@{T\+M\+P102\+\_\+write\+P\+T\+Rreg}}
@@ -522,5 +526,5 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 130 of file temp\+Sensor.\+c.
+Definition at line 140 of file temp\+Sensor.\+c.
 

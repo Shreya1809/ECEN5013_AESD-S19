@@ -1,7 +1,7 @@
 /**
  * @file i2c.c
- * @author your name (you@domain.com)
- * @brief 
+ * @author Shreya Chakraborty
+ * @brief I2C driver functions for the sensor
  * @version 0.1
  * @date 2019-03-22
  * @reference https://gist.github.com/JamesDunne/9b7fbedb74c22ccc833059623f47beb7
@@ -95,12 +95,6 @@ int i2c_read(uint8_t slave_addr, uint8_t reg, uint8_t *result) {
         perror("ioctl(I2C_RDWR) in i2c_read");
         return -1;
     }
-    /*int addr = 0x48;
-    if (ioctl(i2c_fd, I2C_SLAVE, addr) < 0) {
-        perror("ioctl(I2C_RDWR) in i2c_read");
-        return -1;
-    }*/
-
     *result = inbuf[0];
     return 0;
 }

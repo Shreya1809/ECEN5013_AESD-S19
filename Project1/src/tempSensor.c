@@ -1,3 +1,13 @@
+/**
+ * @file tempSensor.c
+ * @author Shreya Chakraborty
+ * @brief TMP102 temperature register functions
+ * @version 0.1
+ * @date 2019-03-31
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "includes.h"
 #include "tempSensor.h"
 #include "myI2C.h"
