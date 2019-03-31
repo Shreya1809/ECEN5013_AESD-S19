@@ -1,0 +1,250 @@
+\hypertarget{group__cmocka__asserts}{}\section{Assert Macros}
+\label{group__cmocka__asserts}\index{Assert Macros@{Assert Macros}}
+Collaboration diagram for Assert Macros\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries assert\+\_\+true}(c)
+\item 
+\#define {\bfseries assert\+\_\+false}(c)
+\item 
+\#define {\bfseries assert\+\_\+return\+\_\+code}(rc,  error)
+\item 
+\#define {\bfseries assert\+\_\+non\+\_\+null}(c)
+\item 
+\#define {\bfseries assert\+\_\+null}(c)
+\item 
+\#define {\bfseries assert\+\_\+int\+\_\+equal}(a,  b)
+\item 
+\#define {\bfseries assert\+\_\+int\+\_\+not\+\_\+equal}(a,  b)
+\item 
+\#define {\bfseries assert\+\_\+string\+\_\+equal}(a,  b)
+\item 
+\#define {\bfseries assert\+\_\+string\+\_\+not\+\_\+equal}(a,  b)
+\item 
+\#define {\bfseries assert\+\_\+memory\+\_\+equal}(a,  b,  size)
+\item 
+\#define {\bfseries assert\+\_\+memory\+\_\+not\+\_\+equal}(a,  b,  size)
+\item 
+\#define {\bfseries assert\+\_\+in\+\_\+range}(value,  minimum,  maximum)
+\item 
+\#define {\bfseries assert\+\_\+not\+\_\+in\+\_\+range}(value,  minimum,  maximum)
+\item 
+\mbox{\Hypertarget{group__cmocka__asserts_ga7df96aa5f5f895f35cc2f84411d643b0}\label{group__cmocka__asserts_ga7df96aa5f5f895f35cc2f84411d643b0}} 
+\#define {\bfseries assert\+\_\+in\+\_\+set}(value,  values,  number\+\_\+of\+\_\+values)~\+\_\+assert\+\_\+in\+\_\+set(value, values, number\+\_\+of\+\_\+values, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{group__cmocka__asserts_ga831c33b0d53230e9f5542a2088e3312d}\label{group__cmocka__asserts_ga831c33b0d53230e9f5542a2088e3312d}} 
+\#define {\bfseries assert\+\_\+not\+\_\+in\+\_\+set}(value,  values,  number\+\_\+of\+\_\+values)~\+\_\+assert\+\_\+not\+\_\+in\+\_\+set(value, values, number\+\_\+of\+\_\+values, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a set of useful assert macros like the standard C libary\textquotesingle{}s assert(3) macro.
+
+On an assertion failure a cmocka assert macro will write the failure to the standard error stream and signal a test failure. Due to limitations of the C language the general C standard library assert() and cmocka\textquotesingle{}s assert\+\_\+true() and assert\+\_\+false() macros can only display the expression that caused the assert failure. cmocka\textquotesingle{}s type specific assert macros, assert\+\_\+\{type\}\+\_\+equal() and assert\+\_\+\{type\}\+\_\+not\+\_\+equal(), display the data that caused the assertion failure which increases data visibility aiding debugging of failing test cases. 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__cmocka__asserts_ga4ca6064e99d5a865b1b7f79391ffba68}\label{group__cmocka__asserts_ga4ca6064e99d5a865b1b7f79391ffba68}} 
+\index{Assert Macros@{Assert Macros}!assert\+\_\+false@{assert\+\_\+false}}
+\index{assert\+\_\+false@{assert\+\_\+false}!Assert Macros@{Assert Macros}}
+\subsubsection{\texorpdfstring{assert\+\_\+false}{assert\_false}}
+{\footnotesize\ttfamily \#define assert\+\_\+false(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_assert\_true(!(cast\_to\_largest\_integral\_type(c)), #c, \(\backslash\)
+                                     \_\_FILE\_\_, \_\_LINE\_\_)
+\end{DoxyCode}
+
+
+Definition at line 1037 of file cmocka.\+h.
+
+\mbox{\Hypertarget{group__cmocka__asserts_ga448ed2ee603a3be404ac7ea6a6096d09}\label{group__cmocka__asserts_ga448ed2ee603a3be404ac7ea6a6096d09}} 
+\index{Assert Macros@{Assert Macros}!assert\+\_\+in\+\_\+range@{assert\+\_\+in\+\_\+range}}
+\index{assert\+\_\+in\+\_\+range@{assert\+\_\+in\+\_\+range}!Assert Macros@{Assert Macros}}
+\subsubsection{\texorpdfstring{assert\+\_\+in\+\_\+range}{assert\_in\_range}}
+{\footnotesize\ttfamily \#define assert\+\_\+in\+\_\+range(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{minimum,  }\item[{}]{maximum }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_assert\_in\_range( \(\backslash\)
+        cast\_to\_largest\_integral\_type(value), \(\backslash\)
+        cast\_to\_largest\_integral\_type(minimum), \(\backslash\)
+        cast\_to\_largest\_integral\_type(maximum), \_\_FILE\_\_, \_\_LINE\_\_)
+\end{DoxyCode}
+
+
+Definition at line 1233 of file cmocka.\+h.
+
+\mbox{\Hypertarget{group__cmocka__asserts_gac31995a6393c6aef66d60b3850fc5f4d}\label{group__cmocka__asserts_gac31995a6393c6aef66d60b3850fc5f4d}} 
+\index{Assert Macros@{Assert Macros}!assert\+\_\+int\+\_\+equal@{assert\+\_\+int\+\_\+equal}}
+\index{assert\+\_\+int\+\_\+equal@{assert\+\_\+int\+\_\+equal}!Assert Macros@{Assert Macros}}
+\subsubsection{\texorpdfstring{assert\+\_\+int\+\_\+equal}{assert\_int\_equal}}
+{\footnotesize\ttfamily \#define assert\+\_\+int\+\_\+equal(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_assert\_int\_equal(cast\_to\_largest\_integral\_type(a), \(\backslash\)
+                      cast\_to\_largest\_integral\_type(b), \(\backslash\)
+                      \_\_FILE\_\_, \_\_LINE\_\_)
+\end{DoxyCode}
+
+
+Definition at line 1110 of file cmocka.\+h.
+
+\mbox{\Hypertarget{group__cmocka__asserts_ga231fbb3638491f77825f3bbf68d5eb59}\label{group__cmocka__asserts_ga231fbb3638491f77825f3bbf68d5eb59}} 
+\index{Assert Macros@{Assert Macros}!assert\+\_\+int\+\_\+not\+\_\+equal@{assert\+\_\+int\+\_\+not\+\_\+equal}}
+\index{assert\+\_\+int\+\_\+not\+\_\+equal@{assert\+\_\+int\+\_\+not\+\_\+equal}!Assert Macros@{Assert Macros}}
+\subsubsection{\texorpdfstring{assert\+\_\+int\+\_\+not\+\_\+equal}{assert\_int\_not\_equal}}
+{\footnotesize\ttfamily \#define assert\+\_\+int\+\_\+not\+\_\+equal(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_assert\_int\_not\_equal(cast\_to\_largest\_integral\_type(a), \(\backslash\)
+                          cast\_to\_largest\_integral\_type(b), \(\backslash\)
+                          \_\_FILE\_\_, \_\_LINE\_\_)
+\end{DoxyCode}
+
+
+Definition at line 1131 of file cmocka.\+h.
+
+\mbox{\Hypertarget{group__cmocka__asserts_ga0392e6dea107d9c9d897fe7847ab6d19}\label{group__cmocka__asserts_ga0392e6dea107d9c9d897fe7847ab6d19}} 
+\index{Assert Macros@{Assert Macros}!assert\+\_\+memory\+\_\+equal@{assert\+\_\+memory\+\_\+equal}}
+\index{assert\+\_\+memory\+\_\+equal@{assert\+\_\+memory\+\_\+equal}!Assert Macros@{Assert Macros}}
+\subsubsection{\texorpdfstring{assert\+\_\+memory\+\_\+equal}{assert\_memory\_equal}}
+{\footnotesize\ttfamily \#define assert\+\_\+memory\+\_\+equal(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{size }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_assert\_memory\_equal((\textcolor{keyword}{const} \textcolor{keywordtype}{void}*)(a), (\textcolor{keyword}{const} \textcolor{keywordtype}{void}*)(b), size, \_\_FILE\_\_, \(\backslash\)
+                         \_\_LINE\_\_)
+\end{DoxyCode}
+
+
+Definition at line 1190 of file cmocka.\+h.
+
+\mbox{\Hypertarget{group__cmocka__asserts_gaca31cdde611bca193f51912c5f3a0d97}\label{group__cmocka__asserts_gaca31cdde611bca193f51912c5f3a0d97}} 
+\index{Assert Macros@{Assert Macros}!assert\+\_\+memory\+\_\+not\+\_\+equal@{assert\+\_\+memory\+\_\+not\+\_\+equal}}
+\index{assert\+\_\+memory\+\_\+not\+\_\+equal@{assert\+\_\+memory\+\_\+not\+\_\+equal}!Assert Macros@{Assert Macros}}
+\subsubsection{\texorpdfstring{assert\+\_\+memory\+\_\+not\+\_\+equal}{assert\_memory\_not\_equal}}
+{\footnotesize\ttfamily \#define assert\+\_\+memory\+\_\+not\+\_\+equal(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{size }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_assert\_memory\_not\_equal((\textcolor{keyword}{const} \textcolor{keywordtype}{void}*)(a), (\textcolor{keyword}{const} \textcolor{keywordtype}{void}*)(b), size, \(\backslash\)
+                             \_\_FILE\_\_, \_\_LINE\_\_)
+\end{DoxyCode}
+
+
+Definition at line 1212 of file cmocka.\+h.
+
+\mbox{\Hypertarget{group__cmocka__asserts_gae44d62210cb89257269021c435b55ea5}\label{group__cmocka__asserts_gae44d62210cb89257269021c435b55ea5}} 
+\index{Assert Macros@{Assert Macros}!assert\+\_\+non\+\_\+null@{assert\+\_\+non\+\_\+null}}
+\index{assert\+\_\+non\+\_\+null@{assert\+\_\+non\+\_\+null}!Assert Macros@{Assert Macros}}
+\subsubsection{\texorpdfstring{assert\+\_\+non\+\_\+null}{assert\_non\_null}}
+{\footnotesize\ttfamily \#define assert\+\_\+non\+\_\+null(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_assert\_true(cast\_ptr\_to\_largest\_integral\_type(c), #c, \(\backslash\)
+                                        \_\_FILE\_\_, \_\_LINE\_\_)
+\end{DoxyCode}
+
+
+Definition at line 1076 of file cmocka.\+h.
+
+\mbox{\Hypertarget{group__cmocka__asserts_ga004ef170c4e0b8182a74435bbb16db2c}\label{group__cmocka__asserts_ga004ef170c4e0b8182a74435bbb16db2c}} 
+\index{Assert Macros@{Assert Macros}!assert\+\_\+not\+\_\+in\+\_\+range@{assert\+\_\+not\+\_\+in\+\_\+range}}
+\index{assert\+\_\+not\+\_\+in\+\_\+range@{assert\+\_\+not\+\_\+in\+\_\+range}!Assert Macros@{Assert Macros}}
+\subsubsection{\texorpdfstring{assert\+\_\+not\+\_\+in\+\_\+range}{assert\_not\_in\_range}}
+{\footnotesize\ttfamily \#define assert\+\_\+not\+\_\+in\+\_\+range(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{minimum,  }\item[{}]{maximum }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_assert\_not\_in\_range( \(\backslash\)
+        cast\_to\_largest\_integral\_type(value), \(\backslash\)
+        cast\_to\_largest\_integral\_type(minimum), \(\backslash\)
+        cast\_to\_largest\_integral\_type(maximum), \_\_FILE\_\_, \_\_LINE\_\_)
+\end{DoxyCode}
+
+
+Definition at line 1256 of file cmocka.\+h.
+
+\mbox{\Hypertarget{group__cmocka__asserts_gada8625ecf9ccdbc48398aee7f78245cb}\label{group__cmocka__asserts_gada8625ecf9ccdbc48398aee7f78245cb}} 
+\index{Assert Macros@{Assert Macros}!assert\+\_\+null@{assert\+\_\+null}}
+\index{assert\+\_\+null@{assert\+\_\+null}!Assert Macros@{Assert Macros}}
+\subsubsection{\texorpdfstring{assert\+\_\+null}{assert\_null}}
+{\footnotesize\ttfamily \#define assert\+\_\+null(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_assert\_true(!(cast\_ptr\_to\_largest\_integral\_type(c)), #c, \(\backslash\)
+\_\_FILE\_\_, \_\_LINE\_\_)
+\end{DoxyCode}
+
+
+Definition at line 1093 of file cmocka.\+h.
+
+\mbox{\Hypertarget{group__cmocka__asserts_ga4db2675db965bd10c7adef276bb6aaea}\label{group__cmocka__asserts_ga4db2675db965bd10c7adef276bb6aaea}} 
+\index{Assert Macros@{Assert Macros}!assert\+\_\+return\+\_\+code@{assert\+\_\+return\+\_\+code}}
+\index{assert\+\_\+return\+\_\+code@{assert\+\_\+return\+\_\+code}!Assert Macros@{Assert Macros}}
+\subsubsection{\texorpdfstring{assert\+\_\+return\+\_\+code}{assert\_return\_code}}
+{\footnotesize\ttfamily \#define assert\+\_\+return\+\_\+code(\begin{DoxyParamCaption}\item[{}]{rc,  }\item[{}]{error }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_assert\_return\_code(cast\_to\_largest\_integral\_type(rc), \(\backslash\)
+                        \textcolor{keyword}{sizeof}(rc), \(\backslash\)
+                        cast\_to\_largest\_integral\_type(error), \(\backslash\)
+                        #rc, \_\_FILE\_\_, \_\_LINE\_\_)
+\end{DoxyCode}
+
+
+Definition at line 1056 of file cmocka.\+h.
+
+\mbox{\Hypertarget{group__cmocka__asserts_ga30969b834c48829d76ec92c21aa9941c}\label{group__cmocka__asserts_ga30969b834c48829d76ec92c21aa9941c}} 
+\index{Assert Macros@{Assert Macros}!assert\+\_\+string\+\_\+equal@{assert\+\_\+string\+\_\+equal}}
+\index{assert\+\_\+string\+\_\+equal@{assert\+\_\+string\+\_\+equal}!Assert Macros@{Assert Macros}}
+\subsubsection{\texorpdfstring{assert\+\_\+string\+\_\+equal}{assert\_string\_equal}}
+{\footnotesize\ttfamily \#define assert\+\_\+string\+\_\+equal(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_assert\_string\_equal((\textcolor{keyword}{const} \textcolor{keywordtype}{char}*)(a), (\textcolor{keyword}{const} \textcolor{keywordtype}{char}*)(b), \_\_FILE\_\_, \(\backslash\)
+                         \_\_LINE\_\_)
+\end{DoxyCode}
+
+
+Definition at line 1150 of file cmocka.\+h.
+
+\mbox{\Hypertarget{group__cmocka__asserts_ga1779f2c99e681290d4d02d197c00e06c}\label{group__cmocka__asserts_ga1779f2c99e681290d4d02d197c00e06c}} 
+\index{Assert Macros@{Assert Macros}!assert\+\_\+string\+\_\+not\+\_\+equal@{assert\+\_\+string\+\_\+not\+\_\+equal}}
+\index{assert\+\_\+string\+\_\+not\+\_\+equal@{assert\+\_\+string\+\_\+not\+\_\+equal}!Assert Macros@{Assert Macros}}
+\subsubsection{\texorpdfstring{assert\+\_\+string\+\_\+not\+\_\+equal}{assert\_string\_not\_equal}}
+{\footnotesize\ttfamily \#define assert\+\_\+string\+\_\+not\+\_\+equal(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_assert\_string\_not\_equal((\textcolor{keyword}{const} \textcolor{keywordtype}{char}*)(a), (\textcolor{keyword}{const} \textcolor{keywordtype}{char}*)(b), \_\_FILE\_\_, \(\backslash\)
+                             \_\_LINE\_\_)
+\end{DoxyCode}
+
+
+Definition at line 1168 of file cmocka.\+h.
+
+\mbox{\Hypertarget{group__cmocka__asserts_gafaacfa3c89570db4347841e4497d3636}\label{group__cmocka__asserts_gafaacfa3c89570db4347841e4497d3636}} 
+\index{Assert Macros@{Assert Macros}!assert\+\_\+true@{assert\+\_\+true}}
+\index{assert\+\_\+true@{assert\+\_\+true}!Assert Macros@{Assert Macros}}
+\subsubsection{\texorpdfstring{assert\+\_\+true}{assert\_true}}
+{\footnotesize\ttfamily \#define assert\+\_\+true(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_assert\_true(cast\_to\_largest\_integral\_type(c), #c, \(\backslash\)
+                                    \_\_FILE\_\_, \_\_LINE\_\_)
+\end{DoxyCode}
+
+
+Definition at line 1019 of file cmocka.\+h.
+

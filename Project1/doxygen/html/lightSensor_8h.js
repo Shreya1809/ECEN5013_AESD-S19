@@ -1,0 +1,57 @@
+var lightSensor_8h =
+[
+    [ "APDS9301_CH0_DATAHIGH_REG", "lightSensor_8h.html#a3409eab2723258753af4e577f92d9ce9", null ],
+    [ "APDS9301_CH0_DATALOW_REG", "lightSensor_8h.html#a8b733cd0c77a9067c806e6d6c32be649", null ],
+    [ "APDS9301_CH1_DATAHIGH_REG", "lightSensor_8h.html#aefc509f2775c1ee0b5b7fd449ec16e5c", null ],
+    [ "APDS9301_CH1_DATALOW_REG", "lightSensor_8h.html#a1807828ae6faa154a39c6384c8faab7d", null ],
+    [ "APDS9301_COMMAND_INT_CLEAR", "lightSensor_8h.html#aa3c257367c5c6ff6fdaeb9767962813e", null ],
+    [ "APDS9301_COMMAND_WORD_RW", "lightSensor_8h.html#a1cf43bdc5f4e7f025ef1f26c923dd13a", null ],
+    [ "APDS9301_CONTROL_POWER_DOWN", "lightSensor_8h.html#a57ee8b477d90d8eb31abcc828f663afa", null ],
+    [ "APDS9301_CONTROL_POWER_UP", "lightSensor_8h.html#a5435005bdc7999960cd992860258d9c9", null ],
+    [ "APDS9301_CONTROL_REG", "lightSensor_8h.html#ad0681aee6f2de966fc6a25ca2dc661b4", null ],
+    [ "APDS9301_ID_REG", "lightSensor_8h.html#a6af905a9f6d4e38491bd03dbde2115ec", null ],
+    [ "APDS9301_INTERRUPT_CTRL_ENABLE_DISABLE", "lightSensor_8h.html#a75dc7a57b66524cc2b4ddab945224430", null ],
+    [ "APDS9301_INTERRUPT_REG", "lightSensor_8h.html#ad8b04d420e844e6999d8b173a6662b44", null ],
+    [ "APDS9301_SLAVE_ADDRESS", "lightSensor_8h.html#a188016ddb3cae516a5208d763a174f6b", null ],
+    [ "APDS9301_THRESHHIHI_REG", "lightSensor_8h.html#adc13e7cc14eb9af2212620c2606c5f37", null ],
+    [ "APDS9301_THRESHHILOW_REG", "lightSensor_8h.html#abc665641e783d3ff35d9dbed78d7db70", null ],
+    [ "APDS9301_THRESHLOWHI_REG", "lightSensor_8h.html#ab668c1cb8aaad25812ca0c67088f1331", null ],
+    [ "APDS9301_THRESHLOWLOW_REG", "lightSensor_8h.html#abccddee7484d0153992eeec38d3f102b", null ],
+    [ "APDS9301_TIMING_GAIN", "lightSensor_8h.html#ac7c6e4d4cfadea533b4900a7eb8b22e0", null ],
+    [ "APDS9301_TIMING_INTEGRATION_TIME_BIT0", "lightSensor_8h.html#ae8fd1c2ff5aa73147b241747141ab552", null ],
+    [ "APDS9301_TIMING_INTEGRATION_TIME_BIT1", "lightSensor_8h.html#a4b97758d5951d2ce6577db57a5f844b9", null ],
+    [ "APDS9301_TIMING_REG", "lightSensor_8h.html#ad633b4f59b5c3b8aa0f1e3ff310f6d8b", null ],
+    [ "gain_mode_t", "lightSensor_8h.html#aa7fde03061a48a697529769416de78a6", [
+      [ "LOW", "lightSensor_8h.html#aa7fde03061a48a697529769416de78a6a6a226f4143ca3b18999551694cdb72a8", null ],
+      [ "HIGH", "lightSensor_8h.html#aa7fde03061a48a697529769416de78a6a0c3a1dacf94061154b3ee354359c5893", null ]
+    ] ],
+    [ "integ_time_t", "lightSensor_8h.html#a564fc05e3767d16dfee2dc1062c83b68", [
+      [ "MODE_ZERO", "lightSensor_8h.html#a564fc05e3767d16dfee2dc1062c83b68a251c83cd40d6a56cf9795c6350e74de2", null ],
+      [ "MODE_ONE", "lightSensor_8h.html#a564fc05e3767d16dfee2dc1062c83b68a9e62338ea4b77c9561c403e9b28feb29", null ],
+      [ "MODE_TWO", "lightSensor_8h.html#a564fc05e3767d16dfee2dc1062c83b68a1acb19f542efcaf34a46dd71e3d7f0d0", null ],
+      [ "MODE_THREE", "lightSensor_8h.html#a564fc05e3767d16dfee2dc1062c83b68aaaa5048400cc37e1290f80bfc84e4c69", null ]
+    ] ],
+    [ "interrupt_mode_t", "lightSensor_8h.html#ac58a57bdddd3383db2e8763d3154e779", [
+      [ "ENABLE", "lightSensor_8h.html#ac58a57bdddd3383db2e8763d3154e779a7d46875fa3ebd2c34d2756950eda83bf", null ],
+      [ "DISABLE", "lightSensor_8h.html#ac58a57bdddd3383db2e8763d3154e779ad3a9df141be0ccf10389b640f492b26d", null ]
+    ] ],
+    [ "APDS9301_CheckInt", "lightSensor_8h.html#a4ff1625996e8f1cebf5041777c653964", null ],
+    [ "APDS9301_getCh0", "lightSensor_8h.html#ad14a314497f8bf3ce13762a87064bad7", null ],
+    [ "APDS9301_getCh1", "lightSensor_8h.html#a913f86bed7075b949472dc93f6f52ca2", null ],
+    [ "APDS9301_getlight", "lightSensor_8h.html#ae12804ca44a2f58617bd467c8633553e", null ],
+    [ "APDS9301_intClear", "lightSensor_8h.html#a2c4c5c895ba901f884f473651bd3afdc", null ],
+    [ "APDS9301_interruptCTRLreg", "lightSensor_8h.html#a59400c5e7bbb4752c3fc2ce6a27f47eb", null ],
+    [ "APDS9301_powerup", "lightSensor_8h.html#a790e79354d79d996d39d97e3c0750f81", null ],
+    [ "APDS9301_readCTRLreg", "lightSensor_8h.html#a2b9865a81efbf475c33b9348b24fcf7e", null ],
+    [ "APDS9301_readIDreg", "lightSensor_8h.html#a960a4cfc5ff042a3fc995a201eb83916", null ],
+    [ "APDS9301_readTHRESH_highhigh", "lightSensor_8h.html#a820e46ef315ed974ba7143bff769d12d", null ],
+    [ "APDS9301_readTHRESH_highlow", "lightSensor_8h.html#a916087564af4e500cd44af4217422990", null ],
+    [ "APDS9301_readTHRESH_lowhigh", "lightSensor_8h.html#ab007d3bff77582d8fc9939fac33caaed", null ],
+    [ "APDS9301_readTHRESH_lowlow", "lightSensor_8h.html#a0ae11df36762fe2f91009e48937d17d7", null ],
+    [ "APDS9301_setAllDefault", "lightSensor_8h.html#a8aa4cf1866fd0f410dfa714fae4828d3", null ],
+    [ "APDS9301_setTiming_gain", "lightSensor_8h.html#a6d4e3519fb0b0a6de99323d272831fbf", null ],
+    [ "APDS9301_setTiming_integ", "lightSensor_8h.html#a8db9045d0df240c23ef622c93a4349ff", null ],
+    [ "APDS9301_writeCMDreg", "lightSensor_8h.html#adaf832bbb1ee2551672b59b171913212", null ],
+    [ "APDS9301_writeTHRESH_highlow", "lightSensor_8h.html#a12baf424983442a616b5fb4fe161ede6", null ],
+    [ "APDS9301_writeTHRESH_lowlow", "lightSensor_8h.html#ac3ee1a2ef65b70265a65944dfa8aeb7f", null ]
+];

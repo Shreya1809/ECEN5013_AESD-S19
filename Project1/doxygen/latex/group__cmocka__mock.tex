@@ -1,0 +1,91 @@
+\hypertarget{group__cmocka__mock}{}\section{Mock Objects}
+\label{group__cmocka__mock}\index{Mock Objects@{Mock Objects}}
+Collaboration diagram for Mock Objects\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__cmocka__mock_gabfbc7d47a880b629f1f922c84bb0b298}\label{group__cmocka__mock_gabfbc7d47a880b629f1f922c84bb0b298}} 
+\#define {\bfseries mock}()~\+\_\+mock(\+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{group__cmocka__mock_ga9c5b6d6f0cb3f2020dfa9def4dbab594}\label{group__cmocka__mock_ga9c5b6d6f0cb3f2020dfa9def4dbab594}} 
+\#define {\bfseries mock\+\_\+type}(type)~((type) mock())
+\item 
+\mbox{\Hypertarget{group__cmocka__mock_gad5d3d911b6b35fd12197d0866b69680d}\label{group__cmocka__mock_gad5d3d911b6b35fd12197d0866b69680d}} 
+\#define {\bfseries mock\+\_\+ptr\+\_\+type}(type)~((type) (uintptr\+\_\+t) mock())
+\item 
+\#define {\bfseries will\+\_\+return}(function,  value)
+\item 
+\#define {\bfseries will\+\_\+return\+\_\+count}(function,  value,  count)
+\item 
+\mbox{\Hypertarget{group__cmocka__mock_gaa71fcfa99426230c1b17b135a2690630}\label{group__cmocka__mock_gaa71fcfa99426230c1b17b135a2690630}} 
+\#define {\bfseries will\+\_\+return\+\_\+always}(function,  value)~will\+\_\+return\+\_\+count(function, (value), -\/1)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mock objects mock objects are simulated objects that mimic the behavior of real objects. Instead of calling the real objects, the tested object calls a mock object that merely asserts that the correct methods were called, with the expected parameters, in the correct order.
+
+
+\begin{DoxyItemize}
+\item {\bfseries will\+\_\+return(function, value)} -\/ The will\+\_\+return() macro pushes a value onto a stack of mock values. This macro is intended to be used by the unit test itself, while programming the behaviour of the mocked object.
+
+
+\item {\bfseries mock()} -\/ the mock macro pops a value from a stack of test values. The user of the mock() macro is the mocked object that uses it to learn how it should behave. 
+\end{DoxyItemize}
+
+Because the will\+\_\+return() and mock() are intended to be used in pairs, the cmocka library would fail the test if there are more values pushed onto the stack using will\+\_\+return() than consumed with mock() and vice-\/versa.
+
+The following unit test stub illustrates how would a unit test instruct the mock object to return a particular value\+:
+
+
+\begin{DoxyCode}
+will\_return(chef\_cook, \textcolor{stringliteral}{"hotdog"});
+will\_return(chef\_cook, 0);
+\end{DoxyCode}
+
+
+Now the mock object can check if the parameter it received is the parameter which is expected by the test driver. This can be done the following way\+:
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} chef\_cook(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *order, \textcolor{keywordtype}{char} **dish\_out)
+\{
+    check\_expected(order);
+\}
+\end{DoxyCode}
+
+
+For a complete example please at a look \href{http://git.cryptomilk.org/projects/cmocka.git/tree/example/chef_wrap/waiter_test_wrap.c}{\tt here}. 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__cmocka__mock_ga30c27007b639ae66ec3bb8598f9526b9}\label{group__cmocka__mock_ga30c27007b639ae66ec3bb8598f9526b9}} 
+\index{Mock Objects@{Mock Objects}!will\+\_\+return@{will\+\_\+return}}
+\index{will\+\_\+return@{will\+\_\+return}!Mock Objects@{Mock Objects}}
+\subsubsection{\texorpdfstring{will\+\_\+return}{will\_return}}
+{\footnotesize\ttfamily \#define will\+\_\+return(\begin{DoxyParamCaption}\item[{}]{function,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_will\_return(#\textcolor{keyword}{function}, \_\_FILE\_\_, \_\_LINE\_\_, \(\backslash\)
+                 cast\_to\_largest\_integral\_type(value), 1)
+\end{DoxyCode}
+
+
+Definition at line 297 of file cmocka.\+h.
+
+\mbox{\Hypertarget{group__cmocka__mock_gaab1cabbc12a25d322f75b77aa67eaf2c}\label{group__cmocka__mock_gaab1cabbc12a25d322f75b77aa67eaf2c}} 
+\index{Mock Objects@{Mock Objects}!will\+\_\+return\+\_\+count@{will\+\_\+return\+\_\+count}}
+\index{will\+\_\+return\+\_\+count@{will\+\_\+return\+\_\+count}!Mock Objects@{Mock Objects}}
+\subsubsection{\texorpdfstring{will\+\_\+return\+\_\+count}{will\_return\_count}}
+{\footnotesize\ttfamily \#define will\+\_\+return\+\_\+count(\begin{DoxyParamCaption}\item[{}]{function,  }\item[{}]{value,  }\item[{}]{count }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\_will\_return(#\textcolor{keyword}{function}, \_\_FILE\_\_, \_\_LINE\_\_, \(\backslash\)
+                 cast\_to\_largest\_integral\_type(value), count)
+\end{DoxyCode}
+
+
+Definition at line 318 of file cmocka.\+h.
+

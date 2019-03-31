@@ -1,0 +1,68 @@
+\hypertarget{socket_8c}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/socket.c File Reference}
+\label{socket_8c}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/socket.\+c@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/socket.\+c}}
+{\ttfamily \#include \char`\"{}includes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}socket.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}temp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logger.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}light.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bbgled.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mysignal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}temp\+Sensor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}heartbeat.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bist.\+h\char`\"{}}\newline
+Include dependency graph for socket.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{socket_8c_a8d7cda36beeab67fa9d5335000d7adf3}\label{socket_8c_a8d7cda36beeab67fa9d5335000d7adf3}} 
+void \hyperlink{socket_8c_a8d7cda36beeab67fa9d5335000d7adf3}{kill\+\_\+socket\+\_\+thread} (void)
+\begin{DoxyCompactList}\small\item\em to kill socket thread \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{socket_8c_a92f66c7de324d0f99973c1af462cfa3b}{socket\+\_\+task} (void $\ast$threadp)
+\begin{DoxyCompactList}\small\item\em Call back function for socket from main thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{socket_8c_a3b97289483a2d9585166e53ed6eaeb6a}\label{socket_8c_a3b97289483a2d9585166e53ed6eaeb6a}} 
+pthread\+\_\+t {\bfseries threads} \mbox{[}M\+A\+X\+\_\+\+T\+A\+S\+KS\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\tt you@domain.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/03-\/16
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{socket_8c_a92f66c7de324d0f99973c1af462cfa3b}\label{socket_8c_a92f66c7de324d0f99973c1af462cfa3b}} 
+\index{socket.\+c@{socket.\+c}!socket\+\_\+task@{socket\+\_\+task}}
+\index{socket\+\_\+task@{socket\+\_\+task}!socket.\+c@{socket.\+c}}
+\subsubsection{\texorpdfstring{socket\+\_\+task()}{socket\_task()}}
+{\footnotesize\ttfamily void$\ast$ socket\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{threadp }\end{DoxyParamCaption})}
+
+
+
+Call back function for socket from main thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threadp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file socket.\+c.
+

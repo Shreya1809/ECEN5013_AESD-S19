@@ -1,0 +1,544 @@
+\hypertarget{lightSensor_8h}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/\+Beaglebone\+Green/light\+Sensor.h File Reference}
+\label{lightSensor_8h}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/\+Beaglebone\+Green/light\+Sensor.\+h@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/\+Beaglebone\+Green/light\+Sensor.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{lightSensor_8h_a188016ddb3cae516a5208d763a174f6b}\label{lightSensor_8h_a188016ddb3cae516a5208d763a174f6b}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+S\+L\+A\+V\+E\+\_\+\+A\+D\+D\+R\+E\+SS}~(0x39)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_ad0681aee6f2de966fc6a25ca2dc661b4}\label{lightSensor_8h_ad0681aee6f2de966fc6a25ca2dc661b4}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+EG}~(0x80)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_ad633b4f59b5c3b8aa0f1e3ff310f6d8b}\label{lightSensor_8h_ad633b4f59b5c3b8aa0f1e3ff310f6d8b}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+R\+EG}~(0x81)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_abccddee7484d0153992eeec38d3f102b}\label{lightSensor_8h_abccddee7484d0153992eeec38d3f102b}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+T\+H\+R\+E\+S\+H\+L\+O\+W\+L\+O\+W\+\_\+\+R\+EG}~(0x82)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_ab668c1cb8aaad25812ca0c67088f1331}\label{lightSensor_8h_ab668c1cb8aaad25812ca0c67088f1331}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+T\+H\+R\+E\+S\+H\+L\+O\+W\+H\+I\+\_\+\+R\+EG}~(0x83)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_abc665641e783d3ff35d9dbed78d7db70}\label{lightSensor_8h_abc665641e783d3ff35d9dbed78d7db70}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+T\+H\+R\+E\+S\+H\+H\+I\+L\+O\+W\+\_\+\+R\+EG}~(0x84)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_adc13e7cc14eb9af2212620c2606c5f37}\label{lightSensor_8h_adc13e7cc14eb9af2212620c2606c5f37}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+T\+H\+R\+E\+S\+H\+H\+I\+H\+I\+\_\+\+R\+EG}~(0x85)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_ad8b04d420e844e6999d8b173a6662b44}\label{lightSensor_8h_ad8b04d420e844e6999d8b173a6662b44}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+R\+EG}~(0x86)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_a6af905a9f6d4e38491bd03dbde2115ec}\label{lightSensor_8h_a6af905a9f6d4e38491bd03dbde2115ec}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+I\+D\+\_\+\+R\+EG}~(0x8\+A)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_a8b733cd0c77a9067c806e6d6c32be649}\label{lightSensor_8h_a8b733cd0c77a9067c806e6d6c32be649}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+C\+H0\+\_\+\+D\+A\+T\+A\+L\+O\+W\+\_\+\+R\+EG}~(0x8\+C)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_a3409eab2723258753af4e577f92d9ce9}\label{lightSensor_8h_a3409eab2723258753af4e577f92d9ce9}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+C\+H0\+\_\+\+D\+A\+T\+A\+H\+I\+G\+H\+\_\+\+R\+EG}~(0x8\+D)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_a1807828ae6faa154a39c6384c8faab7d}\label{lightSensor_8h_a1807828ae6faa154a39c6384c8faab7d}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+C\+H1\+\_\+\+D\+A\+T\+A\+L\+O\+W\+\_\+\+R\+EG}~(0x8\+E)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_aefc509f2775c1ee0b5b7fd449ec16e5c}\label{lightSensor_8h_aefc509f2775c1ee0b5b7fd449ec16e5c}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+C\+H1\+\_\+\+D\+A\+T\+A\+H\+I\+G\+H\+\_\+\+R\+EG}~(0x8\+F)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_a1cf43bdc5f4e7f025ef1f26c923dd13a}\label{lightSensor_8h_a1cf43bdc5f4e7f025ef1f26c923dd13a}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+C\+O\+M\+M\+A\+N\+D\+\_\+\+W\+O\+R\+D\+\_\+\+RW}~(0x20)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_aa3c257367c5c6ff6fdaeb9767962813e}\label{lightSensor_8h_aa3c257367c5c6ff6fdaeb9767962813e}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+C\+O\+M\+M\+A\+N\+D\+\_\+\+I\+N\+T\+\_\+\+C\+L\+E\+AR}~(0x40)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_a57ee8b477d90d8eb31abcc828f663afa}\label{lightSensor_8h_a57ee8b477d90d8eb31abcc828f663afa}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+W\+E\+R\+\_\+\+D\+O\+WN}~(0x00)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_a5435005bdc7999960cd992860258d9c9}\label{lightSensor_8h_a5435005bdc7999960cd992860258d9c9}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+P\+O\+W\+E\+R\+\_\+\+UP}~(0x03)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_a75dc7a57b66524cc2b4ddab945224430}\label{lightSensor_8h_a75dc7a57b66524cc2b4ddab945224430}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+C\+T\+R\+L\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+D\+I\+S\+A\+B\+LE}~(0x10)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_ac7c6e4d4cfadea533b4900a7eb8b22e0}\label{lightSensor_8h_ac7c6e4d4cfadea533b4900a7eb8b22e0}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+G\+A\+IN}~(0x10)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_ae8fd1c2ff5aa73147b241747141ab552}\label{lightSensor_8h_ae8fd1c2ff5aa73147b241747141ab552}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+\_\+\+B\+I\+T0}~(0x01)
+\item 
+\mbox{\Hypertarget{lightSensor_8h_a4b97758d5951d2ce6577db57a5f844b9}\label{lightSensor_8h_a4b97758d5951d2ce6577db57a5f844b9}} 
+\#define {\bfseries A\+P\+D\+S9301\+\_\+\+T\+I\+M\+I\+N\+G\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+\_\+\+B\+I\+T1}~(0x02)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{lightSensor_8h_aa7fde03061a48a697529769416de78a6}\label{lightSensor_8h_aa7fde03061a48a697529769416de78a6}} 
+enum {\bfseries gain\+\_\+mode\+\_\+t} \{ {\bfseries L\+OW}, 
+{\bfseries H\+I\+GH}
+ \}
+\item 
+\mbox{\Hypertarget{lightSensor_8h_a564fc05e3767d16dfee2dc1062c83b68}\label{lightSensor_8h_a564fc05e3767d16dfee2dc1062c83b68}} 
+enum {\bfseries integ\+\_\+time\+\_\+t} \{ {\bfseries M\+O\+D\+E\+\_\+\+Z\+E\+RO}, 
+{\bfseries M\+O\+D\+E\+\_\+\+O\+NE}, 
+{\bfseries M\+O\+D\+E\+\_\+\+T\+WO}, 
+{\bfseries M\+O\+D\+E\+\_\+\+T\+H\+R\+EE}
+ \}
+\item 
+\mbox{\Hypertarget{lightSensor_8h_ac58a57bdddd3383db2e8763d3154e779}\label{lightSensor_8h_ac58a57bdddd3383db2e8763d3154e779}} 
+enum {\bfseries interrupt\+\_\+mode\+\_\+t} \{ {\bfseries E\+N\+A\+B\+LE}, 
+{\bfseries D\+I\+S\+A\+B\+LE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{lightSensor_8h_ad14a314497f8bf3ce13762a87064bad7}{A\+P\+D\+S9301\+\_\+get\+Ch0} (uint16\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em get A\+DC channel0 data \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_a913f86bed7075b949472dc93f6f52ca2}{A\+P\+D\+S9301\+\_\+get\+Ch1} (uint16\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em get A\+DC channel1 data \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_a2c4c5c895ba901f884f473651bd3afdc}{A\+P\+D\+S9301\+\_\+int\+Clear} (void)
+\begin{DoxyCompactList}\small\item\em clears pending inteerupt \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_a4ff1625996e8f1cebf5041777c653964}{A\+P\+D\+S9301\+\_\+\+Check\+Int} (uint8\+\_\+t $\ast$data)
+\item 
+int \hyperlink{lightSensor_8h_ae12804ca44a2f58617bd467c8633553e}{A\+P\+D\+S9301\+\_\+getlight} (float $\ast$lux)
+\begin{DoxyCompactList}\small\item\em combine channel0 and 1 data to get lux \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_a960a4cfc5ff042a3fc995a201eb83916}{A\+P\+D\+S9301\+\_\+read\+I\+Dreg} (uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em read light id register \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_a790e79354d79d996d39d97e3c0750f81}{A\+P\+D\+S9301\+\_\+powerup} ()
+\item 
+int \hyperlink{lightSensor_8h_adaf832bbb1ee2551672b59b171913212}{A\+P\+D\+S9301\+\_\+write\+C\+M\+Dreg} (uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em write to command register \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_a2b9865a81efbf475c33b9348b24fcf7e}{A\+P\+D\+S9301\+\_\+read\+C\+T\+R\+Lreg} (uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em read control register \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_a6d4e3519fb0b0a6de99323d272831fbf}{A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+gain} (gain\+\_\+mode\+\_\+t gain)
+\begin{DoxyCompactList}\small\item\em set gain in timing register \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_a8db9045d0df240c23ef622c93a4349ff}{A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+integ} (integ\+\_\+time\+\_\+t integ\+Time)
+\begin{DoxyCompactList}\small\item\em set integration time in timing register \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_a59400c5e7bbb4752c3fc2ce6a27f47eb}{A\+P\+D\+S9301\+\_\+interrupt\+C\+T\+R\+Lreg} (interrupt\+\_\+mode\+\_\+t option)
+\begin{DoxyCompactList}\small\item\em set interrupt enable disable \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_ac3ee1a2ef65b70265a65944dfa8aeb7f}{A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+lowlow} (uint16\+\_\+t th\+\_\+lowlow)
+\begin{DoxyCompactList}\small\item\em write threshhold low low register \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_a0ae11df36762fe2f91009e48937d17d7}{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowlow} (uint8\+\_\+t $\ast$th\+\_\+lowlow)
+\begin{DoxyCompactList}\small\item\em read threshold low low register \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_a12baf424983442a616b5fb4fe161ede6}{A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+highlow} (uint16\+\_\+t th\+\_\+hilow)
+\begin{DoxyCompactList}\small\item\em write threshold high low register \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_a916087564af4e500cd44af4217422990}{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highlow} (uint8\+\_\+t $\ast$th\+\_\+hilow)
+\begin{DoxyCompactList}\small\item\em read threshold high low register \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_a820e46ef315ed974ba7143bff769d12d}{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highhigh} (uint8\+\_\+t $\ast$th\+\_\+hihi)
+\begin{DoxyCompactList}\small\item\em high high thres register \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_ab007d3bff77582d8fc9939fac33caaed}{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowhigh} (uint8\+\_\+t $\ast$th\+\_\+lowhi)
+\begin{DoxyCompactList}\small\item\em low high threshold register \end{DoxyCompactList}\item 
+int \hyperlink{lightSensor_8h_a8aa4cf1866fd0f410dfa714fae4828d3}{A\+P\+D\+S9301\+\_\+set\+All\+Default} ()
+\begin{DoxyCompactList}\small\item\em set all register values default \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\tt you@domain.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/03-\/22  \+: \href{https://github.com/sparkfun/APDS-9301_Breakout/blob/master/Libraries/Arduino/src/Sparkfun_APDS9301_Library.h}{\tt https\+://github.\+com/sparkfun/\+A\+P\+D\+S-\/9301\+\_\+\+Breakout/blob/master/\+Libraries/\+Arduino/src/\+Sparkfun\+\_\+\+A\+P\+D\+S9301\+\_\+\+Library.\+h} 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{lightSensor_8h_a4ff1625996e8f1cebf5041777c653964}\label{lightSensor_8h_a4ff1625996e8f1cebf5041777c653964}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+\+Check\+Int@{A\+P\+D\+S9301\+\_\+\+Check\+Int}}
+\index{A\+P\+D\+S9301\+\_\+\+Check\+Int@{A\+P\+D\+S9301\+\_\+\+Check\+Int}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+\+Check\+Int()}{APDS9301\_CheckInt()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+\+Check\+Int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_ad14a314497f8bf3ce13762a87064bad7}\label{lightSensor_8h_ad14a314497f8bf3ce13762a87064bad7}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+get\+Ch0@{A\+P\+D\+S9301\+\_\+get\+Ch0}}
+\index{A\+P\+D\+S9301\+\_\+get\+Ch0@{A\+P\+D\+S9301\+\_\+get\+Ch0}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+get\+Ch0()}{APDS9301\_getCh0()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+get\+Ch0 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+get A\+DC channel0 data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 6 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_a913f86bed7075b949472dc93f6f52ca2}\label{lightSensor_8h_a913f86bed7075b949472dc93f6f52ca2}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+get\+Ch1@{A\+P\+D\+S9301\+\_\+get\+Ch1}}
+\index{A\+P\+D\+S9301\+\_\+get\+Ch1@{A\+P\+D\+S9301\+\_\+get\+Ch1}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+get\+Ch1()}{APDS9301\_getCh1()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+get\+Ch1 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+get A\+DC channel1 data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_ae12804ca44a2f58617bd467c8633553e}\label{lightSensor_8h_ae12804ca44a2f58617bd467c8633553e}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+getlight@{A\+P\+D\+S9301\+\_\+getlight}}
+\index{A\+P\+D\+S9301\+\_\+getlight@{A\+P\+D\+S9301\+\_\+getlight}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+getlight()}{APDS9301\_getlight()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+getlight (\begin{DoxyParamCaption}\item[{float $\ast$}]{lux }\end{DoxyParamCaption})}
+
+
+
+combine channel0 and 1 data to get lux 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lux} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_a2c4c5c895ba901f884f473651bd3afdc}\label{lightSensor_8h_a2c4c5c895ba901f884f473651bd3afdc}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+int\+Clear@{A\+P\+D\+S9301\+\_\+int\+Clear}}
+\index{A\+P\+D\+S9301\+\_\+int\+Clear@{A\+P\+D\+S9301\+\_\+int\+Clear}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+int\+Clear()}{APDS9301\_intClear()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+int\+Clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+clears pending inteerupt 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_a59400c5e7bbb4752c3fc2ce6a27f47eb}\label{lightSensor_8h_a59400c5e7bbb4752c3fc2ce6a27f47eb}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+interrupt\+C\+T\+R\+Lreg@{A\+P\+D\+S9301\+\_\+interrupt\+C\+T\+R\+Lreg}}
+\index{A\+P\+D\+S9301\+\_\+interrupt\+C\+T\+R\+Lreg@{A\+P\+D\+S9301\+\_\+interrupt\+C\+T\+R\+Lreg}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+interrupt\+C\+T\+R\+Lreg()}{APDS9301\_interruptCTRLreg()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+interrupt\+C\+T\+R\+Lreg (\begin{DoxyParamCaption}\item[{interrupt\+\_\+mode\+\_\+t}]{option }\end{DoxyParamCaption})}
+
+
+
+set interrupt enable disable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em option} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 233 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_a790e79354d79d996d39d97e3c0750f81}\label{lightSensor_8h_a790e79354d79d996d39d97e3c0750f81}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+powerup@{A\+P\+D\+S9301\+\_\+powerup}}
+\index{A\+P\+D\+S9301\+\_\+powerup@{A\+P\+D\+S9301\+\_\+powerup}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+powerup()}{APDS9301\_powerup()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+powerup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_a2b9865a81efbf475c33b9348b24fcf7e}\label{lightSensor_8h_a2b9865a81efbf475c33b9348b24fcf7e}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+read\+C\+T\+R\+Lreg@{A\+P\+D\+S9301\+\_\+read\+C\+T\+R\+Lreg}}
+\index{A\+P\+D\+S9301\+\_\+read\+C\+T\+R\+Lreg@{A\+P\+D\+S9301\+\_\+read\+C\+T\+R\+Lreg}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+read\+C\+T\+R\+Lreg()}{APDS9301\_readCTRLreg()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+read\+C\+T\+R\+Lreg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+read control register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 155 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_a960a4cfc5ff042a3fc995a201eb83916}\label{lightSensor_8h_a960a4cfc5ff042a3fc995a201eb83916}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+read\+I\+Dreg@{A\+P\+D\+S9301\+\_\+read\+I\+Dreg}}
+\index{A\+P\+D\+S9301\+\_\+read\+I\+Dreg@{A\+P\+D\+S9301\+\_\+read\+I\+Dreg}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+read\+I\+Dreg()}{APDS9301\_readIDreg()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+read\+I\+Dreg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+read light id register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 133 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_a820e46ef315ed974ba7143bff769d12d}\label{lightSensor_8h_a820e46ef315ed974ba7143bff769d12d}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highhigh@{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highhigh}}
+\index{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highhigh@{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highhigh}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highhigh()}{APDS9301\_readTHRESH\_highhigh()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highhigh (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{th\+\_\+hihi }\end{DoxyParamCaption})}
+
+
+
+high high thres register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em th\+\_\+hihi} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 296 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_a916087564af4e500cd44af4217422990}\label{lightSensor_8h_a916087564af4e500cd44af4217422990}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highlow@{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highlow}}
+\index{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highlow@{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highlow}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highlow()}{APDS9301\_readTHRESH\_highlow()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highlow (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{th\+\_\+hilow }\end{DoxyParamCaption})}
+
+
+
+read threshold high low register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em th\+\_\+hilow} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 286 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_ab007d3bff77582d8fc9939fac33caaed}\label{lightSensor_8h_ab007d3bff77582d8fc9939fac33caaed}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowhigh@{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowhigh}}
+\index{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowhigh@{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowhigh}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowhigh()}{APDS9301\_readTHRESH\_lowhigh()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowhigh (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{th\+\_\+lowhi }\end{DoxyParamCaption})}
+
+
+
+low high threshold register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em th\+\_\+lowhi} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 306 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_a0ae11df36762fe2f91009e48937d17d7}\label{lightSensor_8h_a0ae11df36762fe2f91009e48937d17d7}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowlow@{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowlow}}
+\index{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowlow@{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowlow}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowlow()}{APDS9301\_readTHRESH\_lowlow()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowlow (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{th\+\_\+lowlow }\end{DoxyParamCaption})}
+
+
+
+read threshold low low register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em th\+\_\+lowlow} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 268 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_a8aa4cf1866fd0f410dfa714fae4828d3}\label{lightSensor_8h_a8aa4cf1866fd0f410dfa714fae4828d3}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+set\+All\+Default@{A\+P\+D\+S9301\+\_\+set\+All\+Default}}
+\index{A\+P\+D\+S9301\+\_\+set\+All\+Default@{A\+P\+D\+S9301\+\_\+set\+All\+Default}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+set\+All\+Default()}{APDS9301\_setAllDefault()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+set\+All\+Default (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set all register values default 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 316 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_a6d4e3519fb0b0a6de99323d272831fbf}\label{lightSensor_8h_a6d4e3519fb0b0a6de99323d272831fbf}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+gain@{A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+gain}}
+\index{A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+gain@{A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+gain}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+gain()}{APDS9301\_setTiming\_gain()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+gain (\begin{DoxyParamCaption}\item[{gain\+\_\+mode\+\_\+t}]{gain }\end{DoxyParamCaption})}
+
+
+
+set gain in timing register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gain} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 166 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_a8db9045d0df240c23ef622c93a4349ff}\label{lightSensor_8h_a8db9045d0df240c23ef622c93a4349ff}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+integ@{A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+integ}}
+\index{A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+integ@{A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+integ}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+integ()}{APDS9301\_setTiming\_integ()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+integ (\begin{DoxyParamCaption}\item[{integ\+\_\+time\+\_\+t}]{integ\+Time }\end{DoxyParamCaption})}
+
+
+
+set integration time in timing register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em integ\+Time} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 195 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_adaf832bbb1ee2551672b59b171913212}\label{lightSensor_8h_adaf832bbb1ee2551672b59b171913212}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+write\+C\+M\+Dreg@{A\+P\+D\+S9301\+\_\+write\+C\+M\+Dreg}}
+\index{A\+P\+D\+S9301\+\_\+write\+C\+M\+Dreg@{A\+P\+D\+S9301\+\_\+write\+C\+M\+Dreg}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+write\+C\+M\+Dreg()}{APDS9301\_writeCMDreg()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+write\+C\+M\+Dreg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+write to command register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 144 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_a12baf424983442a616b5fb4fe161ede6}\label{lightSensor_8h_a12baf424983442a616b5fb4fe161ede6}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+highlow@{A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+highlow}}
+\index{A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+highlow@{A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+highlow}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+highlow()}{APDS9301\_writeTHRESH\_highlow()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+highlow (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{th\+\_\+hilow }\end{DoxyParamCaption})}
+
+
+
+write threshold high low register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em th\+\_\+hilow} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 277 of file light\+Sensor.\+c.
+
+\mbox{\Hypertarget{lightSensor_8h_ac3ee1a2ef65b70265a65944dfa8aeb7f}\label{lightSensor_8h_ac3ee1a2ef65b70265a65944dfa8aeb7f}} 
+\index{light\+Sensor.\+h@{light\+Sensor.\+h}!A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+lowlow@{A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+lowlow}}
+\index{A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+lowlow@{A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+lowlow}!light\+Sensor.\+h@{light\+Sensor.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+lowlow()}{APDS9301\_writeTHRESH\_lowlow()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+lowlow (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{th\+\_\+lowlow }\end{DoxyParamCaption})}
+
+
+
+write threshhold low low register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em th\+\_\+lowlow} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 259 of file light\+Sensor.\+c.
+

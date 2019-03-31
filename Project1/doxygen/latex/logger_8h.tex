@@ -1,0 +1,233 @@
+\hypertarget{logger_8h}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/logger.h File Reference}
+\label{logger_8h}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/logger.\+h@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/logger.\+h}}
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}includes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+Include dependency graph for logger.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structlog__struct__t}{log\+\_\+struct\+\_\+t}
+\item 
+struct \hyperlink{structloggerTask__param}{logger\+Task\+\_\+param}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{logger_8h_a03933192aea1666b93cd99074fd26332}\label{logger_8h_a03933192aea1666b93cd99074fd26332}} 
+\#define {\bfseries L\+O\+G\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+N\+A\+ME}~\char`\"{}/logger\+\_\+q\char`\"{}
+\item 
+\mbox{\Hypertarget{logger_8h_acb3d9a2722912cafa1aca17ed086f771}\label{logger_8h_acb3d9a2722912cafa1aca17ed086f771}} 
+\#define {\bfseries Q\+U\+E\+U\+E\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+O\+NS}~0666
+\item 
+\mbox{\Hypertarget{logger_8h_a1f02f60afb419aa25921dcd8ae49f807}\label{logger_8h_a1f02f60afb419aa25921dcd8ae49f807}} 
+\#define {\bfseries M\+A\+X\+\_\+\+M\+E\+S\+S\+A\+G\+ES}~128
+\item 
+\mbox{\Hypertarget{logger_8h_a17e333794ae761cd55ec6fd6fc0f1bac}\label{logger_8h_a17e333794ae761cd55ec6fd6fc0f1bac}} 
+\#define {\bfseries M\+A\+X\+\_\+\+M\+S\+G\+\_\+\+S\+I\+ZE}~256
+\item 
+\mbox{\Hypertarget{logger_8h_a8a69bb8322ad0e6dc73f1aaae7f97a8a}\label{logger_8h_a8a69bb8322ad0e6dc73f1aaae7f97a8a}} 
+\#define {\bfseries C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+SG}~0
+\item 
+\mbox{\Hypertarget{logger_8h_a6ccad09b4a2a06ae178418fdccf5940d}\label{logger_8h_a6ccad09b4a2a06ae178418fdccf5940d}} 
+\#define {\bfseries F\+L\+A\+GS}~0
+\item 
+\mbox{\Hypertarget{logger_8h_a841666af413bb2922b6de4a651c282a3}\label{logger_8h_a841666af413bb2922b6de4a651c282a3}} 
+\#define {\bfseries L\+O\+G\+\_\+\+S\+T\+D\+O\+UT}
+\item 
+\#define {\bfseries P\+R\+I\+N\+T\+L\+O\+G\+C\+O\+N\+S\+O\+LE}(f\+\_\+, ...)
+\item 
+\mbox{\Hypertarget{logger_8h_ae3e3a490f3f48d89f563a24fffe92fb3}\label{logger_8h_ae3e3a490f3f48d89f563a24fffe92fb3}} 
+\#define {\bfseries P\+R\+I\+NT}(f\+\_\+, ...)~printf(f\+\_\+, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{logger_8h_aa8ae79f0ca62f8fbb8e783868b73e8b8}\label{logger_8h_aa8ae79f0ca62f8fbb8e783868b73e8b8}} 
+\#define {\bfseries L\+O\+G\+\_\+\+I\+N\+FO}(mod\+Id,  msg, ...)~\hyperlink{logger_8h_a59bf591b758fe8741ffad898e91e748c}{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE}(L\+O\+G\+\_\+\+I\+N\+FO, mod\+Id, msg, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{logger_8h_add6c05edc3df7bc35c5943a2abf9e817}\label{logger_8h_add6c05edc3df7bc35c5943a2abf9e817}} 
+\#define {\bfseries L\+O\+G\+\_\+\+E\+R\+R\+OR}(mod\+Id,  msg, ...)~\hyperlink{logger_8h_a59bf591b758fe8741ffad898e91e748c}{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE}(L\+O\+G\+\_\+\+E\+RR, mod\+Id, msg, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{logger_8h_ac94483074f1322c37aa23564c22e5165}\label{logger_8h_ac94483074f1322c37aa23564c22e5165}} 
+\#define {\bfseries L\+O\+G\+\_\+\+W\+A\+RN}(mod\+Id,  msg, ...)~\hyperlink{logger_8h_a59bf591b758fe8741ffad898e91e748c}{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE}(L\+O\+G\+\_\+\+W\+A\+R\+N\+I\+NG, mod\+Id, msg, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{logger_8h_ae9a3001807e7de08cb0819fb8ed8382f}\label{logger_8h_ae9a3001807e7de08cb0819fb8ed8382f}} 
+\#define {\bfseries L\+O\+G\+\_\+\+D\+E\+B\+UG}(mod\+Id,  msg, ...)~\hyperlink{logger_8h_a59bf591b758fe8741ffad898e91e748c}{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE}(L\+O\+G\+\_\+\+D\+E\+B\+UG, mod\+Id, msg, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{logger_8h_a98121d38a8cf3daf5246a349f912ca1d}\label{logger_8h_a98121d38a8cf3daf5246a349f912ca1d}} 
+enum {\bfseries log\+\_\+level\+\_\+t} \{ \newline
+{\bfseries L\+O\+G\+\_\+\+I\+N\+V\+A\+L\+ID} = -\/1, 
+{\bfseries L\+O\+G\+\_\+\+E\+RR} = 0, 
+{\bfseries L\+O\+G\+\_\+\+W\+A\+R\+N\+I\+NG}, 
+{\bfseries L\+O\+G\+\_\+\+I\+N\+FO}, 
+\newline
+{\bfseries L\+O\+G\+\_\+\+D\+E\+B\+UG}, 
+{\bfseries L\+O\+G\+\_\+\+M\+AX}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{logger_8h_a3d3ce57d8ba16ca05ea10faa97811903}\label{logger_8h_a3d3ce57d8ba16ca05ea10faa97811903}} 
+void \hyperlink{logger_8h_a3d3ce57d8ba16ca05ea10faa97811903}{kill\+\_\+logger\+\_\+thread} (void)
+\begin{DoxyCompactList}\small\item\em to kill logger thread externally \end{DoxyCompactList}\item 
+int \hyperlink{logger_8h_a59bf591b758fe8741ffad898e91e748c}{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE} (log\+\_\+level\+\_\+t level, module\+Id\+\_\+t mod\+Id, char $\ast$msg,...)
+\begin{DoxyCompactList}\small\item\em to put messages in the logger queue \end{DoxyCompactList}\item 
+mqd\+\_\+t \hyperlink{logger_8h_adbbfebbf60efeb03c99c735f2343f26b}{logger\+\_\+queue\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em queue initialisation \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{logger_8h_afa7630a1e435cb94de8fb5c793bc864d}{logger\+\_\+task} (void $\ast$threadp)
+\begin{DoxyCompactList}\small\item\em call back for logger task \end{DoxyCompactList}\item 
+double \hyperlink{logger_8h_aacddb84d39f358e65929dc6f4b914de8}{get\+Time\+Msec} (void)
+\begin{DoxyCompactList}\small\item\em Get the Time Msec object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{logger_8h_a1d4db610fb7416a6e8b333d8619dae00}\label{logger_8h_a1d4db610fb7416a6e8b333d8619dae00}} 
+const char $\ast$ {\bfseries log\+Level} \mbox{[}L\+O\+G\+\_\+\+M\+AX\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\tt you@domain.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/03-\/16
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{logger_8h_a20714b4540bd3995b3161063601a8582}\label{logger_8h_a20714b4540bd3995b3161063601a8582}} 
+\index{logger.\+h@{logger.\+h}!P\+R\+I\+N\+T\+L\+O\+G\+C\+O\+N\+S\+O\+LE@{P\+R\+I\+N\+T\+L\+O\+G\+C\+O\+N\+S\+O\+LE}}
+\index{P\+R\+I\+N\+T\+L\+O\+G\+C\+O\+N\+S\+O\+LE@{P\+R\+I\+N\+T\+L\+O\+G\+C\+O\+N\+S\+O\+LE}!logger.\+h@{logger.\+h}}
+\subsubsection{\texorpdfstring{P\+R\+I\+N\+T\+L\+O\+G\+C\+O\+N\+S\+O\+LE}{PRINTLOGCONSOLE}}
+{\footnotesize\ttfamily \#define P\+R\+I\+N\+T\+L\+O\+G\+C\+O\+N\+S\+O\+LE(\begin{DoxyParamCaption}\item[{}]{f\+\_\+,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{\(\backslash\)
+             printf(\textcolor{stringliteral}{"[%lf] [PID:%d] [TID:%ld] Message:"},\hyperlink{logger_8h_aacddb84d39f358e65929dc6f4b914de8}{getTimeMsec}(),getpid(),syscall(
+      SYS\_gettid));\(\backslash\)
+             printf(f\_, ##\_\_VA\_ARGS\_\_);\(\backslash\)
+             printf(\textcolor{stringliteral}{"\(\backslash\)n"});\(\backslash\)
+             fflush(stdout);\(\backslash\)
+            \}\textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+
+
+Definition at line 56 of file logger.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{logger_8h_aacddb84d39f358e65929dc6f4b914de8}\label{logger_8h_aacddb84d39f358e65929dc6f4b914de8}} 
+\index{logger.\+h@{logger.\+h}!get\+Time\+Msec@{get\+Time\+Msec}}
+\index{get\+Time\+Msec@{get\+Time\+Msec}!logger.\+h@{logger.\+h}}
+\subsubsection{\texorpdfstring{get\+Time\+Msec()}{getTimeMsec()}}
+{\footnotesize\ttfamily double get\+Time\+Msec (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the Time Msec object. 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file logger.\+c.
+
+\mbox{\Hypertarget{logger_8h_a59bf591b758fe8741ffad898e91e748c}\label{logger_8h_a59bf591b758fe8741ffad898e91e748c}} 
+\index{logger.\+h@{logger.\+h}!L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE@{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE}}
+\index{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE@{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE}!logger.\+h@{logger.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+U\+E()}{LOG\_ENQUEUE()}}
+{\footnotesize\ttfamily int L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE (\begin{DoxyParamCaption}\item[{log\+\_\+level\+\_\+t}]{level,  }\item[{module\+Id\+\_\+t}]{mod\+Id,  }\item[{char $\ast$}]{msg,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+to put messages in the logger queue 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & \\
+\hline
+{\em mod\+Id} & \\
+\hline
+{\em msg} & \\
+\hline
+{\em ...} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file logger.\+c.
+
+\mbox{\Hypertarget{logger_8h_adbbfebbf60efeb03c99c735f2343f26b}\label{logger_8h_adbbfebbf60efeb03c99c735f2343f26b}} 
+\index{logger.\+h@{logger.\+h}!logger\+\_\+queue\+\_\+init@{logger\+\_\+queue\+\_\+init}}
+\index{logger\+\_\+queue\+\_\+init@{logger\+\_\+queue\+\_\+init}!logger.\+h@{logger.\+h}}
+\subsubsection{\texorpdfstring{logger\+\_\+queue\+\_\+init()}{logger\_queue\_init()}}
+{\footnotesize\ttfamily mqd\+\_\+t logger\+\_\+queue\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+queue initialisation 
+
+\begin{DoxyReturn}{Returns}
+int
+\end{DoxyReturn}
+queue initialisation
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 97 of file logger.\+c.
+
+\mbox{\Hypertarget{logger_8h_afa7630a1e435cb94de8fb5c793bc864d}\label{logger_8h_afa7630a1e435cb94de8fb5c793bc864d}} 
+\index{logger.\+h@{logger.\+h}!logger\+\_\+task@{logger\+\_\+task}}
+\index{logger\+\_\+task@{logger\+\_\+task}!logger.\+h@{logger.\+h}}
+\subsubsection{\texorpdfstring{logger\+\_\+task()}{logger\_task()}}
+{\footnotesize\ttfamily void$\ast$ logger\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{threadp }\end{DoxyParamCaption})}
+
+
+
+call back for logger task 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threadp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$
+\end{DoxyReturn}
+call back for logger task
+
+
+\begin{DoxyParams}{Parameters}
+{\em threadp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 127 of file logger.\+c.
+

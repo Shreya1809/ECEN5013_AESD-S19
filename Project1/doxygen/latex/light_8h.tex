@@ -1,0 +1,77 @@
+\hypertarget{light_8h}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/light.h File Reference}
+\label{light_8h}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/light.\+h@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/light.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{light_8h_aa20613ae3290593d8251fd99f4cdee5f}\label{light_8h_aa20613ae3290593d8251fd99f4cdee5f}} 
+\#define {\bfseries G\+E\+T\+L\+UX}()~\hyperlink{light_8h_ae749a64e92542af9fe593d9018d64260}{get\+Light}()
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{light_8h_ae78695364002a2e4266e084ff7a2a495}\label{light_8h_ae78695364002a2e4266e084ff7a2a495}} 
+void \hyperlink{light_8h_ae78695364002a2e4266e084ff7a2a495}{kill\+\_\+light\+\_\+thread} (void)
+\begin{DoxyCompactList}\small\item\em to kill light thread \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{light_8h_a173216ebf6f0d4106908c21fcdcddfbf}{light\+\_\+task} (void $\ast$threadp)
+\begin{DoxyCompactList}\small\item\em Call back for light task from main thread. \end{DoxyCompactList}\item 
+float \hyperlink{light_8h_ae749a64e92542af9fe593d9018d64260}{get\+Light} (void)
+\begin{DoxyCompactList}\small\item\em Get the Light object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\tt you@domain.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/03-\/16
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{light_8h_ae749a64e92542af9fe593d9018d64260}\label{light_8h_ae749a64e92542af9fe593d9018d64260}} 
+\index{light.\+h@{light.\+h}!get\+Light@{get\+Light}}
+\index{get\+Light@{get\+Light}!light.\+h@{light.\+h}}
+\subsubsection{\texorpdfstring{get\+Light()}{getLight()}}
+{\footnotesize\ttfamily float get\+Light (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the Light object. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file light.\+c.
+
+\mbox{\Hypertarget{light_8h_a173216ebf6f0d4106908c21fcdcddfbf}\label{light_8h_a173216ebf6f0d4106908c21fcdcddfbf}} 
+\index{light.\+h@{light.\+h}!light\+\_\+task@{light\+\_\+task}}
+\index{light\+\_\+task@{light\+\_\+task}!light.\+h@{light.\+h}}
+\subsubsection{\texorpdfstring{light\+\_\+task()}{light\_task()}}
+{\footnotesize\ttfamily void$\ast$ light\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{threadp }\end{DoxyParamCaption})}
+
+
+
+Call back for light task from main thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threadp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 107 of file light.\+c.
+

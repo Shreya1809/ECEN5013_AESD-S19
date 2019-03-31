@@ -1,0 +1,117 @@
+\hypertarget{i2c_8c}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/i2c.c File Reference}
+\label{i2c_8c}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/i2c.\+c@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/i2c.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$linux/i2c.\+h$>$}\newline
+{\ttfamily \#include $<$linux/i2c-\/dev.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}i2c.\+h\char`\"{}}\newline
+Include dependency graph for i2c.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{i2c_8c_a599b53a348ffd9b2298fcb561417add4}{i2c\+\_\+init} (void)
+\item 
+\mbox{\Hypertarget{i2c_8c_a15a1355b5b945d1b2617e205e534e35f}\label{i2c_8c_a15a1355b5b945d1b2617e205e534e35f}} 
+void {\bfseries i2c\+\_\+close} (void)
+\item 
+int \hyperlink{i2c_8c_a7bbd744d0178497a7b4c74e5933c5a3a}{i2c\+\_\+write} (uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t reg, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em i2c write to register of slave device \end{DoxyCompactList}\item 
+int \hyperlink{i2c_8c_a19cacb29809aba49b97730bdfb7e51f8}{i2c\+\_\+read} (uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t reg, uint8\+\_\+t $\ast$result)
+\begin{DoxyCompactList}\small\item\em i2c read from register of slave device \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{i2c_8c_a1dc55ca7ecf42fa8764eef6c8a9ed885}\label{i2c_8c_a1dc55ca7ecf42fa8764eef6c8a9ed885}} 
+int {\bfseries i2c\+\_\+fd} = -\/1
+\item 
+\mbox{\Hypertarget{i2c_8c_a98e196b426edb87702d7ad0a7499dbf3}\label{i2c_8c_a98e196b426edb87702d7ad0a7499dbf3}} 
+const char $\ast$ {\bfseries i2c\+\_\+fname} = \char`\"{}/dev/i2c-\/2\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\tt you@domain.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/03-\/22  \href{https://gist.github.com/JamesDunne/9b7fbedb74c22ccc833059623f47beb7}{\tt https\+://gist.\+github.\+com/\+James\+Dunne/9b7fbedb74c22ccc833059623f47beb7} \href{https://bunniestudios.com/blog/images/infocast_i2c.c}{\tt https\+://bunniestudios.\+com/blog/images/infocast\+\_\+i2c.\+c} 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{i2c_8c_a599b53a348ffd9b2298fcb561417add4}\label{i2c_8c_a599b53a348ffd9b2298fcb561417add4}} 
+\index{i2c.\+c@{i2c.\+c}!i2c\+\_\+init@{i2c\+\_\+init}}
+\index{i2c\+\_\+init@{i2c\+\_\+init}!i2c.\+c@{i2c.\+c}}
+\subsubsection{\texorpdfstring{i2c\+\_\+init()}{i2c\_init()}}
+{\footnotesize\ttfamily int i2c\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file i2c.\+c.
+
+\mbox{\Hypertarget{i2c_8c_a19cacb29809aba49b97730bdfb7e51f8}\label{i2c_8c_a19cacb29809aba49b97730bdfb7e51f8}} 
+\index{i2c.\+c@{i2c.\+c}!i2c\+\_\+read@{i2c\+\_\+read}}
+\index{i2c\+\_\+read@{i2c\+\_\+read}!i2c.\+c@{i2c.\+c}}
+\subsubsection{\texorpdfstring{i2c\+\_\+read()}{i2c\_read()}}
+{\footnotesize\ttfamily int i2c\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{slave\+\_\+addr,  }\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t $\ast$}]{result }\end{DoxyParamCaption})}
+
+
+
+i2c read from register of slave device 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slave\+\_\+addr} & \\
+\hline
+{\em reg} & \\
+\hline
+{\em result} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file i2c.\+c.
+
+\mbox{\Hypertarget{i2c_8c_a7bbd744d0178497a7b4c74e5933c5a3a}\label{i2c_8c_a7bbd744d0178497a7b4c74e5933c5a3a}} 
+\index{i2c.\+c@{i2c.\+c}!i2c\+\_\+write@{i2c\+\_\+write}}
+\index{i2c\+\_\+write@{i2c\+\_\+write}!i2c.\+c@{i2c.\+c}}
+\subsubsection{\texorpdfstring{i2c\+\_\+write()}{i2c\_write()}}
+{\footnotesize\ttfamily int i2c\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{slave\+\_\+addr,  }\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+i2c write to register of slave device 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slave\+\_\+addr} & \\
+\hline
+{\em reg} & \\
+\hline
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file i2c.\+c.
+

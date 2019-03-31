@@ -1,0 +1,146 @@
+\hypertarget{temp_8c}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/temp.c File Reference}
+\label{temp_8c}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/temp.\+c@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/temp.\+c}}
+{\ttfamily \#include \char`\"{}includes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}temp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logger.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bbgled.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mysignal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mytimer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}my\+I2\+C.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}temp\+Sensor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}heartbeat.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bist.\+h\char`\"{}}\newline
+Include dependency graph for temp.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{temp_8c_a6c6e8e13fb2ba7d141945e64b5b693cc}\label{temp_8c_a6c6e8e13fb2ba7d141945e64b5b693cc}} 
+void \hyperlink{temp_8c_a6c6e8e13fb2ba7d141945e64b5b693cc}{kill\+\_\+temp\+\_\+thread} (void)
+\begin{DoxyCompactList}\small\item\em to kill temp thread \end{DoxyCompactList}\item 
+float \hyperlink{temp_8c_ad278c9dd0785311834fbdd25e9ccb08e}{get\+Temperature} (temp\+\_\+unit unit)
+\begin{DoxyCompactList}\small\item\em Get the Temp object. \end{DoxyCompactList}\item 
+int \hyperlink{temp_8c_a7beb226afb19a57861973866ecaf5338}{Remote\+Threshold\+Values} (float flow, float fhigh)
+\begin{DoxyCompactList}\small\item\em take threshold values from client \end{DoxyCompactList}\item 
+int \hyperlink{temp_8c_a0584aa99c4703588749b140587d1724a}{T\+M\+P102\+\_\+set\+Temp\+Threshold} (float tlow\+\_\+val, float thigh\+\_\+val)
+\begin{DoxyCompactList}\small\item\em Construct a new tmp102 settempthreshold object. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{temp_8c_a9367e0b2320b0dd727163e557a9791d6}{temp\+\_\+task} (void $\ast$threadp)
+\begin{DoxyCompactList}\small\item\em call back for temperature task \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{temp_8c_a4e9707ca4dbcd2ddd6d14657f2e12700}\label{temp_8c_a4e9707ca4dbcd2ddd6d14657f2e12700}} 
+int {\bfseries t\+\_\+count} = 0
+\item 
+\mbox{\Hypertarget{temp_8c_a8b494c3bbbc61f0f14ab42c39ecd22f3}\label{temp_8c_a8b494c3bbbc61f0f14ab42c39ecd22f3}} 
+pthread\+\_\+mutex\+\_\+t {\bfseries temp\+\_\+var\+\_\+lock} = P\+T\+H\+R\+E\+A\+D\+\_\+\+M\+U\+T\+E\+X\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ER
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\tt you@domain.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/03-\/16  \href{https://github.com/jbdatko/tmp102/blob/master/tmp102.c}{\tt https\+://github.\+com/jbdatko/tmp102/blob/master/tmp102.\+c} 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{temp_8c_ad278c9dd0785311834fbdd25e9ccb08e}\label{temp_8c_ad278c9dd0785311834fbdd25e9ccb08e}} 
+\index{temp.\+c@{temp.\+c}!get\+Temperature@{get\+Temperature}}
+\index{get\+Temperature@{get\+Temperature}!temp.\+c@{temp.\+c}}
+\subsubsection{\texorpdfstring{get\+Temperature()}{getTemperature()}}
+{\footnotesize\ttfamily float get\+Temperature (\begin{DoxyParamCaption}\item[{temp\+\_\+unit}]{unit }\end{DoxyParamCaption})}
+
+
+
+Get the Temp object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file temp.\+c.
+
+\mbox{\Hypertarget{temp_8c_a7beb226afb19a57861973866ecaf5338}\label{temp_8c_a7beb226afb19a57861973866ecaf5338}} 
+\index{temp.\+c@{temp.\+c}!Remote\+Threshold\+Values@{Remote\+Threshold\+Values}}
+\index{Remote\+Threshold\+Values@{Remote\+Threshold\+Values}!temp.\+c@{temp.\+c}}
+\subsubsection{\texorpdfstring{Remote\+Threshold\+Values()}{RemoteThresholdValues()}}
+{\footnotesize\ttfamily int Remote\+Threshold\+Values (\begin{DoxyParamCaption}\item[{float}]{flow,  }\item[{float}]{fhigh }\end{DoxyParamCaption})}
+
+
+
+take threshold values from client 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flow} & \\
+\hline
+{\em fhigh} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file temp.\+c.
+
+\mbox{\Hypertarget{temp_8c_a9367e0b2320b0dd727163e557a9791d6}\label{temp_8c_a9367e0b2320b0dd727163e557a9791d6}} 
+\index{temp.\+c@{temp.\+c}!temp\+\_\+task@{temp\+\_\+task}}
+\index{temp\+\_\+task@{temp\+\_\+task}!temp.\+c@{temp.\+c}}
+\subsubsection{\texorpdfstring{temp\+\_\+task()}{temp\_task()}}
+{\footnotesize\ttfamily void$\ast$ temp\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{threadp }\end{DoxyParamCaption})}
+
+
+
+call back for temperature task 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threadp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 125 of file temp.\+c.
+
+\mbox{\Hypertarget{temp_8c_a0584aa99c4703588749b140587d1724a}\label{temp_8c_a0584aa99c4703588749b140587d1724a}} 
+\index{temp.\+c@{temp.\+c}!T\+M\+P102\+\_\+set\+Temp\+Threshold@{T\+M\+P102\+\_\+set\+Temp\+Threshold}}
+\index{T\+M\+P102\+\_\+set\+Temp\+Threshold@{T\+M\+P102\+\_\+set\+Temp\+Threshold}!temp.\+c@{temp.\+c}}
+\subsubsection{\texorpdfstring{T\+M\+P102\+\_\+set\+Temp\+Threshold()}{TMP102\_setTempThreshold()}}
+{\footnotesize\ttfamily int T\+M\+P102\+\_\+set\+Temp\+Threshold (\begin{DoxyParamCaption}\item[{float}]{tlow\+\_\+val,  }\item[{float}]{thigh\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+Construct a new tmp102 settempthreshold object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tlow\+\_\+val} & \\
+\hline
+{\em thigh\+\_\+val} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 75 of file temp.\+c.
+

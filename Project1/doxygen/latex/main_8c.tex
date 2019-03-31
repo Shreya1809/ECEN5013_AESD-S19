@@ -1,0 +1,103 @@
+\hypertarget{main_8c}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/main.c File Reference}
+\label{main_8c}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/main.\+c@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/main.\+c}}
+
+
+main thread  
+
+
+{\ttfamily \#include \char`\"{}includes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logger.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}temp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}socket.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}light.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bbgled.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mysignal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}heartbeat.\+h\char`\"{}}\newline
+Include dependency graph for main.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a3b97289483a2d9585166e53ed6eaeb6a}\label{main_8c_a3b97289483a2d9585166e53ed6eaeb6a}} 
+pthread\+\_\+t {\bfseries threads} \mbox{[}M\+A\+X\+\_\+\+T\+A\+S\+KS\mbox{]} = \{0\}
+\item 
+\mbox{\Hypertarget{main_8c_a7d12979f6bea3125df20de8a7ca74647}\label{main_8c_a7d12979f6bea3125df20de8a7ca74647}} 
+int {\bfseries thread\+\_\+flag} \mbox{[}M\+A\+X\+\_\+\+T\+A\+S\+KS\mbox{]} = \{0\}
+\item 
+void $\ast$($\ast$ {\bfseries Thread\+Entry\+Function} \mbox{[}M\+A\+X\+\_\+\+T\+A\+S\+KS\mbox{]})(void $\ast$)
+\item 
+const char $\ast$ {\bfseries module\+Id\+Name} \mbox{[}M\+A\+X\+\_\+\+T\+A\+S\+KS+1\mbox{]}
+\item 
+\mbox{\Hypertarget{main_8c_aa03aeed08eaf170b2cd2eeff1ebcb219}\label{main_8c_aa03aeed08eaf170b2cd2eeff1ebcb219}} 
+void $\ast$ {\bfseries thread\+Param\+Args} \mbox{[}M\+A\+X\+\_\+\+T\+A\+S\+KS\mbox{]} = \{0\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+main thread 
+
+\begin{DoxyAuthor}{Author}
+shreya 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/03-\/16
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_ac57dd809293f62560a0b0b98b9c1ffc1}\label{main_8c_ac57dd809293f62560a0b0b98b9c1ffc1}} 
+\index{main.\+c@{main.\+c}!module\+Id\+Name@{module\+Id\+Name}}
+\index{module\+Id\+Name@{module\+Id\+Name}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{module\+Id\+Name}{moduleIdName}}
+{\footnotesize\ttfamily const char$\ast$ module\+Id\+Name\mbox{[}M\+A\+X\+\_\+\+T\+A\+S\+KS+1\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \textcolor{stringliteral}{"BIST\_TASK"},
+    \textcolor{stringliteral}{"LOGGER\_TASK"},
+    \textcolor{stringliteral}{"TEMP\_TASK"},
+    \textcolor{stringliteral}{"LIGHT\_TASK"},
+    \textcolor{stringliteral}{"SOCKET\_TASK"},
+    \textcolor{stringliteral}{"MAIN\_TASK"},
+\}
+\end{DoxyCode}
+
+
+Definition at line 35 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a6de8160e82baf8d76759f154093e1f73}\label{main_8c_a6de8160e82baf8d76759f154093e1f73}} 
+\index{main.\+c@{main.\+c}!Thread\+Entry\+Function@{Thread\+Entry\+Function}}
+\index{Thread\+Entry\+Function@{Thread\+Entry\+Function}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Thread\+Entry\+Function}{ThreadEntryFunction}}
+{\footnotesize\ttfamily void$\ast$($\ast$ Thread\+Entry\+Function\mbox{[}M\+A\+X\+\_\+\+T\+A\+S\+KS\mbox{]})(void $\ast$)}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= 
+\{
+    \hyperlink{bist_8c_a3e31456d94976ba2476c1761392f0ca0}{bist\_task},
+    \hyperlink{logger_8c_afa7630a1e435cb94de8fb5c793bc864d}{logger\_task},
+    \hyperlink{light_8h_a173216ebf6f0d4106908c21fcdcddfbf}{light\_task},
+    \hyperlink{temp_8c_a9367e0b2320b0dd727163e557a9791d6}{temp\_task},
+    \hyperlink{socket_8c_a92f66c7de324d0f99973c1af462cfa3b}{socket\_task}
+\}
+\end{DoxyCode}
+
+
+Definition at line 26 of file main.\+c.
+

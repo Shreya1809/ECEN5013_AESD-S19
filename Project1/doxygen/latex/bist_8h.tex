@@ -1,0 +1,146 @@
+\hypertarget{bist_8h}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/bist.h File Reference}
+\label{bist_8h}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/bist.\+h@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/include/common/bist.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{bist_8h_a4af560292780449047e7cd8cd1dab2e8}{Test\+\_\+\+I2C} (void)
+\begin{DoxyCompactList}\small\item\em testing i2c init \end{DoxyCompactList}\item 
+int \hyperlink{bist_8h_a3d14d73d6e1fa674e30aa2304ae93362}{Test\+\_\+\+All\+Threads} (void)
+\begin{DoxyCompactList}\small\item\em checking all thread status \end{DoxyCompactList}\item 
+int \hyperlink{bist_8h_a49ba973b041702872812a3a3986dedf2}{Test\+\_\+\+Temp\+Sensor} (void)
+\begin{DoxyCompactList}\small\item\em testing temperature register \end{DoxyCompactList}\item 
+int \hyperlink{bist_8h_a0206c558e01844495617238cc5288e8e}{Test\+\_\+loggerQ} (void)
+\begin{DoxyCompactList}\small\item\em tedting logger enqueue \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bist_8h_a04f53a58de931b7aee64354337b1717f}\label{bist_8h_a04f53a58de931b7aee64354337b1717f}} 
+int \hyperlink{bist_8h_a04f53a58de931b7aee64354337b1717f}{Test\+\_\+\+Light\+Sensor} (void)
+\begin{DoxyCompactList}\small\item\em testing if light sensor is connected \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{bist_8h_a3e31456d94976ba2476c1761392f0ca0}{bist\+\_\+task} (void $\ast$threadp)
+\begin{DoxyCompactList}\small\item\em call back function for bist task from main task \end{DoxyCompactList}\item 
+int \hyperlink{bist_8h_ab7793fe60ba4afcc9a64e139826ad7b5}{Check\+Bist\+Result} (void)
+\item 
+\mbox{\Hypertarget{bist_8h_a767159aff436f77ad55a3785a9a12cd0}\label{bist_8h_a767159aff436f77ad55a3785a9a12cd0}} 
+void {\bfseries Post\+Bist\+Ok\+Result} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\tt you@domain.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/03-\/16
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{bist_8h_a3e31456d94976ba2476c1761392f0ca0}\label{bist_8h_a3e31456d94976ba2476c1761392f0ca0}} 
+\index{bist.\+h@{bist.\+h}!bist\+\_\+task@{bist\+\_\+task}}
+\index{bist\+\_\+task@{bist\+\_\+task}!bist.\+h@{bist.\+h}}
+\subsubsection{\texorpdfstring{bist\+\_\+task()}{bist\_task()}}
+{\footnotesize\ttfamily void$\ast$ bist\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{threadp }\end{DoxyParamCaption})}
+
+
+
+call back function for bist task from main task 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threadp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 158 of file bist.\+c.
+
+\mbox{\Hypertarget{bist_8h_ab7793fe60ba4afcc9a64e139826ad7b5}\label{bist_8h_ab7793fe60ba4afcc9a64e139826ad7b5}} 
+\index{bist.\+h@{bist.\+h}!Check\+Bist\+Result@{Check\+Bist\+Result}}
+\index{Check\+Bist\+Result@{Check\+Bist\+Result}!bist.\+h@{bist.\+h}}
+\subsubsection{\texorpdfstring{Check\+Bist\+Result()}{CheckBistResult()}}
+{\footnotesize\ttfamily int Check\+Bist\+Result (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 141 of file bist.\+c.
+
+\mbox{\Hypertarget{bist_8h_a3d14d73d6e1fa674e30aa2304ae93362}\label{bist_8h_a3d14d73d6e1fa674e30aa2304ae93362}} 
+\index{bist.\+h@{bist.\+h}!Test\+\_\+\+All\+Threads@{Test\+\_\+\+All\+Threads}}
+\index{Test\+\_\+\+All\+Threads@{Test\+\_\+\+All\+Threads}!bist.\+h@{bist.\+h}}
+\subsubsection{\texorpdfstring{Test\+\_\+\+All\+Threads()}{Test\_AllThreads()}}
+{\footnotesize\ttfamily int Test\+\_\+\+All\+Threads (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+checking all thread status 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file bist.\+c.
+
+\mbox{\Hypertarget{bist_8h_a4af560292780449047e7cd8cd1dab2e8}\label{bist_8h_a4af560292780449047e7cd8cd1dab2e8}} 
+\index{bist.\+h@{bist.\+h}!Test\+\_\+\+I2C@{Test\+\_\+\+I2C}}
+\index{Test\+\_\+\+I2C@{Test\+\_\+\+I2C}!bist.\+h@{bist.\+h}}
+\subsubsection{\texorpdfstring{Test\+\_\+\+I2\+C()}{Test\_I2C()}}
+{\footnotesize\ttfamily int Test\+\_\+\+I2C (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+testing i2c init 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file bist.\+c.
+
+\mbox{\Hypertarget{bist_8h_a0206c558e01844495617238cc5288e8e}\label{bist_8h_a0206c558e01844495617238cc5288e8e}} 
+\index{bist.\+h@{bist.\+h}!Test\+\_\+loggerQ@{Test\+\_\+loggerQ}}
+\index{Test\+\_\+loggerQ@{Test\+\_\+loggerQ}!bist.\+h@{bist.\+h}}
+\subsubsection{\texorpdfstring{Test\+\_\+logger\+Q()}{Test\_loggerQ()}}
+{\footnotesize\ttfamily int Test\+\_\+loggerQ (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+tedting logger enqueue 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file bist.\+c.
+
+\mbox{\Hypertarget{bist_8h_a49ba973b041702872812a3a3986dedf2}\label{bist_8h_a49ba973b041702872812a3a3986dedf2}} 
+\index{bist.\+h@{bist.\+h}!Test\+\_\+\+Temp\+Sensor@{Test\+\_\+\+Temp\+Sensor}}
+\index{Test\+\_\+\+Temp\+Sensor@{Test\+\_\+\+Temp\+Sensor}!bist.\+h@{bist.\+h}}
+\subsubsection{\texorpdfstring{Test\+\_\+\+Temp\+Sensor()}{Test\_TempSensor()}}
+{\footnotesize\ttfamily int Test\+\_\+\+Temp\+Sensor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+testing temperature register 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file bist.\+c.
+
