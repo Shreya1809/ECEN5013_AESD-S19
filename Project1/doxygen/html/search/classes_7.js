@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['unittest',['UnitTest',['../structUnitTest.html',1,'']]]
+  ['sourcelocation',['SourceLocation',['../structSourceLocation.html',1,'']]],
+  ['symbolmapvalue',['SymbolMapValue',['../structSymbolMapValue.html',1,'']]],
+  ['symbolvalue',['SymbolValue',['../structSymbolValue.html',1,'']]]
 ];

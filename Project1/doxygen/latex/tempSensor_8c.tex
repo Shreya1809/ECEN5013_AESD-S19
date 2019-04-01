@@ -1,5 +1,5 @@
-\hypertarget{tempSensor_8c}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/temp\+Sensor.c File Reference}
-\label{tempSensor_8c}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/temp\+Sensor.\+c@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/temp\+Sensor.\+c}}
+\hypertarget{tempSensor_8c}{}\section{src/temp\+Sensor.c File Reference}
+\label{tempSensor_8c}\index{src/temp\+Sensor.\+c@{src/temp\+Sensor.\+c}}
 
 
 T\+M\+P102 temperature register functions.  
@@ -87,6 +87,10 @@ int
 
 Definition at line 215 of file temp\+Sensor.\+c.
 
+
+
+References I2\+C\+\_\+read\+\_\+bytes().
+
 \mbox{\Hypertarget{tempSensor_8c_a9113eb7060b0e80e1022b3513f69dfd7}\label{tempSensor_8c_a9113eb7060b0e80e1022b3513f69dfd7}} 
 \index{temp\+Sensor.\+c@{temp\+Sensor.\+c}!T\+M\+P102\+\_\+get\+Temperature@{T\+M\+P102\+\_\+get\+Temperature}}
 \index{T\+M\+P102\+\_\+get\+Temperature@{T\+M\+P102\+\_\+get\+Temperature}!temp\+Sensor.\+c@{temp\+Sensor.\+c}}
@@ -108,6 +112,14 @@ int
 
 
 Definition at line 18 of file temp\+Sensor.\+c.
+
+
+
+References I2\+C\+\_\+read\+\_\+bytes().
+
+
+
+Referenced by Test\+\_\+\+Temp\+Sensor().
 
 \mbox{\Hypertarget{tempSensor_8c_aa83ab1ebdf1b1134f05369cd41fdd8cf}\label{tempSensor_8c_aa83ab1ebdf1b1134f05369cd41fdd8cf}} 
 \index{temp\+Sensor.\+c@{temp\+Sensor.\+c}!T\+M\+P102\+\_\+get\+Thigh@{T\+M\+P102\+\_\+get\+Thigh}}
@@ -175,6 +187,10 @@ int
 
 Definition at line 324 of file temp\+Sensor.\+c.
 
+
+
+References I2\+C\+\_\+read\+\_\+bytes().
+
 \mbox{\Hypertarget{tempSensor_8c_a3672db766adda3bd63d3be8754f42b7f}\label{tempSensor_8c_a3672db766adda3bd63d3be8754f42b7f}} 
 \index{temp\+Sensor.\+c@{temp\+Sensor.\+c}!T\+M\+P102\+\_\+read\+Reg@{T\+M\+P102\+\_\+read\+Reg}}
 \index{T\+M\+P102\+\_\+read\+Reg@{T\+M\+P102\+\_\+read\+Reg}!temp\+Sensor.\+c@{temp\+Sensor.\+c}}
@@ -199,6 +215,10 @@ int
 
 Definition at line 130 of file temp\+Sensor.\+c.
 
+
+
+References I2\+C\+\_\+read\+\_\+bytes().
+
 \mbox{\Hypertarget{tempSensor_8c_ae8500a6a0560f4d9f80c8986fb0f4d03}\label{tempSensor_8c_ae8500a6a0560f4d9f80c8986fb0f4d03}} 
 \index{temp\+Sensor.\+c@{temp\+Sensor.\+c}!T\+M\+P102\+\_\+set\+All\+Default@{T\+M\+P102\+\_\+set\+All\+Default}}
 \index{T\+M\+P102\+\_\+set\+All\+Default@{T\+M\+P102\+\_\+set\+All\+Default}!temp\+Sensor.\+c@{temp\+Sensor.\+c}}
@@ -215,6 +235,10 @@ int
 
 
 Definition at line 337 of file temp\+Sensor.\+c.
+
+
+
+References T\+M\+P102\+\_\+set\+C\+R().
 
 \mbox{\Hypertarget{tempSensor_8c_a5a18e17f6467937075c02be9d5d51a2a}\label{tempSensor_8c_a5a18e17f6467937075c02be9d5d51a2a}} 
 \index{temp\+Sensor.\+c@{temp\+Sensor.\+c}!T\+M\+P102\+\_\+set\+CR@{T\+M\+P102\+\_\+set\+CR}}
@@ -238,6 +262,14 @@ int
 
 Definition at line 287 of file temp\+Sensor.\+c.
 
+
+
+References I2\+C\+\_\+read\+\_\+bytes().
+
+
+
+Referenced by T\+M\+P102\+\_\+set\+All\+Default().
+
 \mbox{\Hypertarget{tempSensor_8c_aca8fb3e52a8046f7194f0334ed5c1167}\label{tempSensor_8c_aca8fb3e52a8046f7194f0334ed5c1167}} 
 \index{temp\+Sensor.\+c@{temp\+Sensor.\+c}!T\+M\+P102\+\_\+set\+EM@{T\+M\+P102\+\_\+set\+EM}}
 \index{T\+M\+P102\+\_\+set\+EM@{T\+M\+P102\+\_\+set\+EM}!temp\+Sensor.\+c@{temp\+Sensor.\+c}}
@@ -259,6 +291,10 @@ int
 
 
 Definition at line 262 of file temp\+Sensor.\+c.
+
+
+
+References I2\+C\+\_\+read\+\_\+bytes().
 
 \mbox{\Hypertarget{tempSensor_8c_a182a31c4de57ec285a490baedbccb926}\label{tempSensor_8c_a182a31c4de57ec285a490baedbccb926}} 
 \index{temp\+Sensor.\+c@{temp\+Sensor.\+c}!T\+M\+P102\+\_\+set\+Faultbits@{T\+M\+P102\+\_\+set\+Faultbits}}
@@ -282,6 +318,10 @@ int
 
 Definition at line 227 of file temp\+Sensor.\+c.
 
+
+
+References I2\+C\+\_\+read\+\_\+bytes().
+
 \mbox{\Hypertarget{tempSensor_8c_ac6442311de8464158cc4be49136a464b}\label{tempSensor_8c_ac6442311de8464158cc4be49136a464b}} 
 \index{temp\+Sensor.\+c@{temp\+Sensor.\+c}!T\+M\+P102\+\_\+set\+Resolution@{T\+M\+P102\+\_\+set\+Resolution}}
 \index{T\+M\+P102\+\_\+set\+Resolution@{T\+M\+P102\+\_\+set\+Resolution}!temp\+Sensor.\+c@{temp\+Sensor.\+c}}
@@ -304,6 +344,10 @@ int
 
 Definition at line 177 of file temp\+Sensor.\+c.
 
+
+
+References I2\+C\+\_\+read\+\_\+bytes().
+
 \mbox{\Hypertarget{tempSensor_8c_aa52da543d212e628eb14ade211b64a5b}\label{tempSensor_8c_aa52da543d212e628eb14ade211b64a5b}} 
 \index{temp\+Sensor.\+c@{temp\+Sensor.\+c}!T\+M\+P102\+\_\+set\+Shutdown\+Mode@{T\+M\+P102\+\_\+set\+Shutdown\+Mode}}
 \index{T\+M\+P102\+\_\+set\+Shutdown\+Mode@{T\+M\+P102\+\_\+set\+Shutdown\+Mode}!temp\+Sensor.\+c@{temp\+Sensor.\+c}}
@@ -325,6 +369,10 @@ int
 
 
 Definition at line 150 of file temp\+Sensor.\+c.
+
+
+
+References I2\+C\+\_\+read\+\_\+bytes().
 
 \mbox{\Hypertarget{tempSensor_8c_a7008e1c8cfb707e16c0b107b8f97ef9c}\label{tempSensor_8c_a7008e1c8cfb707e16c0b107b8f97ef9c}} 
 \index{temp\+Sensor.\+c@{temp\+Sensor.\+c}!T\+M\+P102\+\_\+set\+Thigh@{T\+M\+P102\+\_\+set\+Thigh}}
@@ -391,4 +439,8 @@ int
 
 
 Definition at line 140 of file temp\+Sensor.\+c.
+
+
+
+References I2\+C\+\_\+write\+\_\+byte().
 

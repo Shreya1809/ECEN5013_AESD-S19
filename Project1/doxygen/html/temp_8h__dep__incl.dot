@@ -1,18 +1,18 @@
-digraph "/home/shreya1809/ECEN5013_AESD-S19/Project1/include/common/temp.h"
+digraph "include/common/temp.h"
 {
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/include\l/common/temp.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 [label="include/common/temp.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/heartbeat.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$heartbeat_8c.html",tooltip="heartbeat functionality from all threads "];
+  Node2 [label="src/heartbeat.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$heartbeat_8c.html",tooltip="heartbeat functionality from all threads "];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html",tooltip="Main task which spawns the other threads. "];
+  Node3 [label="src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html",tooltip="Main task which spawns the other threads. "];
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/mytimer.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mytimer_8c.html",tooltip="Posix timer functions for light and temp thread and heartbeat. "];
+  Node4 [label="src/mytimer.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mytimer_8c.html",tooltip="Posix timer functions for light and temp thread and heartbeat. "];
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/socket.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$socket_8c.html",tooltip="Socket thread task functionality. "];
+  Node5 [label="src/socket.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$socket_8c.html",tooltip="Socket thread task functionality. "];
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src/temp.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$temp_8c.html",tooltip="Temperature task thread functionality. "];
+  Node6 [label="src/temp.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$temp_8c.html",tooltip="Temperature task thread functionality. "];
   Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/test\l/Temp_TEST/test.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Temp__TEST_2test_8c_source.html"];
+  Node7 [label="test/Temp_TEST/test.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Temp__TEST_2test_8c_source.html"];
 }

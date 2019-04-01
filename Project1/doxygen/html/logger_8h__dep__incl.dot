@@ -1,36 +1,36 @@
-digraph "/home/shreya1809/ECEN5013_AESD-S19/Project1/include/common/logger.h"
+digraph "include/common/logger.h"
 {
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node32 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/include\l/common/logger.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node32 [label="include/common/logger.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node32 -> Node33 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node33 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/bbgled.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bbgled_8c.html"];
+  Node33 [label="src/bbgled.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bbgled_8c.html"];
   Node32 -> Node34 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node34 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src/bist.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bist_8c.html",tooltip="built in self test before starting the main program "];
+  Node34 [label="src/bist.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bist_8c.html",tooltip="built in self test before starting the main program "];
   Node32 -> Node35 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node35 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/heartbeat.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$heartbeat_8c.html",tooltip="heartbeat functionality from all threads "];
+  Node35 [label="src/heartbeat.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$heartbeat_8c.html",tooltip="heartbeat functionality from all threads "];
   Node32 -> Node36 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node36 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/light.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$light_8c.html",tooltip="Light task thread functionality. "];
+  Node36 [label="src/light.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$light_8c.html",tooltip="Light task thread functionality. "];
   Node32 -> Node37 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node37 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/lightSensor.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lightSensor_8c.html",tooltip="APDS9301 sensor register functions. "];
+  Node37 [label="src/lightSensor.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lightSensor_8c.html",tooltip="APDS9301 sensor register functions. "];
   Node32 -> Node38 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node38 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/logger.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logger_8c.html",tooltip="externally connected led functionalities for normal and error conditions "];
+  Node38 [label="src/logger.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logger_8c.html",tooltip="externally connected led functionalities for normal and error conditions "];
   Node32 -> Node39 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node39 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html",tooltip="Main task which spawns the other threads. "];
+  Node39 [label="src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html",tooltip="Main task which spawns the other threads. "];
   Node32 -> Node40 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node40 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/myI2C.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$myI2C_8c.html",tooltip="I2C drivers for sensor using mraa library. "];
+  Node40 [label="src/myI2C.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$myI2C_8c.html",tooltip="I2C drivers for sensor using mraa library. "];
   Node32 -> Node41 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node41 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/mysignal.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mysignal_8c.html",tooltip="handles the CTRL-C keyboard input from user to exit cleanly "];
+  Node41 [label="src/mysignal.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mysignal_8c.html",tooltip="handles the CTRL-C keyboard input from user to exit cleanly "];
   Node32 -> Node42 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node42 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/mytimer.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mytimer_8c.html",tooltip="Posix timer functions for light and temp thread and heartbeat. "];
+  Node42 [label="src/mytimer.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mytimer_8c.html",tooltip="Posix timer functions for light and temp thread and heartbeat. "];
   Node32 -> Node43 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node43 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/socket.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$socket_8c.html",tooltip="Socket thread task functionality. "];
+  Node43 [label="src/socket.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$socket_8c.html",tooltip="Socket thread task functionality. "];
   Node32 -> Node44 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node44 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src/temp.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$temp_8c.html",tooltip="Temperature task thread functionality. "];
+  Node44 [label="src/temp.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$temp_8c.html",tooltip="Temperature task thread functionality. "];
   Node32 -> Node45 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node45 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/tempSensor.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$tempSensor_8c.html",tooltip="TMP102 temperature register functions. "];
+  Node45 [label="src/tempSensor.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$tempSensor_8c.html",tooltip="TMP102 temperature register functions. "];
   Node32 -> Node46 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node46 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/test\l/Light_TEST/test.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Light__TEST_2test_8c_source.html"];
+  Node46 [label="test/Light_TEST/test.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Light__TEST_2test_8c_source.html"];
   Node32 -> Node47 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node47 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/test\l/Logger_TEST/test.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Logger__TEST_2test_8c_source.html"];
+  Node47 [label="test/Logger_TEST/test.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Logger__TEST_2test_8c_source.html"];
 }

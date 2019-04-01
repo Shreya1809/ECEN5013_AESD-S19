@@ -1,18 +1,18 @@
-digraph "/home/shreya1809/ECEN5013_AESD-S19/Project1/include/common/heartbeat.h"
+digraph "include/common/heartbeat.h"
 {
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node2 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/include\l/common/heartbeat.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 [label="include/common/heartbeat.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node3 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/light.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$light_8c.html",tooltip="Light task thread functionality. "];
+  Node3 [label="src/light.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$light_8c.html",tooltip="Light task thread functionality. "];
   Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node4 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/logger.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logger_8c.html",tooltip="externally connected led functionalities for normal and error conditions "];
+  Node4 [label="src/logger.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logger_8c.html",tooltip="externally connected led functionalities for normal and error conditions "];
   Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node5 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html",tooltip="Main task which spawns the other threads. "];
+  Node5 [label="src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html",tooltip="Main task which spawns the other threads. "];
   Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node6 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/mysignal.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mysignal_8c.html",tooltip="handles the CTRL-C keyboard input from user to exit cleanly "];
+  Node6 [label="src/mysignal.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mysignal_8c.html",tooltip="handles the CTRL-C keyboard input from user to exit cleanly "];
   Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node7 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src\l/socket.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$socket_8c.html",tooltip="Socket thread task functionality. "];
+  Node7 [label="src/socket.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$socket_8c.html",tooltip="Socket thread task functionality. "];
   Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node8 [label="/home/shreya1809/ECEN5013\l_AESD-S19/Project1/src/temp.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$temp_8c.html",tooltip="Temperature task thread functionality. "];
+  Node8 [label="src/temp.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$temp_8c.html",tooltip="Temperature task thread functionality. "];
 }

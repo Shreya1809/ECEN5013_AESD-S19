@@ -13,10 +13,13 @@ var annotated_dup =
     [ "loggerTask_param", "structloggerTask__param.html", "structloggerTask__param" ],
     [ "main_struct_t", "structmain__struct__t.html", "structmain__struct__t" ],
     [ "MallocBlockInfo", "structMallocBlockInfo.html", "structMallocBlockInfo" ],
+    [ "Node", "structNode.html", "structNode" ],
+    [ "payload_struct_t", "structpayload__struct__t.html", "structpayload__struct__t" ],
     [ "SourceLocation", "structSourceLocation.html", "structSourceLocation" ],
     [ "SymbolMapValue", "structSymbolMapValue.html", "structSymbolMapValue" ],
     [ "SymbolValue", "structSymbolValue.html", "structSymbolValue" ],
     [ "TestState", "structTestState.html", "structTestState" ],
+    [ "thread_data", "structthread__data.html", "structthread__data" ],
     [ "UnitTest", "structUnitTest.html", "structUnitTest" ],
     [ "ValuePointer", "unionValuePointer.html", "unionValuePointer" ]
 ];

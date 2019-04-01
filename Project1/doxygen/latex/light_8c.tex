@@ -1,5 +1,5 @@
-\hypertarget{light_8c}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/light.c File Reference}
-\label{light_8c}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/light.\+c@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/light.\+c}}
+\hypertarget{light_8c}{}\section{src/light.c File Reference}
+\label{light_8c}\index{src/light.\+c@{src/light.\+c}}
 
 
 Light task thread functionality.  
@@ -33,6 +33,9 @@ Include dependency graph for light.\+c\+:
 \mbox{\Hypertarget{light_8c_a0e3e495354294ac06a133bb42a58ded4}\label{light_8c_a0e3e495354294ac06a133bb42a58ded4}} 
 mraa\+\_\+gpio\+\_\+context \hyperlink{light_8c_a0e3e495354294ac06a133bb42a58ded4}{A\+P\+D\+S9301\+\_\+\+Int\+Pin\+Setup} (int mraa\+Pin\+Number)
 \begin{DoxyCompactList}\small\item\em pin setup using gpio mraa library \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{light_8c_aca3a464b8b7ae0f4efd5b917a07c32ea}\label{light_8c_aca3a464b8b7ae0f4efd5b917a07c32ea}} 
+int {\bfseries A\+P\+D\+S9301\+\_\+\+Int\+Pin\+Close} (mraa\+\_\+gpio\+\_\+context light\+Sensor\+Int\+Pin)
+\item 
 int \hyperlink{light_8c_a21ebdd5fb32c58d52dcfe7f4f08445a5}{A\+P\+D\+S9301\+\_\+check\+I\+N\+T\+P\+IN} (mraa\+\_\+gpio\+\_\+context light\+Sensor\+Int\+Pin)
 \begin{DoxyCompactList}\small\item\em checks the I\+NT pin on the A\+P\+D\+S9301 sensor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{light_8c_ae78695364002a2e4266e084ff7a2a495}\label{light_8c_ae78695364002a2e4266e084ff7a2a495}} 
@@ -48,9 +51,6 @@ void $\ast$ \hyperlink{light_8c_a173216ebf6f0d4106908c21fcdcddfbf}{light\+\_\+ta
 \begin{DoxyCompactList}\small\item\em Call back for light task from main thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{light_8c_a14330c8671f26a5f56f8d210a33b758f}\label{light_8c_a14330c8671f26a5f56f8d210a33b758f}} 
-mraa\+\_\+gpio\+\_\+context {\bfseries interrupt\+\_\+gpio\+\_\+pin}
 \item 
 \mbox{\Hypertarget{light_8c_a3a05b2488eb3093cfa021b9b31e2f964}\label{light_8c_a3a05b2488eb3093cfa021b9b31e2f964}} 
 int {\bfseries l\+\_\+count} = 0
@@ -98,7 +98,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 104 of file light.\+c.
+Definition at line 129 of file light.\+c.
 
 \mbox{\Hypertarget{light_8c_a111c84e6b2e3a3968a18e4fbd488327f}\label{light_8c_a111c84e6b2e3a3968a18e4fbd488327f}} 
 \index{light.\+c@{light.\+c}!A\+P\+D\+S9301\+\_\+set\+Light\+Threshold@{A\+P\+D\+S9301\+\_\+set\+Light\+Threshold}}
@@ -122,7 +122,7 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 142 of file light.\+c.
+Definition at line 168 of file light.\+c.
 
 \mbox{\Hypertarget{light_8c_ae749a64e92542af9fe593d9018d64260}\label{light_8c_ae749a64e92542af9fe593d9018d64260}} 
 \index{light.\+c@{light.\+c}!get\+Light@{get\+Light}}
@@ -139,7 +139,7 @@ float
 \end{DoxyReturn}
 
 
-Definition at line 122 of file light.\+c.
+Definition at line 147 of file light.\+c.
 
 \mbox{\Hypertarget{light_8c_a173216ebf6f0d4106908c21fcdcddfbf}\label{light_8c_a173216ebf6f0d4106908c21fcdcddfbf}} 
 \index{light.\+c@{light.\+c}!light\+\_\+task@{light\+\_\+task}}
@@ -161,7 +161,11 @@ void$\ast$
 \end{DoxyReturn}
 
 
-Definition at line 164 of file light.\+c.
+Definition at line 185 of file light.\+c.
+
+
+
+References Check\+Bist\+Result(), and L\+O\+G\+\_\+\+I\+N\+FO.
 
 \mbox{\Hypertarget{light_8c_a64fb9b6e666ca43b918e316190751c6c}\label{light_8c_a64fb9b6e666ca43b918e316190751c6c}} 
 \index{light.\+c@{light.\+c}!Remote\+Threshold\+Valueslight@{Remote\+Threshold\+Valueslight}}
@@ -185,5 +189,5 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 133 of file light.\+c.
+Definition at line 158 of file light.\+c.
 

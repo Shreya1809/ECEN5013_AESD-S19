@@ -1,7 +1,8 @@
 var NAVTREE =
 [
   [ "AESD Project", "index.html", [
-    [ "PROJECT 1", "index.html", null ],
+    [ "ECEN5013_AESD-S19", "index.html", null ],
+    [ "PROJECT 1", "md_README.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Classes", "annotated.html", [
@@ -21,9 +22,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Led__TEST_2test_8c_source.html",
-"logger_8h.html#afa7630a1e435cb94de8fb5c793bc864d",
-"unionValuePointer.html#a90d9bff0d538cfab7b46b9b496c36801"
+"BubbleSort_2Sysfile_2sys_8c_source.html",
+"lightSensor_8h.html#ae12804ca44a2f58617bd467c8633553e",
+"tempSensor_8c.html#a9113eb7060b0e80e1022b3513f69dfd7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

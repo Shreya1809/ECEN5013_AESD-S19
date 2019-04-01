@@ -1,5 +1,5 @@
-\hypertarget{mytimer_8c}{}\section{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/mytimer.c File Reference}
-\label{mytimer_8c}\index{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/mytimer.\+c@{/home/shreya1809/\+E\+C\+E\+N5013\+\_\+\+A\+E\+S\+D-\/\+S19/\+Project1/src/mytimer.\+c}}
+\hypertarget{mytimer_8c}{}\section{src/mytimer.c File Reference}
+\label{mytimer_8c}\index{src/mytimer.\+c@{src/mytimer.\+c}}
 
 
 Posix timer functions for light and temp thread and heartbeat.  
@@ -19,8 +19,6 @@ int \hyperlink{mytimer_8c_ab394d92918831adf1a3bbe47cbbced97}{maketimer} (timer\+
 \begin{DoxyCompactList}\small\item\em initialise timer with call back functions \end{DoxyCompactList}\item 
 int \hyperlink{mytimer_8c_a9da9343753983bfda1747d67fdddf152}{start\+Timer} (timer\+\_\+t timer\+ID, int sec, int nsec)
 \begin{DoxyCompactList}\small\item\em starts timer for sensor threads \end{DoxyCompactList}\item 
-int \hyperlink{mytimer_8c_a21b4f202c411cb6a5373435789483ab6}{start\+Timer\+HB} (timer\+\_\+t timer\+ID, int sec, int nsec)
-\begin{DoxyCompactList}\small\item\em starts timer for heartbeat functions \end{DoxyCompactList}\item 
 int \hyperlink{mytimer_8c_a8988f75287d3b679f778a1bec163bdd0}{stop\+Timer} (timer\+\_\+t timer\+\_\+id)
 \begin{DoxyCompactList}\small\item\em stops the timer \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -67,6 +65,10 @@ int
 
 Definition at line 17 of file mytimer.\+c.
 
+
+
+Referenced by start\+Hearbeat\+Check().
+
 \mbox{\Hypertarget{mytimer_8c_a9da9343753983bfda1747d67fdddf152}\label{mytimer_8c_a9da9343753983bfda1747d67fdddf152}} 
 \index{mytimer.\+c@{mytimer.\+c}!start\+Timer@{start\+Timer}}
 \index{start\+Timer@{start\+Timer}!mytimer.\+c@{mytimer.\+c}}
@@ -93,31 +95,9 @@ int
 
 Definition at line 29 of file mytimer.\+c.
 
-\mbox{\Hypertarget{mytimer_8c_a21b4f202c411cb6a5373435789483ab6}\label{mytimer_8c_a21b4f202c411cb6a5373435789483ab6}} 
-\index{mytimer.\+c@{mytimer.\+c}!start\+Timer\+HB@{start\+Timer\+HB}}
-\index{start\+Timer\+HB@{start\+Timer\+HB}!mytimer.\+c@{mytimer.\+c}}
-\subsubsection{\texorpdfstring{start\+Timer\+H\+B()}{startTimerHB()}}
-{\footnotesize\ttfamily int start\+Timer\+HB (\begin{DoxyParamCaption}\item[{timer\+\_\+t}]{timer\+ID,  }\item[{int}]{sec,  }\item[{int}]{nsec }\end{DoxyParamCaption})}
 
 
-
-starts timer for heartbeat functions 
-
-
-\begin{DoxyParams}{Parameters}
-{\em timer\+ID} & \\
-\hline
-{\em sec} & \\
-\hline
-{\em nsec} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int 
-\end{DoxyReturn}
-
-
-Definition at line 41 of file mytimer.\+c.
+Referenced by start\+Hearbeat\+Check().
 
 \mbox{\Hypertarget{mytimer_8c_a8988f75287d3b679f778a1bec163bdd0}\label{mytimer_8c_a8988f75287d3b679f778a1bec163bdd0}} 
 \index{mytimer.\+c@{mytimer.\+c}!stop\+Timer@{stop\+Timer}}
@@ -139,5 +119,5 @@ int
 \end{DoxyReturn}
 
 
-Definition at line 52 of file mytimer.\+c.
+Definition at line 41 of file mytimer.\+c.
 

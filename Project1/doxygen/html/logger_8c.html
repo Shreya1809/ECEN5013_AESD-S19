@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AESD Project: /home/shreya1809/ECEN5013_AESD-S19/Project1/src/logger.c File Reference</title>
+<title>AESD Project: src/logger.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('logger_8c.html','');});
 
 <p>externally connected led functionalities for normal and error conditions  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="includes_8h_source.html">includes.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;includes.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="bbgled_8h_source.html">bbgled.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="mysignal_8h_source.html">mysignal.h</a>&quot;</code><br />
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('logger_8c.html','');});
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for logger.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="logger_8c__incl.png" border="0" usemap="#_2home_2shreya1809_2ECEN5013__AESD-S19_2Project1_2src_2logger_8c" alt=""/></div>
+<div class="center"><img src="logger_8c__incl.png" border="0" usemap="#src_2logger_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
@@ -110,6 +110,9 @@ Include dependency graph for logger.c:</div>
 Macros</h2></td></tr>
 <tr class="memitem:a3066ab35b23c0e0c5d9198070250a130"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>PRINTLOGFILE</b>(log)</td></tr>
 <tr class="separator:a3066ab35b23c0e0c5d9198070250a130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8fca29e3ec7cde9d418b0a8cdbdc777"><td class="memItemLeft" align="right" valign="top"><a id="af8fca29e3ec7cde9d418b0a8cdbdc777"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LOG_EMPTY_CHECK</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:af8fca29e3ec7cde9d418b0a8cdbdc777"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -162,9 +165,9 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>fp</b></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span>{\</div><div class="line">             printf(<span class="stringliteral">&quot;[%lf] [%s] [%s] [PID:%d] [TID:%ld] Message: &quot;</span>,<a class="code" href="logger_8c.html#a2a8842755f14b8a2ba414132307a8c51">getTimeMsec</a>(),logLevel[log.level], moduleIdName[log.srcModuleID],getpid(),syscall(SYS_gettid));\</div><div class="line">             printf(<span class="stringliteral">&quot;%s\n&quot;</span>,log.msg );\</div><div class="line">             fflush(stdout);\</div><div class="line">             fprintf(fp,<span class="stringliteral">&quot;[%lf] [%s] [%s] [PID:%d] [TID:%ld] Message: &quot;</span>, <a class="code" href="logger_8c.html#a2a8842755f14b8a2ba414132307a8c51">getTimeMsec</a>(),logLevel[log.level], moduleIdName[log.srcModuleID],getpid(),syscall(SYS_gettid));\</div><div class="line">             fprintf(fp, <span class="stringliteral">&quot;%s\n&quot;</span>,log.msg );\</div><div class="line">             fflush(fp);\</div><div class="line">            }<span class="keywordflow">while</span>(0)</div><div class="ttc" id="logger_8c_html_a2a8842755f14b8a2ba414132307a8c51"><div class="ttname"><a href="logger_8c.html#a2a8842755f14b8a2ba414132307a8c51">getTimeMsec</a></div><div class="ttdeci">double getTimeMsec()</div><div class="ttdoc">Get the Time Msec object. </div><div class="ttdef"><b>Definition:</b> <a href="logger_8c_source.html#l00045">logger.c:45</a></div></div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span>{\</div><div class="line">             printf(<span class="stringliteral">&quot;[%lf] [%s] [%s] [PID:%d] [TID:%ld] Message: &quot;</span>,<a class="code" href="logger_8c.html#a2a8842755f14b8a2ba414132307a8c51">getTimeMsec</a>(),logLevel[log.level], moduleIdName[log.srcModuleID],getpid(),syscall(SYS_gettid));\</div><div class="line">             printf(<span class="stringliteral">&quot;%s\n&quot;</span>,log.msg );\</div><div class="line">             fflush(stdout);\</div><div class="line">             fprintf(fp,<span class="stringliteral">&quot;[%lf] [%s] [%s] [PID:%d] [TID:%ld] Message: &quot;</span>, <a class="code" href="logger_8c.html#a2a8842755f14b8a2ba414132307a8c51">getTimeMsec</a>(),logLevel[log.level], moduleIdName[log.srcModuleID],getpid(),syscall(SYS_gettid));\</div><div class="line">             fprintf(fp, <span class="stringliteral">&quot;%s\n&quot;</span>,log.msg );\</div><div class="line">             fflush(fp);\</div><div class="line">            }<span class="keywordflow">while</span>(0)</div><div class="ttc" id="logger_8c_html_a2a8842755f14b8a2ba414132307a8c51"><div class="ttname"><a href="logger_8c.html#a2a8842755f14b8a2ba414132307a8c51">getTimeMsec</a></div><div class="ttdeci">double getTimeMsec()</div><div class="ttdoc">Get the Time Msec object. </div><div class="ttdef"><b>Definition:</b> <a href="logger_8c_source.html#l00049">logger.c:49</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00054">54</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00058">58</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
 
 </div>
 </div>
@@ -188,7 +191,7 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>fp</b></td></tr>
 <p>Get the Time Msec object. </p>
 <dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00045">45</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00049">49</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
 
 </div>
 </div>
@@ -242,7 +245,9 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>fp</b></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00063">63</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00067">67</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bist_8c_source.html#l00079">Test_loggerQ()</a>.</p>
 
 </div>
 </div>
@@ -265,7 +270,7 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>fp</b></td></tr>
 <p>queue initialisation </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00093">93</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00097">97</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
 
 </div>
 </div>
@@ -295,7 +300,9 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>fp</b></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void* </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00123">123</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00129">129</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bist_8c_source.html#l00140">CheckBistResult()</a>.</p>
 
 </div>
 </div>
@@ -312,7 +319,7 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>fp</b></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">    <span class="stringliteral">&quot;LOG_ERR&quot;</span>,              </div><div class="line">    <span class="stringliteral">&quot;LOG_WARNING&quot;</span>,          </div><div class="line">    <span class="stringliteral">&quot;LOG_INFO&quot;</span>,             </div><div class="line">    <span class="stringliteral">&quot;LOG_DEBUG&quot;</span>            </div><div class="line">}</div></div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00022">22</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00026">26</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
 
 </div>
 </div>
@@ -321,7 +328,7 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>fp</b></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="logger_8c.html">logger.c</a></li>
+    <li class="navelem"><a class="el" href="dir_fb6daa1fd067b6a4ba48efb10e898369.html">src</a></li><li class="navelem"><a class="el" href="logger_8c.html">logger.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
