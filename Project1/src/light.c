@@ -28,10 +28,11 @@
 static volatile float lux_val = 0.0;
 static volatile uint16_t l_low = 0;
 static volatile uint16_t l_high = 1200;
+static volatile bool thresholdChanged = false;
 static int l_sec = 1;
 static int l_nsec = 0;
 static sig_atomic_t stop_thread_light = 0;
-mraa_gpio_context interrupt_gpio_pin;
+// mraa_gpio_context interrupt_gpio_pin;
 int l_count = 0;
 pthread_mutex_t light_var_lock = PTHREAD_MUTEX_INITIALIZER;
 
@@ -65,20 +66,39 @@ static inline float getLuxVar()
 static int readAndUpdateLight(void)
 {
     float lux = 0.0;
-    if(l_count > 4)
+    /*if(l_count > 4)
     {
         stop_thread_light = 1;   
-    }
+    }*/
     int ret = APDS9301_getlight(&lux);
     if(ret)
     {
         LOG_ERROR(TEMP_TASK, "APDS9301 light Sensor Disconnected: %d", ret);
-        l_count++;
+        REDLEDON();
+        APDS9301_powerup();
+        //l_count++;
         return ret;
     } 
-    LOG_INFO(LIGHT_TASK,"The light is %f",lux);
-    setLuxVar(lux); 
-    LOG_INFO(LIGHT_TASK,"Light thresholds are 0x%02x and 0x%02x",l_low,l_high);
+    REDLEDOFF();
+    setLuxVar(lux);
+    LOG_INFO(LIGHT_TASK,"The light is %0.3f lux",lux); 
+    if(thresholdChanged)
+    {
+        LOG_DEBUG(LIGHT_TASK, "Threshold changed Remotely");
+        pthread_mutex_lock(&light_var_lock);
+        uint16_t llow = l_low;
+        uint16_t lhigh = l_high;
+        thresholdChanged = false;
+        pthread_mutex_unlock(&light_var_lock); 
+        if(0 == APDS9301_setLightThreshold(llow, lhigh))
+        {
+            LOG_INFO(LIGHT_TASK,"Light thresholds changed to 0x%02x and 0x%02x",llow,lhigh);
+        }
+        else{
+            LOG_ERROR(LIGHT_TASK, "Could Not set Ligth threshold");
+        }
+    }
+    LOG_DEBUG(LIGHT_TASK,"Light thresholds are 0x%02x and 0x%02x",l_low,l_high);
     return 0;
 }
 
@@ -99,6 +119,11 @@ mraa_gpio_context APDS9301_IntPinSetup(int mraaPinNumber)
         return NULL;
     }
     return lightSensorIntPin;
+}
+
+int APDS9301_IntPinClose(mraa_gpio_context lightSensorIntPin)
+{
+    return mraa_gpio_close(lightSensorIntPin);
 }
 
 int APDS9301_checkINTPIN(mraa_gpio_context lightSensorIntPin)
@@ -135,6 +160,7 @@ int RemoteThresholdValueslight(uint16_t llow,uint16_t lhigh)
     pthread_mutex_lock(&light_var_lock);
     l_low = llow;
     l_high = lhigh;
+    thresholdChanged = true;
     pthread_mutex_unlock(&light_var_lock); 
     return 0;
 }
@@ -142,11 +168,6 @@ int RemoteThresholdValueslight(uint16_t llow,uint16_t lhigh)
 int APDS9301_setLightThreshold(uint16_t l_low,uint16_t l_high)
 {
     uint8_t th_lowlow,th_hilow,th_lowhi,th_hihi;
-    interrupt_gpio_pin =  APDS9301_IntPinSetup(APDS_INT_PIN); //mraa_gpio context
-    if(interrupt_gpio_pin == NULL)
-    {
-       return -1;
-    }
     LOG_DEBUG(LIGHT_TASK, "APDS Int pin setup done");
     int ret1 = APDS9301_writeTHRESH_lowlow(l_low); //write 2 byte
     int ret4 = APDS9301_writeTHRESH_highlow(l_high);//write 2 byte
@@ -170,6 +191,11 @@ void *light_task(void *threadp)
         goto exit;
     }
     LOG_INFO(LIGHT_TASK,"Light task thread spawned");
+    mraa_gpio_context interrupt_gpio_pin =  APDS9301_IntPinSetup(APDS_INT_PIN); //mraa_gpio context
+    if(interrupt_gpio_pin == NULL)
+    {
+        goto exit;
+    }
     if(APDS9301_setLightThreshold(l_low,l_high) == -1)
     {
         goto exit;
@@ -191,11 +217,17 @@ void *light_task(void *threadp)
             int pinValue = APDS9301_checkINTPIN(interrupt_gpio_pin);
             if(pinValue == 0)
             {
-                LOG_INFO(LIGHT_TASK, "Light sensor Threshold exceeded");
+                LOG_INFO(LIGHT_TASK, "Light sensor Threshold exceeded, It is day outside! (^_^)");
                 APDS9301_intClear();
             }
+            else
+            {
+                LOG_INFO(LIGHT_TASK, "Below Light Threshold.It is night outside! (-_-)...");    
+            }
+            
         }
     }
+    APDS9301_IntPinClose(interrupt_gpio_pin);
 exit:
     PRINTLOGCONSOLE("Light task thread exiting");
     LOG_INFO(LIGHT_TASK,"Light task thread exiting");

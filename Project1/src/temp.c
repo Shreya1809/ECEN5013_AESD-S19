@@ -24,6 +24,7 @@
 static volatile float temperature_val = 0.0;
 static volatile float tlow_val = 75.0;
 static volatile float thigh_val = 80.0;
+static volatile bool thresholdChanged = false;
 static int t_sec = 1;
 static int t_nsec = 0;
 static sig_atomic_t stop_thread_temp = 0;
@@ -82,6 +83,7 @@ int RemoteThresholdValues(float flow,float fhigh)
     pthread_mutex_lock(&temp_var_lock);
     tlow_val = flow;
     thigh_val = fhigh;
+    thresholdChanged = true;
     pthread_mutex_unlock(&temp_var_lock); 
     return 0;
 }
@@ -113,20 +115,26 @@ int TMP102_setTempThreshold(float tlow_val,float thigh_val)
 static int readAndUpdateTemp(void)
 {
     float temp_val = 0.0 ;
-    if(t_count > 4)
+    /*if(t_count > 4)
     {
         stop_thread_temp = 1;   
-    }
+    }*/
     int ret = TMP102_getTemperature(&temp_val);
     if(ret)
     {
         LOG_ERROR(TEMP_TASK, "TMP102 Temperature Sensor disconnected: %d", ret);
-        t_count++;
+        REDLEDON();
+        //t_count++;
         return ret;
     }
+    REDLEDOFF();
     setTempVar(temp_val);    
     LOG_INFO(TEMP_TASK,"The temperature is %f C",temp_val);
-    TMP102_setTempThreshold(tlow_val,thigh_val);
+    if(thresholdChanged)
+    {
+        thresholdChanged = false;
+        TMP102_setTempThreshold(tlow_val,thigh_val);
+    }
     return 0;
 }
 

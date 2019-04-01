@@ -20,7 +20,7 @@
 
 extern int thread_flags[5];
 static volatile uint32_t BIST_allOk = 0;
-static pthread_mutex_t bistlock = PTHREAD_MUTEX_INITIALIZER;
+// static pthread_mutex_t bistlock = PTHREAD_MUTEX_INITIALIZER;
 
 int Test_LightSensor(void)
 {
@@ -139,15 +139,15 @@ int BuiltInSelfTest(void)
 
 int CheckBistResult(void)
 {
-    int ret;
-    pthread_mutex_lock(&bistlock);
-    ret = BIST_allOk;
-    pthread_mutex_unlock(&bistlock);
+    //int ret;
+    // pthread_mutex_lock(&bistlock);
+    //ret = BIST_allOk;
+    // pthread_mutex_unlock(&bistlock);
     if(BIST_allOk)
     {
-        LOG_INFO(BIST_TASK,"Built in Self Test Passed");
+        LOG_DEBUG(BIST_TASK,"Built in Self Test Passed");
     }
-    return ret;   
+    return BIST_allOk;   
 }
 
 void PostBistOkResult(void)
@@ -160,21 +160,21 @@ void PostBistOkResult(void)
 
 void *bist_task(void *threadp)
 {
-    PRINT("-----Built in Self Test started-----\n");
+    PRINT("\n******BIST TASK******\n");
+    PRINTLOGCONSOLE("-----Built in Self Test started-----");
     int ret = BuiltInSelfTest();
     if(ret)
     {
         BIST_allOk = 0;
-        REDLEDON();   
-        GREENLEDOFF(); 
-        PRINTLOGCONSOLE("Program Exiting.....");
+        // PRINTLOGCONSOLE("Program Exiting.....");
     }
     else
     {
-        pthread_mutex_lock(&bistlock);
+        //pthread_mutex_lock(&bistlock);
         BIST_allOk = 1;
-        pthread_mutex_unlock(&bistlock);
+        //pthread_mutex_unlock(&bistlock);
     }
-    PRINT("-----Built in Self Test Ended-----\n");
+    PRINTLOGCONSOLE("-----Built in Self Test Ended-----");
+    PRINT("******BIST TASK END******\n\n");
     return NULL;
 }

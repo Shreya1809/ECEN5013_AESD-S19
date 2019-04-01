@@ -114,6 +114,8 @@ void kill_logger_thread(void)
   LOG_DEBUG(LOGGER_TASK,"logger exit signal received");
   stop_thread_logger = 1;    
 }
+
+#define LOG_EMPTY_CHECK 3
 /**
  * @brief call back function for the logger
  * 
@@ -149,7 +151,7 @@ void *logger_task(void *threadp)
   fprintf(fp, "log file created\n");
   log_struct_t recv_log = {0};
   int lastError = 0;
-  while(!stop_thread_logger || lastError < 5)
+  while(!stop_thread_logger || lastError < LOG_EMPTY_CHECK)
   {
     set_heartbeatFlag(LOGGER_TASK);
     //deque msg

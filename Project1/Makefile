@@ -23,10 +23,13 @@ rungdb:
 build:
 	echo $(WORKSPACE)
 	$(CC) $(FLAGS) -o $(OUTPUT) $(SRCS) $(LIBS)
-	scp -r $(WORKSPACE_FILES) root@10.0.0.16:~/home/Project1/code/
-	scp $(OUTPUT) root@10.0.0.16:~/home/Project1/output/
-	scp -pr $(WORKSPACE)/config root@10.0.0.16:~/home/Project1/config/
-
+	ssh root@10.0.0.16 "mkdir -p ~/home/Project1 ~/home/Project1/config ~/home/Project1/code ~/home/Project1/output" 
+	#scp -r $(WORKSPACE_FILES) root@10.0.0.16:~/home/Project1/code/
+	scp -pr $(WORKSPACE)/src root@10.0.0.16:~/home/Project1/code/src
+	scp -pr $(WORKSPACE)/include root@10.0.0.16:~/home/Project1/code/include
+	scp -pr $(WORKSPACE)/test root@10.0.0.16:~/home/Project1/code/test
+	scp *$(OUTPUT_EXT) root@10.0.0.16:~/home/Project1/output/
+	scp -pr $(WORKSPACE)/config/* root@10.0.0.16:~/home/Project1/config/
 .PHONY: test
 test:
 	$(CC) $(FLAGS) test/Socket_TEST/client.c -o client_test.out -lpthread
@@ -39,6 +42,10 @@ test:
 .PHONY: doxygen
 doxygen:
 	cd doxygen && doxygen doxygen.config
+
+.PHONY: ssh
+ssh:
+	gnome-terminal -- ssh root@10.0.0.16
 
 .PHONY:clean
 clean:

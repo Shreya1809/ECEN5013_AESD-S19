@@ -50,8 +50,6 @@ int main(int argc , char **argv){
     int rc;
     signal(SIGINT,signal_handler);
     logger_queue_init();
-    GREENLEDON();
-    REDLEDOFF();
     LOG_INFO(MAIN_TASK, "-----Project1 started main thread------");
     if (argc < 2)
     {
@@ -94,7 +92,7 @@ int main(int argc , char **argv){
     LOG_INFO(MAIN_TASK, "Threads spawned from the main");
 
     //Creating bist thread 
-    rc = pthread_create(&threads[0],NULL,ThreadEntryFunction[0], threadParamArgs[0]);
+    rc = pthread_create(&threads[BIST_TASK],NULL,ThreadEntryFunction[BIST_TASK], threadParamArgs[BIST_TASK]);
     if(rc)
     {
         PRINT("pthread_create for thread %s failed\n", (char*)ThreadEntryFunction[0]);
@@ -110,7 +108,7 @@ int main(int argc , char **argv){
     }
 
     //joing only the bist thread initially to do the built in selt tests
-    rc = pthread_join(threads[0],NULL);
+    rc = pthread_join(threads[BIST_TASK],NULL);
     if(rc)
     {
         PRINTLOGCONSOLE("pthread_join for thread %s failed\n", (char*)ThreadEntryFunction[0]);
@@ -120,11 +118,20 @@ int main(int argc , char **argv){
     PostBistOkResult(); //if bist has been successful then post semaphores to the rest of the waiting threads
     if(CheckBistResult()) // check if test is successful before joining other threads
     {
+        LOG_INFO(MAIN_TASK,"Built in Self Test Result - Pass");
+        GREENLEDON();
+        REDLEDOFF();
         startHearbeatCheck();// when bist return val is 1 start heartbeat check
+    }
+    else
+    {
+        LOG_INFO(MAIN_TASK,"Built in Self Test Result - Fail");
+        REDLEDON();   
+        GREENLEDOFF(); 
     }
 
     //joining other threads
-    for(int i = 1; i < MAX_TASKS; i++)
+    for(int i = 2; i < MAX_TASKS; i++)
     {
         rc = pthread_join(threads[i],NULL);
         if(rc)
@@ -135,9 +142,20 @@ int main(int argc , char **argv){
             exit(EXIT_FAILURE);   
         }
     }   
+
+    kill_logger_thread();
+    //all tasks have exited. only then exit the logger task to make sure we have all logs
+    rc = pthread_join(threads[LOGGER_TASK],NULL);
+    if(rc)
+    {
+        PRINTLOGCONSOLE("pthread_join for thread %s failed\n", (char*)ThreadEntryFunction[LOGGER_TASK]);
+        GREENLEDOFF();
+        REDLEDON();
+        exit(EXIT_FAILURE);   
+    }
     
     PRINT("******Program Clean Exit******\n");
-
+    GREENLEDOFF();
     return 0;
 }
 

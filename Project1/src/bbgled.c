@@ -15,8 +15,14 @@
 #include "bbgled.h"
 #include "includes.h"
 
+static bool RED_currentState = false;
+static bool GREEN_currentState = false;
+
 int redLed_OnOff(bool option)
 {
+    // if(RED_currentState == option){
+    //     return 0;
+    // }
     char low[] = "0"; // value low led off
     char high[] = "1"; //value high led on
     char dir[] = "out"; //direction 
@@ -51,12 +57,15 @@ int redLed_OnOff(bool option)
         fwrite (low, 1, sizeof(low), IO_value); //set the pin to HIGH
     }
     fclose (IO_value);
-
+    RED_currentState = option;
     return 0;
 }
 
 int greenLed_OnOff(bool option)
 {
+    // if(GREEN_currentState == option){
+    //     return 0;
+    // }
     char low[] = "0"; // value low led off
     char high[] = "1"; //value high led on
     char dir[] = "out"; //direction 
@@ -91,7 +100,7 @@ int greenLed_OnOff(bool option)
         fwrite (low, 1, sizeof(low), IO_value); //set the pin to HIGH
     }
     fclose (IO_value);
-
+    GREEN_currentState = option;
     return 0;
 }
 

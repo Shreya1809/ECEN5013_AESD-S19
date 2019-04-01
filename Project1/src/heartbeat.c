@@ -36,7 +36,7 @@ void SystemExit(void)
 	kill_temp_thread();
 	kill_light_thread();
 	kill_socket_thread();
-	kill_logger_thread();
+	//kill_logger_thread();
 }
 
 static bool systemExitInitiated = false; //to break out of heartbeat loop
