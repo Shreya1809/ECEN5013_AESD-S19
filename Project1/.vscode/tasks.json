@@ -69,6 +69,17 @@
             
         },
         {
+            "label": "REMOTE_DEBUG",
+            "type": "shell",
+            "command": "make clean build rungdb",
+            "isBackground": true,
+            "group": {
+                "kind": "build",
+                "isDefault": true,
+            },
+            
+        },
+        {
             "label": "clean",
             "type": "shell",
             "command": "make clean",

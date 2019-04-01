@@ -68,7 +68,7 @@ int main(int argc , char **argv){
         loggerParam.loglevel = atoi(argv[2]);
     }
 
-    threadParamArgs[1] = (void*)&loggerParam;
+    threadParamArgs[LOGGER_TASK] = (void*)&loggerParam;
     
     //creating all threads except the bist for tasks
     for(int i = 1; i < MAX_TASKS; i++)

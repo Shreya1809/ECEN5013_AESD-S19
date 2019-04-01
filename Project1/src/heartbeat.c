@@ -17,8 +17,8 @@
 #include "socket.h"
 
 static volatile uint32_t g_heartbeat_taskFlags = 0;
-static int h_sec = 2;
-static int h_nsec = 0;
+#define h_sec 2
+#define h_nsec 0
 int counter = 0;
 static pthread_mutex_t heartbeatFlagsLock = PTHREAD_MUTEX_INITIALIZER;
 
@@ -91,6 +91,6 @@ void startHearbeatCheck(void)
 {
     timer_t hearbeat_timer_id;
 	maketimer(&hearbeat_timer_id, &heatbeat_timer_callback);
-	startTimerHB(hearbeat_timer_id,h_sec,h_nsec);
+	startTimer(hearbeat_timer_id,h_sec,h_nsec);
 }
 

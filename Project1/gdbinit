@@ -1,4 +1,4 @@
 target extended-remote 10.0.0.16:5500
 set remote exec-file ~/home/Project1/output/project1.out
 file project1.out
-set args log.txt
+set args log.dat 2

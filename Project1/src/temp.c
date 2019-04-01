@@ -129,7 +129,7 @@ static int readAndUpdateTemp(void)
     }
     REDLEDOFF();
     setTempVar(temp_val);    
-    LOG_INFO(TEMP_TASK,"The temperature is %f C",temp_val);
+    LOG_INFO(TEMP_TASK,"The temperature is %0.2f C",temp_val);
     if(thresholdChanged)
     {
         thresholdChanged = false;
