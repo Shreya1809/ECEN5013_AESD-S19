@@ -89,11 +89,11 @@ $(document).ready(function(){initNavTree('tempSensor_8c.html','');});
 
 <p>TMP102 temperature register functions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;includes.h&quot;</code><br />
-<code>#include &quot;tempSensor.h&quot;</code><br />
-<code>#include &quot;myI2C.h&quot;</code><br />
-<code>#include &quot;logger.h&quot;</code><br />
-<code>#include &quot;main.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="includes_8h_source.html">includes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="tempSensor_8h_source.html">tempSensor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="myI2C_8h_source.html">myI2C.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for tempSensor.c:</div>
 <div class="dyncontent">
@@ -105,50 +105,50 @@ Include dependency graph for tempSensor.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9113eb7060b0e80e1022b3513f69dfd7"><td class="memItemLeft" align="right" valign="top"><a id="a9113eb7060b0e80e1022b3513f69dfd7"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_getTemperature</b> (float *temp_val)</td></tr>
+<tr class="memitem:a9113eb7060b0e80e1022b3513f69dfd7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#a9113eb7060b0e80e1022b3513f69dfd7">TMP102_getTemperature</a> (float *temp_val)</td></tr>
+<tr class="memdesc:a9113eb7060b0e80e1022b3513f69dfd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">get temperature raw value  <a href="#a9113eb7060b0e80e1022b3513f69dfd7">More...</a><br /></td></tr>
 <tr class="separator:a9113eb7060b0e80e1022b3513f69dfd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8d930c53b02b7b3513732e4351ff222"><td class="memItemLeft" align="right" valign="top"><a id="aa8d930c53b02b7b3513732e4351ff222"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_getTlow</b> (float *tlow_val)</td></tr>
+<tr class="memitem:aa8d930c53b02b7b3513732e4351ff222"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#aa8d930c53b02b7b3513732e4351ff222">TMP102_getTlow</a> (float *tlow_val)</td></tr>
+<tr class="memdesc:aa8d930c53b02b7b3513732e4351ff222"><td class="mdescLeft">&#160;</td><td class="mdescRight">read tlow reg  <a href="#aa8d930c53b02b7b3513732e4351ff222">More...</a><br /></td></tr>
 <tr class="separator:aa8d930c53b02b7b3513732e4351ff222"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa83ab1ebdf1b1134f05369cd41fdd8cf"><td class="memItemLeft" align="right" valign="top"><a id="aa83ab1ebdf1b1134f05369cd41fdd8cf"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_getThigh</b> (float *thigh_val)</td></tr>
+<tr class="memitem:aa83ab1ebdf1b1134f05369cd41fdd8cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#aa83ab1ebdf1b1134f05369cd41fdd8cf">TMP102_getThigh</a> (float *thigh_val)</td></tr>
+<tr class="memdesc:aa83ab1ebdf1b1134f05369cd41fdd8cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">read thigh register  <a href="#aa83ab1ebdf1b1134f05369cd41fdd8cf">More...</a><br /></td></tr>
 <tr class="separator:aa83ab1ebdf1b1134f05369cd41fdd8cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7008e1c8cfb707e16c0b107b8f97ef9c"><td class="memItemLeft" align="right" valign="top"><a id="a7008e1c8cfb707e16c0b107b8f97ef9c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_setThigh</b> (float thigh_val)</td></tr>
+<tr class="memitem:a7008e1c8cfb707e16c0b107b8f97ef9c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#a7008e1c8cfb707e16c0b107b8f97ef9c">TMP102_setThigh</a> (float thigh_val)</td></tr>
+<tr class="memdesc:a7008e1c8cfb707e16c0b107b8f97ef9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">write to thigh reg  <a href="#a7008e1c8cfb707e16c0b107b8f97ef9c">More...</a><br /></td></tr>
 <tr class="separator:a7008e1c8cfb707e16c0b107b8f97ef9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69c77489451fe289ecafea703e70f817"><td class="memItemLeft" align="right" valign="top"><a id="a69c77489451fe289ecafea703e70f817"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_setTlow</b> (float tlow_val)</td></tr>
+<tr class="memitem:a69c77489451fe289ecafea703e70f817"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#a69c77489451fe289ecafea703e70f817">TMP102_setTlow</a> (float tlow_val)</td></tr>
+<tr class="memdesc:a69c77489451fe289ecafea703e70f817"><td class="mdescLeft">&#160;</td><td class="mdescRight">write to tlow reg  <a href="#a69c77489451fe289ecafea703e70f817">More...</a><br /></td></tr>
 <tr class="separator:a69c77489451fe289ecafea703e70f817"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3672db766adda3bd63d3be8754f42b7f"><td class="memItemLeft" align="right" valign="top"><a id="a3672db766adda3bd63d3be8754f42b7f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_readReg</b> (uint8_t reg, uint8_t *data)</td></tr>
+<tr class="memitem:a3672db766adda3bd63d3be8754f42b7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#a3672db766adda3bd63d3be8754f42b7f">TMP102_readReg</a> (uint8_t reg, uint8_t *data)</td></tr>
+<tr class="memdesc:a3672db766adda3bd63d3be8754f42b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">read any reg  <a href="#a3672db766adda3bd63d3be8754f42b7f">More...</a><br /></td></tr>
 <tr class="separator:a3672db766adda3bd63d3be8754f42b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a221d0e1479cbfa8701175eae33e3a847"><td class="memItemLeft" align="right" valign="top"><a id="a221d0e1479cbfa8701175eae33e3a847"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_writePTRreg</b> (uint8_t reg)</td></tr>
+<tr class="memitem:a221d0e1479cbfa8701175eae33e3a847"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#a221d0e1479cbfa8701175eae33e3a847">TMP102_writePTRreg</a> (uint8_t reg)</td></tr>
+<tr class="memdesc:a221d0e1479cbfa8701175eae33e3a847"><td class="mdescLeft">&#160;</td><td class="mdescRight">write to ptr reg  <a href="#a221d0e1479cbfa8701175eae33e3a847">More...</a><br /></td></tr>
 <tr class="separator:a221d0e1479cbfa8701175eae33e3a847"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa52da543d212e628eb14ade211b64a5b"><td class="memItemLeft" align="right" valign="top"><a id="aa52da543d212e628eb14ade211b64a5b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_setShutdownMode</b> (shutdown_mode_t option)</td></tr>
+<tr class="memitem:aa52da543d212e628eb14ade211b64a5b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#aa52da543d212e628eb14ade211b64a5b">TMP102_setShutdownMode</a> (shutdown_mode_t option)</td></tr>
+<tr class="memdesc:aa52da543d212e628eb14ade211b64a5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">set shutdown mode  <a href="#aa52da543d212e628eb14ade211b64a5b">More...</a><br /></td></tr>
 <tr class="separator:aa52da543d212e628eb14ade211b64a5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6442311de8464158cc4be49136a464b"><td class="memItemLeft" align="right" valign="top"><a id="ac6442311de8464158cc4be49136a464b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_setResolution</b> (sensor_resolution_t option)</td></tr>
+<tr class="memitem:ac6442311de8464158cc4be49136a464b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#ac6442311de8464158cc4be49136a464b">TMP102_setResolution</a> (sensor_resolution_t option)</td></tr>
+<tr class="memdesc:ac6442311de8464158cc4be49136a464b"><td class="mdescLeft">&#160;</td><td class="mdescRight">set resolution  <a href="#ac6442311de8464158cc4be49136a464b">More...</a><br /></td></tr>
 <tr class="separator:ac6442311de8464158cc4be49136a464b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea770dbc3d17d5692c3d9f7dd88cb490"><td class="memItemLeft" align="right" valign="top"><a id="aea770dbc3d17d5692c3d9f7dd88cb490"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_getFaultbits</b> (uint16_t *data)</td></tr>
+<tr class="memitem:aea770dbc3d17d5692c3d9f7dd88cb490"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#aea770dbc3d17d5692c3d9f7dd88cb490">TMP102_getFaultbits</a> (uint16_t *data)</td></tr>
+<tr class="memdesc:aea770dbc3d17d5692c3d9f7dd88cb490"><td class="mdescLeft">&#160;</td><td class="mdescRight">read fault bits  <a href="#aea770dbc3d17d5692c3d9f7dd88cb490">More...</a><br /></td></tr>
 <tr class="separator:aea770dbc3d17d5692c3d9f7dd88cb490"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a182a31c4de57ec285a490baedbccb926"><td class="memItemLeft" align="right" valign="top"><a id="a182a31c4de57ec285a490baedbccb926"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_setFaultbits</b> (fault_setting_t option)</td></tr>
+<tr class="memitem:a182a31c4de57ec285a490baedbccb926"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#a182a31c4de57ec285a490baedbccb926">TMP102_setFaultbits</a> (fault_setting_t option)</td></tr>
+<tr class="memdesc:a182a31c4de57ec285a490baedbccb926"><td class="mdescLeft">&#160;</td><td class="mdescRight">set fault bits  <a href="#a182a31c4de57ec285a490baedbccb926">More...</a><br /></td></tr>
 <tr class="separator:a182a31c4de57ec285a490baedbccb926"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca8fb3e52a8046f7194f0334ed5c1167"><td class="memItemLeft" align="right" valign="top"><a id="aca8fb3e52a8046f7194f0334ed5c1167"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_setEM</b> (EM_mode_t option)</td></tr>
+<tr class="memitem:aca8fb3e52a8046f7194f0334ed5c1167"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#aca8fb3e52a8046f7194f0334ed5c1167">TMP102_setEM</a> (EM_mode_t option)</td></tr>
+<tr class="memdesc:aca8fb3e52a8046f7194f0334ed5c1167"><td class="mdescLeft">&#160;</td><td class="mdescRight">set EM mode  <a href="#aca8fb3e52a8046f7194f0334ed5c1167">More...</a><br /></td></tr>
 <tr class="separator:aca8fb3e52a8046f7194f0334ed5c1167"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a18e17f6467937075c02be9d5d51a2a"><td class="memItemLeft" align="right" valign="top"><a id="a5a18e17f6467937075c02be9d5d51a2a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_setCR</b> (conversion_rate_t option)</td></tr>
+<tr class="memitem:a5a18e17f6467937075c02be9d5d51a2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#a5a18e17f6467937075c02be9d5d51a2a">TMP102_setCR</a> (conversion_rate_t option)</td></tr>
+<tr class="memdesc:a5a18e17f6467937075c02be9d5d51a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">set conversion rate  <a href="#a5a18e17f6467937075c02be9d5d51a2a">More...</a><br /></td></tr>
 <tr class="separator:a5a18e17f6467937075c02be9d5d51a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae00e5aa054bb4f37b6ad8b04a709f49c"><td class="memItemLeft" align="right" valign="top"><a id="ae00e5aa054bb4f37b6ad8b04a709f49c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_readAL</b> (uint8_t *bit)</td></tr>
+<tr class="memitem:ae00e5aa054bb4f37b6ad8b04a709f49c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#ae00e5aa054bb4f37b6ad8b04a709f49c">TMP102_readAL</a> (uint8_t *bit)</td></tr>
+<tr class="memdesc:ae00e5aa054bb4f37b6ad8b04a709f49c"><td class="mdescLeft">&#160;</td><td class="mdescRight">read AL bit  <a href="#ae00e5aa054bb4f37b6ad8b04a709f49c">More...</a><br /></td></tr>
 <tr class="separator:ae00e5aa054bb4f37b6ad8b04a709f49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8500a6a0560f4d9f80c8986fb0f4d03"><td class="memItemLeft" align="right" valign="top"><a id="ae8500a6a0560f4d9f80c8986fb0f4d03"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_setAllDefault</b> ()</td></tr>
+<tr class="memitem:ae8500a6a0560f4d9f80c8986fb0f4d03"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tempSensor_8c.html#ae8500a6a0560f4d9f80c8986fb0f4d03">TMP102_setAllDefault</a> ()</td></tr>
+<tr class="memdesc:ae8500a6a0560f4d9f80c8986fb0f4d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">set all registers to default value  <a href="#ae8500a6a0560f4d9f80c8986fb0f4d03">More...</a><br /></td></tr>
 <tr class="separator:ae8500a6a0560f4d9f80c8986fb0f4d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -159,7 +159,473 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>TMP102_setAllDefault</
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="aea770dbc3d17d5692c3d9f7dd88cb490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea770dbc3d17d5692c3d9f7dd88cb490">&#9670;&nbsp;</a></span>TMP102_getFaultbits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_getFaultbits </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>read fault bits </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00215">215</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+<p class="reference">References <a class="el" href="myI2C_8c_source.html#l00088">I2C_read_bytes()</a>.</p>
+
+</div>
+</div>
+<a id="a9113eb7060b0e80e1022b3513f69dfd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9113eb7060b0e80e1022b3513f69dfd7">&#9670;&nbsp;</a></span>TMP102_getTemperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_getTemperature </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>temp_val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get temperature raw value </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temp_val</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00018">18</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+<p class="reference">References <a class="el" href="myI2C_8c_source.html#l00088">I2C_read_bytes()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bist_8c_source.html#l00068">Test_TempSensor()</a>.</p>
+
+</div>
+</div>
+<a id="aa83ab1ebdf1b1134f05369cd41fdd8cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa83ab1ebdf1b1134f05369cd41fdd8cf">&#9670;&nbsp;</a></span>TMP102_getThigh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_getThigh </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>thigh_val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>read thigh register </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">thigh_val</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00063">63</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+</div>
+</div>
+<a id="aa8d930c53b02b7b3513732e4351ff222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8d930c53b02b7b3513732e4351ff222">&#9670;&nbsp;</a></span>TMP102_getTlow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_getTlow </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>tlow_val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>read tlow reg </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tlow_val</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00044">44</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+</div>
+</div>
+<a id="ae00e5aa054bb4f37b6ad8b04a709f49c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae00e5aa054bb4f37b6ad8b04a709f49c">&#9670;&nbsp;</a></span>TMP102_readAL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_readAL </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>bit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>read AL bit </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bit</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00324">324</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+<p class="reference">References <a class="el" href="myI2C_8c_source.html#l00088">I2C_read_bytes()</a>.</p>
+
+</div>
+</div>
+<a id="a3672db766adda3bd63d3be8754f42b7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3672db766adda3bd63d3be8754f42b7f">&#9670;&nbsp;</a></span>TMP102_readReg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_readReg </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>read any reg </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00130">130</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+<p class="reference">References <a class="el" href="myI2C_8c_source.html#l00088">I2C_read_bytes()</a>.</p>
+
+</div>
+</div>
+<a id="ae8500a6a0560f4d9f80c8986fb0f4d03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8500a6a0560f4d9f80c8986fb0f4d03">&#9670;&nbsp;</a></span>TMP102_setAllDefault()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_setAllDefault </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set all registers to default value </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00337">337</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+<p class="reference">References <a class="el" href="tempSensor_8c_source.html#l00287">TMP102_setCR()</a>.</p>
+
+</div>
+</div>
+<a id="a5a18e17f6467937075c02be9d5d51a2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a18e17f6467937075c02be9d5d51a2a">&#9670;&nbsp;</a></span>TMP102_setCR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_setCR </td>
+          <td>(</td>
+          <td class="paramtype">conversion_rate_t&#160;</td>
+          <td class="paramname"><em>option</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set conversion rate </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">option</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00287">287</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+<p class="reference">References <a class="el" href="myI2C_8c_source.html#l00088">I2C_read_bytes()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="tempSensor_8c_source.html#l00337">TMP102_setAllDefault()</a>.</p>
+
+</div>
+</div>
+<a id="aca8fb3e52a8046f7194f0334ed5c1167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca8fb3e52a8046f7194f0334ed5c1167">&#9670;&nbsp;</a></span>TMP102_setEM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_setEM </td>
+          <td>(</td>
+          <td class="paramtype">EM_mode_t&#160;</td>
+          <td class="paramname"><em>option</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set EM mode </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">option</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00262">262</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+<p class="reference">References <a class="el" href="myI2C_8c_source.html#l00088">I2C_read_bytes()</a>.</p>
+
+</div>
+</div>
+<a id="a182a31c4de57ec285a490baedbccb926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a182a31c4de57ec285a490baedbccb926">&#9670;&nbsp;</a></span>TMP102_setFaultbits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_setFaultbits </td>
+          <td>(</td>
+          <td class="paramtype">fault_setting_t&#160;</td>
+          <td class="paramname"><em>option</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set fault bits </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">option</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00227">227</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+<p class="reference">References <a class="el" href="myI2C_8c_source.html#l00088">I2C_read_bytes()</a>.</p>
+
+</div>
+</div>
+<a id="ac6442311de8464158cc4be49136a464b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6442311de8464158cc4be49136a464b">&#9670;&nbsp;</a></span>TMP102_setResolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_setResolution </td>
+          <td>(</td>
+          <td class="paramtype">sensor_resolution_t&#160;</td>
+          <td class="paramname"><em>option</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set resolution </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">option</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00177">177</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+<p class="reference">References <a class="el" href="myI2C_8c_source.html#l00088">I2C_read_bytes()</a>.</p>
+
+</div>
+</div>
+<a id="aa52da543d212e628eb14ade211b64a5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa52da543d212e628eb14ade211b64a5b">&#9670;&nbsp;</a></span>TMP102_setShutdownMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_setShutdownMode </td>
+          <td>(</td>
+          <td class="paramtype">shutdown_mode_t&#160;</td>
+          <td class="paramname"><em>option</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set shutdown mode </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">option</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00150">150</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+<p class="reference">References <a class="el" href="myI2C_8c_source.html#l00088">I2C_read_bytes()</a>.</p>
+
+</div>
+</div>
+<a id="a7008e1c8cfb707e16c0b107b8f97ef9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7008e1c8cfb707e16c0b107b8f97ef9c">&#9670;&nbsp;</a></span>TMP102_setThigh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_setThigh </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>thigh_val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>write to thigh reg </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">thigh_val</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00082">82</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+</div>
+</div>
+<a id="a69c77489451fe289ecafea703e70f817"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69c77489451fe289ecafea703e70f817">&#9670;&nbsp;</a></span>TMP102_setTlow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_setTlow </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>tlow_val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>write to tlow reg </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tlow_val</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00105">105</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+</div>
+</div>
+<a id="a221d0e1479cbfa8701175eae33e3a847"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a221d0e1479cbfa8701175eae33e3a847">&#9670;&nbsp;</a></span>TMP102_writePTRreg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TMP102_writePTRreg </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>reg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>write to ptr reg </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tempSensor_8c_source.html#l00140">140</a> of file <a class="el" href="tempSensor_8c_source.html">tempSensor.c</a>.</p>
+
+<p class="reference">References <a class="el" href="myI2C_8c_source.html#l00054">I2C_write_byte()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

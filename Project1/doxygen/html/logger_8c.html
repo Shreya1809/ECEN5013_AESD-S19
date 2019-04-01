@@ -91,12 +91,12 @@ $(document).ready(function(){initNavTree('logger_8c.html','');});
 
 <p>externally connected led functionalities for normal and error conditions  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;includes.h&quot;</code><br />
-<code>#include &quot;logger.h&quot;</code><br />
-<code>#include &quot;bbgled.h&quot;</code><br />
-<code>#include &quot;mysignal.h&quot;</code><br />
-<code>#include &quot;heartbeat.h&quot;</code><br />
-<code>#include &quot;bist.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="includes_8h_source.html">includes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bbgled_8h_source.html">bbgled.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mysignal_8h_source.html">mysignal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="heartbeat_8h_source.html">heartbeat.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bist_8h_source.html">bist.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for logger.c:</div>
 <div class="dyncontent">
@@ -119,14 +119,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a2a8842755f14b8a2ba414132307a8c51"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8c.html#a2a8842755f14b8a2ba414132307a8c51">getTimeMsec</a> ()</td></tr>
 <tr class="memdesc:a2a8842755f14b8a2ba414132307a8c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Time Msec object.  <a href="#a2a8842755f14b8a2ba414132307a8c51">More...</a><br /></td></tr>
 <tr class="separator:a2a8842755f14b8a2ba414132307a8c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59bf591b758fe8741ffad898e91e748c"><td class="memItemLeft" align="right" valign="top"><a id="a59bf591b758fe8741ffad898e91e748c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>LOG_ENQUEUE</b> (log_level_t level, moduleId_t modId, char *msg,...)</td></tr>
+<tr class="memitem:a59bf591b758fe8741ffad898e91e748c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8c.html#a59bf591b758fe8741ffad898e91e748c">LOG_ENQUEUE</a> (log_level_t level, moduleId_t modId, char *msg,...)</td></tr>
+<tr class="memdesc:a59bf591b758fe8741ffad898e91e748c"><td class="mdescLeft">&#160;</td><td class="mdescRight">to put messages in the logger queue  <a href="#a59bf591b758fe8741ffad898e91e748c">More...</a><br /></td></tr>
 <tr class="separator:a59bf591b758fe8741ffad898e91e748c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbbfebbf60efeb03c99c735f2343f26b"><td class="memItemLeft" align="right" valign="top"><a id="adbbfebbf60efeb03c99c735f2343f26b"></a>
-mqd_t&#160;</td><td class="memItemRight" valign="bottom"><b>logger_queue_init</b> (void)</td></tr>
+<tr class="memitem:adbbfebbf60efeb03c99c735f2343f26b"><td class="memItemLeft" align="right" valign="top">mqd_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8c.html#adbbfebbf60efeb03c99c735f2343f26b">logger_queue_init</a> (void)</td></tr>
+<tr class="memdesc:adbbfebbf60efeb03c99c735f2343f26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">queue initialisation  <a href="#adbbfebbf60efeb03c99c735f2343f26b">More...</a><br /></td></tr>
 <tr class="separator:adbbfebbf60efeb03c99c735f2343f26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d3ce57d8ba16ca05ea10faa97811903"><td class="memItemLeft" align="right" valign="top"><a id="a3d3ce57d8ba16ca05ea10faa97811903"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>kill_logger_thread</b> (void)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8c.html#a3d3ce57d8ba16ca05ea10faa97811903">kill_logger_thread</a> (void)</td></tr>
+<tr class="memdesc:a3d3ce57d8ba16ca05ea10faa97811903"><td class="mdescLeft">&#160;</td><td class="mdescRight">to kill logger thread externally <br /></td></tr>
 <tr class="separator:a3d3ce57d8ba16ca05ea10faa97811903"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa7630a1e435cb94de8fb5c793bc864d"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8c.html#afa7630a1e435cb94de8fb5c793bc864d">logger_task</a> (void *threadp)</td></tr>
 <tr class="memdesc:afa7630a1e435cb94de8fb5c793bc864d"><td class="mdescLeft">&#160;</td><td class="mdescRight">call back function for the logger  <a href="#afa7630a1e435cb94de8fb5c793bc864d">More...</a><br /></td></tr>
@@ -180,6 +181,7 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>fp</b></td></tr>
         <tr>
           <td class="memname">double getTimeMsec </td>
           <td>(</td>
+          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -190,6 +192,85 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>fp</b></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00049">49</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
+
+</div>
+</div>
+<a id="a59bf591b758fe8741ffad898e91e748c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59bf591b758fe8741ffad898e91e748c">&#9670;&nbsp;</a></span>LOG_ENQUEUE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LOG_ENQUEUE </td>
+          <td>(</td>
+          <td class="paramtype">log_level_t&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">moduleId_t&#160;</td>
+          <td class="paramname"><em>modId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>to put messages in the logger queue </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>log level </td></tr>
+    <tr><td class="paramname">modId</td><td>the task </td></tr>
+    <tr><td class="paramname">msg</td><td></td></tr>
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00067">67</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bist_8c_source.html#l00079">Test_loggerQ()</a>.</p>
+
+</div>
+</div>
+<a id="adbbfebbf60efeb03c99c735f2343f26b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbbfebbf60efeb03c99c735f2343f26b">&#9670;&nbsp;</a></span>logger_queue_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mqd_t logger_queue_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>queue initialisation </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="logger_8c_source.html#l00097">97</a> of file <a class="el" href="logger_8c_source.html">logger.c</a>.</p>
 
 </div>
 </div>
@@ -210,6 +291,7 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>fp</b></td></tr>
 </div><div class="memdoc">
 
 <p>call back function for the logger </p>
+<p>call back for logger task</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">threadp</td><td></td></tr>

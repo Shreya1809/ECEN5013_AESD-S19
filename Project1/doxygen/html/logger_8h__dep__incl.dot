@@ -29,8 +29,4 @@ digraph "include/common/logger.h"
   Node44 [label="src/temp.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$temp_8c.html",tooltip="Temperature task thread functionality. "];
   Node32 -> Node45 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node45 [label="src/tempSensor.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$tempSensor_8c.html",tooltip="TMP102 temperature register functions. "];
-  Node32 -> Node46 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node46 [label="test/Light_TEST/test.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Light__TEST_2test_8c_source.html"];
-  Node32 -> Node47 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node47 [label="test/Logger_TEST/test.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Logger__TEST_2test_8c_source.html"];
 }

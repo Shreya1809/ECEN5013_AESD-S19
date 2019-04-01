@@ -89,9 +89,9 @@ $(document).ready(function(){initNavTree('myI2C_8c.html','');});
 
 <p>I2C drivers for sensor using mraa library.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;includes.h&quot;</code><br />
-<code>#include &quot;myI2C.h&quot;</code><br />
-<code>#include &quot;logger.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="includes_8h_source.html">includes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="myI2C_8h_source.html">myI2C.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
 <code>#include &lt;errno.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for myI2C.c:</div>
@@ -104,29 +104,29 @@ Include dependency graph for myI2C.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0799af3d3a75e0597b805dedfecc9d07"><td class="memItemLeft" align="right" valign="top"><a id="a0799af3d3a75e0597b805dedfecc9d07"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>I2C_init</b> (i2c_struct_t *i2c_handler)</td></tr>
+<tr class="memitem:a0799af3d3a75e0597b805dedfecc9d07"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="myI2C_8c.html#a0799af3d3a75e0597b805dedfecc9d07">I2C_init</a> (<a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *i2c_handler)</td></tr>
+<tr class="memdesc:a0799af3d3a75e0597b805dedfecc9d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise i2c context, passing in the i2c bus to use.  <a href="#a0799af3d3a75e0597b805dedfecc9d07">More...</a><br /></td></tr>
 <tr class="separator:a0799af3d3a75e0597b805dedfecc9d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8decee1cd7906785e6ce389d71e14c0"><td class="memItemLeft" align="right" valign="top"><a id="ae8decee1cd7906785e6ce389d71e14c0"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>I2C_close</b> (i2c_struct_t *i2c_handler)</td></tr>
+<tr class="memitem:ae8decee1cd7906785e6ce389d71e14c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="myI2C_8c.html#ae8decee1cd7906785e6ce389d71e14c0">I2C_close</a> (<a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *i2c_handler)</td></tr>
+<tr class="memdesc:ae8decee1cd7906785e6ce389d71e14c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">close i2c context  <a href="#ae8decee1cd7906785e6ce389d71e14c0">More...</a><br /></td></tr>
 <tr class="separator:ae8decee1cd7906785e6ce389d71e14c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b94ae8a4cd4577a177959a15fe7a837"><td class="memItemLeft" align="right" valign="top"><a id="a0b94ae8a4cd4577a177959a15fe7a837"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>I2C_set_slave</b> (i2c_struct_t *i2c_handler, uint8_t slave_addr)</td></tr>
+<tr class="memitem:a0b94ae8a4cd4577a177959a15fe7a837"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="myI2C_8c.html#a0b94ae8a4cd4577a177959a15fe7a837">I2C_set_slave</a> (<a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *i2c_handler, uint8_t slave_addr)</td></tr>
+<tr class="memdesc:a0b94ae8a4cd4577a177959a15fe7a837"><td class="mdescLeft">&#160;</td><td class="mdescRight">set slave address for i2c read and write  <a href="#a0b94ae8a4cd4577a177959a15fe7a837">More...</a><br /></td></tr>
 <tr class="separator:a0b94ae8a4cd4577a177959a15fe7a837"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a239ee2fef128c26fdc70926af40b8831"><td class="memItemLeft" align="right" valign="top"><a id="a239ee2fef128c26fdc70926af40b8831"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>I2C_write_byte</b> (i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t data)</td></tr>
+<tr class="memitem:a239ee2fef128c26fdc70926af40b8831"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="myI2C_8c.html#a239ee2fef128c26fdc70926af40b8831">I2C_write_byte</a> (<a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *i2c_handler, uint8_t slave_addr, uint8_t data)</td></tr>
+<tr class="memdesc:a239ee2fef128c26fdc70926af40b8831"><td class="mdescLeft">&#160;</td><td class="mdescRight">write 1 byte to the given slave address  <a href="#a239ee2fef128c26fdc70926af40b8831">More...</a><br /></td></tr>
 <tr class="separator:a239ee2fef128c26fdc70926af40b8831"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fdfce2ee87545c93df820fafd913370"><td class="memItemLeft" align="right" valign="top"><a id="a6fdfce2ee87545c93df820fafd913370"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>I2C_read_byte</b> (i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint8_t *data)</td></tr>
+<tr class="memitem:a6fdfce2ee87545c93df820fafd913370"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="myI2C_8c.html#a6fdfce2ee87545c93df820fafd913370">I2C_read_byte</a> (<a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint8_t *data)</td></tr>
+<tr class="memdesc:a6fdfce2ee87545c93df820fafd913370"><td class="mdescLeft">&#160;</td><td class="mdescRight">read 1 byte from the slave from the particular register  <a href="#a6fdfce2ee87545c93df820fafd913370">More...</a><br /></td></tr>
 <tr class="separator:a6fdfce2ee87545c93df820fafd913370"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d22d3baf97a7fbff1036bee6c34b64e"><td class="memItemLeft" align="right" valign="top"><a id="a5d22d3baf97a7fbff1036bee6c34b64e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>I2C_read_bytes</b> (i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint8_t *data, size_t length)</td></tr>
+<tr class="memitem:a5d22d3baf97a7fbff1036bee6c34b64e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="myI2C_8c.html#a5d22d3baf97a7fbff1036bee6c34b64e">I2C_read_bytes</a> (<a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint8_t *data, size_t length)</td></tr>
+<tr class="memdesc:a5d22d3baf97a7fbff1036bee6c34b64e"><td class="mdescLeft">&#160;</td><td class="mdescRight">read multiple bytes from the command register of the slave into data  <a href="#a5d22d3baf97a7fbff1036bee6c34b64e">More...</a><br /></td></tr>
 <tr class="separator:a5d22d3baf97a7fbff1036bee6c34b64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a951696b402a493dde4120b49a709a9fe"><td class="memItemLeft" align="right" valign="top"><a id="a951696b402a493dde4120b49a709a9fe"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>I2C_write_byte_data</b> (i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint8_t data)</td></tr>
+<tr class="memitem:a951696b402a493dde4120b49a709a9fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="myI2C_8c.html#a951696b402a493dde4120b49a709a9fe">I2C_write_byte_data</a> (<a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint8_t data)</td></tr>
+<tr class="memdesc:a951696b402a493dde4120b49a709a9fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">write 1 byte data  <a href="#a951696b402a493dde4120b49a709a9fe">More...</a><br /></td></tr>
 <tr class="separator:a951696b402a493dde4120b49a709a9fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad25819b7ac00db28d3f446105592306f"><td class="memItemLeft" align="right" valign="top"><a id="ad25819b7ac00db28d3f446105592306f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>I2C_write_word</b> (i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint16_t data)</td></tr>
+<tr class="memitem:ad25819b7ac00db28d3f446105592306f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="myI2C_8c.html#ad25819b7ac00db28d3f446105592306f">I2C_write_word</a> (<a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint16_t data)</td></tr>
+<tr class="memdesc:ad25819b7ac00db28d3f446105592306f"><td class="mdescLeft">&#160;</td><td class="mdescRight">write 2 bytes MSB first then lsb into the command register of the slave addr  <a href="#ad25819b7ac00db28d3f446105592306f">More...</a><br /></td></tr>
 <tr class="separator:ad25819b7ac00db28d3f446105592306f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -137,7 +137,388 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>I2C_write_word</b> (i2
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="myI2C_8c_source.html">myI2C.c</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="ae8decee1cd7906785e6ce389d71e14c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8decee1cd7906785e6ce389d71e14c0">&#9670;&nbsp;</a></span>I2C_close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int I2C_close </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *&#160;</td>
+          <td class="paramname"><em>i2c_handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>close i2c context </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i2c_handler</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="myI2C_8c_source.html#l00031">31</a> of file <a class="el" href="myI2C_8c_source.html">myI2C.c</a>.</p>
+
+</div>
+</div>
+<a id="a0799af3d3a75e0597b805dedfecc9d07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0799af3d3a75e0597b805dedfecc9d07">&#9670;&nbsp;</a></span>I2C_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int I2C_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *&#160;</td>
+          <td class="paramname"><em>i2c_handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise i2c context, passing in the i2c bus to use. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i2c_handler</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="myI2C_8c_source.html#l00018">18</a> of file <a class="el" href="myI2C_8c_source.html">myI2C.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bist_8c_source.html#l00062">Test_I2C()</a>.</p>
+
+</div>
+</div>
+<a id="a6fdfce2ee87545c93df820fafd913370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fdfce2ee87545c93df820fafd913370">&#9670;&nbsp;</a></span>I2C_read_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int I2C_read_byte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *&#160;</td>
+          <td class="paramname"><em>i2c_handler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>slave_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>command_reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>read 1 byte from the slave from the particular register </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i2c_handler</td><td></td></tr>
+    <tr><td class="paramname">slave_addr</td><td></td></tr>
+    <tr><td class="paramname">command_reg</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="myI2C_8c_source.html#l00069">69</a> of file <a class="el" href="myI2C_8c_source.html">myI2C.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="lightSensor_8c_source.html#l00122">APDS9301_CheckInt()</a>, <a class="el" href="lightSensor_8c_source.html#l00016">APDS9301_getCh0()</a>, <a class="el" href="lightSensor_8c_source.html#l00032">APDS9301_getCh1()</a>, <a class="el" href="lightSensor_8c_source.html#l00243">APDS9301_interruptCTRLreg()</a>, <a class="el" href="lightSensor_8c_source.html#l00165">APDS9301_readCTRLreg()</a>, <a class="el" href="lightSensor_8c_source.html#l00143">APDS9301_readIDreg()</a>, <a class="el" href="lightSensor_8c_source.html#l00305">APDS9301_readTHRESH_highhigh()</a>, <a class="el" href="lightSensor_8c_source.html#l00295">APDS9301_readTHRESH_highlow()</a>, <a class="el" href="lightSensor_8c_source.html#l00315">APDS9301_readTHRESH_lowhigh()</a>, <a class="el" href="lightSensor_8c_source.html#l00277">APDS9301_readTHRESH_lowlow()</a>, <a class="el" href="lightSensor_8c_source.html#l00176">APDS9301_setTiming_gain()</a>, and <a class="el" href="lightSensor_8c_source.html#l00205">APDS9301_setTiming_integ()</a>.</p>
+
+</div>
+</div>
+<a id="a5d22d3baf97a7fbff1036bee6c34b64e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d22d3baf97a7fbff1036bee6c34b64e">&#9670;&nbsp;</a></span>I2C_read_bytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int I2C_read_bytes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *&#160;</td>
+          <td class="paramname"><em>i2c_handler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>slave_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>command_reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>read multiple bytes from the command register of the slave into data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i2c_handler</td><td></td></tr>
+    <tr><td class="paramname">slave_addr</td><td></td></tr>
+    <tr><td class="paramname">command_reg</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramname">length</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="myI2C_8c_source.html#l00088">88</a> of file <a class="el" href="myI2C_8c_source.html">myI2C.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="tempSensor_8c_source.html#l00215">TMP102_getFaultbits()</a>, <a class="el" href="tempSensor_8c_source.html#l00018">TMP102_getTemperature()</a>, <a class="el" href="tempSensor_8c_source.html#l00324">TMP102_readAL()</a>, <a class="el" href="tempSensor_8c_source.html#l00130">TMP102_readReg()</a>, <a class="el" href="tempSensor_8c_source.html#l00287">TMP102_setCR()</a>, <a class="el" href="tempSensor_8c_source.html#l00262">TMP102_setEM()</a>, <a class="el" href="tempSensor_8c_source.html#l00227">TMP102_setFaultbits()</a>, <a class="el" href="tempSensor_8c_source.html#l00177">TMP102_setResolution()</a>, and <a class="el" href="tempSensor_8c_source.html#l00150">TMP102_setShutdownMode()</a>.</p>
+
+</div>
+</div>
+<a id="a0b94ae8a4cd4577a177959a15fe7a837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b94ae8a4cd4577a177959a15fe7a837">&#9670;&nbsp;</a></span>I2C_set_slave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int I2C_set_slave </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *&#160;</td>
+          <td class="paramname"><em>i2c_handler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>slave_addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set slave address for i2c read and write </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i2c_handler</td><td></td></tr>
+    <tr><td class="paramname">slave_addr</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="myI2C_8c_source.html#l00043">43</a> of file <a class="el" href="myI2C_8c_source.html">myI2C.c</a>.</p>
+
+</div>
+</div>
+<a id="a239ee2fef128c26fdc70926af40b8831"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a239ee2fef128c26fdc70926af40b8831">&#9670;&nbsp;</a></span>I2C_write_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int I2C_write_byte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *&#160;</td>
+          <td class="paramname"><em>i2c_handler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>slave_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>write 1 byte to the given slave address </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i2c_handler</td><td></td></tr>
+    <tr><td class="paramname">slave_addr</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="myI2C_8c_source.html#l00054">54</a> of file <a class="el" href="myI2C_8c_source.html">myI2C.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="lightSensor_8c_source.html#l00111">APDS9301_intClear()</a>, and <a class="el" href="tempSensor_8c_source.html#l00140">TMP102_writePTRreg()</a>.</p>
+
+</div>
+</div>
+<a id="a951696b402a493dde4120b49a709a9fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a951696b402a493dde4120b49a709a9fe">&#9670;&nbsp;</a></span>I2C_write_byte_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int I2C_write_byte_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *&#160;</td>
+          <td class="paramname"><em>i2c_handler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>slave_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>command_reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>write 1 byte data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i2c_handler</td><td></td></tr>
+    <tr><td class="paramname">slave_addr</td><td></td></tr>
+    <tr><td class="paramname">command_reg</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="myI2C_8c_source.html#l00109">109</a> of file <a class="el" href="myI2C_8c_source.html">myI2C.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="lightSensor_8c_source.html#l00093">APDS9301_powerup()</a>, and <a class="el" href="lightSensor_8c_source.html#l00154">APDS9301_writeCMDreg()</a>.</p>
+
+</div>
+</div>
+<a id="ad25819b7ac00db28d3f446105592306f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad25819b7ac00db28d3f446105592306f">&#9670;&nbsp;</a></span>I2C_write_word()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int I2C_write_word </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structi2c__struct__t.html">i2c_struct_t</a> *&#160;</td>
+          <td class="paramname"><em>i2c_handler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>slave_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>command_reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>write 2 bytes MSB first then lsb into the command register of the slave addr </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i2c_handler</td><td></td></tr>
+    <tr><td class="paramname">slave_addr</td><td></td></tr>
+    <tr><td class="paramname">command_reg</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="myI2C_8c_source.html#l00125">125</a> of file <a class="el" href="myI2C_8c_source.html">myI2C.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="lightSensor_8c_source.html#l00286">APDS9301_writeTHRESH_highlow()</a>, and <a class="el" href="lightSensor_8c_source.html#l00268">APDS9301_writeTHRESH_lowlow()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

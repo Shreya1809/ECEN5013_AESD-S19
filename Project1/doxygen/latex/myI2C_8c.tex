@@ -14,30 +14,22 @@ Include dependency graph for my\+I2\+C.\+c\+:
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{myI2C_8c_a0799af3d3a75e0597b805dedfecc9d07}\label{myI2C_8c_a0799af3d3a75e0597b805dedfecc9d07}} 
-int {\bfseries I2\+C\+\_\+init} (i2c\+\_\+struct\+\_\+t $\ast$i2c\+\_\+handler)
-\item 
-\mbox{\Hypertarget{myI2C_8c_ae8decee1cd7906785e6ce389d71e14c0}\label{myI2C_8c_ae8decee1cd7906785e6ce389d71e14c0}} 
-int {\bfseries I2\+C\+\_\+close} (i2c\+\_\+struct\+\_\+t $\ast$i2c\+\_\+handler)
-\item 
-\mbox{\Hypertarget{myI2C_8c_a0b94ae8a4cd4577a177959a15fe7a837}\label{myI2C_8c_a0b94ae8a4cd4577a177959a15fe7a837}} 
-int {\bfseries I2\+C\+\_\+set\+\_\+slave} (i2c\+\_\+struct\+\_\+t $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr)
-\item 
-\mbox{\Hypertarget{myI2C_8c_a239ee2fef128c26fdc70926af40b8831}\label{myI2C_8c_a239ee2fef128c26fdc70926af40b8831}} 
-int {\bfseries I2\+C\+\_\+write\+\_\+byte} (i2c\+\_\+struct\+\_\+t $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t data)
-\item 
-\mbox{\Hypertarget{myI2C_8c_a6fdfce2ee87545c93df820fafd913370}\label{myI2C_8c_a6fdfce2ee87545c93df820fafd913370}} 
-int {\bfseries I2\+C\+\_\+read\+\_\+byte} (i2c\+\_\+struct\+\_\+t $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t command\+\_\+reg, uint8\+\_\+t $\ast$data)
-\item 
-\mbox{\Hypertarget{myI2C_8c_a5d22d3baf97a7fbff1036bee6c34b64e}\label{myI2C_8c_a5d22d3baf97a7fbff1036bee6c34b64e}} 
-int {\bfseries I2\+C\+\_\+read\+\_\+bytes} (i2c\+\_\+struct\+\_\+t $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t command\+\_\+reg, uint8\+\_\+t $\ast$data, size\+\_\+t length)
-\item 
-\mbox{\Hypertarget{myI2C_8c_a951696b402a493dde4120b49a709a9fe}\label{myI2C_8c_a951696b402a493dde4120b49a709a9fe}} 
-int {\bfseries I2\+C\+\_\+write\+\_\+byte\+\_\+data} (i2c\+\_\+struct\+\_\+t $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t command\+\_\+reg, uint8\+\_\+t data)
-\item 
-\mbox{\Hypertarget{myI2C_8c_ad25819b7ac00db28d3f446105592306f}\label{myI2C_8c_ad25819b7ac00db28d3f446105592306f}} 
-int {\bfseries I2\+C\+\_\+write\+\_\+word} (i2c\+\_\+struct\+\_\+t $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t command\+\_\+reg, uint16\+\_\+t data)
-\end{DoxyCompactItemize}
+int \hyperlink{myI2C_8c_a0799af3d3a75e0597b805dedfecc9d07}{I2\+C\+\_\+init} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler)
+\begin{DoxyCompactList}\small\item\em Initialise i2c context, passing in the i2c bus to use. \end{DoxyCompactList}\item 
+int \hyperlink{myI2C_8c_ae8decee1cd7906785e6ce389d71e14c0}{I2\+C\+\_\+close} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler)
+\begin{DoxyCompactList}\small\item\em close i2c context \end{DoxyCompactList}\item 
+int \hyperlink{myI2C_8c_a0b94ae8a4cd4577a177959a15fe7a837}{I2\+C\+\_\+set\+\_\+slave} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em set slave address for i2c read and write \end{DoxyCompactList}\item 
+int \hyperlink{myI2C_8c_a239ee2fef128c26fdc70926af40b8831}{I2\+C\+\_\+write\+\_\+byte} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em write 1 byte to the given slave address \end{DoxyCompactList}\item 
+int \hyperlink{myI2C_8c_a6fdfce2ee87545c93df820fafd913370}{I2\+C\+\_\+read\+\_\+byte} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t command\+\_\+reg, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em read 1 byte from the slave from the particular register \end{DoxyCompactList}\item 
+int \hyperlink{myI2C_8c_a5d22d3baf97a7fbff1036bee6c34b64e}{I2\+C\+\_\+read\+\_\+bytes} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t command\+\_\+reg, uint8\+\_\+t $\ast$data, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em read multiple bytes from the command register of the slave into data \end{DoxyCompactList}\item 
+int \hyperlink{myI2C_8c_a951696b402a493dde4120b49a709a9fe}{I2\+C\+\_\+write\+\_\+byte\+\_\+data} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t command\+\_\+reg, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em write 1 byte data \end{DoxyCompactList}\item 
+int \hyperlink{myI2C_8c_ad25819b7ac00db28d3f446105592306f}{I2\+C\+\_\+write\+\_\+word} (\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$i2c\+\_\+handler, uint8\+\_\+t slave\+\_\+addr, uint8\+\_\+t command\+\_\+reg, uint16\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em write 2 bytes M\+SB first then lsb into the command register of the slave addr \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -55,3 +47,238 @@ Shreya Chakraborty
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2019 
 \end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{myI2C_8c_ae8decee1cd7906785e6ce389d71e14c0}\label{myI2C_8c_ae8decee1cd7906785e6ce389d71e14c0}} 
+\index{my\+I2\+C.\+c@{my\+I2\+C.\+c}!I2\+C\+\_\+close@{I2\+C\+\_\+close}}
+\index{I2\+C\+\_\+close@{I2\+C\+\_\+close}!my\+I2\+C.\+c@{my\+I2\+C.\+c}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+close()}{I2C\_close()}}
+{\footnotesize\ttfamily int I2\+C\+\_\+close (\begin{DoxyParamCaption}\item[{\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$}]{i2c\+\_\+handler }\end{DoxyParamCaption})}
+
+
+
+close i2c context 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+handler} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 31 of file my\+I2\+C.\+c.
+
+\mbox{\Hypertarget{myI2C_8c_a0799af3d3a75e0597b805dedfecc9d07}\label{myI2C_8c_a0799af3d3a75e0597b805dedfecc9d07}} 
+\index{my\+I2\+C.\+c@{my\+I2\+C.\+c}!I2\+C\+\_\+init@{I2\+C\+\_\+init}}
+\index{I2\+C\+\_\+init@{I2\+C\+\_\+init}!my\+I2\+C.\+c@{my\+I2\+C.\+c}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+init()}{I2C\_init()}}
+{\footnotesize\ttfamily int I2\+C\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$}]{i2c\+\_\+handler }\end{DoxyParamCaption})}
+
+
+
+Initialise i2c context, passing in the i2c bus to use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+handler} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 18 of file my\+I2\+C.\+c.
+
+
+
+Referenced by Test\+\_\+\+I2\+C().
+
+\mbox{\Hypertarget{myI2C_8c_a6fdfce2ee87545c93df820fafd913370}\label{myI2C_8c_a6fdfce2ee87545c93df820fafd913370}} 
+\index{my\+I2\+C.\+c@{my\+I2\+C.\+c}!I2\+C\+\_\+read\+\_\+byte@{I2\+C\+\_\+read\+\_\+byte}}
+\index{I2\+C\+\_\+read\+\_\+byte@{I2\+C\+\_\+read\+\_\+byte}!my\+I2\+C.\+c@{my\+I2\+C.\+c}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+read\+\_\+byte()}{I2C\_read\_byte()}}
+{\footnotesize\ttfamily int I2\+C\+\_\+read\+\_\+byte (\begin{DoxyParamCaption}\item[{\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$}]{i2c\+\_\+handler,  }\item[{uint8\+\_\+t}]{slave\+\_\+addr,  }\item[{uint8\+\_\+t}]{command\+\_\+reg,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+read 1 byte from the slave from the particular register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+handler} & \\
+\hline
+{\em slave\+\_\+addr} & \\
+\hline
+{\em command\+\_\+reg} & \\
+\hline
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 69 of file my\+I2\+C.\+c.
+
+
+
+Referenced by A\+P\+D\+S9301\+\_\+\+Check\+Int(), A\+P\+D\+S9301\+\_\+get\+Ch0(), A\+P\+D\+S9301\+\_\+get\+Ch1(), A\+P\+D\+S9301\+\_\+interrupt\+C\+T\+R\+Lreg(), A\+P\+D\+S9301\+\_\+read\+C\+T\+R\+Lreg(), A\+P\+D\+S9301\+\_\+read\+I\+Dreg(), A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highhigh(), A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+highlow(), A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowhigh(), A\+P\+D\+S9301\+\_\+read\+T\+H\+R\+E\+S\+H\+\_\+lowlow(), A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+gain(), and A\+P\+D\+S9301\+\_\+set\+Timing\+\_\+integ().
+
+\mbox{\Hypertarget{myI2C_8c_a5d22d3baf97a7fbff1036bee6c34b64e}\label{myI2C_8c_a5d22d3baf97a7fbff1036bee6c34b64e}} 
+\index{my\+I2\+C.\+c@{my\+I2\+C.\+c}!I2\+C\+\_\+read\+\_\+bytes@{I2\+C\+\_\+read\+\_\+bytes}}
+\index{I2\+C\+\_\+read\+\_\+bytes@{I2\+C\+\_\+read\+\_\+bytes}!my\+I2\+C.\+c@{my\+I2\+C.\+c}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+read\+\_\+bytes()}{I2C\_read\_bytes()}}
+{\footnotesize\ttfamily int I2\+C\+\_\+read\+\_\+bytes (\begin{DoxyParamCaption}\item[{\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$}]{i2c\+\_\+handler,  }\item[{uint8\+\_\+t}]{slave\+\_\+addr,  }\item[{uint8\+\_\+t}]{command\+\_\+reg,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+read multiple bytes from the command register of the slave into data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+handler} & \\
+\hline
+{\em slave\+\_\+addr} & \\
+\hline
+{\em command\+\_\+reg} & \\
+\hline
+{\em data} & \\
+\hline
+{\em length} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 88 of file my\+I2\+C.\+c.
+
+
+
+Referenced by T\+M\+P102\+\_\+get\+Faultbits(), T\+M\+P102\+\_\+get\+Temperature(), T\+M\+P102\+\_\+read\+A\+L(), T\+M\+P102\+\_\+read\+Reg(), T\+M\+P102\+\_\+set\+C\+R(), T\+M\+P102\+\_\+set\+E\+M(), T\+M\+P102\+\_\+set\+Faultbits(), T\+M\+P102\+\_\+set\+Resolution(), and T\+M\+P102\+\_\+set\+Shutdown\+Mode().
+
+\mbox{\Hypertarget{myI2C_8c_a0b94ae8a4cd4577a177959a15fe7a837}\label{myI2C_8c_a0b94ae8a4cd4577a177959a15fe7a837}} 
+\index{my\+I2\+C.\+c@{my\+I2\+C.\+c}!I2\+C\+\_\+set\+\_\+slave@{I2\+C\+\_\+set\+\_\+slave}}
+\index{I2\+C\+\_\+set\+\_\+slave@{I2\+C\+\_\+set\+\_\+slave}!my\+I2\+C.\+c@{my\+I2\+C.\+c}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+set\+\_\+slave()}{I2C\_set\_slave()}}
+{\footnotesize\ttfamily int I2\+C\+\_\+set\+\_\+slave (\begin{DoxyParamCaption}\item[{\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$}]{i2c\+\_\+handler,  }\item[{uint8\+\_\+t}]{slave\+\_\+addr }\end{DoxyParamCaption})}
+
+
+
+set slave address for i2c read and write 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+handler} & \\
+\hline
+{\em slave\+\_\+addr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file my\+I2\+C.\+c.
+
+\mbox{\Hypertarget{myI2C_8c_a239ee2fef128c26fdc70926af40b8831}\label{myI2C_8c_a239ee2fef128c26fdc70926af40b8831}} 
+\index{my\+I2\+C.\+c@{my\+I2\+C.\+c}!I2\+C\+\_\+write\+\_\+byte@{I2\+C\+\_\+write\+\_\+byte}}
+\index{I2\+C\+\_\+write\+\_\+byte@{I2\+C\+\_\+write\+\_\+byte}!my\+I2\+C.\+c@{my\+I2\+C.\+c}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+write\+\_\+byte()}{I2C\_write\_byte()}}
+{\footnotesize\ttfamily int I2\+C\+\_\+write\+\_\+byte (\begin{DoxyParamCaption}\item[{\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$}]{i2c\+\_\+handler,  }\item[{uint8\+\_\+t}]{slave\+\_\+addr,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+write 1 byte to the given slave address 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+handler} & \\
+\hline
+{\em slave\+\_\+addr} & \\
+\hline
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file my\+I2\+C.\+c.
+
+
+
+Referenced by A\+P\+D\+S9301\+\_\+int\+Clear(), and T\+M\+P102\+\_\+write\+P\+T\+Rreg().
+
+\mbox{\Hypertarget{myI2C_8c_a951696b402a493dde4120b49a709a9fe}\label{myI2C_8c_a951696b402a493dde4120b49a709a9fe}} 
+\index{my\+I2\+C.\+c@{my\+I2\+C.\+c}!I2\+C\+\_\+write\+\_\+byte\+\_\+data@{I2\+C\+\_\+write\+\_\+byte\+\_\+data}}
+\index{I2\+C\+\_\+write\+\_\+byte\+\_\+data@{I2\+C\+\_\+write\+\_\+byte\+\_\+data}!my\+I2\+C.\+c@{my\+I2\+C.\+c}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+write\+\_\+byte\+\_\+data()}{I2C\_write\_byte\_data()}}
+{\footnotesize\ttfamily int I2\+C\+\_\+write\+\_\+byte\+\_\+data (\begin{DoxyParamCaption}\item[{\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$}]{i2c\+\_\+handler,  }\item[{uint8\+\_\+t}]{slave\+\_\+addr,  }\item[{uint8\+\_\+t}]{command\+\_\+reg,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+write 1 byte data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+handler} & \\
+\hline
+{\em slave\+\_\+addr} & \\
+\hline
+{\em command\+\_\+reg} & \\
+\hline
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file my\+I2\+C.\+c.
+
+
+
+Referenced by A\+P\+D\+S9301\+\_\+powerup(), and A\+P\+D\+S9301\+\_\+write\+C\+M\+Dreg().
+
+\mbox{\Hypertarget{myI2C_8c_ad25819b7ac00db28d3f446105592306f}\label{myI2C_8c_ad25819b7ac00db28d3f446105592306f}} 
+\index{my\+I2\+C.\+c@{my\+I2\+C.\+c}!I2\+C\+\_\+write\+\_\+word@{I2\+C\+\_\+write\+\_\+word}}
+\index{I2\+C\+\_\+write\+\_\+word@{I2\+C\+\_\+write\+\_\+word}!my\+I2\+C.\+c@{my\+I2\+C.\+c}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+write\+\_\+word()}{I2C\_write\_word()}}
+{\footnotesize\ttfamily int I2\+C\+\_\+write\+\_\+word (\begin{DoxyParamCaption}\item[{\hyperlink{structi2c__struct__t}{i2c\+\_\+struct\+\_\+t} $\ast$}]{i2c\+\_\+handler,  }\item[{uint8\+\_\+t}]{slave\+\_\+addr,  }\item[{uint8\+\_\+t}]{command\+\_\+reg,  }\item[{uint16\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+write 2 bytes M\+SB first then lsb into the command register of the slave addr 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+handler} & \\
+\hline
+{\em slave\+\_\+addr} & \\
+\hline
+{\em command\+\_\+reg} & \\
+\hline
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 125 of file my\+I2\+C.\+c.
+
+
+
+Referenced by A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+highlow(), and A\+P\+D\+S9301\+\_\+write\+T\+H\+R\+E\+S\+H\+\_\+lowlow().
+

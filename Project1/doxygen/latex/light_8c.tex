@@ -31,29 +31,24 @@ Include dependency graph for light.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{light_8c_a0e3e495354294ac06a133bb42a58ded4}\label{light_8c_a0e3e495354294ac06a133bb42a58ded4}} 
-mraa\+\_\+gpio\+\_\+context {\bfseries A\+P\+D\+S9301\+\_\+\+Int\+Pin\+Setup} (int mraa\+Pin\+Number)
-\item 
+mraa\+\_\+gpio\+\_\+context \hyperlink{light_8c_a0e3e495354294ac06a133bb42a58ded4}{A\+P\+D\+S9301\+\_\+\+Int\+Pin\+Setup} (int mraa\+Pin\+Number)
+\begin{DoxyCompactList}\small\item\em pin setup using gpio mraa library \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{light_8c_aca3a464b8b7ae0f4efd5b917a07c32ea}\label{light_8c_aca3a464b8b7ae0f4efd5b917a07c32ea}} 
 int {\bfseries A\+P\+D\+S9301\+\_\+\+Int\+Pin\+Close} (mraa\+\_\+gpio\+\_\+context light\+Sensor\+Int\+Pin)
 \item 
-\mbox{\Hypertarget{light_8c_a21ebdd5fb32c58d52dcfe7f4f08445a5}\label{light_8c_a21ebdd5fb32c58d52dcfe7f4f08445a5}} 
-int {\bfseries A\+P\+D\+S9301\+\_\+check\+I\+N\+T\+P\+IN} (mraa\+\_\+gpio\+\_\+context light\+Sensor\+Int\+Pin)
-\item 
+int \hyperlink{light_8c_a21ebdd5fb32c58d52dcfe7f4f08445a5}{A\+P\+D\+S9301\+\_\+check\+I\+N\+T\+P\+IN} (mraa\+\_\+gpio\+\_\+context light\+Sensor\+Int\+Pin)
+\begin{DoxyCompactList}\small\item\em checks the I\+NT pin on the A\+P\+D\+S9301 sensor \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{light_8c_ae78695364002a2e4266e084ff7a2a495}\label{light_8c_ae78695364002a2e4266e084ff7a2a495}} 
-void {\bfseries kill\+\_\+light\+\_\+thread} (void)
-\item 
-\mbox{\Hypertarget{light_8c_ae749a64e92542af9fe593d9018d64260}\label{light_8c_ae749a64e92542af9fe593d9018d64260}} 
-float {\bfseries get\+Light} (void)
-\item 
-\mbox{\Hypertarget{light_8c_a64fb9b6e666ca43b918e316190751c6c}\label{light_8c_a64fb9b6e666ca43b918e316190751c6c}} 
-int {\bfseries Remote\+Threshold\+Valueslight} (uint16\+\_\+t llow, uint16\+\_\+t lhigh)
-\item 
-\mbox{\Hypertarget{light_8c_a111c84e6b2e3a3968a18e4fbd488327f}\label{light_8c_a111c84e6b2e3a3968a18e4fbd488327f}} 
-int {\bfseries A\+P\+D\+S9301\+\_\+set\+Light\+Threshold} (uint16\+\_\+t l\+\_\+low, uint16\+\_\+t l\+\_\+high)
-\item 
-\mbox{\Hypertarget{light_8c_a173216ebf6f0d4106908c21fcdcddfbf}\label{light_8c_a173216ebf6f0d4106908c21fcdcddfbf}} 
-void $\ast$ {\bfseries light\+\_\+task} (void $\ast$threadp)
-\end{DoxyCompactItemize}
+void \hyperlink{light_8c_ae78695364002a2e4266e084ff7a2a495}{kill\+\_\+light\+\_\+thread} (void)
+\begin{DoxyCompactList}\small\item\em to kill light thread sets the stop thread flag \end{DoxyCompactList}\item 
+float \hyperlink{light_8c_ae749a64e92542af9fe593d9018d64260}{get\+Light} (void)
+\begin{DoxyCompactList}\small\item\em Get the Light object. \end{DoxyCompactList}\item 
+int \hyperlink{light_8c_a64fb9b6e666ca43b918e316190751c6c}{Remote\+Threshold\+Valueslight} (uint16\+\_\+t llow, uint16\+\_\+t lhigh)
+\begin{DoxyCompactList}\small\item\em gets the streshold values from the remote client and changes the default values \end{DoxyCompactList}\item 
+int \hyperlink{light_8c_a111c84e6b2e3a3968a18e4fbd488327f}{A\+P\+D\+S9301\+\_\+set\+Light\+Threshold} (uint16\+\_\+t l\+\_\+low, uint16\+\_\+t l\+\_\+high)
+\begin{DoxyCompactList}\small\item\em sets the threshold values for the light sensor \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{light_8c_a173216ebf6f0d4106908c21fcdcddfbf}{light\+\_\+task} (void $\ast$threadp)
+\begin{DoxyCompactList}\small\item\em Call back for light task from main thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -80,3 +75,115 @@ Shreya C\+Hakraborty
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2019 
 \end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{light_8c_a21ebdd5fb32c58d52dcfe7f4f08445a5}\label{light_8c_a21ebdd5fb32c58d52dcfe7f4f08445a5}} 
+\index{light.\+c@{light.\+c}!A\+P\+D\+S9301\+\_\+check\+I\+N\+T\+P\+IN@{A\+P\+D\+S9301\+\_\+check\+I\+N\+T\+P\+IN}}
+\index{A\+P\+D\+S9301\+\_\+check\+I\+N\+T\+P\+IN@{A\+P\+D\+S9301\+\_\+check\+I\+N\+T\+P\+IN}!light.\+c@{light.\+c}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+check\+I\+N\+T\+P\+I\+N()}{APDS9301\_checkINTPIN()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+check\+I\+N\+T\+P\+IN (\begin{DoxyParamCaption}\item[{mraa\+\_\+gpio\+\_\+context}]{light\+Sensor\+Int\+Pin }\end{DoxyParamCaption})}
+
+
+
+checks the I\+NT pin on the A\+P\+D\+S9301 sensor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em light\+Sensor\+Int\+Pin} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 129 of file light.\+c.
+
+\mbox{\Hypertarget{light_8c_a111c84e6b2e3a3968a18e4fbd488327f}\label{light_8c_a111c84e6b2e3a3968a18e4fbd488327f}} 
+\index{light.\+c@{light.\+c}!A\+P\+D\+S9301\+\_\+set\+Light\+Threshold@{A\+P\+D\+S9301\+\_\+set\+Light\+Threshold}}
+\index{A\+P\+D\+S9301\+\_\+set\+Light\+Threshold@{A\+P\+D\+S9301\+\_\+set\+Light\+Threshold}!light.\+c@{light.\+c}}
+\subsubsection{\texorpdfstring{A\+P\+D\+S9301\+\_\+set\+Light\+Threshold()}{APDS9301\_setLightThreshold()}}
+{\footnotesize\ttfamily int A\+P\+D\+S9301\+\_\+set\+Light\+Threshold (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{l\+\_\+low,  }\item[{uint16\+\_\+t}]{l\+\_\+high }\end{DoxyParamCaption})}
+
+
+
+sets the threshold values for the light sensor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l\+\_\+low} & \\
+\hline
+{\em l\+\_\+high} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 168 of file light.\+c.
+
+\mbox{\Hypertarget{light_8c_ae749a64e92542af9fe593d9018d64260}\label{light_8c_ae749a64e92542af9fe593d9018d64260}} 
+\index{light.\+c@{light.\+c}!get\+Light@{get\+Light}}
+\index{get\+Light@{get\+Light}!light.\+c@{light.\+c}}
+\subsubsection{\texorpdfstring{get\+Light()}{getLight()}}
+{\footnotesize\ttfamily float get\+Light (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the Light object. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Definition at line 147 of file light.\+c.
+
+\mbox{\Hypertarget{light_8c_a173216ebf6f0d4106908c21fcdcddfbf}\label{light_8c_a173216ebf6f0d4106908c21fcdcddfbf}} 
+\index{light.\+c@{light.\+c}!light\+\_\+task@{light\+\_\+task}}
+\index{light\+\_\+task@{light\+\_\+task}!light.\+c@{light.\+c}}
+\subsubsection{\texorpdfstring{light\+\_\+task()}{light\_task()}}
+{\footnotesize\ttfamily void$\ast$ light\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{threadp }\end{DoxyParamCaption})}
+
+
+
+Call back for light task from main thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threadp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 185 of file light.\+c.
+
+\mbox{\Hypertarget{light_8c_a64fb9b6e666ca43b918e316190751c6c}\label{light_8c_a64fb9b6e666ca43b918e316190751c6c}} 
+\index{light.\+c@{light.\+c}!Remote\+Threshold\+Valueslight@{Remote\+Threshold\+Valueslight}}
+\index{Remote\+Threshold\+Valueslight@{Remote\+Threshold\+Valueslight}!light.\+c@{light.\+c}}
+\subsubsection{\texorpdfstring{Remote\+Threshold\+Valueslight()}{RemoteThresholdValueslight()}}
+{\footnotesize\ttfamily int Remote\+Threshold\+Valueslight (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{llow,  }\item[{uint16\+\_\+t}]{lhigh }\end{DoxyParamCaption})}
+
+
+
+gets the streshold values from the remote client and changes the default values 
+
+
+\begin{DoxyParams}{Parameters}
+{\em llow} & \\
+\hline
+{\em lhigh} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 158 of file light.\+c.
+

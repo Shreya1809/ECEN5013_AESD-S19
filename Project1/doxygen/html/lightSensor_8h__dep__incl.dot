@@ -9,6 +9,4 @@ digraph "include/BeagleboneGreen/lightSensor.h"
   Node3 [label="src/light.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$light_8c.html",tooltip="Light task thread functionality. "];
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="src/lightSensor.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lightSensor_8c.html",tooltip="APDS9301 sensor register functions. "];
-  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="test/Light_TEST/test.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Light__TEST_2test_8c_source.html"];
 }

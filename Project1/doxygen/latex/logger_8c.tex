@@ -26,15 +26,13 @@ Include dependency graph for logger.\+c\+:
 \item 
 double \hyperlink{logger_8c_a2a8842755f14b8a2ba414132307a8c51}{get\+Time\+Msec} ()
 \begin{DoxyCompactList}\small\item\em Get the Time Msec object. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{logger_8c_a59bf591b758fe8741ffad898e91e748c}\label{logger_8c_a59bf591b758fe8741ffad898e91e748c}} 
-int {\bfseries L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE} (log\+\_\+level\+\_\+t level, module\+Id\+\_\+t mod\+Id, char $\ast$msg,...)
-\item 
-\mbox{\Hypertarget{logger_8c_adbbfebbf60efeb03c99c735f2343f26b}\label{logger_8c_adbbfebbf60efeb03c99c735f2343f26b}} 
-mqd\+\_\+t {\bfseries logger\+\_\+queue\+\_\+init} (void)
-\item 
+int \hyperlink{logger_8c_a59bf591b758fe8741ffad898e91e748c}{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE} (log\+\_\+level\+\_\+t level, module\+Id\+\_\+t mod\+Id, char $\ast$msg,...)
+\begin{DoxyCompactList}\small\item\em to put messages in the logger queue \end{DoxyCompactList}\item 
+mqd\+\_\+t \hyperlink{logger_8c_adbbfebbf60efeb03c99c735f2343f26b}{logger\+\_\+queue\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em queue initialisation \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{logger_8c_a3d3ce57d8ba16ca05ea10faa97811903}\label{logger_8c_a3d3ce57d8ba16ca05ea10faa97811903}} 
-void {\bfseries kill\+\_\+logger\+\_\+thread} (void)
-\item 
+void \hyperlink{logger_8c_a3d3ce57d8ba16ca05ea10faa97811903}{kill\+\_\+logger\+\_\+thread} (void)
+\begin{DoxyCompactList}\small\item\em to kill logger thread externally \end{DoxyCompactList}\item 
 void $\ast$ \hyperlink{logger_8c_afa7630a1e435cb94de8fb5c793bc864d}{logger\+\_\+task} (void $\ast$threadp)
 \begin{DoxyCompactList}\small\item\em call back function for the logger \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
@@ -95,7 +93,7 @@ Definition at line 58 of file logger.\+c.
 \index{logger.\+c@{logger.\+c}!get\+Time\+Msec@{get\+Time\+Msec}}
 \index{get\+Time\+Msec@{get\+Time\+Msec}!logger.\+c@{logger.\+c}}
 \subsubsection{\texorpdfstring{get\+Time\+Msec()}{getTimeMsec()}}
-{\footnotesize\ttfamily double get\+Time\+Msec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily double get\+Time\+Msec (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -108,6 +106,55 @@ double
 
 Definition at line 49 of file logger.\+c.
 
+\mbox{\Hypertarget{logger_8c_a59bf591b758fe8741ffad898e91e748c}\label{logger_8c_a59bf591b758fe8741ffad898e91e748c}} 
+\index{logger.\+c@{logger.\+c}!L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE@{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE}}
+\index{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE@{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE}!logger.\+c@{logger.\+c}}
+\subsubsection{\texorpdfstring{L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+U\+E()}{LOG\_ENQUEUE()}}
+{\footnotesize\ttfamily int L\+O\+G\+\_\+\+E\+N\+Q\+U\+E\+UE (\begin{DoxyParamCaption}\item[{log\+\_\+level\+\_\+t}]{level,  }\item[{module\+Id\+\_\+t}]{mod\+Id,  }\item[{char $\ast$}]{msg,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+to put messages in the logger queue 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & log level \\
+\hline
+{\em mod\+Id} & the task \\
+\hline
+{\em msg} & \\
+\hline
+{\em ...} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file logger.\+c.
+
+
+
+Referenced by Test\+\_\+logger\+Q().
+
+\mbox{\Hypertarget{logger_8c_adbbfebbf60efeb03c99c735f2343f26b}\label{logger_8c_adbbfebbf60efeb03c99c735f2343f26b}} 
+\index{logger.\+c@{logger.\+c}!logger\+\_\+queue\+\_\+init@{logger\+\_\+queue\+\_\+init}}
+\index{logger\+\_\+queue\+\_\+init@{logger\+\_\+queue\+\_\+init}!logger.\+c@{logger.\+c}}
+\subsubsection{\texorpdfstring{logger\+\_\+queue\+\_\+init()}{logger\_queue\_init()}}
+{\footnotesize\ttfamily mqd\+\_\+t logger\+\_\+queue\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+queue initialisation 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 97 of file logger.\+c.
+
 \mbox{\Hypertarget{logger_8c_afa7630a1e435cb94de8fb5c793bc864d}\label{logger_8c_afa7630a1e435cb94de8fb5c793bc864d}} 
 \index{logger.\+c@{logger.\+c}!logger\+\_\+task@{logger\+\_\+task}}
 \index{logger\+\_\+task@{logger\+\_\+task}!logger.\+c@{logger.\+c}}
@@ -117,6 +164,8 @@ Definition at line 49 of file logger.\+c.
 
 
 call back function for the logger 
+
+call back for logger task
 
 
 \begin{DoxyParams}{Parameters}

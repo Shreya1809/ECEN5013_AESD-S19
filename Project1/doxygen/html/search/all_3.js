@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['heartbeat_2ec',['heartbeat.c',['../heartbeat_8c.html',1,'']]]
+  ['dynamic_20memory_20allocation',['Dynamic Memory Allocation',['../group__cmocka__alloc.html',1,'']]],
+  ['deprecated_20list',['Deprecated List',['../deprecated.html',1,'']]]
 ];

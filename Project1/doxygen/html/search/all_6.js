@@ -1,8 +1,16 @@
 var searchData=
 [
-  ['main_2ec',['main.c',['../main_8c.html',1,'']]],
-  ['mallocblockinfo',['MallocBlockInfo',['../structMallocBlockInfo.html',1,'']]],
-  ['myi2c_2ec',['myI2C.c',['../myI2C_8c.html',1,'']]],
-  ['mysignal_2ec',['mysignal.c',['../mysignal_8c.html',1,'']]],
-  ['mytimer_2ec',['mytimer.c',['../mytimer_8c.html',1,'']]]
+  ['i2c_2ec',['i2c.c',['../i2c_8c.html',1,'']]],
+  ['i2c_5fclose',['I2C_close',['../myI2C_8c.html#ae8decee1cd7906785e6ce389d71e14c0',1,'I2C_close(i2c_struct_t *i2c_handler):&#160;myI2C.c'],['../myI2C_8h.html#ae8decee1cd7906785e6ce389d71e14c0',1,'I2C_close(i2c_struct_t *i2c_handler):&#160;myI2C.c']]],
+  ['i2c_5finit',['I2C_init',['../myI2C_8c.html#a0799af3d3a75e0597b805dedfecc9d07',1,'I2C_init(i2c_struct_t *i2c_handler):&#160;myI2C.c'],['../myI2C_8h.html#a0799af3d3a75e0597b805dedfecc9d07',1,'I2C_init(i2c_struct_t *i2c_handler):&#160;myI2C.c'],['../i2c_8c.html#a599b53a348ffd9b2298fcb561417add4',1,'i2c_init(void):&#160;i2c.c']]],
+  ['i2c_5fread',['i2c_read',['../i2c_8c.html#a19cacb29809aba49b97730bdfb7e51f8',1,'i2c.c']]],
+  ['i2c_5fread_5fbyte',['I2C_read_byte',['../myI2C_8c.html#a6fdfce2ee87545c93df820fafd913370',1,'I2C_read_byte(i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint8_t *data):&#160;myI2C.c'],['../myI2C_8h.html#a6fdfce2ee87545c93df820fafd913370',1,'I2C_read_byte(i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint8_t *data):&#160;myI2C.c']]],
+  ['i2c_5fread_5fbytes',['I2C_read_bytes',['../myI2C_8c.html#a5d22d3baf97a7fbff1036bee6c34b64e',1,'I2C_read_bytes(i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint8_t *data, size_t length):&#160;myI2C.c'],['../myI2C_8h.html#a5d22d3baf97a7fbff1036bee6c34b64e',1,'I2C_read_bytes(i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint8_t *data, size_t length):&#160;myI2C.c']]],
+  ['i2c_5fset_5fslave',['I2C_set_slave',['../myI2C_8c.html#a0b94ae8a4cd4577a177959a15fe7a837',1,'I2C_set_slave(i2c_struct_t *i2c_handler, uint8_t slave_addr):&#160;myI2C.c'],['../myI2C_8h.html#a0b94ae8a4cd4577a177959a15fe7a837',1,'I2C_set_slave(i2c_struct_t *i2c_handler, uint8_t slave_addr):&#160;myI2C.c']]],
+  ['i2c_5fstruct_5ft',['i2c_struct_t',['../structi2c__struct__t.html',1,'']]],
+  ['i2c_5fwrite',['i2c_write',['../i2c_8c.html#a7bbd744d0178497a7b4c74e5933c5a3a',1,'i2c.c']]],
+  ['i2c_5fwrite_5fbyte',['I2C_write_byte',['../myI2C_8c.html#a239ee2fef128c26fdc70926af40b8831',1,'I2C_write_byte(i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t data):&#160;myI2C.c'],['../myI2C_8h.html#a239ee2fef128c26fdc70926af40b8831',1,'I2C_write_byte(i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t data):&#160;myI2C.c']]],
+  ['i2c_5fwrite_5fbyte_5fdata',['I2C_write_byte_data',['../myI2C_8c.html#a951696b402a493dde4120b49a709a9fe',1,'I2C_write_byte_data(i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint8_t data):&#160;myI2C.c'],['../myI2C_8h.html#a951696b402a493dde4120b49a709a9fe',1,'I2C_write_byte_data(i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint8_t data):&#160;myI2C.c']]],
+  ['i2c_5fwrite_5fword',['I2C_write_word',['../myI2C_8c.html#ad25819b7ac00db28d3f446105592306f',1,'I2C_write_word(i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint16_t data):&#160;myI2C.c'],['../myI2C_8h.html#ad25819b7ac00db28d3f446105592306f',1,'I2C_write_word(i2c_struct_t *i2c_handler, uint8_t slave_addr, uint8_t command_reg, uint16_t data):&#160;myI2C.c']]],
+  ['includes_2eh',['includes.h',['../includes_8h.html',1,'']]]
 ];
