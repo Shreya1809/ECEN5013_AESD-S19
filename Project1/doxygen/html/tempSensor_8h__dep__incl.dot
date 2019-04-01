@@ -11,4 +11,6 @@ digraph "include/BeagleboneGreen/tempSensor.h"
   Node4 [label="src/temp.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$temp_8c.html",tooltip="Temperature task thread functionality. "];
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="src/tempSensor.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$tempSensor_8c.html",tooltip="TMP102 temperature register functions. "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="test/Temp_TEST/test.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Temp__TEST_2test_8c_source.html"];
 }
