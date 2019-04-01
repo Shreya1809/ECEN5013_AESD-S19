@@ -100,7 +100,7 @@ int TMP102_setTempThreshold(float tlow_val,float thigh_val)
     {
         GREENLEDOFF();
         REDLEDON();
-        LOG_WARN(TEMP_TASK,"Current Temperature has exceeded the upper threshold");
+        LOG_INFO(TEMP_TASK,"Current Temperature has exceeded the upper threshold");
     }
     else
     {
