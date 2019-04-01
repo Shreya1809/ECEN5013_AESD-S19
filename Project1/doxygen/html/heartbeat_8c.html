@@ -91,13 +91,13 @@ $(document).ready(function(){initNavTree('heartbeat_8c.html','');});
 
 <p>heartbeat functionality from all threads  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="mytimer_8h_source.html">mytimer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="bbgled_8h_source.html">bbgled.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="temp_8h_source.html">temp.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="light_8h_source.html">light.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="socket_8h_source.html">socket.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;mytimer.h&quot;</code><br />
+<code>#include &quot;main.h&quot;</code><br />
+<code>#include &quot;logger.h&quot;</code><br />
+<code>#include &quot;bbgled.h&quot;</code><br />
+<code>#include &quot;temp.h&quot;</code><br />
+<code>#include &quot;light.h&quot;</code><br />
+<code>#include &quot;socket.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for heartbeat.c:</div>
 <div class="dyncontent">
@@ -118,19 +118,17 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af5af631610de6787aeca531ef57e6983"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heartbeat_8c.html#af5af631610de6787aeca531ef57e6983">set_heartbeatFlag</a> (moduleId_t moduleId)</td></tr>
-<tr class="memdesc:af5af631610de6787aeca531ef57e6983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the heartbeatFlag bit corresponding to each module that sets the heartbeat to the static volatile flag called g_heartbeat_taskFlags.  <a href="#af5af631610de6787aeca531ef57e6983">More...</a><br /></td></tr>
+<tr class="memitem:af5af631610de6787aeca531ef57e6983"><td class="memItemLeft" align="right" valign="top"><a id="af5af631610de6787aeca531ef57e6983"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_heartbeatFlag</b> (moduleId_t moduleId)</td></tr>
 <tr class="separator:af5af631610de6787aeca531ef57e6983"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cc9d852a50d767ada09ea8a96033217"><td class="memItemLeft" align="right" valign="top"><a id="a1cc9d852a50d767ada09ea8a96033217"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heartbeat_8c.html#a1cc9d852a50d767ada09ea8a96033217">SystemExit</a> (void)</td></tr>
-<tr class="memdesc:a1cc9d852a50d767ada09ea8a96033217"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the thread exit flags in each task modules for clean exit <br /></td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SystemExit</b> (void)</td></tr>
 <tr class="separator:a1cc9d852a50d767ada09ea8a96033217"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1d3a741d617844f846cdd4ea91dac85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heartbeat_8c.html#af1d3a741d617844f846cdd4ea91dac85">heatbeat_timer_callback</a> (union sigval no)</td></tr>
-<tr class="memdesc:af1d3a741d617844f846cdd4ea91dac85"><td class="mdescLeft">&#160;</td><td class="mdescRight">the heartbeat timer call back function checks the global static heartbeat flag to see if all the threads are alive  <a href="#af1d3a741d617844f846cdd4ea91dac85">More...</a><br /></td></tr>
+<tr class="memitem:af1d3a741d617844f846cdd4ea91dac85"><td class="memItemLeft" align="right" valign="top"><a id="af1d3a741d617844f846cdd4ea91dac85"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>heatbeat_timer_callback</b> (union sigval no)</td></tr>
 <tr class="separator:af1d3a741d617844f846cdd4ea91dac85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c5dadaeef46c763018c3b9f05f8e396"><td class="memItemLeft" align="right" valign="top"><a id="a1c5dadaeef46c763018c3b9f05f8e396"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heartbeat_8c.html#a1c5dadaeef46c763018c3b9f05f8e396">startHearbeatCheck</a> (void)</td></tr>
-<tr class="memdesc:a1c5dadaeef46c763018c3b9f05f8e396"><td class="mdescLeft">&#160;</td><td class="mdescRight">starts the timer for heartbeat and calls the callback function above <br /></td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>startHearbeatCheck</b> (void)</td></tr>
 <tr class="separator:a1c5dadaeef46c763018c3b9f05f8e396"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -147,72 +145,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>counter</b> = 0</td></
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="heartbeat_8c_source.html">heartbeat.c</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="af1d3a741d617844f846cdd4ea91dac85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1d3a741d617844f846cdd4ea91dac85">&#9670;&nbsp;</a></span>heatbeat_timer_callback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void heatbeat_timer_callback </td>
-          <td>(</td>
-          <td class="paramtype">union sigval&#160;</td>
-          <td class="paramname"><em>no</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>the heartbeat timer call back function checks the global static heartbeat flag to see if all the threads are alive </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sigval</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="heartbeat_8c_source.html#l00044">44</a> of file <a class="el" href="heartbeat_8c_source.html">heartbeat.c</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="heartbeat_8c_source.html#l00090">startHearbeatCheck()</a>.</p>
-
-</div>
-</div>
-<a id="af5af631610de6787aeca531ef57e6983"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5af631610de6787aeca531ef57e6983">&#9670;&nbsp;</a></span>set_heartbeatFlag()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void set_heartbeatFlag </td>
-          <td>(</td>
-          <td class="paramtype">moduleId_t&#160;</td>
-          <td class="paramname"><em>moduleId</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the heartbeatFlag bit corresponding to each module that sets the heartbeat to the static volatile flag called g_heartbeat_taskFlags. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">moduleId</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="heartbeat_8c_source.html#l00027">27</a> of file <a class="el" href="heartbeat_8c_source.html">heartbeat.c</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_fb6daa1fd067b6a4ba48efb10e898369.html">src</a></li><li class="navelem"><a class="el" href="heartbeat_8c.html">heartbeat.c</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="heartbeat_8c.html">heartbeat.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

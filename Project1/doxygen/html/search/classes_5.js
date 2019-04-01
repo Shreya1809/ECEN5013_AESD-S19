@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['node',['Node',['../structNode.html',1,'']]]
+  ['valuepointer',['ValuePointer',['../unionValuePointer.html',1,'']]]
 ];

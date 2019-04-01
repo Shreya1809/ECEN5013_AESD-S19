@@ -23,16 +23,20 @@ Include dependency graph for temp.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{temp_8c_a6c6e8e13fb2ba7d141945e64b5b693cc}\label{temp_8c_a6c6e8e13fb2ba7d141945e64b5b693cc}} 
-void \hyperlink{temp_8c_a6c6e8e13fb2ba7d141945e64b5b693cc}{kill\+\_\+temp\+\_\+thread} (void)
-\begin{DoxyCompactList}\small\item\em to kill temp thread Sets the kill thread in the task \end{DoxyCompactList}\item 
-float \hyperlink{temp_8c_ad278c9dd0785311834fbdd25e9ccb08e}{get\+Temperature} (temp\+\_\+unit unit)
-\begin{DoxyCompactList}\small\item\em Get the Temp object. Gets the temperature value from the temp register. \end{DoxyCompactList}\item 
-int \hyperlink{temp_8c_a7beb226afb19a57861973866ecaf5338}{Remote\+Threshold\+Values} (float flow, float fhigh)
-\begin{DoxyCompactList}\small\item\em take threshold values from remote client \end{DoxyCompactList}\item 
-int \hyperlink{temp_8c_a0584aa99c4703588749b140587d1724a}{T\+M\+P102\+\_\+set\+Temp\+Threshold} (float tlow\+\_\+val, float thigh\+\_\+val)
-\begin{DoxyCompactList}\small\item\em Construct a new tmp102 settempthreshold object sets thresholds for the temperature val. \end{DoxyCompactList}\item 
-void $\ast$ \hyperlink{temp_8c_a9367e0b2320b0dd727163e557a9791d6}{temp\+\_\+task} (void $\ast$threadp)
-\begin{DoxyCompactList}\small\item\em call back for temperature task waits on a semaphore from the timer periodically \end{DoxyCompactList}\end{DoxyCompactItemize}
+void {\bfseries kill\+\_\+temp\+\_\+thread} (void)
+\item 
+\mbox{\Hypertarget{temp_8c_ad278c9dd0785311834fbdd25e9ccb08e}\label{temp_8c_ad278c9dd0785311834fbdd25e9ccb08e}} 
+float {\bfseries get\+Temperature} (temp\+\_\+unit unit)
+\item 
+\mbox{\Hypertarget{temp_8c_a7beb226afb19a57861973866ecaf5338}\label{temp_8c_a7beb226afb19a57861973866ecaf5338}} 
+int {\bfseries Remote\+Threshold\+Values} (float flow, float fhigh)
+\item 
+\mbox{\Hypertarget{temp_8c_a0584aa99c4703588749b140587d1724a}\label{temp_8c_a0584aa99c4703588749b140587d1724a}} 
+int {\bfseries T\+M\+P102\+\_\+set\+Temp\+Threshold} (float tlow\+\_\+val, float thigh\+\_\+val)
+\item 
+\mbox{\Hypertarget{temp_8c_a9367e0b2320b0dd727163e557a9791d6}\label{temp_8c_a9367e0b2320b0dd727163e557a9791d6}} 
+void $\ast$ {\bfseries temp\+\_\+task} (void $\ast$threadp)
+\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -59,99 +63,3 @@ your name (\href{mailto:you@domain.com}{\tt you@domain.\+com})
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2019 
 \end{DoxyCopyright}
-
-
-\subsection{Function Documentation}
-\mbox{\Hypertarget{temp_8c_ad278c9dd0785311834fbdd25e9ccb08e}\label{temp_8c_ad278c9dd0785311834fbdd25e9ccb08e}} 
-\index{temp.\+c@{temp.\+c}!get\+Temperature@{get\+Temperature}}
-\index{get\+Temperature@{get\+Temperature}!temp.\+c@{temp.\+c}}
-\subsubsection{\texorpdfstring{get\+Temperature()}{getTemperature()}}
-{\footnotesize\ttfamily float get\+Temperature (\begin{DoxyParamCaption}\item[{temp\+\_\+unit}]{unit }\end{DoxyParamCaption})}
-
-
-
-Get the Temp object. Gets the temperature value from the temp register. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em unit} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-float 
-\end{DoxyReturn}
-
-
-Definition at line 67 of file temp.\+c.
-
-\mbox{\Hypertarget{temp_8c_a7beb226afb19a57861973866ecaf5338}\label{temp_8c_a7beb226afb19a57861973866ecaf5338}} 
-\index{temp.\+c@{temp.\+c}!Remote\+Threshold\+Values@{Remote\+Threshold\+Values}}
-\index{Remote\+Threshold\+Values@{Remote\+Threshold\+Values}!temp.\+c@{temp.\+c}}
-\subsubsection{\texorpdfstring{Remote\+Threshold\+Values()}{RemoteThresholdValues()}}
-{\footnotesize\ttfamily int Remote\+Threshold\+Values (\begin{DoxyParamCaption}\item[{float}]{flow,  }\item[{float}]{fhigh }\end{DoxyParamCaption})}
-
-
-
-take threshold values from remote client 
-
-
-\begin{DoxyParams}{Parameters}
-{\em flow} & \\
-\hline
-{\em fhigh} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int 
-\end{DoxyReturn}
-
-
-Definition at line 81 of file temp.\+c.
-
-\mbox{\Hypertarget{temp_8c_a9367e0b2320b0dd727163e557a9791d6}\label{temp_8c_a9367e0b2320b0dd727163e557a9791d6}} 
-\index{temp.\+c@{temp.\+c}!temp\+\_\+task@{temp\+\_\+task}}
-\index{temp\+\_\+task@{temp\+\_\+task}!temp.\+c@{temp.\+c}}
-\subsubsection{\texorpdfstring{temp\+\_\+task()}{temp\_task()}}
-{\footnotesize\ttfamily void$\ast$ temp\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{threadp }\end{DoxyParamCaption})}
-
-
-
-call back for temperature task waits on a semaphore from the timer periodically 
-
-
-\begin{DoxyParams}{Parameters}
-{\em threadp} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void$\ast$ 
-\end{DoxyReturn}
-
-
-Definition at line 146 of file temp.\+c.
-
-
-
-References Check\+Bist\+Result(), and L\+O\+G\+\_\+\+I\+N\+FO.
-
-\mbox{\Hypertarget{temp_8c_a0584aa99c4703588749b140587d1724a}\label{temp_8c_a0584aa99c4703588749b140587d1724a}} 
-\index{temp.\+c@{temp.\+c}!T\+M\+P102\+\_\+set\+Temp\+Threshold@{T\+M\+P102\+\_\+set\+Temp\+Threshold}}
-\index{T\+M\+P102\+\_\+set\+Temp\+Threshold@{T\+M\+P102\+\_\+set\+Temp\+Threshold}!temp.\+c@{temp.\+c}}
-\subsubsection{\texorpdfstring{T\+M\+P102\+\_\+set\+Temp\+Threshold()}{TMP102\_setTempThreshold()}}
-{\footnotesize\ttfamily int T\+M\+P102\+\_\+set\+Temp\+Threshold (\begin{DoxyParamCaption}\item[{float}]{tlow\+\_\+val,  }\item[{float}]{thigh\+\_\+val }\end{DoxyParamCaption})}
-
-
-
-Construct a new tmp102 settempthreshold object sets thresholds for the temperature val. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em tlow\+\_\+val} & \\
-\hline
-{\em thigh\+\_\+val} & \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 90 of file temp.\+c.
-

@@ -21,10 +21,11 @@ Include dependency graph for socket.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{socket_8c_a8d7cda36beeab67fa9d5335000d7adf3}\label{socket_8c_a8d7cda36beeab67fa9d5335000d7adf3}} 
-void \hyperlink{socket_8c_a8d7cda36beeab67fa9d5335000d7adf3}{kill\+\_\+socket\+\_\+thread} (void)
-\begin{DoxyCompactList}\small\item\em to kill socket thread \end{DoxyCompactList}\item 
-void $\ast$ \hyperlink{socket_8c_a92f66c7de324d0f99973c1af462cfa3b}{socket\+\_\+task} (void $\ast$threadp)
-\begin{DoxyCompactList}\small\item\em Call back function for socket from main thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void {\bfseries kill\+\_\+socket\+\_\+thread} (void)
+\item 
+\mbox{\Hypertarget{socket_8c_a92f66c7de324d0f99973c1af462cfa3b}\label{socket_8c_a92f66c7de324d0f99973c1af462cfa3b}} 
+void $\ast$ {\bfseries socket\+\_\+task} (void $\ast$threadp)
+\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -48,32 +49,3 @@ Shreya Chakraborty
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2019 
 \end{DoxyCopyright}
-
-
-\subsection{Function Documentation}
-\mbox{\Hypertarget{socket_8c_a92f66c7de324d0f99973c1af462cfa3b}\label{socket_8c_a92f66c7de324d0f99973c1af462cfa3b}} 
-\index{socket.\+c@{socket.\+c}!socket\+\_\+task@{socket\+\_\+task}}
-\index{socket\+\_\+task@{socket\+\_\+task}!socket.\+c@{socket.\+c}}
-\subsubsection{\texorpdfstring{socket\+\_\+task()}{socket\_task()}}
-{\footnotesize\ttfamily void$\ast$ socket\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{threadp }\end{DoxyParamCaption})}
-
-
-
-Call back function for socket from main thread. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em threadp} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void$\ast$ 
-\end{DoxyReturn}
-
-
-Definition at line 33 of file socket.\+c.
-
-
-
-References Check\+Bist\+Result(), and L\+O\+G\+\_\+\+I\+N\+FO.
-

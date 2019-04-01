@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['light_2ec',['light.c',['../light_8c.html',1,'']]],
-  ['light_2eh',['light.h',['../light_8h.html',1,'']]],
-  ['lightsensor_2ec',['lightSensor.c',['../lightSensor_8c.html',1,'']]],
-  ['lightsensor_2eh',['lightSensor.h',['../lightSensor_8h.html',1,'']]],
-  ['logger_2ec',['logger.c',['../logger_8c.html',1,'']]],
-  ['logger_2eh',['logger.h',['../logger_8h.html',1,'']]]
+  ['main_2ec',['main.c',['../main_8c.html',1,'']]],
+  ['myi2c_2ec',['myI2C.c',['../myI2C_8c.html',1,'']]],
+  ['mysignal_2ec',['mysignal.c',['../mysignal_8c.html',1,'']]],
+  ['mytimer_2ec',['mytimer.c',['../mytimer_8c.html',1,'']]]
 ];

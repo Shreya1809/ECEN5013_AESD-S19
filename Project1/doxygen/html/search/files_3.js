@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['i2c_2ec',['i2c.c',['../i2c_8c.html',1,'']]]
+  ['light_2ec',['light.c',['../light_8c.html',1,'']]],
+  ['lightsensor_2ec',['lightSensor.c',['../lightSensor_8c.html',1,'']]],
+  ['logger_2ec',['logger.c',['../logger_8c.html',1,'']]]
 ];

@@ -15,12 +15,15 @@ Include dependency graph for mytimer.\+c\+:
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{mytimer_8c_ab394d92918831adf1a3bbe47cbbced97}{maketimer} (timer\+\_\+t $\ast$timer\+ID, void($\ast$callback)(union sigval))
-\begin{DoxyCompactList}\small\item\em initialise timer with call back functions \end{DoxyCompactList}\item 
-int \hyperlink{mytimer_8c_a9da9343753983bfda1747d67fdddf152}{start\+Timer} (timer\+\_\+t timer\+ID, int sec, int nsec)
-\begin{DoxyCompactList}\small\item\em starts timer for sensor threads \end{DoxyCompactList}\item 
-int \hyperlink{mytimer_8c_a8988f75287d3b679f778a1bec163bdd0}{stop\+Timer} (timer\+\_\+t timer\+\_\+id)
-\begin{DoxyCompactList}\small\item\em stops the timer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{mytimer_8c_ab394d92918831adf1a3bbe47cbbced97}\label{mytimer_8c_ab394d92918831adf1a3bbe47cbbced97}} 
+int {\bfseries maketimer} (timer\+\_\+t $\ast$timer\+ID, void($\ast$callback)(union sigval))
+\item 
+\mbox{\Hypertarget{mytimer_8c_a9da9343753983bfda1747d67fdddf152}\label{mytimer_8c_a9da9343753983bfda1747d67fdddf152}} 
+int {\bfseries start\+Timer} (timer\+\_\+t timer\+ID, int sec, int nsec)
+\item 
+\mbox{\Hypertarget{mytimer_8c_a8988f75287d3b679f778a1bec163bdd0}\label{mytimer_8c_a8988f75287d3b679f778a1bec163bdd0}} 
+int {\bfseries stop\+Timer} (timer\+\_\+t timer\+\_\+id)
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -38,86 +41,3 @@ Shreya Chakraborty
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2019 
 \end{DoxyCopyright}
-
-
-\subsection{Function Documentation}
-\mbox{\Hypertarget{mytimer_8c_ab394d92918831adf1a3bbe47cbbced97}\label{mytimer_8c_ab394d92918831adf1a3bbe47cbbced97}} 
-\index{mytimer.\+c@{mytimer.\+c}!maketimer@{maketimer}}
-\index{maketimer@{maketimer}!mytimer.\+c@{mytimer.\+c}}
-\subsubsection{\texorpdfstring{maketimer()}{maketimer()}}
-{\footnotesize\ttfamily int maketimer (\begin{DoxyParamCaption}\item[{timer\+\_\+t $\ast$}]{timer\+ID,  }\item[{void($\ast$)(union sigval)}]{callback }\end{DoxyParamCaption})}
-
-
-
-initialise timer with call back functions 
-
-
-\begin{DoxyParams}{Parameters}
-{\em timer\+ID} & \\
-\hline
-{\em callback} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int 
-\end{DoxyReturn}
-
-
-Definition at line 17 of file mytimer.\+c.
-
-
-
-Referenced by start\+Hearbeat\+Check().
-
-\mbox{\Hypertarget{mytimer_8c_a9da9343753983bfda1747d67fdddf152}\label{mytimer_8c_a9da9343753983bfda1747d67fdddf152}} 
-\index{mytimer.\+c@{mytimer.\+c}!start\+Timer@{start\+Timer}}
-\index{start\+Timer@{start\+Timer}!mytimer.\+c@{mytimer.\+c}}
-\subsubsection{\texorpdfstring{start\+Timer()}{startTimer()}}
-{\footnotesize\ttfamily int start\+Timer (\begin{DoxyParamCaption}\item[{timer\+\_\+t}]{timer\+ID,  }\item[{int}]{sec,  }\item[{int}]{nsec }\end{DoxyParamCaption})}
-
-
-
-starts timer for sensor threads 
-
-
-\begin{DoxyParams}{Parameters}
-{\em timer\+ID} & \\
-\hline
-{\em sec} & \\
-\hline
-{\em nsec} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int 
-\end{DoxyReturn}
-
-
-Definition at line 29 of file mytimer.\+c.
-
-
-
-Referenced by start\+Hearbeat\+Check().
-
-\mbox{\Hypertarget{mytimer_8c_a8988f75287d3b679f778a1bec163bdd0}\label{mytimer_8c_a8988f75287d3b679f778a1bec163bdd0}} 
-\index{mytimer.\+c@{mytimer.\+c}!stop\+Timer@{stop\+Timer}}
-\index{stop\+Timer@{stop\+Timer}!mytimer.\+c@{mytimer.\+c}}
-\subsubsection{\texorpdfstring{stop\+Timer()}{stopTimer()}}
-{\footnotesize\ttfamily int stop\+Timer (\begin{DoxyParamCaption}\item[{timer\+\_\+t}]{timer\+\_\+id }\end{DoxyParamCaption})}
-
-
-
-stops the timer 
-
-
-\begin{DoxyParams}{Parameters}
-{\em timer\+\_\+id} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int 
-\end{DoxyReturn}
-
-
-Definition at line 41 of file mytimer.\+c.
-
