@@ -16,7 +16,7 @@
 #include "temp.h"
 
 
-i2c_struct_t i2c_handler;
+// i2c_struct_t i2c_handler;
 
 static void tempSensor_InitTest(void **state)
 {

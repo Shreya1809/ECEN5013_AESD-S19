@@ -16,7 +16,11 @@
 #include "bist.h"
 
 static mqd_t mq_logger = -1;
+#ifdef TEST_MODE
+static log_level_t currentLogLevel = LOG_INVALID;
+#else
 static log_level_t currentLogLevel = LOG_DEBUG;
+#endif
 static sig_atomic_t  stop_thread_logger = 0;
 
 const char * logLevel[LOG_MAX] = {

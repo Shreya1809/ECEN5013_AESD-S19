@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "CROSS_ALL",
+            "label": "BUILD ALL",
             "type": "shell",
             "command": "make clean all",
             "group": {
@@ -14,9 +14,42 @@
             "problemMatcher":"$gcc",
         },
         {
-            "label": "CROSS",
+            "label": "BUILD",
             "type": "shell",
             "command": "make clean build",
+            "group": {
+                "kind": "build",
+                "isDefault": true,
+            },
+            "problemMatcher":"$gcc"
+            
+        },
+        {
+            "label": "BUILD TEST",
+            "type": "shell",
+            "command": "make test",
+            "group": {
+                "kind": "build",
+                "isDefault": true,
+            },
+            "problemMatcher":"$gcc"
+            
+        },
+        {
+            "label": "DOXYGEN",
+            "type": "shell",
+            "command": "make doxygen",
+            "group": {
+                "kind": "build",
+                "isDefault": true,
+            },
+            "problemMatcher":"$gcc"
+            
+        },
+        {
+            "label": "Remote_SSH",
+            "type": "shell",
+            "command": "make ssh",
             "group": {
                 "kind": "build",
                 "isDefault": true,

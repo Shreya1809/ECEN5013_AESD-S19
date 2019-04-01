@@ -16,13 +16,14 @@
 #include "light.h"
 #include "logger.h"
 
-i2c_struct_t i2c_handler;
+// i2c_struct_t i2c_handler;
 
 static void lightSensor_InitTest(void **state)
 {
     int ret = I2C_init(&i2c_handler);
-    ret |= APDS9301_powerup();
+    ret += APDS9301_powerup();
     assert_int_equal(ret, 0);
+    //sleep(1);
 }
 
 static void lightSensor_GetLightTest(void **state)

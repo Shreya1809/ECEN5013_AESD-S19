@@ -12,7 +12,7 @@ FLAGS:= $(CFLAGS) $(INCLUDES)
 LIBS:= -L /usr/local/lib -lrt -lpthread -lmraa -lm 
 
 .PHONY:all
-all: build rungdb 
+all: build test doxygen rungdb
 	 
 
 .PHONY:rungdb
@@ -30,22 +30,35 @@ build:
 	scp -pr $(WORKSPACE)/test root@10.0.0.16:~/home/Project1/code/test
 	scp *$(OUTPUT_EXT) root@10.0.0.16:~/home/Project1/output/
 	scp -pr $(WORKSPACE)/config/* root@10.0.0.16:~/home/Project1/config/
+
 .PHONY: test
-test:
+test: buildtest runtest
+
+.PHONY: buildtest
+buildtest:
 	$(CC) $(FLAGS) test/Socket_TEST/client.c -o client_test.out -lpthread
 	$(CC) $(FLAGS) $(TEST_INCLUDES) test/Led_TEST/test.c -o led_test.out $(LIBS)
 	$(CC) $(FLAGS) $(TEST_INCLUDES) -DTEST_MODE -DHAVE_SIGNAL_H $(TEST_SRCS) test/Temp_TEST/test.c -o temp_test.out $(LIBS)
 	$(CC) $(FLAGS) $(TEST_INCLUDES) -DTEST_MODE -DHAVE_SIGNAL_H $(TEST_SRCS) test/Light_TEST/test.c -o light_test.out $(LIBS)
 	$(CC) $(FLAGS) $(TEST_INCLUDES) -DTEST_MODE -DHAVE_SIGNAL_H $(TEST_SRCS) test/Logger_TEST/test.c -o logger_test.out $(LIBS)
-	scp *.out root@10.0.0.16:~/home/Project1/output
-	
-.PHONY: doxygen
-doxygen:
-	cd doxygen && doxygen doxygen.config
+	@scp *.out root@10.0.0.16:~/home/Project1/output
+
+.PHONY: runtest
+runtest:
+	@echo "\n********Executing test all test cases********\n"
+	@ssh root@10.0.0.16 "cd ~/home/Project1/output; sync;  \
+	echo -e "***Testing Light sensor***"; sync; ./light_test.out; sync; \
+	echo -e "***Testing Temperature sensor***"; sync; ./temp_test.out; sync; \
+	echo -e "***Testing Logger***"; sync; ./logger_test.out; sync;"
+	@echo "\n********All Tests executed********\n"
 
 .PHONY: ssh
 ssh:
 	gnome-terminal -- ssh root@10.0.0.16
+
+.PHONY: doxygen
+doxygen:
+	doxygen config/doxygen.config
 
 .PHONY:clean
 clean:
