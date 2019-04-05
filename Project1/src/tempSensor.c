@@ -27,10 +27,11 @@ int TMP102_getTemperature(float *temp_val)
     uint16_t result = 0;
     MSB = tempbuff[0];
     LSB = tempbuff[1];
-    result = (((uint16_t)MSB << 8) | LSB) >> 4;
+    result = ((((uint16_t)MSB << 8) | LSB) >> 4) & 0xFFF;
+    result &= 0xFFF;
     if(result & 0x800) //check for negative temperature
     {
-        result = ((~result) + 1); 
+        result = ((~result) + 1) & 0xFFF; 
         *temp_val = (-1) * result * 0.0625;
     }
     else{
