@@ -6,12 +6,12 @@
 [Project Report](report/PROJECT1_REPORT.pdf)
 
 ## Software Block Diagram
-![Software Block Diagram](report/SWBlock.jpg)
+![Software Block Diagram](https://github.com/Shreya1809/ECEN5013_AESD-S19/blob/master/Project1/report/SWBlock.jpg)
 
 ## Connection Diagram
-![Connection Diagram](report/connectiondiagram.jpg)
+![Connection Diagram](https://github.com/Shreya1809/ECEN5013_AESD-S19/blob/master/Project1/report/connectiondiagram.jpg)
 
 ## Connection Photo
-![Connection Photo](report/boardconnection.jpg)
+![Connection Photo](https://github.com/Shreya1809/ECEN5013_AESD-S19/blob/master/Project1/report/boardconnection.jpg)
 
 ### Project Brief
