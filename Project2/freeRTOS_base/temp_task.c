@@ -28,7 +28,7 @@
 
 extern uint32_t g_ui32SysClock;
 //macro for delay
-#define TEMP_RATE_MS   2000
+#define TEMP_RATE_MS   1000
 //*****************************************************************************
 //
 // The stack size for the Logger task.
@@ -194,7 +194,7 @@ static void myTempTask(void *params)
     while(1)
     {
         temperaturedata.data.floatingpoint = TMP102_getTemperature();
-        if(temperaturedata.data.floatingpoint > 26 || temperaturedata.data.floatingpoint < 24) //thresholds for alert
+        if(temperaturedata.data.floatingpoint > 26 || temperaturedata.data.floatingpoint < 20) //thresholds for alert
         {
             xSemaphoreGive(Alertsem);
         }

@@ -50,7 +50,7 @@
 // The amount of time to delay between toggles of the LED.
 //
 //*****************************************************************************
-#define LED_BLINK_RATE_MS   1000
+#define LED_BLINK_RATE_MS   100
 
 static void myLedTask(void *params)
 {
