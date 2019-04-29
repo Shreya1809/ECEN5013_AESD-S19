@@ -5,8 +5,8 @@
  *      Author: Shreya
  */
 
-#ifndef TEMP_TASK_H_
-#define TEMP_TASK_H_
+#ifndef TMP102_H_
+#define TMP102_H_
 
 /* Register address */
 #define TMP102_SLAVE_ADDRESS            (0x48)
@@ -55,8 +55,8 @@ typedef enum{
 }fault_setting_t;
 
 typedef enum{
-    NORMAL,
-    EXTENDED
+    NORMAL_MODE,
+    EXTENDED_MODE
 }EM_mode_t;
 
 typedef enum{
@@ -71,15 +71,17 @@ typedef enum{
     EIGHT_HZ
 }conversion_rate_t;
 
+typedef enum{
+    ON,
+    OFF
+}state_t;
 /**
  * @brief get temperature raw value
  *
  * @param temp_val
  * @return int
  */
-extern float  TMP102_getTemperature(void);
-extern uint16_t I2CGet2Bytes(uint8_t target_address, uint8_t register_address);
-extern int readAndUpdateTemp(void);
-extern uint32_t TempTaskInit(void);
+float  TMP102_getTemperature(void);
+void DCmotor(state_t option);
 
-#endif /* TEMP_TASK_H_ */
+#endif /* TMP102_H_ */

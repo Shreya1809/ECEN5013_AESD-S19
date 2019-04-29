@@ -19,7 +19,12 @@
 // DAMAGES, FOR ANY REASON WHATSOEVER.
 //
 //*****************************************************************************
+
+
+
+#include <communicationSend_task.h>
 #include "includes.h"
+
 #include "inc/hw_nvic.h"
 #include "inc/hw_types.h"
 #include "inc/hw_memmap.h"
@@ -28,17 +33,22 @@
 #include "driverlib/rom_map.h"
 #include "driverlib/sysctl.h"
 #include "drivers/pinout.h"
-#include "idle_task.h"
-#include "led_task.h"
+
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
 #include "semphr.h"
-#include "temp_task.h"
-#include "logger_task.h"
-#include "alert.h"
+#include "priorities.h"
 
-xSemaphoreHandle Alertsem = 0;
+#include "idle_task.h"
+#include "logger_task.h"
+#include "sensors_task.h"
+#include "heartbeat_task.h"
+#include "lcd_driver.h"
+#include "communicationSend_task.h"
+#include "communicationRecv_task.h"
+
+
 //*****************************************************************************
 //
 // System clock rate in Hz.
@@ -71,6 +81,7 @@ vApplicationStackOverflowHook(xTaskHandle *pxTask, signed char *pcTaskName)
     // on entry to this function, so no processor interrupts will interrupt
     // this loop.
     //
+    UARTprintf("[WARNING]******Stack Overflow Task: %s",pcTaskName);
     while(1)
     {
     }
@@ -95,6 +106,7 @@ main(void)
                                             configCPU_CLOCK_HZ);
 
 
+
     //
     // Make sure the main oscillator is enabled because this is required by
     // the PHY.  The system must have a 25MHz crystal attached to the OSC
@@ -103,40 +115,46 @@ main(void)
     //
     SysCtlMOSCConfigSet(SYSCTL_MOSC_HIGHFREQ);
 
-    Alertsem = xSemaphoreCreateMutex();
 
-    // Create the LED task.
-    //
+#ifdef PWM_TEST
+   timer_Init();
+   generate_PWM(g_ui32SysClock, DC_50_PERCENT);
+   while(1);
+#endif
 
-    if(LoggerTaskInit() != 0)
-    {
-        while(1)
-        {
-        }
-    }
+   LCD_init();
+   if(LoggerTaskInit() != 0)
+   {
+       while(1)
+       {
+       }
+   }
 
-    if(TempTaskInit() != 0)
-    {
-        while(1)
-        {
-        }
-    }
+   if(StartCommSendTask() != 0)
+   {
+       while(1)
+       {
+       }
+   }
+   if(StartCommRecvTask() != 0)
+   {
+       while(1)
+       {
 
-    if(LEDTaskInit() != 0)
-    {
-        while(1)
-        {
-        }
-    }
-
-    if(AlertTaskInit() != 0)
-    {
-        while(1)
-        {
-        }
-    }
-
-
+       }
+   }
+   if(SensorTaskInit() != 0)
+   {
+       while(1)
+       {
+       }
+   }
+   if(HBTaskInit() != 0)
+   {
+       while(1)
+       {
+       }
+   }
 
     //
     // Start the scheduler.  This should not return.

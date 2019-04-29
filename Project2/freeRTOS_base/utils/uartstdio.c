@@ -388,7 +388,8 @@ UARTStdioConfig(uint32_t ui32PortNum, uint32_t ui32Baud, uint32_t ui32SrcClock)
     //
     // Remember which interrupt we are dealing with.
     //
-    g_ui32PortNum = ui32PortNum;
+    if(g_ui32PortNum == 0)
+        g_ui32PortNum = ui32PortNum;
 
     //
     // We are configured for buffered output so enable the master interrupt

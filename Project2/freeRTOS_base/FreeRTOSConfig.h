@@ -74,14 +74,16 @@
 #define configTICK_RATE_HZ                  ( ( portTickType ) 1000 )
 #define configMINIMAL_STACK_SIZE            ( ( unsigned short ) 64 )
 #define configTOTAL_HEAP_SIZE               ( ( size_t ) ( 20240 ) )
-#define configMAX_TASK_NAME_LEN             ( 12 )
-#define configUSE_TRACE_FACILITY            0
+#define configMAX_TASK_NAME_LEN             ( 15 )
+#define configUSE_TRACE_FACILITY            1
 #define configUSE_16_BIT_TICKS              0
 #define configIDLE_SHOULD_YIELD             0
 #define configUSE_CO_ROUTINES               0
 #define configUSE_MUTEXES                   1
+#define configUSE_COUNTING_SEMAPHORES       1
 #define configUSE_RECURSIVE_MUTEXES         1
 #define configCHECK_FOR_STACK_OVERFLOW      2
+//#define configSUPPORT_STATIC_ALLOCATION     1
 
 #define configMAX_PRIORITIES                16
 #define configMAX_CO_ROUTINE_PRIORITIES     ( 2 )
@@ -95,12 +97,20 @@ to exclude the API function. */
 
 #define INCLUDE_vTaskPrioritySet            0
 #define INCLUDE_uxTaskPriorityGet           0
-#define INCLUDE_vTaskDelete                 0
+#define INCLUDE_vTaskDelete                 1
 #define INCLUDE_vTaskCleanUpResources       0
 #define INCLUDE_vTaskSuspend                0
 #define INCLUDE_vTaskDelayUntil             1
 #define INCLUDE_vTaskDelay                  1
 #define INCLUDE_uxTaskGetStackHighWaterMark 0
+
+/* Software timer definitions. */
+#define configUSE_TIMERS                1
+#define configTIMER_TASK_PRIORITY       ( configMAX_PRIORITIES - 1 )
+#define configTIMER_QUEUE_LENGTH        5
+#define configTIMER_TASK_STACK_DEPTH    ( configMINIMAL_STACK_SIZE * 2 )
+
+#define configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY    10
 
 /* Be ENORMOUSLY careful if you want to modify these two values and make sure
  * you read http://www.freertos.org/a00110.html#kernel_priority first!

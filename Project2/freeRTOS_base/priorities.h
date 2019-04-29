@@ -30,9 +30,9 @@
 // The priorities of the various tasks.
 //
 //*****************************************************************************
-#define PRIORITY_LED_TASK       4
-#define PRIORITY_LOGGER_TASK    2
-#define PRIORITY_TEMP_TASK      3
-#define PRIORITY_ALERT_TASK     1
-
+#define PRIORITY_HB_TASK                1
+#define PRIORITY_LOGGER_TASK            2
+#define PRIORITY_COMM_RECV_TASK         2
+#define PRIORITY_COMM_SEND_TASK         3
+#define PRIORITY_SENSOR_TASK            5
 #endif // __PRIORITIES_H__

@@ -1,8 +1,8 @@
 //*****************************************************************************
 //
-// random.h - Protoytpes for the random number generator.
+// led_task.h - Prototypes for the LED task.
 //
-// Copyright (c) 2005-2017 Texas Instruments Incorporated.  All rights reserved.
+// Copyright (c) 2009-2017 Texas Instruments Incorporated.  All rights reserved.
 // Software License Agreement
 // 
 // Texas Instruments (TI) is supplying this software for use solely and
@@ -22,16 +22,19 @@
 //
 //*****************************************************************************
 
-#ifndef __RANDOM_H__
-#define __RANDOM_H__
+#ifndef __HEARTBEAT_TASK_H__
+#define __HEARTBEAT_TASK_H__
 
 //*****************************************************************************
 //
-// Prototypes for the random number generator functions.
+// Prototypes for the LED task.
 //
 //*****************************************************************************
-extern void RandomAddEntropy(uint32_t ui32Entropy);
-extern void RandomSeed(void);
-extern uint32_t RandomNumber(void);
 
-#endif // __RANDOM_H__
+
+//extern uint32_t g_ui32LEDDelay;
+uint32_t HBTaskInit(void);
+void WATCHDOG_init(void);
+void WatchdogHandler(void);
+
+#endif // __LED_TASK_H__
