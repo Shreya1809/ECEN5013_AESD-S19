@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "logger.h": "c",
+        "includes.h": "c",
+        "main.h": "c",
+        "comm_send.h": "c",
+        "socket.h": "c",
+        "mysignal.h": "c",
+        "uart.h": "c",
+        "md5.h": "c"
+    }
+}
