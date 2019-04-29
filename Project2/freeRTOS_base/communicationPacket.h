@@ -105,8 +105,9 @@ static inline void FillCRC(packet_struct_t *commpacket)
 
 static inline bool VerifyCRC(packet_struct_t *commpacket)
 {
+    uint16_t checkCRC = commpacket->crc;
     uint16_t crc = CRC_calculate((uint8_t*)commpacket, sizeof(*commpacket));
-    return crc == commpacket->crc;
+    return crc == checkCRC;
 }
 
 
