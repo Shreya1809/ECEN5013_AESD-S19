@@ -63,62 +63,13 @@ int SendTask_enqueue(opcode_t opcode, void *data)
 #define COMM_PHYSEND(data,len)  UART3_putData(data,len)
 #endif
 
-static void SendPacket(packet_struct_t *commpacket)
+static inline void SendPacket(packet_struct_t *commpacket)
 {
 
-        size_t bytesToSend = sizeof(*commpacket);
-        size_t bytesSent = COMM_PHYSEND((char*)commpacket, bytesToSend);
-        LOG_DEBUG(ETHERNET_TASK,NULL , "Packet Header Sent: %u",bytesSent);
-    //starting of frame
-//    size_t bytesSent = COMM_PHYSEND(infostartframe, strlen(infostartframe));
-//    LOG_DEBUG(ETHERNET_TASK,NULL , "Start frame sent: %u",bytesSent);
-
-    //sending packet header
-//    size_t bytesToSend = sizeof(commpacket->header);
-//    bytesSent = COMM_PHYSEND((char*)&commpacket->header, bytesToSend);
-//    LOG_DEBUG(ETHERNET_TASK,NULL , "Packet Header Sent: %u",bytesSent);
-
-    //start sending the packet data separately
-    //sending the opcode
-//    bytesSent = COMM_PHYSEND((char*)&commpacket->data.opcode, sizeof(commpacket->data.opcode));
-//    LOG_DEBUG(ETHERNET_TASK,NULL , "Opcode Sent: %u",bytesSent);
-
-//    switch(commpacket->data.opcode){
-//    case Heartbeat:
-//        LOG_DEBUG(ETHERNET_TASK, NULL, "<<<<<<<> Heartbeat Sent <>>>>>>>");
-//        break;
-//    case temperature:
-//        //sending the actual data size
-//        bytesSent = COMM_PHYSEND((char*)&commpacket->data.dataSize, sizeof(commpacket->data.dataSize));
-//        LOG_DEBUG(ETHERNET_TASK,NULL , "Data size Sent: %u",bytesSent);
-//        bytesSent = COMM_PHYSEND((char*)&commpacket->data.temperature, sizeof(commpacket->data.dataSize));
-//        LOG_DEBUG(ETHERNET_TASK,NULL , "Data Sent: %u",bytesSent);
-//        break;
-//    case accelerometer:
-//        //sending the actual data size
-//        bytesSent = COMM_PHYSEND((char*)&commpacket->data.dataSize, sizeof(commpacket->data.dataSize));
-//        LOG_DEBUG(ETHERNET_TASK,NULL , "Data size Sent: %u",bytesSent);
-//        bytesSent = COMM_PHYSEND((char*)&commpacket->data.accel, sizeof(commpacket->data.dataSize));
-//        LOG_DEBUG(ETHERNET_TASK,NULL , "Data Sent: %u",bytesSent);
-//        break;
-//    case distance:
-//        //sending the actual data size
-//        bytesSent = COMM_PHYSEND((char*)&commpacket->data.dataSize, sizeof(commpacket->data.dataSize));
-//        LOG_DEBUG(ETHERNET_TASK,NULL , "Data size Sent: %u",bytesSent);
-//        bytesSent = COMM_PHYSEND((char*)&commpacket->data.dist, sizeof(commpacket->data.dataSize));
-//        LOG_DEBUG(ETHERNET_TASK,NULL , "Data Sent: %u",bytesSent);
-//        break;
-//    default:
-//        break;
-//
-//    }
-
-//    bytesSent = COMM_PHYSEND((char*)&commpacket->crc, sizeof(commpacket->crc));
-//    LOG_DEBUG(ETHERNET_TASK,NULL , "CRC Sent: %u",bytesSent);
-//
-//    //ending of frame
-//    bytesSent = COMM_PHYSEND(infoendframe, strlen(infoendframe));
-//    LOG_INFO(ETHERNET_TASK, NULL, "End frame sent: %u", bytesSent);
+    FillCRC(commpacket);
+    size_t bytesToSend = sizeof(*commpacket);
+    size_t bytesSent = COMM_PHYSEND((char*)commpacket, bytesToSend);
+    LOG_DEBUG(ETHERNET_TASK,NULL , "Packet Header Sent: %u",bytesSent);
 
 }
 
@@ -142,7 +93,7 @@ void SendNodeInfo(void)
     infoPacket.data.dataSize = infoDatasize;
 
     //log.crc = CRC_calculate((uint8_t*)&, uint8_t length)
-    infoPacket.crc = 10;
+    FillCRC(&infoPacket);
 
     //starting of frame
 //    size_t bytesSent = COMM_PHYSEND(infostartframe, strlen(infostartframe));
