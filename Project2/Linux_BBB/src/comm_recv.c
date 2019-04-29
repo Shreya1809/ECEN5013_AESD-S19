@@ -184,6 +184,13 @@ void *commRecv_task(void *pnewsock)
         memset(&packet, 0, sizeof(packet));
         valread = COMM_PHYRECV(fd , (char*)&packet, sizeof(packet));
         LOG_DEBUG(RECV_TASK, "Valread: %d. sizeof packet:%u",valread, sizeof(packet)); 
+        bool crcCheck = VerifyCRC(&packet);
+        if(crcCheck == false)
+        {
+            LOG_ERROR(RECV_TASK, "CRC Check failed");
+            UART_flush(fd);
+            continue;
+        }
         LOG_DEBUG(RECV_TASK,"opcode is %d",packet.data.opcode);
         LOG_DEBUG(RECV_TASK, "Packet: ");
         LOG_DEBUG(RECV_TASK,   \

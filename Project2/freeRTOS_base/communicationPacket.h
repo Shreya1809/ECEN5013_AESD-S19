@@ -100,12 +100,12 @@ static inline void FillPacketBBGHeader(packet_struct_t *commpacket)
 static inline void FillCRC(packet_struct_t *commpacket)
 {
     commpacket->crc = 0;
-    commpacket->crc = CRC_calculate((char*)commpacket, sizeof(*commpacket));
+    commpacket->crc = CRC_calculate((uint8_t*)commpacket, sizeof(*commpacket));
 }
 
 static inline bool VerifyCRC(packet_struct_t *commpacket)
 {
-    uint16_t crc = CRC_calculate((char*)commpacket, sizeof(*commpacket));
+    uint16_t crc = CRC_calculate((uint8_t*)commpacket, sizeof(*commpacket));
     return crc == commpacket->crc;
 }
 
