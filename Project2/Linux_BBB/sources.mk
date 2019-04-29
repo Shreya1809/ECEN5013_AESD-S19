@@ -8,7 +8,9 @@ SRCS:= $(SRCDIR)main.c\
 	$(SRCDIR)mytimer.c\
 	$(SRCDIR)heartbeat.c\
 	$(SRCDIR)mysignal.c\
-	$(SRCDIR)uart.c
+	$(SRCDIR)uart.c\
+	$(SRCDIR)communicationPacket.c\
+	$(SRCDIR)nodeInformation.c\
 	
 	
 #TEST_SRCS:= $(SRCDIR)cmocka.c\

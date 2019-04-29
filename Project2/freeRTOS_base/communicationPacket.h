@@ -88,6 +88,15 @@ static inline void FillPacketHeader(packet_struct_t *commpacket)
     commpacket->header.node = REMOTE_NODE;
 }
 
+static inline void FillPacketBBGHeader(packet_struct_t *commpacket)
+{
+    commpacket->header.timestamp = getTimeMsec();
+    commpacket->header.node_state = getThisNodeCurrentOperation();
+    commpacket->header.src_node = BBG;
+    commpacket->header.dst_node = EK_TM4C1294XL;
+    commpacket->header.node = CONTROL_NODE;
+}
+
 static inline void FillCRC(packet_struct_t *commpacket)
 {
     commpacket->crc = 0;

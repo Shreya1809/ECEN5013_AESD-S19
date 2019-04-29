@@ -182,7 +182,7 @@ void *commRecv_task(void *pnewsock)
     while(!stop_recv_thread) //outer loop for just ther start frames
     {
         memset(&packet, 0, sizeof(packet));
-        valread = COMM_PHYRECV(fd , &packet, sizeof(packet));
+        valread = COMM_PHYRECV(fd , (char*)&packet, sizeof(packet));
         LOG_DEBUG(RECV_TASK, "Valread: %d. sizeof packet:%u",valread, sizeof(packet)); 
         LOG_DEBUG(RECV_TASK,"opcode is %d",packet.data.opcode);
         LOG_DEBUG(RECV_TASK, "Packet: ");
@@ -213,7 +213,7 @@ void *commRecv_task(void *pnewsock)
                 CommReceive_NodeInfoHandler(fd); 
                 break;
             case Heartbeat :
-                LOG_INFO(RECV_TASK,"<<<Heartbeat from: :%d" packet.header.src_node);
+                LOG_INFO(RECV_TASK,"<<<Heartbeat from: :%d" ,packet.header.src_node);
                 break;
             case temperature:
                 LOG_INFO(RECV_TASK,"Current Temperature : %f",packet.data.temperature.floatingpoint); 
@@ -233,85 +233,7 @@ void *commRecv_task(void *pnewsock)
                 UART_flush(fd);
                 break;
         }
-       #if 0 
-    TRY:valread = COMM_PHYRECV(fd , startFrame, sizeof(startFrame)-1); 
-        if(valread < 0)
-        {
-            if((errno == EAGAIN) && retryFlag < 10)
-            {
-                LOG_ERROR(RECV_TASK,"Read timed out retry no %d",retryFlag);
-                retryFlag++;
-                goto TRY;
-            }
-            if(retryFlag == 10)
-            {
-                LOG_ERROR(RECV_TASK,"Comm disconnected");
-                break;    
-            }
-            else retryFlag = 0;
-            LOG_ERROR(RECV_TASK,"Read error start frame ");
-            close(fd);
-            return (void*)0;
-        }
-        
-        LOG_INFO(RECV_TASK," Read: %d. Start Frame is %s",valread, startFrame);
-        if(strcmp(startFrame,"*#*#") != 0)
-        {
-            LOG_INFO(RECV_TASK,"Invalid Start Frame.. try again");
-            goto TRY;
-            break;
-        }
-        if(strcmp(startFrame,"*#*#") == 0) //node info
-        {
-            //timelimit(fd, 1);
-            packetHeader_t infoPacketHeader;
-            opcode_t opcode;
-            LOG_INFO(RECV_TASK,"Remote node Sends frame"); 
-            //get header
-            if((COMM_PHYRECV( fd , (char*)&infoPacketHeader, sizeof(infoPacketHeader))) != sizeof(infoPacketHeader))
-            {
-                perror("Read error packet"); 
-                LOG_ERROR(RECV_TASK,"Read error");    
-            }
-            LOG_INFO(RECV_TASK,   \
-            "Source Node: %d\n  \
-            Destination Node: %d\n\
-            Timestamp: %u\n\
-            Operation state: %d\n\
-            Node Type: %d",\
-            infoPacketHeader.src_node,
-            infoPacketHeader.dst_node,
-            infoPacketHeader.timestamp,
-            infoPacketHeader.node_state,
-            infoPacketHeader.node);
-
-            //get opcode
-            COMM_PHYRECV( fd , (char*)&opcode, sizeof(opcode));
-            LOG_INFO(RECV_TASK,"opcode is %d",opcode);
-
-            switch(opcode)
-            {
-                case NodeInfo : 
-                    CommReceive_NodeInfoHandler(fd); 
-                    break;
-                case Heartbeat : 
-                    CommReceive_HeartBeatHandler(fd);
-                    break;
-                case temperature:
-                    CommReceive_TempDataHandler(fd);
-                    break;
-                case distance:
-                    CommReceive_DistDataHandler(fd);
-                    break;
-                case accelerometer:
-                    CommReceive_AccelDataHandler(fd);
-                    break;
-            
-                default:
-                    break;
-            }
-        } 
-        #endif
+       
     }
     #ifdef TCP
     LOG_INFO(RECV_TASK,"Socket task exiting fd: %d\n pthread id: %lu", fd, pthread_self());
