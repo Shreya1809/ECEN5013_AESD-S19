@@ -88,5 +88,17 @@ static inline void FillPacketHeader(packet_struct_t *commpacket)
     commpacket->header.node = REMOTE_NODE;
 }
 
+static inline void FillCRC(packet_struct_t *commpacket)
+{
+    commpacket->crc = 0;
+    commpacket->crc = CRC_calculate((char*)commpacket, sizeof(*commpacket));
+}
+
+static inline bool VerifyCRC(packet_struct_t *commpacket)
+{
+    uint16_t crc = CRC_calculate((char*)commpacket, sizeof(*commpacket));
+    return crc == commpacket->crc;
+}
+
 
 #endif /* COMMUNICATIONPACKET_H_ */
