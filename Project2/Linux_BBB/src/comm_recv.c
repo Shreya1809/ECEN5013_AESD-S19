@@ -14,8 +14,6 @@
 #include "socket.h"
 #include "logger.h"
 #include "bbgled.h"
-#include "mysignal.h"
-#include "heartbeat.h"
 #include "uart.h"
 #include "comm_send.h"
 #include "sensorData.h"
@@ -109,9 +107,9 @@ accel_data_t getPrevAccel(void)
 
 void kill_recv_thread(void)
 {
-    LOG_DEBUG(RECV_TASK,"socket thread exit signal received");
+    LOG_DEBUG(RECV_TASK,"Recv thread exit signal received");
     stop_recv_thread = 1;
-    //pthread_cancel(threads[RECV_TASK]);    
+    pthread_cancel(threads[RECV_TASK]);    
 }
 
 #ifdef TCP
@@ -143,7 +141,7 @@ void *commRecv_task(void *pnewsock)
     {
         memset(&packet, 0, sizeof(packet));
         valread = COMM_PHYRECV(fd , (char*)&packet, sizeof(packet));
-        UART_iflush(fd);
+        //UART_iflush(fd);
         LOG_DEBUG(RECV_TASK, "Valread: %d. sizeof packet:%u",valread, sizeof(packet)); 
         if(VerifyCRC(&packet) == false)
         {

@@ -11,8 +11,6 @@
 #include "includes.h"
 #include "logger.h"
 #include "bbgled.h"
-#include "mysignal.h"
-#include "heartbeat.h"
 #include "main.h"
 
 static mqd_t mq_logger = -1;
@@ -166,7 +164,7 @@ void *logger_task(void *threadp)
   int lastError = 0;
   while(!stop_thread_logger || lastError < LOG_EMPTY_CHECK)
   {
-    set_heartbeatFlag(LOGGER_TASK);
+    //set_heartbeatFlag(LOGGER_TASK);
     //deque msg
     if (mq_timedreceive(mq_logger, (char*)&recv_log, sizeof(recv_log), &prio, &recv_timeout) == -1) {
         if(!stop_thread_logger && errno == ETIMEDOUT)

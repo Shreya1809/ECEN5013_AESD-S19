@@ -33,6 +33,6 @@ typedef struct{
 
 uint32_t startofprogramTime;
 const char * moduleIdName[MAX_TASKS+1];
-
+//void SystemExit(void);
 
 #endif

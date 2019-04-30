@@ -4,12 +4,10 @@
 #include "socket.h"
 #include "logger.h"
 #include "bbgled.h"
-#include "mysignal.h"
-#include "heartbeat.h"
 #include "comm_recv.h"
 #include "ext_clientHandler.h"
 #include "main.h"
-#include "comm_send.h"
+#include "comm_recv.h"
 #include "sensorData.h"
 
 
@@ -24,16 +22,24 @@ pthread_mutex_t thresholdlock = PTHREAD_MUTEX_INITIALIZER;
 void putIn_ReverseGear(void)
 {
     // pthread_mutex_lock(&thresholdlock);
-  	reverse_gear_flag_state  = true;
-    COMM_SEND(reverse_gear_flag_state, (void*)&reverse_gear_flag_state);
+    if(reverse_gear_flag_state  == false)
+    {
+        LOG_DEBUG(EXT_TASK," Reverse gear flag is set to true from false");
+        reverse_gear_flag_state  = true;
+        COMM_SEND(reverseGearStateControl, (void*)&reverse_gear_flag_state);
+    }
+  
     // pthread_mutex_unlock(&thresholdlock);
 }
 
 void removeFrom_ReverseGear(void)
 {
     // pthread_mutex_lock(&thresholdlock);
-  	reverse_gear_flag_state  = false;
-    COMM_SEND(reverse_gear_flag_state, (void*)&reverse_gear_flag_state);
+    if(reverse_gear_flag_state  == true)
+    {
+        reverse_gear_flag_state  = false;
+        COMM_SEND(reverseGearStateControl, (void*)&reverse_gear_flag_state);
+    }
     // pthread_mutex_unlock(&thresholdlock);
 }
 
@@ -92,11 +98,12 @@ void getAccelDelta(int16_t *x,int16_t *y,int16_t *z)
 
 
 static sig_atomic_t stop_ext_thread = 0;
+
 void kill_ext_thread(void)
 {
-    LOG_DEBUG(EXT_TASK,"socket thread exit signal received");
+    LOG_DEBUG(EXT_TASK,"Ext thread exit signal received");
     stop_ext_thread = 1;
-    pthread_cancel(threads[RECV_TASK]);    
+    pthread_cancel(threads[EXT_TASK]);    
 }
 
 void *ext_clientHandle_task(void *threadp)
@@ -114,13 +121,12 @@ void *ext_clientHandle_task(void *threadp)
     char mesg2[1024] ={0};
        
     // Creating socket file descriptor 
-    if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) 
+    if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == -1) 
     { 
         perror("socket failed"); 
         exit(EXIT_FAILURE); 
     }
-    LOG_INFO(EXT_TASK,"Socket has been created"); 
-    // Forcefully attaching socket to the port 8080 
+    LOG_INFO(EXT_TASK,"Socket has been created");
     if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, 
                                                   &opt, sizeof(opt))) 
     { 
@@ -139,15 +145,15 @@ void *ext_clientHandle_task(void *threadp)
         exit(EXIT_FAILURE); 
     }
     LOG_INFO(EXT_TASK,"socket binded"); 
-    if (listen(server_fd, 3) < 0) 
+    if (listen(server_fd, 10) < 0) 
     { 
         perror("listen"); 
         exit(EXIT_FAILURE); 
     }
     LOG_INFO(EXT_TASK,"socket listening"); 
-    while(!stop_ext_thread)
+    while(!stop_ext_thread  && (strcmp(buffer,"7") != 0))
     {
-        set_heartbeatFlag(EXT_TASK);
+        //set_heartbeatFlag(EXT_TASK);
         if ((new_socket = accept(server_fd, (struct sockaddr *)&address,  
                         (socklen_t*)&addrlen))<0) 
         { 
@@ -230,10 +236,12 @@ void *ext_clientHandle_task(void *threadp)
                 send(new_socket , mesg , strlen(mesg) , 0 );
             }
             if(strcmp(buffer,"7") == 0)
-     
             {
                 LOG_INFO(EXT_TASK,"Client has requested Control Node to Exit");
-                SystemExit();
+                kill_recv_thread();
+	            kill_send_thread();
+	            kill_ext_thread();
+                close(new_socket);
                 break;
             } 
             LOG_INFO(EXT_TASK,"Client Request processed");

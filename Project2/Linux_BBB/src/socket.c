@@ -4,8 +4,7 @@
 #include "socket.h"
 #include "logger.h"
 #include "bbgled.h"
-#include "mysignal.h"
-#include "heartbeat.h"
+
 
 void timelimit(int sockfd, int io)
 {
