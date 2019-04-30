@@ -15,7 +15,7 @@ volatile int delayMS = 0;
 extern uint32_t g_ui32SysClock;
 int16_t prev_x = 0, prev_y = 0,prev_z = 0;
 
-bool volatile inReverseGear = true;
+bool volatile inReverseGear = false;
 bool volatile BBGConnectedFlag = false;
 int32_t SensorDownFlag = 0;
 
@@ -164,6 +164,7 @@ bool BISTcheckSensorConnection(sensor_type_t sensor)
 
 int BBG_Disconnected_TempHandler(temp_data_t temperaturedata)
 {
+    temperaturedata.floatingpoint = 0.0;
     temperaturedata.floatingpoint = TMP102_getTemperature();
     if(temperaturedata.floatingpoint == 0.0)
     {
@@ -212,6 +213,10 @@ int  BBG_Disconnected_AccelHandler(accel_data_t readings)
             {
                 LOG_INFO(ACCEL_TASK,&readings,"***THRESHOLD EXCEEDED***");
                 LCD_printString(0, 0, "**Accident**");
+            }
+            else
+            {
+                LCD_clear();
             }
         }
 
@@ -310,7 +315,7 @@ static void mySensorTasks(void *params)
     while(1)
     {
         if(!BBGConnectedFlag) //BBG is disconnected, TIVA independent working
-        {
+        {   LOG_INFO(MAIN_TASK, NULL, "BBG disconnected, TIVA independent working");
             if(counter % 4 == 0) //temp task
             {
                 if(BBG_Disconnected_TempHandler(temperaturedata)) //return 1 if sensor is not connected
@@ -360,7 +365,8 @@ static void mySensorTasks(void *params)
         }
         else
         {
-            if(counter % 4 == 0) //temp task
+            //LOG_INFO(MAIN_TASK, NULL, "BBG Connected");
+            if(counter % 6 == 0) //temp task
             {
                 temperaturedata.floatingpoint = TMP102_getTemperature();
                 COMM_SEND(temperature,&temperaturedata);

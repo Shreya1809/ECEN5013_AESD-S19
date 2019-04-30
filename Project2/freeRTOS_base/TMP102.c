@@ -11,6 +11,7 @@
 #include "driverlib/gpio.h"
 #include "driverlib/sysctl.h"
 #include "i2c.h"
+#include "logger.h"
 
 
 void DCmotor(state_t option)
@@ -28,8 +29,9 @@ void DCmotor(state_t option)
 float TMP102_getTemperature(void)
 {
     uint32_t temperature = I2CGet2Bytes(TMP102_SLAVE_ADDRESS, TMP102_TEMP_REG);
+    //LOG_DEBUG(MAIN_TASK,NULL,"Temp raw val 1 is %d",temperature);
     temperature &= 0x00000FFF;
-
+    //LOG_DEBUG(MAIN_TASK,NULL,"Temp raw val 2 is %d",temperature);
     float temp = 0.0;
     if(temperature & 0x00000800) //check for negative temperature
     {
@@ -37,7 +39,9 @@ float TMP102_getTemperature(void)
         temp = (-1) * (float)temperature * 0.0625;
     }
     else{
+        //LOG_DEBUG(MAIN_TASK,NULL,"Temp raw float is %f",(float)temperature);
         temp = 0.0625 * (float)temperature;
+        //LOG_DEBUG(MAIN_TASK,NULL,"Temp float is %f",temp);
     }
 
     return temp;

@@ -12,6 +12,9 @@
 #include "task.h"
 #include "logger.h"
 #include "commUART.h"
+#include "communicationPacket.h"
+#include <string.h>
+
 
 #ifdef TCP
 #include "TCP_layer.h"
@@ -24,7 +27,7 @@ int xTCPReceive(char *buffer, size_t size)
         ret= vTCPReceive(&buffer[bytesRecv], size - bytesRecv);
         if(ret < 0)
         {
-            LOG_ERROR(ETHERNET_TASK, NULL, "TCP Recv Error:%d",ret);
+            LOG_ERROR(RECV_TASK, NULL, "TCP Recv Error:%d",ret);
             break;
         }
         bytesRecv += ret;
@@ -41,23 +44,65 @@ int xTCPReceive(char *buffer, size_t size)
 TaskHandle_t communicationRecvTaskHandle;
 extern volatile bool BBGConnectedFlag;
 
+
+extern volatile bool BBGConnectedFlag;
 static void myCommRecvTask(void *params)
 {
-        char start[15] = {0};
-        int ret = 0;
-        while(1)
-        {
+        UART3_config(9600);
+        packet_struct_t recv_packet;
+        int valread = 0;
+
 #ifdef TCP
             ulTaskNotifyTake( pdTRUE, portMAX_DELAY);
 #endif
-            ret = COMM_PHYRECV(start, 15);
-            if(ret == 15)
+            while(1)
             {
-                LOG_INFO(ETHERNET_TASK, NULL, "Bytes Recv:%d",ret);
-                BBGConnectedFlag = true;
+                    memset(&recv_packet, 0, sizeof(recv_packet));
+                    valread = COMM_PHYRECV((char*)&recv_packet, sizeof(recv_packet));
+                    LOG_DEBUG(RECV_TASK,NULL , "Packet received: %u, CRC %d",valread,recv_packet.crc);
+                    bool crcCheck = VerifyCRC(&recv_packet);
+                    if(crcCheck == false)
+                    {
+                        LOG_ERROR(RECV_TASK,NULL, "CRC Check failed");
+                        //UART_flush(fd);
+                        //continue;
+                    }
+                    LOG_DEBUG(RECV_TASK,NULL , "Opcode received: %d",recv_packet.data.opcode);
+                    LOG_DEBUG(RECV_TASK,NULL, "Packet: ");
+                            LOG_DEBUG(RECV_TASK,NULL,   \
+                                "Source Node: %d\n  \
+                                Destination Node: %d\n\
+                                Timestamp: %u\n\
+                                Operation state: %d\n\
+                                Node Type: %d",\
+                                recv_packet.header.src_node,    \
+                                recv_packet.header.dst_node,\
+                                recv_packet.header.timestamp,\
+                                recv_packet.header.node_state,\
+                                recv_packet.header.node);
+
+                            LOG_DEBUG(RECV_TASK, NULL,  \
+                                "Opcode: %d\n  \
+                                Data Size: %d\n\
+                                CRC: %u\n",\
+                                recv_packet.data.opcode,    \
+                                recv_packet.data.dataSize, \
+                                recv_packet.crc);
+
+                    switch(recv_packet.data.opcode)
+                    {
+                    case reverseGearStateControl:
+                        break;
+                    case fanStateControl:
+                        break;
+                    case accelerometerDeltaThresholdControl:
+                        break;
+                    case Heartbeat:
+                        LOG_INFO(HB_TASK,NULL,"Heart beat ACK");
+                        BBGConnectedFlag = 0;
+                        break;
+                    }
             }
-            vTaskDelay(50);
-        }
 }
 
 uint32_t StartCommRecvTask()

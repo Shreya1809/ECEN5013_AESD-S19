@@ -22,6 +22,7 @@
 #include "driverlib/pin_map.h"
 #include "driverlib/uart.h"
 #include "utils/uartstdio.h"
+#include "driverlib/interrupt.h"
 
 extern uint32_t g_ui32SysClock;
 
@@ -143,7 +144,7 @@ UART3PrimeTransmit(uint32_t ui32Base)
         // Disable the UART interrupt.  If we don't do this there is a race
         // condition which can cause the read index to be corrupted.
         //
-        MAP_IntDisable(g_ui32UARTInt[g_ui32PortNum]);
+        IntDisable(g_ui32UARTInt[g_ui32PortNum]);
 
         //
         // Yes - take some characters out of the transmit buffer and feed
@@ -774,10 +775,11 @@ size_t UART3_putData(char *data, size_t len)
     return i;
 }
 
+
 size_t UART3_getData(uint8_t *data, size_t len)
 {
-    if(!UARTCharsAvail(UART3_BASE))
-        return 0;
+//    if(!UARTCharsAvail(UART3_BASE))
+//        return 0;
     int i = 0;
     while(i<len)
     {
@@ -787,6 +789,7 @@ size_t UART3_getData(uint8_t *data, size_t len)
             data[i] = c;
             i++;
         }
+        else return i;
     }
     return i;
 }

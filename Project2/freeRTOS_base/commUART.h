@@ -16,5 +16,6 @@ size_t UART3_putString(const char *str);
 void UART2_config(uint32_t baudrate);
 int UART2_putData(const char *data, size_t len);
 int UART2_getData(char *data, size_t len);
+int32_t UART3CharGet(void);
 
 #endif /* COMMUART_H_ */

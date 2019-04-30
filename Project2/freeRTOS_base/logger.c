@@ -33,10 +33,13 @@ const char * logLevel[LOG_MAX] = {
 const char * moduleIdName[MAX_TASKS+1] = {
     "LOGGER_TASK",
     "TEMP_TASK",
-    "ETHERNET_TASK",
+    "SEND_TASK",
     "ACCEL_TASK",
     "DIST_TASK",
     "MAIN_TASK",
+    "RECV_TASK",
+     "HB_TASK",
+
 };
 
 const char *operationalState[4] = {
@@ -103,9 +106,9 @@ int LOG_ENQUEUE(log_level_t level, moduleId_t modId, void *data, char *msg, ...)
         case TEMP_TASK:
             send_log.temperature = *(temp_data_t*)data;
             break;
-        case ETHERNET_TASK:
-            //send_log.temperature = *(temp_data_t*)data;
-            break;
+//        case ETHERNET_TASK:
+//            //send_log.temperature = *(temp_data_t*)data;
+//            break;
             //case LED_TASK:
             //    send_log.led = *(led_data_t*)data;
             //    break;

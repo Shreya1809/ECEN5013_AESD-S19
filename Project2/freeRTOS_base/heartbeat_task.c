@@ -69,7 +69,7 @@ extern uint32_t g_ui32SysClock;
 #define HB_RATE_MS   1000
 
 extern volatile bool BBGConnectedFlag;
-#define SendHeartbeatToServer() if(BBGConnectedFlag){   COMM_SEND(Heartbeat, NULL); }
+#define SendHeartbeatToServer()         COMM_SEND(Heartbeat, NULL)
 static void myHeartBeatTask(void *params)
 {
     uint8_t ledval1 = (uint8_t)0;
@@ -78,6 +78,7 @@ static void myHeartBeatTask(void *params)
     const TickType_t xFrequency = pdMS_TO_TICKS(HB_RATE_MS);
     uint32_t count = 0;
     xLastWakeTime = xTaskGetTickCount();
+    static uint32_t disconnectedCounter = 0;
     while(1)
     {
         ledval1 ^= (uint8_t)GPIO_PIN_0;
@@ -86,6 +87,16 @@ static void myHeartBeatTask(void *params)
         GPIOPinWrite(GPIO_PORTN_BASE, (uint8_t)GPIO_PIN_1, ledval2);
         if(count % 5 == 0)
         {
+            if(BBGConnectedFlag == 0)
+            {
+                disconnectedCounter++;
+                if(disconnectedCounter > 2)
+                {
+                    LOG_ERROR(HB_TASK, NULL, "BBG Disconnected");
+                    disconnectedCounter = 0;
+                }
+            }
+            BBGConnectedFlag = 1;
             SendHeartbeatToServer();
         }
         //        if(count % 1 == 0)

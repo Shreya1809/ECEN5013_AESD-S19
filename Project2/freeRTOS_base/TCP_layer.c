@@ -80,7 +80,7 @@ void vApplicationIPNetworkEventHook( eIPCallbackEvent_t eNetworkEvent )
              * For convenience, tasks that use FreeRTOS+TCP can be created here
              * to ensure they are not created before the network is usable.
              */
-            LOG_DEBUG(ETHERNET_TASK, NULL, "Network Up event");
+            LOG_DEBUG(MAIN_TASK, NULL, "Network Up event");
             SIGNAL_TASK_ON_NETWORK_UP();
 
             xTasksAlreadyCreated = pdTRUE;
@@ -88,7 +88,7 @@ void vApplicationIPNetworkEventHook( eIPCallbackEvent_t eNetworkEvent )
     }
     else if( eNetworkEvent == eNetworkDown )
     {
-        LOG_ERROR(ETHERNET_TASK, NULL, "Network Down");
+        LOG_ERROR(MAIN_TASK, NULL, "Network Down");
     }
 }
 
@@ -124,7 +124,7 @@ void vCreateTCPClientSocket( void )
     configASSERT( xClientSocket != FREERTOS_INVALID_SOCKET );
     if(xClientSocket == FREERTOS_INVALID_SOCKET)
     {
-        LOG_ERROR(ETHERNET_TASK, NULL, "Invalid Socket");
+        LOG_ERROR(MAIN_TASK, NULL, "Invalid Socket");
         while(1);
 
     }
@@ -166,11 +166,11 @@ void vCreateTCPClientSocket( void )
     port number. */
     FreeRTOS_bind(xClientSocket, &xRemoteAddress, sizeof( xRemoteAddress ));
 
-    LOG_DEBUG(ETHERNET_TASK, NULL, "Socket Bind. Now trying to Connect#####");
+    LOG_DEBUG(MAIN_TASK, NULL, "Socket Bind. Now trying to Connect#####");
     while(FreeRTOS_connect( xClientSocket, &xRemoteAddress, sizeof( xRemoteAddress )) != 0);
     if(pdTRUE != FreeRTOS_issocketconnected(xClientSocket))
     {
-        LOG_ERROR(ETHERNET_TASK, NULL, "->Socket Not Connected#########");
+        LOG_ERROR(MAIN_TASK, NULL, "->Socket Not Connected#########");
     }
     else
     {
@@ -178,8 +178,8 @@ void vCreateTCPClientSocket( void )
         FreeRTOS_GetRemoteAddress( xClientSocket, &xConnectedAddress );
         char ip[16];
         FreeRTOS_inet_ntoa( xConnectedAddress.sin_addr, ip);
-        LOG_INFO(ETHERNET_TASK, NULL, "Socket Connected");
-        LOG_INFO(ETHERNET_TASK, NULL, "IP:%s Port:%d", ip, FreeRTOS_ntohs(xConnectedAddress.sin_port) );
+        LOG_INFO(MAIN_TASK, NULL, "Socket Connected");
+        LOG_INFO(MAIN_TASK, NULL, "IP:%s Port:%d", ip, FreeRTOS_ntohs(xConnectedAddress.sin_port) );
     }
 
 }

@@ -34,6 +34,7 @@ int SendTask_enqueue(opcode_t opcode, void *data)
             packet.data.dataSize = sizeof(temp_data_t);
             break;
         case Heartbeat:
+            LOG_INFO(MAIN_TASK,NULL,"Heart beat Sent");
             break;
         case accelerometer:
             packet.data.accel = *(accel_data_t*)data;
@@ -69,14 +70,14 @@ static inline void SendPacket(packet_struct_t *commpacket)
     FillCRC(commpacket);
     size_t bytesToSend = sizeof(*commpacket);
     size_t bytesSent = COMM_PHYSEND((char*)commpacket, bytesToSend);
-    LOG_DEBUG(ETHERNET_TASK,NULL , "Packet Header Sent: %u",bytesSent);
+    LOG_DEBUG(SEND_TASK,NULL , "Packet Header Sent: %u, CRC %d",bytesSent,commpacket->crc);
 
 }
 
 
 void SendNodeInfo(void)
 {
-    packet_struct_t infoPacket;
+    packet_struct_t infoPacket = {0};
     infoPacket.header.timestamp = getTimeMsec();
     infoPacket.header.node_state = getThisNodeCurrentOperation();
     infoPacket.header.src_node = EK_TM4C1294XL;
@@ -92,45 +93,25 @@ void SendNodeInfo(void)
 
     infoPacket.data.dataSize = infoDatasize;
 
-    //log.crc = CRC_calculate((uint8_t*)&, uint8_t length)
     FillCRC(&infoPacket);
 
-    //starting of frame
-//    size_t bytesSent = COMM_PHYSEND(infostartframe, strlen(infostartframe));
-//    LOG_DEBUG(ETHERNET_TASK,NULL , "Start frame sent: %u",bytesSent);
-
-    //sending packet header
-//    size_t bytesToSend = sizeof(infoPacket.header);
-//    bytesSent = COMM_PHYSEND((char*)&infoPacket.header, bytesToSend);
-//    LOG_DEBUG(ETHERNET_TASK,NULL , "Packet Header Sent: %u",bytesSent);
-//
-//    //start sending the packet data separately
-//    //sending the opcode
-//    bytesSent = COMM_PHYSEND((char*)&infoPacket.data.opcode, sizeof(infoPacket.data.opcode));
-//    LOG_DEBUG(ETHERNET_TASK,NULL , "Opcode Sent: %u",bytesSent);
 
     size_t bytesToSend = sizeof(infoPacket);
     size_t bytesSent = COMM_PHYSEND((char*)&infoPacket, bytesToSend);
-    LOG_DEBUG(ETHERNET_TASK,NULL , "Packet Header Sent: %u",bytesSent);
+    LOG_DEBUG(SEND_TASK,NULL , "Packet Sent: %u ,CRC %d",bytesSent,infoPacket.crc);
 
 
     //sending the actual data size
-    bytesSent = COMM_PHYSEND((char*)&infoPacket.data.dataSize, sizeof(infoPacket.data.dataSize));
-    LOG_DEBUG(ETHERNET_TASK,NULL , "Data size Sent: %u",bytesSent);
+//    bytesSent = COMM_PHYSEND((char*)&infoPacket.data.dataSize, sizeof(infoPacket.data.dataSize));
+//    LOG_DEBUG(SEND_TASK,NULL , "Data size Sent: %u",bytesSent);
 
     bytesSent = 0;
     for(int i = 0; i < NODE_INFO_MAX; i++)
     {
         bytesSent += COMM_PHYSEND((char*)_thisNodeInfo[i], strlen(_thisNodeInfo[i]));
     }
-    LOG_DEBUG(ETHERNET_TASK,NULL , "Actual Data info Sent: %u",bytesSent);
+    //LOG_DEBUG(SEND_TASK,NULL , "Actual Data info Sent: %u",bytesSent);
 
-    bytesSent = COMM_PHYSEND((char*)&infoPacket.crc, sizeof(infoPacket.crc));
-    LOG_DEBUG(ETHERNET_TASK,NULL , "CRC Sent: %u",bytesSent);
-
-    //ending of frame
-//    bytesSent = COMM_PHYSEND(infoendframe, strlen(infoendframe));
-//    LOG_INFO(ETHERNET_TASK, NULL, "End frame sent: %u", bytesSent);
 }
 
 TaskHandle_t communicationSendTaskHandle;
@@ -155,7 +136,7 @@ static void myCommSendTask(void *params)
         //             message is not immediately available.
         if( xQueueReceive(send_queue, &send_packet, (TickType_t)portMAX_DELAY) == pdPASS )
         {
-            LOG_INFO(ETHERNET_TASK, NULL, "TCP Packet Sending");
+           // LOG_INFO(SEND_TASK, NULL, "Packet Sending");
             SendPacket(&send_packet);
         }
     }

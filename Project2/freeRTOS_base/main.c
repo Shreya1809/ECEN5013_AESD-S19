@@ -33,7 +33,7 @@
 #include "driverlib/rom_map.h"
 #include "driverlib/sysctl.h"
 #include "drivers/pinout.h"
-
+#include "utils/uartstdio.h"
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
@@ -143,12 +143,12 @@ main(void)
 
        }
    }
-   if(SensorTaskInit() != 0)
-   {
-       while(1)
-       {
-       }
-   }
+//   if(SensorTaskInit() != 0)
+//   {
+//       while(1)
+//       {
+//       }
+//   }
    if(HBTaskInit() != 0)
    {
        while(1)
