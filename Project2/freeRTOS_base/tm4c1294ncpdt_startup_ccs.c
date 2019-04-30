@@ -124,7 +124,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // GPIO Port F
     IntDefaultHandler,                      // GPIO Port G
     IntDefaultHandler,                      // GPIO Port H
-    UART2IntHandler,                      // UART2 Rx and Tx
+    IntDefaultHandler,                      // UART2 Rx and Tx
     IntDefaultHandler,                      // SSI1 Rx and Tx
     IntDefaultHandler,                      // Timer 3 subtimer A
     IntDefaultHandler,                      // Timer 3 subtimer B
@@ -147,7 +147,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // GPIO Port L
     IntDefaultHandler,                      // SSI2 Rx and Tx
     IntDefaultHandler,                      // SSI3 Rx and Tx
-    IntDefaultHandler,                      // UART3 Rx and Tx
+    UART2IntHandler,                      // UART3 Rx and Tx
     IntDefaultHandler,                      // UART4 Rx and Tx
     IntDefaultHandler,                      // UART5 Rx and Tx
     IntDefaultHandler,                      // UART6 Rx and Tx

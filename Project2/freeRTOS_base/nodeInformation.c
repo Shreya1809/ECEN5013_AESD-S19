@@ -36,14 +36,23 @@ const char *_thisNodeInfo[NODE_INFO_MAX] = {
 "00:bc:de:ef:12:4a\n"
 };
 
+volatile int OperationStateFlag = 0x00;
+
 //global variable for seeting the operation state
 static volatile node_operation_state_t _thisNodeOperationState = STARTUP;
 
-node_operation_state_t getThisNodeCurrentOperation(){
-    return _thisNodeOperationState;
+node_operation_state_t getThisNodeCurrentOperation()
+{
+//    xSemaphoreTake(currentOpStateLock, portMAX_DELAY);
+    node_operation_state_t state = _thisNodeOperationState;
+//    xSemaphoreGive(currentOpStateLock);
+    return state;
 }
 
-void setThisNodeCurrentOperation(node_operation_state_t state){
+void setThisNodeCurrentOperation(node_operation_state_t state)
+{
+//    xSemaphoreTake(currentOpStateLock, portMAX_DELAY);
     _thisNodeOperationState = state;
+//    xSemaphoreGive(currentOpStateLock);
 }
 

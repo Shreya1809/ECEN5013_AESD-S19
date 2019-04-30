@@ -41,9 +41,10 @@ const char * moduleIdName[MAX_TASKS+1] = {
      "MAIN_TASK",
 };
 
-const char *operationalState[4] = {
+const char *operationalState[5] = {
        "STARTUP",
        "NORMAL",
+       "CONN_DISCONNECTED",
        "DEGRADED_OPERATION",
        "OUTOFSERVICE"
 };

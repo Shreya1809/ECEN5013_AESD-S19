@@ -13,7 +13,7 @@
 #define RATE_MS                 500
 volatile int delayMS = 0;
 extern uint32_t g_ui32SysClock;
-
+volatile bool BBGConnectedState = false;
 volatile accel_data_t prevAccelReadings = {
                                            .x = 0,
                                            .y = 0,
@@ -35,18 +35,18 @@ volatile temp_data_t temperatureThreshold = {
                                             .unit = 'C'
 };
 
-volatile uint32_t SensorConnectionFlag = 0x00;
+extern volatile int OperationStateFlag;
 
 
 void DCmotor(state_t option)
 {
     if(option)
     {
-        GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, 0);
+        GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, GPIO_PIN_7);
     }
     else
     {
-        GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, GPIO_PIN_7);
+        GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, 0);
     }
 }
 
@@ -55,7 +55,15 @@ void setReversGear(bool state)
     xSemaphoreTake(sensorDataLock, portMAX_DELAY);
     inReverseGear = state;
     xSemaphoreGive(sensorDataLock);
-    state ? LCD_printString(0,13,"1") : LCD_printString(0,13,"0");
+    if(state)
+    {
+        LCD_printString(0,13,"1");
+    }
+    else
+    {
+        LCD_printString(0,13,"0");
+        generate_PWM(g_ui32SysClock, DC_OFF);
+    }
 }
 
 bool getReversGear()
@@ -179,18 +187,16 @@ static inline int AccelHandler(accel_data_t *readings)
     if(!get_Accel(&readings->x, &readings->y, &readings->z))
     {
         readings->connected = false;
-        setThisNodeCurrentOperation(DEGRADED_OPERATION);
         LOG_WARN(ACCEL_TASK,&readings , "DISCONNECTED");
         prevAccelReadings.x = 0;
         prevAccelReadings.y = 0;
         prevAccelReadings.z = 0;
-        SensorConnectionFlag |= (1<<1);
+        OperationStateFlag |= ACCL_DISCONNECTED_FLAG;
         return 1;
     }
     else
     {
         readings->connected = true;
-        setThisNodeCurrentOperation(NORMAL);
         if(prevAccelReadings.x != 0 && prevAccelReadings.y != 0 && prevAccelReadings.z != 0)
         {
             accel_data_t th = {0};
@@ -215,7 +221,7 @@ static inline int AccelHandler(accel_data_t *readings)
             readings->INT2 = true;
         }
         else readings->INT2 = false;
-        SensorConnectionFlag &= ~(1<<1);
+        OperationStateFlag &= ~(ACCL_DISCONNECTED_FLAG);
         return 0;
     }
 }
@@ -228,12 +234,11 @@ static inline int DistHandler(dist_data_t *data)
         data->connected = false;
         generate_PWM(g_ui32SysClock, DC_OFF);
         LOG_WARN(DIST_TASK, &data , "DISCONNECTED");
-        SensorConnectionFlag |= (1<<0);
+        OperationStateFlag |= (DIST_DISCONNECTED_FLAG);
         return 1;
     }
     else{
         data->connected = true;
-        setThisNodeCurrentOperation(NORMAL);
         if(data->distance > 50){
             generate_PWM(g_ui32SysClock, DC_OFF);
         }
@@ -252,7 +257,7 @@ static inline int DistHandler(dist_data_t *data)
         if(data->distance > 0 && data->distance < 2){
             generate_PWM(g_ui32SysClock, DC_100_PERCENT);
         }
-        SensorConnectionFlag &= ~(1<<0);
+        OperationStateFlag &= ~(DIST_DISCONNECTED_FLAG);
         return 0;
     }
 }
@@ -260,7 +265,7 @@ static inline int DistHandler(dist_data_t *data)
 static inline int TempHandler(temp_data_t *temperaturedata)
 {
     temperaturedata->floatingpoint = TMP102_getTemperature();
-    if(BBGConnectedFlag == false)
+    if(BBGConnectedState == false)
     {
         //we will decide on the fan as BBG is not connected
         if(temperaturedata->floatingpoint > getTemperatureThreshold())
@@ -271,7 +276,6 @@ static inline int TempHandler(temp_data_t *temperaturedata)
         else
         {
             DCmotor(OFF);
-            LOG_INFO(TEMP_TASK,temperaturedata," Celcius");
         }
     }
     else
@@ -313,51 +317,38 @@ static void mySensorTasks(void *params)
     LOG_INFO(MAIN_TASK, NULL, " \t\t Start of Sensor Task");
     while(1)
     {
-        if(BBGConnectedFlag == false)
-        {
-            LOG_DEBUG(TEMP_TASK, NULL, "BBG Disconnected");
-        }
         if(counter % 6 == 0)
         {
             //temperature
             TempHandler(&temperaturedata);
+            LOG_INFO(TEMP_TASK,&temperaturedata,"Temperature");
         }
 
         //accel
         AccelHandler(&accelReadings);
         LCD_printAccel(&accelReadings);
-        if(counter % 2 && BBGConnectedFlag)
+        if((counter % 2 == 0))
         {
             LOG_INFO(ACCEL_TASK, &accelReadings, "Accelerometer");
-            COMM_SEND(accelerometer, &accelReadings);
+            if(BBGConnectedState)
+            {
+                COMM_SEND(accelerometer, &accelReadings);
+            }
         }
-
 
         if(getReversGear())
         {
             DistHandler(&distanceData);
-            if(counter % 2 && BBGConnectedFlag)
+            if((counter % 2 == 0))
             {
-                LOG_INFO(DIST_TASK, &data, " Distance");
-                COMM_SEND(distance, &distanceData);
+                LOG_INFO(DIST_TASK, &distanceData, "Distance");
+                if(BBGConnectedState)
+                {
+                    COMM_SEND(distance, &distanceData);
+                }
             }
         }
 
-        //updating the opertion state
-        if(SensorConnectionFlag == 0x00)
-        {
-            setThisNodeCurrentOperation(NORMAL);
-        }
-        else if(SensorConnectionFlag != 0x07)
-        {
-            setThisNodeCurrentOperation(DEGRADED_OPERATION);
-            //LOG_INFO(MAIN_TASK, NULL, " -----DEGRADED_OPERATION----");
-        }
-        else if(SensorConnectionFlag == 0x07)
-        {
-            setThisNodeCurrentOperation(OUTOFSERVICE);
-            LOG_INFO(MAIN_TASK, NULL, " -----OUTOFSERVICE----");
-        }
         counter++;
         vTaskDelayUntil( &xLastWakeTime, xFrequency );
     }

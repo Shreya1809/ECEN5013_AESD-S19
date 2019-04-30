@@ -37,18 +37,18 @@ int xTCPReceive(char *buffer, size_t size)
 }
 #define COMM_PHYRECV(data, len) xTCPReceive(data,len)
 #else
-#define COMM_PHYRECV(data,len)  UART3_getData(data,len)
+#define COMM_PHYRECV(data,len)  UART2_getData(data,len)
 #endif
 
 #define STACKSIZE_COMM_RECV_TASK     512
 
 TaskHandle_t communicationRecvTaskHandle;
 extern volatile bool BBGConnectedFlag;
+extern volatile bool BBGConnectedState;
 extern bool volatile inReverseGear;
 
 static void myCommRecvTask(void *params)
 {
-        UART3_config(9600);
         packet_struct_t recv_packet;
         int valread = 0;
 
@@ -104,14 +104,19 @@ static void myCommRecvTask(void *params)
                         DCmotor(recv_packet.data.isFanOn);
                         break;
                     case accelerometerDeltaThresholdControl:
+                        LOG_INFO(RECV_TASK, NULL, "ACCEL Threshold:%d,%d,%d",recv_packet.data.accel.x,recv_packet.data.accel.y,recv_packet.data.accel.z);
                         setAccelDeltaThreshold(&recv_packet.data.accel);
                         break;
                     case temperatureThresholdControl:
+                        LOG_INFO(RECV_TASK, NULL, "Temp Threshild:%f",recv_packet.data.temperature.floatingpoint);
                         setTemperatureThreshold(recv_packet.data.temperature.floatingpoint);
                         break;
                     case Heartbeat:
                         LOG_INFO(RECV_TASK,NULL,"Got Heart beat ACK");
                         BBGConnectedFlag = 0;
+                        BBGConnectedState = true;
+                        GPIOPinWrite(GPIO_PORTN_BASE, GPIO_PIN_3, 0);
+                        OperationStateFlag &= ~CONN_DISCONNECTED_FLAG;
                         break;
                     }
             }

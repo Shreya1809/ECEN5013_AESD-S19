@@ -26,9 +26,20 @@ typedef enum nodeInfo{
 typedef enum {
     STARTUP,
     NORMAL,
+    CONN_DISCONNECTED,
     DEGRADED_OPERATION,
     OUTOFSERVICE
 }node_operation_state_t;
+
+#define TEMP_DISCONNECTED_FLAG  (1<<0)
+#define ACCL_DISCONNECTED_FLAG  (1<<1)
+#define DIST_DISCONNECTED_FLAG  (1<<2)
+#define CONN_DISCONNECTED_FLAG  (1<<4)
+extern volatile int OperationStateFlag;
+#include "FreeRTOS.h"
+#include "semphr.h"
+SemaphoreHandle_t currentOpStateLock;
+#define OPStateLOCKInit()   currentOpStateLock = xSemaphoreCreateBinary()
 
 extern const char *_thisNodeInfoIDString[NODE_INFO_MAX];
 

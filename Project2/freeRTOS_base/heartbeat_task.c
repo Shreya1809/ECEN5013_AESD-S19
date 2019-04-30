@@ -69,7 +69,9 @@ extern uint32_t g_ui32SysClock;
 #define HB_RATE_MS   1000
 
 extern volatile bool BBGConnectedFlag;
+extern volatile bool BBGConnectedState;
 #define SendHeartbeatToServer()         COMM_SEND(Heartbeat, NULL)
+
 static void myHeartBeatTask(void *params)
 {
     uint8_t ledval1 = (uint8_t)0;
@@ -93,6 +95,9 @@ static void myHeartBeatTask(void *params)
                 if(disconnectedCounter > 2)
                 {
                     LOG_ERROR(HB_TASK, NULL, "BBG Disconnected");
+                    OperationStateFlag |= CONN_DISCONNECTED_FLAG;
+                    BBGConnectedState = false;
+                    GPIOPinWrite(GPIO_PORTN_BASE, GPIO_PIN_3, GPIO_PIN_3);
                     disconnectedCounter = 0;
                 }
             }
@@ -103,6 +108,27 @@ static void myHeartBeatTask(void *params)
         //        {
         LCD_update();
         //        }
+
+        //updating the opertion state
+        if(OperationStateFlag == 0x00)
+        {
+            setThisNodeCurrentOperation(NORMAL);
+        }
+        //updating the opertion state
+        else if(OperationStateFlag == CONN_DISCONNECTED_FLAG)
+        {
+            setThisNodeCurrentOperation(CONN_DISCONNECTED);
+        }
+        else if((OperationStateFlag != (TEMP_DISCONNECTED_FLAG | ACCL_DISCONNECTED_FLAG | DIST_DISCONNECTED_FLAG)) && (OperationStateFlag & ((TEMP_DISCONNECTED_FLAG | ACCL_DISCONNECTED_FLAG | DIST_DISCONNECTED_FLAG))) )
+        {
+            setThisNodeCurrentOperation(DEGRADED_OPERATION);
+        }
+        else if(OperationStateFlag == 0x0F)
+        {
+            setThisNodeCurrentOperation(OUTOFSERVICE);
+            LOG_INFO(MAIN_TASK, NULL, " -----OUTOFSERVICE----");
+        }
+
         count++;
         vTaskDelayUntil( &xLastWakeTime, xFrequency );
     }
@@ -130,6 +156,7 @@ uint32_t HBTaskInit(void)
 
     GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, GPIO_PIN_0);
     GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, GPIO_PIN_1);
+    GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, GPIO_PIN_3);
 
     //
     // Create the LED task.

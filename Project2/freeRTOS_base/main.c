@@ -47,6 +47,7 @@
 #include "lcd_driver.h"
 #include "communicationSend_task.h"
 #include "communicationRecv_task.h"
+#include "nodeInformation.h"
 
 
 //*****************************************************************************
@@ -125,6 +126,7 @@ main(void)
    LCD_init();
    LCD_printString(0,0,"Reverse Gear:");
    LCD_printString(0,13,"0");
+   OPStateLOCKInit();
    if(LoggerTaskInit() != 0)
    {
        while(1)

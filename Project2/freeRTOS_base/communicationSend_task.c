@@ -61,7 +61,7 @@ int SendTask_enqueue(opcode_t opcode, void *data)
 #ifdef TCP
 #define COMM_PHYSEND(data, len) vTCPSend(data,len)
 #else
-#define COMM_PHYSEND(data,len)  UART3_putData(data,len)
+#define COMM_PHYSEND(data,len)  UART2_putData(data,len)
 #endif
 
 static inline void SendPacket(packet_struct_t *commpacket)
@@ -77,7 +77,7 @@ static inline void SendPacket(packet_struct_t *commpacket)
 
 void SendNodeInfo(void)
 {
-    packet_struct_t infoPacket = {0};
+    packet_struct_t infoPacket;
     infoPacket.header.timestamp = getTimeMsec();
     infoPacket.header.node_state = getThisNodeCurrentOperation();
     infoPacket.header.src_node = EK_TM4C1294XL;
@@ -126,7 +126,7 @@ static void myCommSendTask(void *params)
         vCreateTCPClientSocket();
     #endif
 #else
-    UART3_config(9600);
+    UART2_config(9600);
 #endif
     SendNodeInfo();
     packet_struct_t send_packet;
