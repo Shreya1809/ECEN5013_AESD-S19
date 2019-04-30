@@ -9,49 +9,49 @@
 #include "comm_recv.h"
 #include "ext_clientHandler.h"
 #include "main.h"
+#include "comm_send.h"
+#include "sensorData.h"
 
 
-static volatile bool reverse_gear_flag = false;
-static volatile float temp_low_threshold = 22;
-static volatile float temp_high_threshold = 25;
+static volatile bool reverse_gear_flag_state = false;
+static volatile float temp_low_threshold = 10.0;
+static volatile float temp_high_threshold = 30.0;
 static volatile uint16_t x_delta = 0;
 static volatile uint16_t y_delta = 0;
 static volatile uint16_t z_delta = 0;
 pthread_mutex_t thresholdlock = PTHREAD_MUTEX_INITIALIZER;
 
-static sig_atomic_t stop_ext_thread = 0;
-
-static void set_ReverseGearFlag(void)
+void putIn_ReverseGear(void)
 {
-    pthread_mutex_lock(&thresholdlock);
-	reverse_gear_flag  = true;
-    pthread_mutex_unlock(&thresholdlock);
+    // pthread_mutex_lock(&thresholdlock);
+  	reverse_gear_flag_state  = true;
+    COMM_SEND(reverse_gear_flag_state, (void*)&reverse_gear_flag_state);
+    // pthread_mutex_unlock(&thresholdlock);
 }
 
-static void clear_ReverseGearFlag(void)
+void removeFrom_ReverseGear(void)
 {
-    pthread_mutex_lock(&thresholdlock);
-	reverse_gear_flag  = false;
-    pthread_mutex_unlock(&thresholdlock);
+    // pthread_mutex_lock(&thresholdlock);
+  	reverse_gear_flag_state  = false;
+    COMM_SEND(reverse_gear_flag_state, (void*)&reverse_gear_flag_state);
+    // pthread_mutex_unlock(&thresholdlock);
 }
 
 bool getReverseGearStatus(void)
 {
     bool status = false;
-    pthread_mutex_lock(&thresholdlock);
-	status = reverse_gear_flag;
-    pthread_mutex_unlock(&thresholdlock);
+    // pthread_mutex_lock(&thresholdlock);
+	  status = reverse_gear_flag_state;
+    // pthread_mutex_unlock(&thresholdlock);
     return status;
 }
 
-static void SetRemoteNodeTempThresholdValues(float low,float high)
+void SetRemoteNodeTempThresholdValues(float low,float high)
 {
-    //low = 20.00;
-    //high = 25.00;
     pthread_mutex_lock(&thresholdlock);
-	temp_low_threshold = low;
+	  temp_low_threshold = low;
     temp_high_threshold = high;
-	pthread_mutex_unlock(&thresholdlock);    
+	  pthread_mutex_unlock(&thresholdlock);    
 }
 
 float getTempThresLowVal(void)
@@ -71,11 +71,9 @@ float getTempThresHighVal(void)
     pthread_mutex_unlock(&thresholdlock); 
     return highval;   
 }
-static void SetRemoteNodeAccelDelta(uint16_t x,uint16_t y,uint16_t z)
+
+void SetRemoteNodeAccelDelta(int16_t x,int16_t y,int16_t z)
 {
-    //x = 150;
-    //y = 120;
-    //z = 100;
     pthread_mutex_lock(&thresholdlock);
     x_delta = x;
     y_delta = y;
@@ -83,32 +81,17 @@ static void SetRemoteNodeAccelDelta(uint16_t x,uint16_t y,uint16_t z)
     pthread_mutex_unlock(&thresholdlock);
 }
 
-uint16_t getXaxisDelta(void)
+void getAccelDelta(int16_t *x,int16_t *y,int16_t *z)
 {
-    uint16_t x_del = 0;
     pthread_mutex_lock(&thresholdlock);
-    x_del = x_delta;
+    *x = x_delta;
+    *y = y_delta;
+    *z = z_delta;
     pthread_mutex_unlock(&thresholdlock);
-    return x_del;
 }
 
-uint16_t getYaxisDelta(void)
-{
-    uint16_t y_del = 0;
-    pthread_mutex_lock(&thresholdlock);
-    y_del = y_delta;
-    pthread_mutex_unlock(&thresholdlock);
-    return y_del;
-}
 
-uint16_t getZaxisDelta(void)
-{
-    uint16_t z_del = 0;
-    pthread_mutex_lock(&thresholdlock);
-    z_del = z_delta;
-    pthread_mutex_unlock(&thresholdlock);
-    return z_del;
-}
+static sig_atomic_t stop_ext_thread = 0;
 void kill_ext_thread(void)
 {
     LOG_DEBUG(EXT_TASK,"socket thread exit signal received");
@@ -187,12 +170,14 @@ void *ext_clientHandle_task(void *threadp)
 
             if(strcmp(buffer,"1") == 0)
             {
-                sprintf(mesg,"Current Car Temperature %f",getCurrentTemperature());
+                temp_data_t temp = getCurrentTemperature();
+                sprintf(mesg,"[%d]Current Car Temperature %f %c",temp.connected, temp.floatingpoint, temp.unit);
                 send(new_socket , mesg , strlen(mesg) , 0 );
             }
             if(strcmp(buffer,"2") == 0)
             {
-                sprintf(mesg,"Current  Car Acceleration values are %d,%d and %d",getCurrentXaxis(),getCurrentYaxis(),getCurrentZaxis());
+                accel_data_t accel = getCurrentAccel();
+                sprintf(mesg,"[%d][%x]Current Car Acceleration values are %d,%d and %d",accel.connected, accel.devId, accel.x,accel.y,accel.z);
                 send(new_socket , mesg , strlen(mesg) , 0 );
             }
             if(strcmp(buffer,"3") == 0)
@@ -234,13 +219,13 @@ void *ext_clientHandle_task(void *threadp)
             if(strcmp(buffer,"5") == 0)
             {
                 //Set Car in reverse Gear for parking
-                set_ReverseGearFlag();
+                putIn_ReverseGear();
                 sprintf(mesg,"Ultrasonic Sensor in the back of the car activated");
                 send(new_socket , mesg , strlen(mesg) , 0 );
             }
             if(strcmp(buffer,"6") == 0)
             {
-                clear_ReverseGearFlag();
+                removeFrom_ReverseGear();
                 sprintf(mesg,"Ultrasonic Sensor in the back of the car deactivated");
                 send(new_socket , mesg , strlen(mesg) , 0 );
             }

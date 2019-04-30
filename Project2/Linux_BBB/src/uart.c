@@ -35,11 +35,11 @@ int UART_config(void)
 
     new_config.c_cflag = B9600 | CS8 | CLOCAL | CREAD;
     cfmakeraw(&new_config);
-    new_config.c_cc[VMIN]  = 0;
+    new_config.c_cc[VMIN]  = 1;
     new_config.c_cc[VTIME] = 1;
 
-    tcflush(fd, TCIFLUSH);
-    if(tcsetattr(fd, TCSAFLUSH, &new_config))
+    tcflush(fd, TCIOFLUSH);
+    if(tcsetattr(fd, TCSANOW, &new_config))
     {
         perror("Set Attr");
     }
@@ -52,9 +52,14 @@ void UART_close(int fd)
     close(fd);
 }
 
-void UART_flush(int fd)
+void UART_iflush(int fd)
 {
     (fd > 0) ? tcflush(fd, TCIFLUSH): 0;
+}
+
+void UART_oflush(int fd)
+{
+    (fd > 0) ? tcflush(fd, TCOFLUSH): 0;
 }
 
 int UART_printChar(int fd,char c)

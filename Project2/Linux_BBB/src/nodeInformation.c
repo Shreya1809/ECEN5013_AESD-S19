@@ -36,6 +36,8 @@ const char *_thisNodeInfo[NODE_INFO_MAX] = {
 "00:bc:de:ef:12:4a\n"
 };
 
+volatile int remoteNodeDisconnected = 0;
+
 //global variable for seeting the operation state
 static node_operation_state_t _thisNodeOperationState = STARTUP;
 

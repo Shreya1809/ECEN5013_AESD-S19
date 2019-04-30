@@ -23,6 +23,7 @@ typedef enum opcode{
     accelerometer,
     reverseGearStateControl,
     fanStateControl,
+    temperatureThresholdControl,
     accelerometerDeltaThresholdControl,
 }opcode_t;
 
@@ -90,7 +91,7 @@ static inline void FillPacketHeader(packet_struct_t *commpacket)
 
 static inline void FillPacketBBGHeader(packet_struct_t *commpacket)
 {
-    commpacket->header.timestamp = getTimeMsec();
+    commpacket->header.timestamp = getCurrentTimeMsec();
     commpacket->header.node_state = getThisNodeCurrentOperation();
     commpacket->header.src_node = BBG;
     commpacket->header.dst_node = EK_TM4C1294XL;
@@ -106,7 +107,9 @@ static inline void FillCRC(packet_struct_t *commpacket)
 static inline bool VerifyCRC(packet_struct_t *commpacket)
 {
     uint16_t checkCRC = commpacket->crc;
+    commpacket->crc = 0;
     uint16_t crc = CRC_calculate((uint8_t*)commpacket, sizeof(*commpacket));
+    LOG_DEBUG(RECV_TASK, "CRC Calc == CRCcheck -> %u == %u",crc, checkCRC);
     return crc == checkCRC;
 }
 

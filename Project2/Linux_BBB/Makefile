@@ -17,7 +17,7 @@ CLG:=128.138.189.80
 IPADDR:=$(LOCAL)
 
 .PHONY:all
-all: build send test doxygen rungdb
+all: build send #test doxygen rungdb
 	 
 
 .PHONY:rungdb
@@ -32,10 +32,10 @@ build:
 .PHONY:send
 send:
 	ssh root@$(IPADDR) "mkdir -p ~/home/Project2 ~/home/Project2/config ~/home/Project2/code ~/home/Project2/output" 
-	scp -r $(WORKSPACE_FILES) root@$(IPADDR):~/home/Project2/code/
-	scp -pr $(WORKSPACE)/src root@$(IPADDR):~/home/Project2/code/src
-	scp -pr $(WORKSPACE)/include root@$(IPADDR):~/home/Project2/code/include
-	scp -pr $(WORKSPACE)/test root@$(IPADDR):~/home/Project2/code/test
+	#scp -r $(WORKSPACE_FILES) root@$(IPADDR):~/home/Project2/code/
+	#scp -pr $(WORKSPACE)/src root@$(IPADDR):~/home/Project2/code/src
+	#scp -pr $(WORKSPACE)/include root@$(IPADDR):~/home/Project2/code/include
+	#scp -pr $(WORKSPACE)/test root@$(IPADDR):~/home/Project2/code/test
 	scp *$(OUTPUT_EXT) root@$(IPADDR):~/home/Project2/output/
 	#scp -pr $(WORKSPACE)/config/* root@$(IPADDR):~/home/Project2/config/
 

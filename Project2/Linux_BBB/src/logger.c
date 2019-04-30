@@ -81,10 +81,10 @@ FILE *fp;
 
 int LOG_ENQUEUE(log_level_t level, moduleId_t modId, char *msg, ...)
 {
-  //if(level > currentLogLevel)
-  //{
-  //  return 0;
-  //}
+  if(level > currentLogLevel)
+  {
+   return 0;
+  }
   if (mq_logger > -1 && level > LOG_INVALID && level < LOG_MAX)
   {
     log_struct_t send_log;

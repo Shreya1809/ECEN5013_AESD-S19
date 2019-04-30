@@ -12,12 +12,18 @@
 #define EXT_CLIENT_HANDLER_H_
 
 
+/* 
+ * Data thresholds API
+*/
+void putIn_ReverseGear(void);
+void removeFrom_ReverseGear(void);
+bool getReverseGearStatus(void);
+void SetRemoteNodeTempThresholdValues(float low,float high);
 float getTempThresLowVal(void);
 float getTempThresHighVal(void);
-bool getReverseGearStatus(void);
-uint16_t getXaxisDelta(void);
-uint16_t getYaxisDelta(void);
-uint16_t getZaxisDelta(void);
+void SetRemoteNodeAccelDelta(int16_t x,int16_t y,int16_t z);
+void getAccelDelta(int16_t *x,int16_t *y,int16_t *z);
+
 void kill_ext_thread(void);
 void *ext_clientHandle_task(void *threadp);
 

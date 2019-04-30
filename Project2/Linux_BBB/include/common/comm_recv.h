@@ -23,21 +23,21 @@ void kill_recv_thread(void);
  * @param threadp 
  * @return void* 
  */
+
+#include "communicationPacket.h"
+#include "sensorData.h"
+
 void *commRecv_task(void *threadp);
-int CommReceive_NodeInfoHandler(int clientsock);                  
+int CommReceive_NodeInfoHandler(int fd, packet_struct_t *packet);                 
 int CommReceive_HeartBeatHandler(int clientsock);
 int CommReceive_TempDataHandler(int clientsock);
 int CommReceive_DistDataHandler(int clientsock);
-int CommReceive_AccelDataHandler(int clientsock);
+int CommReceive_AccelDataHandler(int fd, packet_struct_t *packet);
                    
-float getCurrentTemperature(void);
-int32_t getCurentDist(void);
-int16_t getCurrentXaxis(void);
-int16_t getCurrentYaxis(void);
-int16_t getCurrentZaxis(void);
-int16_t getPrevXaxis(void);
-int16_t getPrevYaxis(void);
-int16_t getPrevZaxis(void);
+temp_data_t getCurrentTemperature(void);
+dist_data_t getCurentDist(void);
+accel_data_t getCurrentAccel(void);
+accel_data_t getPrevAccel(void);
 
 
 #endif

@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "uart.h": "c",
+        "comm_send.h": "c",
+        "ext_clienthandler.h": "c"
+    }
+}
