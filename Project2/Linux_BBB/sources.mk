@@ -5,9 +5,6 @@ SRCS:= $(SRCDIR)main.c\
 	$(SRCDIR)ext_clientHandler.c\
 	$(SRCDIR)logger.c\
 	$(SRCDIR)bbgled.c\
-	$(SRCDIR)mytimer.c\
-	$(SRCDIR)heartbeat.c\
-	$(SRCDIR)mysignal.c\
 	$(SRCDIR)uart.c\
 	$(SRCDIR)communicationPacket.c\
 	$(SRCDIR)nodeInformation.c\

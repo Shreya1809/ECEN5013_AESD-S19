@@ -13,12 +13,11 @@
 #include "logger.h"
 #include "socket.h"
 #include "bbgled.h"
-#include "mysignal.h"
-#include "heartbeat.h"
 #include "comm_recv.h"
 #include "comm_send.h"
 #include "ext_clientHandler.h"
 #include "uart.h"
+#include "main.h"
 
 pthread_t threads[MAX_TASKS]={0};
 int thread_flag[MAX_TASKS] = {0};
@@ -43,6 +42,19 @@ void *threadParamArgs[MAX_TASKS] = {0};
 
 uint32_t startofprogramTime = 0;
 #ifndef TEST_MODE
+
+void signal_handler(int signum)
+{
+    if (signum == SIGINT)
+    {
+        LOG_WARN(MAIN_TASK,"User exit signal received....");
+        kill_recv_thread();
+	    kill_send_thread();
+	    kill_ext_thread();
+    }
+    
+}
+
 int main(int argc , char **argv)
 {
     startofprogramTime = getStartofProgramTime();
@@ -164,6 +176,7 @@ int main(int argc , char **argv)
         }
     }
     #else
+
     int fd = 0;
     fd = UART_config();
     if(fd < 0)
@@ -171,31 +184,32 @@ int main(int argc , char **argv)
         perror("uart config:");
     }
     if (pthread_create(&thread, NULL, commRecv_task, &fd) != 0) {
-                fprintf(stderr, "Failed to create thread\n");
-            }
-            else{
-                thread_flag[RECV_TASK]=1;
-            LOG_INFO(MAIN_TASK,"COMM RECV TASK thread created");
-            }
+            fprintf(stderr, "Failed to create thread\n");
+    }
+    else{
+        thread_flag[RECV_TASK]=1;
+        LOG_INFO(MAIN_TASK,"COMM RECV TASK thread created");
+    }
 
-            if (pthread_create(&thread, NULL, commSend_task, &fd) != 0) {
-                fprintf(stderr, "Failed to create thread\n");
-            }
-            else{
-                thread_flag[SEND_TASK]=1;
-            LOG_INFO(MAIN_TASK,"COMM SEND TASK thread created");
-            }
+    if (pthread_create(&thread, NULL, commSend_task, &fd) != 0) {
+        fprintf(stderr, "Failed to create thread\n");
+    }
+    else{
+        thread_flag[SEND_TASK]=1;
+        LOG_INFO(MAIN_TASK,"COMM SEND TASK thread created");
+    }
     #endif
+
     //joining socket threads first followed by logger thread
     for(int i = 1; i< 4;i++)
     {
         rc = pthread_join(threads[i],NULL);
         if(rc)
         {
-            PRINTLOGCONSOLE("pthread_join for thread %s failed\n", (char*)ThreadEntryFunction[i]);
+            PRINTLOGCONSOLE("pthread_join for thread %s failed\n", moduleIdName[i]);
             //GREENLEDOFF();
             REDLEDON();
-            exit(EXIT_FAILURE);
+            //exit(EXIT_FAILURE);
         }  
     }
     #ifdef TCP 
@@ -207,7 +221,7 @@ int main(int argc , char **argv)
     rc = pthread_join(threads[LOGGER_TASK],NULL);
     if(rc)
     {
-        PRINTLOGCONSOLE("pthread_join for thread %s failed\n", (char*)ThreadEntryFunction[LOGGER_TASK]);
+        PRINTLOGCONSOLE("pthread_join for thread %s failed\n", moduleIdName[LOGGER_TASK]);
         GREENLEDOFF();
         REDLEDON();
         exit(EXIT_FAILURE);   

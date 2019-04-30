@@ -4,8 +4,6 @@
 #include "socket.h"
 #include "logger.h"
 #include "bbgled.h"
-#include "mysignal.h"
-#include "heartbeat.h"
 #include "uart.h"
 
 static sig_atomic_t stop_send_thread = 0;
@@ -157,5 +155,7 @@ void *commSend_task(void *pnewsock)
 
 void kill_send_thread(void)
 {
-
+    LOG_DEBUG(SEND_TASK,"Send thread exit signal received");
+    stop_send_thread = 1;
+    pthread_cancel(threads[SEND_TASK]);    
 } 

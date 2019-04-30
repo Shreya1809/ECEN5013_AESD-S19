@@ -42,7 +42,7 @@ int main(int argc, char const *argv[])
     serv_addr.sin_port = htons(PORT); 
        
     // Convert IPv4 and IPv6 addresses from text to binary form 
-    if(inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr)<=0)  
+    if(inet_pton(AF_INET, "10.0.0.19", &serv_addr.sin_addr)<=0)  
     { 
         printf("\nInvalid address/ Address not supported \n"); 
         return -1; 
@@ -54,7 +54,7 @@ int main(int argc, char const *argv[])
     } 
     while(1)
     {
-        TRY: send(sock , startFrame , sizeof(startFrame) , 0 ); 
+        TRY: //send(sock , startFrame , sizeof(startFrame) , 0 ); 
         printf("EXternal Client Request Option:\n");
         printf("1. Request Current Car Temperature value\n");
         printf("2. Request Current  Car Acceleration value\n");
@@ -139,7 +139,7 @@ int main(int argc, char const *argv[])
             printf("The delta valus are %s for x,y and z axis\n",del_x);
             send(sock , (char*)&del_x , sizeof(del_x) , 0 );
         }
-        if(c == '6')
+        if(c == '7')
         {
             send(sock , (char*)&c , sizeof(c) , 0 ); //exit client and send close control node indeication
             break; 
@@ -153,8 +153,6 @@ int main(int argc, char const *argv[])
             printf("%s\n",buffer ); 
             
         }
-        
-
     }
     printf("Client exiting....\n");
     close(sock);
