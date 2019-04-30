@@ -9,8 +9,6 @@
 #include "communicationPacket.h"
 #include "nodeInformation.h"
 
-//char *infostartframe = "*#*#";
-//char *infoendframe = "#*#*";
 
 //cal crc
 uint16_t CRC_calculate(uint8_t * data_p, uint8_t length){

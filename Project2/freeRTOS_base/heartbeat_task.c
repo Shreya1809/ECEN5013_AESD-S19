@@ -87,7 +87,7 @@ static void myHeartBeatTask(void *params)
         GPIOPinWrite(GPIO_PORTN_BASE, (uint8_t)GPIO_PIN_1, ledval2);
         if(count % 5 == 0)
         {
-            if(BBGConnectedFlag == 0)
+            if(BBGConnectedFlag == 1)
             {
                 disconnectedCounter++;
                 if(disconnectedCounter > 2)

@@ -123,6 +123,8 @@ main(void)
 #endif
 
    LCD_init();
+   LCD_printString(0,0,"Reverse Gear:");
+   LCD_printString(0,13,"0");
    if(LoggerTaskInit() != 0)
    {
        while(1)
@@ -143,12 +145,12 @@ main(void)
 
        }
    }
-//   if(SensorTaskInit() != 0)
-//   {
-//       while(1)
-//       {
-//       }
-//   }
+   if(SensorTaskInit() != 0)
+   {
+       while(1)
+       {
+       }
+   }
    if(HBTaskInit() != 0)
    {
        while(1)

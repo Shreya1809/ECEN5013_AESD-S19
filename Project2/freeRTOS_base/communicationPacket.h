@@ -75,8 +75,6 @@ struct packet{
 typedef struct packet packet_struct_t;
 
 
-//extern char *infostartframe;
-//extern char *infoendframe;
 
 uint16_t CRC_calculate(uint8_t * data_p, uint8_t length);
 
@@ -109,7 +107,7 @@ static inline bool VerifyCRC(packet_struct_t *commpacket)
     uint16_t checkCRC = commpacket->crc;
     commpacket->crc = 0;
     uint16_t crc = CRC_calculate((uint8_t*)commpacket, sizeof(*commpacket));
-    LOG_DEBUG(RECV_TASK, "CRC Calc == CRCcheck -> %u == %u",crc, checkCRC);
+    LOG_DEBUG(RECV_TASK, NULL, "CRC Calc == CRCcheck -> %u == %u",crc, checkCRC);
     return crc == checkCRC;
 }
 

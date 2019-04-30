@@ -37,8 +37,7 @@ const char *_thisNodeInfo[NODE_INFO_MAX] = {
 };
 
 //global variable for seeting the operation state
-static node_operation_state_t _thisNodeOperationState = STARTUP;
-
+static volatile node_operation_state_t _thisNodeOperationState = STARTUP;
 
 node_operation_state_t getThisNodeCurrentOperation(){
     return _thisNodeOperationState;

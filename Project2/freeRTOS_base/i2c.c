@@ -101,6 +101,7 @@ uint16_t I2CGet2Bytes(uint8_t target_address, uint8_t register_address)
    while(I2CMasterBusy(I2C0_BASE));
 
    uint32_t data_one = I2CMasterDataGet(I2C0_BASE);
+   data_one &= 0xFF;
 
    /*
    ** read one byte
@@ -120,6 +121,7 @@ uint16_t I2CGet2Bytes(uint8_t target_address, uint8_t register_address)
    while(I2CMasterBusy(I2C0_BASE));
 
    uint32_t data_two = I2CMasterDataGet(I2C0_BASE);
+   data_two &= 0xFF;
 
    return (((data_one << 8) | data_two) >> 4);
 }

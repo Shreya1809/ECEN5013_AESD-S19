@@ -778,8 +778,8 @@ size_t UART3_putData(char *data, size_t len)
 
 size_t UART3_getData(uint8_t *data, size_t len)
 {
-//    if(!UARTCharsAvail(UART3_BASE))
-//        return 0;
+    if(!UARTCharsAvail(UART3_BASE))
+        return 0;
     int i = 0;
     while(i<len)
     {

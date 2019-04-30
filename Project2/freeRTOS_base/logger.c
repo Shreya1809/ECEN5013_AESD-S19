@@ -36,10 +36,9 @@ const char * moduleIdName[MAX_TASKS+1] = {
     "SEND_TASK",
     "ACCEL_TASK",
     "DIST_TASK",
-    "MAIN_TASK",
     "RECV_TASK",
      "HB_TASK",
-
+     "MAIN_TASK",
 };
 
 const char *operationalState[4] = {
@@ -48,9 +47,10 @@ const char *operationalState[4] = {
        "DEGRADED_OPERATION",
        "OUTOFSERVICE"
 };
+
 #define LOG_LEVEL_STR(level)            logLevel[level]
 #define MODULE_ID_STR(id)               moduleIdName[id]
-#define OPERATIONAL_STATE_STR(state)    operationalState[state]
+#define OPERATIONAL_STATE_STR(state)   (state >=0 && state <4) ? operationalState[state] : ""
 
 //function to print log
 void LOG_PRINT(const log_struct_t *log)
@@ -92,8 +92,15 @@ void LOG_NodeInformation()
 
 extern xQueueHandle logger_queue;
 
+//log_level_t currentLogLevel = LOG_DEBUG;
+log_level_t currentLogLevel = LOG_INFO;
+
 int LOG_ENQUEUE(log_level_t level, moduleId_t modId, void *data, char *msg, ...)
 {
+    if(level > currentLogLevel)
+    {
+        return 0;
+    }
     log_struct_t send_log;
     send_log.level = level;
     send_log.timestamp = getTimeMsec();

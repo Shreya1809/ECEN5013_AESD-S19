@@ -30,7 +30,7 @@
 // The priorities of the various tasks.
 //
 //*****************************************************************************
-#define PRIORITY_HB_TASK                2
+#define PRIORITY_HB_TASK                3
 #define PRIORITY_LOGGER_TASK            3
 #define PRIORITY_COMM_RECV_TASK         3
 #define PRIORITY_COMM_SEND_TASK         4

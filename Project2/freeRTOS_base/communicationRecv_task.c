@@ -13,6 +13,7 @@
 #include "logger.h"
 #include "commUART.h"
 #include "communicationPacket.h"
+#include "sensors_task.h"
 #include <string.h>
 
 
@@ -34,7 +35,7 @@ int xTCPReceive(char *buffer, size_t size)
     }
     return bytesRecv;
 }
-#define COMM_PHYRECV(data, len) vTCPSend(data,len)
+#define COMM_PHYRECV(data, len) xTCPReceive(data,len)
 #else
 #define COMM_PHYRECV(data,len)  UART3_getData(data,len)
 #endif
@@ -43,9 +44,8 @@ int xTCPReceive(char *buffer, size_t size)
 
 TaskHandle_t communicationRecvTaskHandle;
 extern volatile bool BBGConnectedFlag;
+extern bool volatile inReverseGear;
 
-
-extern volatile bool BBGConnectedFlag;
 static void myCommRecvTask(void *params)
 {
         UART3_config(9600);
@@ -59,13 +59,17 @@ static void myCommRecvTask(void *params)
             {
                     memset(&recv_packet, 0, sizeof(recv_packet));
                     valread = COMM_PHYRECV((char*)&recv_packet, sizeof(recv_packet));
+                    if(valread == 0)
+                    {
+//                        vTaskDelay(50);
+                        continue;
+                    }
                     LOG_DEBUG(RECV_TASK,NULL , "Packet received: %u, CRC %d",valread,recv_packet.crc);
                     bool crcCheck = VerifyCRC(&recv_packet);
                     if(crcCheck == false)
                     {
                         LOG_ERROR(RECV_TASK,NULL, "CRC Check failed");
-                        //UART_flush(fd);
-                        //continue;
+                        continue;
                     }
                     LOG_DEBUG(RECV_TASK,NULL , "Opcode received: %d",recv_packet.data.opcode);
                     LOG_DEBUG(RECV_TASK,NULL, "Packet: ");
@@ -92,13 +96,21 @@ static void myCommRecvTask(void *params)
                     switch(recv_packet.data.opcode)
                     {
                     case reverseGearStateControl:
+                        LOG_INFO(RECV_TASK, NULL, "Reverse Gear:%u",recv_packet.data.inReverseGear);
+                        setReversGear(recv_packet.data.inReverseGear);
                         break;
                     case fanStateControl:
+                        LOG_INFO(RECV_TASK, NULL, "Fan:%u",recv_packet.data.isFanOn);
+                        DCmotor(recv_packet.data.isFanOn);
                         break;
                     case accelerometerDeltaThresholdControl:
+                        setAccelDeltaThreshold(&recv_packet.data.accel);
+                        break;
+                    case temperatureThresholdControl:
+                        setTemperatureThreshold(recv_packet.data.temperature.floatingpoint);
                         break;
                     case Heartbeat:
-                        LOG_INFO(HB_TASK,NULL,"Heart beat ACK");
+                        LOG_INFO(RECV_TASK,NULL,"Got Heart beat ACK");
                         BBGConnectedFlag = 0;
                         break;
                     }

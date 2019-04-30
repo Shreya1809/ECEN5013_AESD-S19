@@ -70,11 +70,6 @@ typedef enum{
     FOUR_HZ,
     EIGHT_HZ
 }conversion_rate_t;
-
-typedef enum{
-    ON,
-    OFF
-}state_t;
 /**
  * @brief get temperature raw value
  *
@@ -82,6 +77,5 @@ typedef enum{
  * @return int
  */
 float  TMP102_getTemperature(void);
-void DCmotor(state_t option);
 
 #endif /* TMP102_H_ */

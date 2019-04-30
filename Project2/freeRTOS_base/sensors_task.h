@@ -22,14 +22,27 @@
 #include "pwm.h"
 #include "i2c.h"
 
-typedef enum
-{
-    Ultrasonic,
-    Accelerometer,
-    Temperature
+//typedef enum
+//{
+//    Ultrasonic,
+//    Accelerometer,
+//    Temperature
+//
+//}sensor_type_t;
 
-}sensor_type_t;
 
-bool BISTcheckSensorConnection(sensor_type_t sensor);
+#define OFF false
+#define ON  true
+typedef bool state_t;
+
+void DCmotor(state_t option);
+void setReversGear(bool state);
+bool getReversGear();
+void setTemperatureThreshold(float temp);
+float getTemperatureThreshold();
+void setAccelDeltaThreshold(accel_data_t *accel);
+void getAccelDeltaThreshold(accel_data_t *accel);
+
+//bool BISTcheckSensorConnection(sensor_type_t sensor);
 uint32_t SensorTaskInit(void);
 #endif /* SENSORS_TASK_H_ */

@@ -29,9 +29,9 @@ typedef enum {
     SEND_TASK,
     ACCEL_TASK,
     DIST_TASK,
-    MAIN_TASK,
     RECV_TASK,
     HB_TASK,
+    MAIN_TASK,
     MAX_TASKS = MAIN_TASK, /*maximum no of tasks*/
 }moduleId_t;
 
