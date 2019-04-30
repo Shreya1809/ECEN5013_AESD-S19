@@ -55,9 +55,12 @@ bool getReverseGearStatus(void)
 void SetRemoteNodeTempThresholdValues(float low,float high)
 {
     pthread_mutex_lock(&thresholdlock);
-	  temp_low_threshold = low;
+    temp_low_threshold = low;
     temp_high_threshold = high;
-	  pthread_mutex_unlock(&thresholdlock);    
+    pthread_mutex_unlock(&thresholdlock);
+    temp_data_t temp;
+    temp.floatingpoint = high;
+    COMM_SEND(temperatureThresholdControl, &temp);    
 }
 
 float getTempThresLowVal(void)
@@ -85,6 +88,11 @@ void SetRemoteNodeAccelDelta(int16_t x,int16_t y,int16_t z)
     y_delta = y;
     z_delta = z;
     pthread_mutex_unlock(&thresholdlock);
+    accel_data_t accel;
+    accel.x = x;
+    accel.y = y;
+    accel.z = z;
+    COMM_SEND(accelerometerDeltaThresholdControl,&accel);
 }
 
 void getAccelDelta(int16_t *x,int16_t *y,int16_t *z)

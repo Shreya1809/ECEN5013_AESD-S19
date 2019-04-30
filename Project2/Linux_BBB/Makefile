@@ -45,12 +45,12 @@ test: buildtest runtest
 .PHONY: buildtest
 buildtest:
 	$(CC) $(FLAGS) -DUART_TEST src/uart.c -o uartloopback_test.out -lpthread
-	$(CC) $(FLAGS) test/ExternalClient.c -o client_test.out -lpthread
-	gcc $(FLAGS) test/ExternalClient.c -o host_client_test.out -lpthread
+	$(CC) $(FLAGS) test/ExClient_Test/ExternalClient.c -o client_test.out -lpthread
+	gcc $(FLAGS) test/ExClient_Test/ExternalClient.c -o host_client_test.out -lpthread
 	#$(CC) $(FLAGS) $(TEST_INCLUDES) test/Led_TEST/test.c -o led_test.out $(LIBS)
 	#$(CC) $(FLAGS) $(TEST_INCLUDES) -DTEST_MODE -DHAVE_SIGNAL_H $(TEST_SRCS) test/Temp_TEST/test.c -o temp_test.out $(LIBS)
 	#$(CC) $(FLAGS) $(TEST_INCLUDES) -DTEST_MODE -DHAVE_SIGNAL_H $(TEST_SRCS) test/Light_TEST/test.c -o light_test.out $(LIBS)
-	#$(CC) $(FLAGS) $(TEST_INCLUDES) -DTEST_MODE -DHAVE_SIGNAL_H $(TEST_SRCS) test/Logger_TEST/test.c -o logger_test.out $(LIBS)
+	$(CC) $(FLAGS) $(TEST_INCLUDES) -DTEST_MODE -DHAVE_SIGNAL_H $(TEST_SRCS) test/Logger_Test/loggerTest.c -o logger_test.out $(LIBS)
 	@scp *.out root@$(IPADDR):~/home/Project2/output
 
 .PHONY: runtest

@@ -102,8 +102,8 @@ int LOG_ENQUEUE(log_level_t level, moduleId_t modId, char *msg, ...)
   }
 
   LOG_ERROR(LOGGER_TASK,"Log enqueue Error");
-  GREENLEDOFF();
-  REDLEDON();
+  //GREENLEDOFF();
+  //REDLEDON();
   return EXIT_FAILURE;
 }
 

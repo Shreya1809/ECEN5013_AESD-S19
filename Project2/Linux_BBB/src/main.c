@@ -206,7 +206,7 @@ int main(int argc , char **argv)
         rc = pthread_join(threads[i],NULL);
         if(rc)
         {
-            PRINTLOGCONSOLE("pthread_join for thread %s failed\n", moduleIdName[i]);
+            //PRINTLOGCONSOLE("pthread_join for thread %s failed\n", moduleIdName[i]);
             //GREENLEDOFF();
             REDLEDON();
             //exit(EXIT_FAILURE);
